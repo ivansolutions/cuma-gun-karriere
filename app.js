@@ -8,6 +8,7 @@ const T = {
     brand_sub: "gegründet 1995",
     nav_prozess: "Bewerbungsprozess",
     nav_arbeitstag: "Arbeitstag",
+    nav_ueber: "Über uns",
     nav_stellen: "Offene Stellen",
     nav_standorte: "Standorte",
     nav_faq: "FAQ",
@@ -19,10 +20,15 @@ const T = {
 
     /* HERO */
     hero_eyebrow: "Aktuell offene Stellen · Nürnberg & Crailsheim",
-    hero_h1: "Werden Sie Kurierfahrer:in bei Cuma Gün Kuriertransporte e.K.",
+    hero_h1: "Werden Sie Paketzusteller bei Cuma Gün Kuriertransporte e.K.",
+    hero_ups: "Im Auftrag von UPS, dem weltgrößten Paketdienst",
     hero_sub: "Familienunternehmen, gegründet im September 1995.",
-    hero_lede: "Ein familiengeführter Logistikbetrieb mit drei Jahrzehnten Erfahrung. Festanstellung, deutscher Arbeitsvertrag, direkter Kontakt zur Disposition — ohne Callcenter, ohne Ticketsystem.",
+    hero_lede: "Seit über drei Jahrzehnten ist der Betrieb in Familienhand. Bei uns gilt das gesprochene Wort, und Sie bekommen eine Festanstellung mit deutschem Arbeitsvertrag zu fairen Bedingungen.",
     hero_caption: "Eigene Fahrzeuge · eigenes Personal",
+    hero_founder_badge: "FOTO FOLGT",
+    hero_founder_name: "Cuma Gün",
+    hero_founder_role: "Inhaber & Geschäftsführer",
+    hero_founder_note: "Demo — wird durch echtes Foto ersetzt",
     stat1_unit: "Jahre", stat1_label: "Familienunternehmen, gegründet im September 1995",
     stat2_unit: "Standorte", stat2_label: "Hauptsitz Nürnberg · Niederlassung Crailsheim",
     stat3_unit: "Sprachen", stat3_label: "Deutsch, Russisch, Rumänisch und Türkisch im Depot-Alltag",
@@ -37,25 +43,25 @@ const T = {
     s1_04_title: "Probefahrt möglich", s1_04_desc: "Wenn Sie möchten, fahren Sie einen Tag als Beifahrer mit, bevor Sie unterschreiben.",
     s1_05_title: "Arbeitsvertrag", s1_05_desc: "Festanstellung, deutscher Vertrag, transparente Konditionen — keine grauen Modelle.",
     s1_06_title: "Erster Tag", s1_06_desc: "Sie starten mit einem erfahrenen Kollegen an Ihrer Seite — niemand fährt allein los.",
-    s1_close_strong: "Antwort innerhalb von drei Werktagen.", s1_close_rest: "Lieber direkt sprechen?",
+    s1_close_strong: "Wir melden uns persönlich.", s1_close_rest: "Lieber direkt sprechen?",
 
     /* S2 */
-    s2_kicker: "02 — Anforderungen",
+    s2_kicker: "01 — Anforderungen",
     s2_h2_a: "Was Sie ", s2_h2_b: "mitbringen sollten", s2_h2_c: ".",
-    s2_lede: "Wenig formelle Voraussetzungen, hohe Erwartung an das, was im Alltag zählt. Berufserfahrung ist hilfreich, aber kein Muss — wir arbeiten Sie ein.",
+    s2_lede: "Wenige formale Voraussetzungen, aber klare Erwartungen an das, was im Alltag zählt. Berufserfahrung hilft, ist aber kein Muss. Wir arbeiten Sie ein.",
     s2_01_title: "Führerschein Klasse B", s2_01_desc: "Voraussetzung für unsere Touren. Klasse C1 oder C ist ein Plus, aber keine Bedingung.",
     s2_02_title: "Verlässlichkeit", s2_02_desc: "Sie kommen, wenn Sie kommen sollen. Für uns zählt das mehr als Berufsjahre.",
-    s2_03_title: "Verantwortung", s2_03_desc: "Fahrzeug und Sendungen liegen in Ihrer Hand. Wir vertrauen — Sie tragen Verantwortung.",
+    s2_03_title: "Verantwortung", s2_03_desc: "Fahrzeug und Sendungen liegen in Ihrer Hand. Wir vertrauen Ihnen das an, und Sie tragen die Verantwortung.",
     s2_04_title: "Sprachkenntnisse", s2_04_desc: "Grundkenntnisse Deutsch reichen für den Start. Im Depot sprechen wir DE, RU, RO, TR.",
 
     /* S3 */
-    s3_kicker: "03 — Arbeitstag",
+    s3_kicker: "02 — Arbeitstag",
     s3_h2_a: "Wie ein ", s3_h2_b: "Arbeitstag", s3_h2_c: " aussieht.",
     s3_lede: "Ehrlich beschrieben — vom ersten Scan am Depot bis zum Feierabend. Wir nennen die Zeiten so, wie sie wirklich sind.",
     s3_t1_time: "06:45 – 07:00 Uhr", s3_t1_loc: "Ankunft am Depot", s3_t1_title: "Eintreffen am Fahrzeug",
     s3_t1_desc: "Der Arbeitstag beginnt um 07:00 Uhr am Fahrzeug. Etwas früher zu kommen ist eine persönliche Entscheidung — niemand setzt das voraus, niemand drängt.",
     s3_t2_time: "07:00 – 08:30 Uhr", s3_t2_loc: "Tour vorbereiten", s3_t2_title: "Pakete scannen, sortieren, prüfen",
-    s3_t2_desc: "Sie scannen Ihre Sendungen, sortieren sie nach Stop-Reihenfolge und prüfen die Express-Sendungen. Sobald alle Pakete bereit sind, fahren Sie los — in der Regel in der ersten Hälfte der achten Stunde.",
+    s3_t2_desc: "Sie scannen Ihre Sendungen, sortieren sie nach Stopp-Reihenfolge und prüfen die Express-Sendungen. Sobald alle Pakete bereit sind, fahren Sie los — in der Regel in der ersten Hälfte der achten Stunde.",
     s3_t3_time: "08:30 – Nachmittag", s3_t3_loc: "Auf Tour", s3_t3_title: "Ihre Route, Ihr Rhythmus",
     s3_t3_desc: "Sie fahren Ihre feste Route. Die Express-Sendungen werden im Vorfeld mit der Disposition abgestimmt — Sie haben Klarheit über die Tagestermine, ohne Überraschungen mittendrin.",
     s3_t4_time: "13:00 – 13:45 Uhr", s3_t4_loc: "Pause", s3_t4_title: "Gesetzlich vorgeschriebene Pause",
@@ -69,27 +75,27 @@ const T = {
     s3_close_strong: "Alle Details", s3_close_a: " — individuelle Konditionen, genaue Stunden, konkrete Aufgaben — ", s3_close_strong2: "besprechen wir im Vorstellungsgespräch.", s3_close_b: " Sie sollen wissen, worauf Sie sich einlassen, bevor Sie unterschreiben.",
 
     /* S4 */
-    s4_kicker: "04 — Offene Stellen",
+    s4_kicker: "03 — Offene Stellen",
     s4_h2_a: "Aktuell ", s4_h2_b: "suchen wir", s4_h2_c: ".",
-    s4_lede: "Drei aktive Positionen an unseren Standorten. Wenn nichts Passendes dabei ist — die Initiativbewerbung steht jederzeit offen.",
+    s4_lede: "Drei offene Stellen an unseren Standorten. Ist nichts Passendes dabei, freuen wir uns über Ihre Initiativbewerbung.",
     tag_active: "Aktiv", tag_initiativ: "Initiativ", tag_full: "Vollzeit", tag_part: "Teilzeit", tag_fullpart: "Vollzeit · Teilzeit",
     loc_nbg: "Nürnberg", loc_crl: "Crailsheim", loc_both: "Nürnberg · Crailsheim",
-    s4_j1_title: "Paketzusteller:in (m/w/d)", s4_j1_desc: "Tägliche Zustelltouren im Stadtgebiet Nürnberg und Umgebung. Festanstellung mit deutschem Arbeitsvertrag, Einarbeitung mit erfahrenem Kollegen.",
-    s4_j2_title: "Paketzusteller:in (m/w/d)", s4_j2_desc: "Zustellung in und um Crailsheim. Halbtags-Modell — gut vereinbar mit Familie oder Studium. Klasse-B-Führerschein erforderlich.",
-    s4_j3_title: "Be- und Entlader (m/w/d)", s4_j3_desc: "Verladearbeiten am Depot Crailsheim. Frühschicht ab den frühen Morgenstunden. Körperliche Belastbarkeit, kein Führerschein erforderlich.",
+    s4_j1_title: "Paketzusteller (m/w/d)", s4_j1_desc: "Tägliche Zustelltouren im Stadtgebiet Nürnberg und Umgebung. Festanstellung mit deutschem Arbeitsvertrag, Einarbeitung mit erfahrenem Kollegen.",
+    s4_j2_title: "Paketzusteller (m/w/d)", s4_j2_desc: "Zustellung in und um Crailsheim. Halbtags-Modell — gut vereinbar mit Familie oder Studium. Klasse-B-Führerschein erforderlich.",
+    s4_j3_title: "Be- und Entlader (m/w/d)", s4_j3_desc: "Verladearbeiten am Depot Crailsheim. Frühschicht, Beginn am frühen Morgen. Körperliche Belastbarkeit ist wichtig, ein Führerschein nicht nötig.",
     s4_j4_title: "Initiativbewerbung", s4_j4_desc: "Kein passender Job dabei? Schicken Sie uns trotzdem Ihre Unterlagen. Gute Leute finden bei uns immer einen Platz — auch außerhalb der aktuell ausgeschriebenen Stellen.",
 
     /* S5 */
-    s5_kicker: "05 — Stimmen aus dem Team",
+    s5_kicker: "04 — Stimmen aus dem Team",
     s5_h2_a: "Echte Geschichten — ", s5_h2_b: "in Kürze hier", s5_h2_c: ".",
-    s5_lede: "Wir sammeln gerade Erzählungen unserer Fahrerinnen und Fahrer — mit Foto, mit Namen, mit Einverständnis. Die ersten Geschichten folgen in den nächsten Wochen.",
+    s5_lede: "Wir sammeln gerade Geschichten unserer Fahrer — mit Foto und Namen, sofern sie einverstanden sind. Die ersten folgen in den nächsten Wochen.",
     voice_demo: "Demo · Foto folgt",
-    voice_courier: "Kurierfahrer:in", voice_dispatch: "Disposition", voice_loader: "Be- und Entlader", voice_workshop: "Werkstatt",
+    voice_courier: "Kurierfahrer", voice_dispatch: "Disposition", voice_loader: "Be- und Entlader", voice_workshop: "Werkstatt",
 
     /* S6 */
-    s6_kicker: "06 — Häufige Fragen",
-    s6_h2_a: "Was Bewerber:innen ", s6_h2_b: "oft fragen", s6_h2_c: ".",
-    s6_lede: "Wenn Ihre Frage nicht dabei ist — schreiben Sie uns. Wir antworten persönlich, in der Regel innerhalb von zwei Werktagen.",
+    s6_kicker: "05 — Häufige Fragen",
+    s6_h2_a: "Was Bewerber ", s6_h2_b: "oft fragen", s6_h2_c: ".",
+    s6_lede: "Wenn Ihre Frage nicht dabei ist — schreiben Sie uns. Wir antworten persönlich.",
     s6_q1: "Welche Unterlagen brauche ich für die Bewerbung?",
     s6_a1: "Ein kurzer Lebenslauf reicht für den ersten Schritt. Führerschein, Aufenthaltspapiere (falls zutreffend) und ein Führungszeugnis besprechen wir im persönlichen Gespräch. Wenn etwas fehlt, sagen wir es direkt — Sie müssen nicht alles vorab klären.",
     s6_q2: "Was, wenn mein Deutsch nicht perfekt ist?",
@@ -108,16 +114,25 @@ const T = {
     s6_a8: "Wir prüfen jede Bewerbung sorgfältig und melden uns persönlich, sobald wir eine konkrete Antwort haben.",
 
     /* S7 */
-    s7_kicker: "07 — Standorte",
+    s7_kicker: "06 — Standorte",
     s7_h2_a: "Zwei Standorte, ", s7_h2_b: "eine Disposition", s7_h2_c: ".",
-    s7_lede: "Nürnberg ist der Hauptsitz, Crailsheim die Niederlassung. Beide Depots sind direkt erreichbar — eine Anfahrt ist jederzeit nach Absprache möglich.",
+    s7_lede: "Nürnberg ist der Hauptsitz, Crailsheim die Niederlassung. Beide Depots können Sie nach Absprache jederzeit besuchen.",
     loc_hq: "Hauptsitz", loc_branch: "Niederlassung",
     loc_addr: "Adresse", loc_tel: "Telefon", loc_mail: "E-Mail",
-    loc_hours: "Öffnungszeiten", loc_hours_val: "Mo–Fr 07:00–20:00 · Sa 07:00–12:00",
+    loc_hours: "Öffnungszeiten", loc_hours_val: "Mo–Fr 07:00–18:00 · Sa 07:00–12:00",
+    loc_hours_nbg: "Mo–Fr 07:00–18:00 · Sa 07:00–12:00",
+    loc_hours_crl: "Mo–Fr 07:00–17:00 · Sa 07:00–12:00",
+    loc_tel_crl: "+49 — wird vom Geschäftsführer bestätigt",
     loc_more: "Mehr zum Standort", loc_route: "Route planen",
+    bew_steps_label: "In sechs Schritten zum ersten Arbeitstag",
+    bew_contact_label: "Direkter Kontakt zur Bewerbung",
+    ueber_h1: "Über uns",
+    ueber_lede: "Diese Seite wird derzeit vorbereitet.",
+    ueber_body: "Schon bald erfahren Sie hier mehr über Cuma Gün Kuriertransporte e.K. — die Familie hinter dem Unternehmen, drei Jahrzehnte Branchenerfahrung, unsere Werte, und unsere Partnerschaft mit United Parcel Service.",
+    ueber_home: "Zurück zur Startseite",
 
     /* S8 */
-    s8_kicker: "08 — Bewerbung",
+    s8_kicker: "07 — Bewerbung",
     s8_h2_a: "Ein kurzes Formular. ", s8_h2_b: "Eine ehrliche Antwort", s8_h2_c: ".",
     s8_lede: "Schreiben Sie uns. Wenn Sie zu uns passen, melden wir uns persönlich bei Ihnen, sobald wir Ihre Unterlagen geprüft haben.",
     s8_b1: "Sorgfältige Prüfung jeder Bewerbung",
@@ -129,9 +144,9 @@ const T = {
     form_title: "Ihre Bewerbung",
     form_sub: "Felder mit * sind Pflicht. Unterlagen können Sie direkt unten anhängen.",
     form_vorname: "Vorname *", form_nachname: "Nachname *", form_telefon: "Telefon *", form_email: "E-Mail *",
-    form_position: "Position", form_standort: "Bevorzugter Standort", form_around: "Umgebung Nürnberg",
+    form_position: "Position", form_standort: "Bevorzugter Standort", form_around: "Umgebung Nürnberg", form_no_pref: "egal / keine Präferenz",
     form_sprache: "Sprache für Rückruf",
-    form_pos1: "Paketzusteller:in Nürnberg (Vollzeit)", form_pos2: "Paketzusteller:in Crailsheim (Teilzeit)",
+    form_pos1: "Paketzusteller Nürnberg (Vollzeit)", form_pos2: "Paketzusteller Crailsheim (Teilzeit)",
     form_pos3: "Be- und Entlader Crailsheim", form_pos4: "Initiativbewerbung",
     form_files: "Unterlagen (PDF/DOC/DOCX, max. 10 MB)",
     form_drop: "Hierher ziehen oder <u>klicken zum Auswählen</u>",
@@ -146,7 +161,7 @@ const T = {
     footer_menu: "Menü", footer_locations: "Standorte", footer_legal: "Rechtliches",
     footer_imprint: "Impressum", footer_privacy: "Datenschutzerklärung", footer_a11y: "Barrierefreiheitserklärung",
     footer_family: "Familienunternehmen · Sitz Nürnberg",
-    footer_translations: "Übersetzungen DE/RU/RO/TR — wird noch finalisiert",
+    footer_translations: "Übersetzungen DE/RU/RO/TR — werden noch finalisiert",
     emp_kicker: "MITARBEITERGESCHICHTE",
     emp_back: "Zurück zur Übersicht",
     footer_cookies: "Cookie-Einstellungen",
@@ -155,7 +170,7 @@ const T = {
     legal_imprint_title: "Impressum",
     legal_imprint_text: "Hier folgt der vollständige Impressum-Text mit allen gesetzlich erforderlichen Angaben gemäß § 5 TMG. Wird vor Veröffentlichung finalisiert.",
     legal_privacy_title: "Datenschutzerklärung",
-    legal_privacy_text: "Hier folgt die vollständige Datenschutzerklärung gemäß DSGVO Art. 13/14 — welche Daten wir wann zu welchem Zweck verarbeiten, Speicherdauer, Ihre Rechte als Betroffene:r, Kontakt zum Datenschutzbeauftragten. Wird vor Veröffentlichung finalisiert.",
+    legal_privacy_text: "Hier folgt die vollständige Datenschutzerklärung gemäß DSGVO Art. 13/14 — welche Daten wir wann zu welchem Zweck verarbeiten, Speicherdauer, Ihre Rechte als betroffene Person, Kontakt zum Datenschutzbeauftragten. Wird vor Veröffentlichung finalisiert.",
     legal_agb_title: "Allgemeine Geschäftsbedingungen",
     legal_agb_text: "Hier folgen die allgemeinen Geschäftsbedingungen. Wird vor Veröffentlichung finalisiert.",
     legal_a11y_title: "Barrierefreiheitserklärung",
@@ -172,17 +187,22 @@ const T = {
 
   ru: {
     brand_sub: "основано в 1995",
-    nav_prozess: "Процесс приёма", nav_arbeitstag: "Рабочий день", nav_stellen: "Вакансии",
+    nav_prozess: "Процесс приёма", nav_arbeitstag: "Рабочий день", nav_ueber: "О нас", nav_stellen: "Вакансии",
     nav_standorte: "Локации", nav_faq: "Вопросы",
     cta_apply: "Подать заявку", cta_apply_now: "Подать заявку", cta_apply_arrow: "Подать заявку",
     cta_day: "Как проходит рабочий день",
     demo_photo: "Демо-фото · будет заменено реальным снимком",
 
     hero_eyebrow: "Открытые вакансии · Нюрнберг и Крайльсхайм",
-    hero_h1: "Станьте курьером в компании Cuma Gün Kuriertransporte e.K.",
+    hero_h1: "Станьте доставщиком посылок в компании Cuma Gün Kuriertransporte e.K.",
+    hero_ups: "По поручению UPS — крупнейшей в мире службы доставки посылок",
     hero_sub: "Семейное предприятие, основано в сентябре 1995 года.",
-    hero_lede: "Семейный логистический бизнес с тридцатилетним опытом. Постоянное трудоустройство, немецкий трудовой договор, прямой контакт с диспетчерской — без колл-центров и систем тикетов.",
+    hero_lede: "Уже более трёх десятилетий предприятие находится в руках семьи. У нас слово остаётся словом, и Вы получаете постоянную работу с немецким трудовым договором на честных условиях.",
     hero_caption: "Свой автопарк · свой персонал",
+    hero_founder_badge: "ФОТО СКОРО",
+    hero_founder_name: "Cuma Gün",
+    hero_founder_role: "Владелец и управляющий",
+    hero_founder_note: "Демо — будет заменено реальным фото",
     stat1_unit: "лет", stat1_label: "Семейное предприятие, основано в сентябре 1995 года",
     stat2_unit: "локации", stat2_label: "Главный офис Нюрнберг · Филиал Крайльсхайм",
     stat3_unit: "языка", stat3_label: "Немецкий, русский, румынский и турецкий — повседневно в депо",
@@ -196,17 +216,17 @@ const T = {
     s1_04_title: "Возможна пробная поездка", s1_04_desc: "При желании — один день рядом с водителем, прежде чем подписать договор.",
     s1_05_title: "Трудовой договор", s1_05_desc: "Постоянное трудоустройство, немецкий договор, прозрачные условия — никаких серых схем.",
     s1_06_title: "Первый день", s1_06_desc: "Вы начинаете рядом с опытным коллегой — никто не выезжает один.",
-    s1_close_strong: "Ответ в течение трёх рабочих дней.", s1_close_rest: "Хотите поговорить напрямую?",
+    s1_close_strong: "Мы свяжемся лично.", s1_close_rest: "Хотите поговорить напрямую?",
 
-    s2_kicker: "02 — Требования",
+    s2_kicker: "01 — Требования",
     s2_h2_a: "Что Вы должны ", s2_h2_b: "принести с собой", s2_h2_c: ".",
-    s2_lede: "Мало формальных требований, высокие ожидания к тому, что важно в повседневной работе. Опыт желателен, но не обязателен — мы Вас введём в курс дела.",
+    s2_lede: "Мало формальных требований, но чёткие ожидания к тому, что действительно важно в работе. Опыт помогает, но не обязателен — мы Вас всему обучим.",
     s2_01_title: "Права категории B", s2_01_desc: "Обязательное условие для наших маршрутов. C1 или C — плюс, но не требование.",
     s2_02_title: "Надёжность", s2_02_desc: "Вы приходите, когда нужно прийти. Для нас это важнее, чем годы стажа.",
-    s2_03_title: "Ответственность", s2_03_desc: "Машина и отправления — в Ваших руках. Мы доверяем — Вы несёте ответственность.",
+    s2_03_title: "Ответственность", s2_03_desc: "Машина и отправления — в Ваших руках. Мы доверяем это Вам, и Вы несёте ответственность.",
     s2_04_title: "Знание языка", s2_04_desc: "Базового немецкого достаточно для старта. В депо мы говорим на DE, RU, RO, TR.",
 
-    s3_kicker: "03 — Рабочий день",
+    s3_kicker: "02 — Рабочий день",
     s3_h2_a: "Как выглядит ", s3_h2_b: "рабочий день", s3_h2_c: ".",
     s3_lede: "Честно описано — от первого скана в депо до конца смены. Мы называем часы такими, какие они есть.",
     s3_t1_time: "06:45 – 07:00", s3_t1_loc: "Прибытие в депо", s3_t1_title: "Подход к машине",
@@ -225,25 +245,25 @@ const T = {
     s3_t7_desc: "В первый-второй месяц закладывайте больше времени — до 16:00 или 17:00 это нормально, пока Вы учите маршрут. Опытный коллега всё это время рядом с Вами.",
     s3_close_strong: "Все детали", s3_close_a: " — индивидуальные условия, точные часы, конкретные задачи — ", s3_close_strong2: "мы обсуждаем на собеседовании.", s3_close_b: " Вы должны понимать, на что соглашаетесь, ещё до подписания.",
 
-    s4_kicker: "04 — Открытые вакансии",
+    s4_kicker: "03 — Открытые вакансии",
     s4_h2_a: "Сейчас ", s4_h2_b: "мы ищем", s4_h2_c: ".",
-    s4_lede: "Три активные позиции на наших локациях. Если ничего подходящего — инициативная заявка всегда открыта.",
+    s4_lede: "Три открытые вакансии на наших локациях. Если подходящего нет, будем рады Вашей инициативной заявке.",
     tag_active: "Активна", tag_initiativ: "Инициативная", tag_full: "Полная занятость", tag_part: "Частичная", tag_fullpart: "Полная · Частичная",
     loc_nbg: "Нюрнберг", loc_crl: "Крайльсхайм", loc_both: "Нюрнберг · Крайльсхайм",
     s4_j1_title: "Курьер-доставщик (м/ж/д)", s4_j1_desc: "Ежедневные маршруты по Нюрнбергу и окрестностям. Постоянное трудоустройство, немецкий договор, ввод в работу с опытным коллегой.",
     s4_j2_title: "Курьер-доставщик (м/ж/д)", s4_j2_desc: "Доставка в Крайльсхайме и окрестностях. Полдня — удобно совмещать с семьёй или учёбой. Права категории B обязательны.",
-    s4_j3_title: "Грузчик / разгрузчик (м/ж/д)", s4_j3_desc: "Погрузочные работы в депо Крайльсхайма. Ранняя смена с раннего утра. Физическая выносливость, права не требуются.",
+    s4_j3_title: "Грузчик / разгрузчик (м/ж/д)", s4_j3_desc: "Погрузочные работы в депо Крайльсхайма. Ранняя смена, начало ранним утром. Важна физическая выносливость, права не требуются.",
     s4_j4_title: "Инициативная заявка", s4_j4_desc: "Нет подходящей вакансии? Всё равно пришлите документы. Для хороших людей у нас всегда найдётся место — даже вне открытых позиций.",
 
-    s5_kicker: "05 — Голоса команды",
+    s5_kicker: "04 — Голоса команды",
     s5_h2_a: "Реальные истории — ", s5_h2_b: "скоро здесь", s5_h2_c: ".",
-    s5_lede: "Мы собираем рассказы наших водителей — с фото, с именами, с согласием. Первые истории появятся в ближайшие недели.",
+    s5_lede: "Мы собираем истории наших водителей — с фото и именем, если они на это согласны. Первые появятся в ближайшие недели.",
     voice_demo: "Демо · фото будет позже",
     voice_courier: "Курьер", voice_dispatch: "Диспетчер", voice_loader: "Грузчик", voice_workshop: "Мастерская",
 
-    s6_kicker: "06 — Частые вопросы",
+    s6_kicker: "05 — Частые вопросы",
     s6_h2_a: "Что чаще всего ", s6_h2_b: "спрашивают кандидаты", s6_h2_c: ".",
-    s6_lede: "Если Вашего вопроса нет — напишите нам. Мы отвечаем лично, как правило, в течение двух рабочих дней.",
+    s6_lede: "Если Вашего вопроса нет — напишите нам. Мы отвечаем лично.",
     s6_q1: "Какие документы нужны для подачи заявки?",
     s6_a1: "На первом этапе достаточно короткого резюме. Права, документы о пребывании (если требуется) и справку о несудимости обсудим на личной встрече. Если чего-то не хватает — скажем прямо; Вам не нужно решать всё заранее.",
     s6_q2: "Что, если мой немецкий неидеален?",
@@ -261,15 +281,24 @@ const T = {
     s6_q8: "Как быстро я получу ответ?",
     s6_a8: "Мы внимательно изучаем каждую заявку и свяжемся лично, как только сможем дать конкретный ответ.",
 
-    s7_kicker: "07 — Локации",
+    s7_kicker: "06 — Локации",
     s7_h2_a: "Две локации, ", s7_h2_b: "одна диспетчерская", s7_h2_c: ".",
-    s7_lede: "Нюрнберг — главный офис, Крайльсхайм — филиал. Оба депо доступны напрямую — визит возможен в любое время по договорённости.",
+    s7_lede: "Нюрнберг — главный офис, Крайльсхайм — филиал. Оба депо Вы можете посетить в любое время по договорённости.",
     loc_hq: "Главный офис", loc_branch: "Филиал",
     loc_addr: "Адрес", loc_tel: "Телефон", loc_mail: "E-Mail",
-    loc_hours: "Часы работы", loc_hours_val: "Пн–Пт 07:00–20:00 · Сб 07:00–12:00",
+    loc_hours: "Часы работы", loc_hours_val: "Пн–Пт 07:00–18:00 · Сб 07:00–12:00",
+    loc_hours_nbg: "Пн–Пт 07:00–18:00 · Сб 07:00–12:00",
+    loc_hours_crl: "Пн–Пт 07:00–17:00 · Сб 07:00–12:00",
+    loc_tel_crl: "+49 — будет подтверждён управляющим",
     loc_more: "Подробнее о локации", loc_route: "Построить маршрут",
+    bew_steps_label: "Шесть шагов до первого рабочего дня",
+    bew_contact_label: "Прямой контакт для заявки",
+    ueber_h1: "О нас",
+    ueber_lede: "Эта страница сейчас готовится.",
+    ueber_body: "Совсем скоро здесь Вы узнаете больше о Cuma Gün Kuriertransporte e.K. — о семье, стоящей за компанией, трёх десятилетиях отраслевого опыта, наших ценностях и нашем партнёрстве с United Parcel Service.",
+    ueber_home: "Вернуться на главную",
 
-    s8_kicker: "08 — Заявка",
+    s8_kicker: "07 — Заявка",
     s8_h2_a: "Короткая форма. ", s8_h2_b: "Честный ответ", s8_h2_c: ".",
     s8_lede: "Напишите нам. Если Вы нам подходите, мы свяжемся с Вами лично, как только рассмотрим Ваши документы.",
     s8_b1: "Тщательное рассмотрение каждой заявки",
@@ -281,7 +310,7 @@ const T = {
     form_title: "Ваша заявка",
     form_sub: "Поля со * обязательны. Документы можно прикрепить ниже.",
     form_vorname: "Имя *", form_nachname: "Фамилия *", form_telefon: "Телефон *", form_email: "E-Mail *",
-    form_position: "Позиция", form_standort: "Предпочтительная локация", form_around: "Окрестности Нюрнберга",
+    form_position: "Позиция", form_standort: "Предпочтительная локация", form_around: "Окрестности Нюрнберга", form_no_pref: "не важно / без предпочтений",
     form_sprache: "Язык для обратной связи",
     form_pos1: "Курьер Нюрнберг (Полная)", form_pos2: "Курьер Крайльсхайм (Частичная)",
     form_pos3: "Грузчик Крайльсхайм", form_pos4: "Инициативная заявка",
@@ -323,17 +352,22 @@ const T = {
 
   ro: {
     brand_sub: "fondat în 1995",
-    nav_prozess: "Procesul de aplicare", nav_arbeitstag: "Ziua de lucru", nav_stellen: "Posturi vacante",
+    nav_prozess: "Procesul de aplicare", nav_arbeitstag: "Ziua de lucru", nav_ueber: "Despre noi", nav_stellen: "Posturi vacante",
     nav_standorte: "Locații", nav_faq: "Întrebări",
     cta_apply: "Aplicați acum", cta_apply_now: "Aplicați acum", cta_apply_arrow: "Aplicați acum",
     cta_day: "Cum arată o zi de lucru",
     demo_photo: "Foto demo · va fi înlocuită cu o imagine reală",
 
     hero_eyebrow: "Posturi vacante acum · Nürnberg și Crailsheim",
-    hero_h1: "Deveniți curier la Cuma Gün Kuriertransporte e.K.",
+    hero_h1: "Deveniți livrator de colete la Cuma Gün Kuriertransporte e.K.",
+    hero_ups: "În numele UPS, cel mai mare serviciu de colete din lume",
     hero_sub: "Afacere de familie, fondată în septembrie 1995.",
-    hero_lede: "O firmă de logistică condusă de familie, cu trei decenii de experiență. Angajare permanentă, contract de muncă german, contact direct cu dispeceratul — fără call center, fără sistem de tichete.",
+    hero_lede: "De peste trei decenii, firma este condusă de familie. La noi, cuvântul dat se ține, iar dumneavoastră primiți un loc de muncă stabil, cu contract german, în condiții corecte.",
     hero_caption: "Vehicule proprii · personal propriu",
+    hero_founder_badge: "FOTO URMEAZĂ",
+    hero_founder_name: "Cuma Gün",
+    hero_founder_role: "Proprietar și administrator",
+    hero_founder_note: "Demo — va fi înlocuit cu o fotografie reală",
     stat1_unit: "ani", stat1_label: "Afacere de familie, fondată în septembrie 1995",
     stat2_unit: "locații", stat2_label: "Sediul Nürnberg · Filiala Crailsheim",
     stat3_unit: "limbi", stat3_label: "Germană, rusă, română și turcă în depozit",
@@ -347,17 +381,17 @@ const T = {
     s1_04_title: "Cursă de probă posibilă", s1_04_desc: "Dacă doriți, mergeți o zi ca pasager înainte de a semna.",
     s1_05_title: "Contract de muncă", s1_05_desc: "Angajare permanentă, contract german, condiții transparente — fără modele gri.",
     s1_06_title: "Prima zi", s1_06_desc: "Începeți alături de un coleg cu experiență — nimeni nu pleacă singur pe traseu.",
-    s1_close_strong: "Răspuns în trei zile lucrătoare.", s1_close_rest: "Preferați să vorbiți direct?",
+    s1_close_strong: "Vă răspundem personal.", s1_close_rest: "Preferați să vorbiți direct?",
 
-    s2_kicker: "02 — Cerințe",
+    s2_kicker: "01 — Cerințe",
     s2_h2_a: "Ce ar trebui ", s2_h2_b: "să aduceți", s2_h2_c: ".",
-    s2_lede: "Cerințe formale puține, așteptări mari la ceea ce contează zilnic. Experiența ajută, dar nu este obligatorie — vă instruim noi.",
+    s2_lede: "Puține cerințe formale, dar așteptări clare la ceea ce contează zilnic. Experiența ajută, dar nu este obligatorie. Vă instruim noi.",
     s2_01_title: "Permis categoria B", s2_01_desc: "Necesar pentru traseele noastre. Categoria C1 sau C este un plus, dar nu o condiție.",
     s2_02_title: "Seriozitate", s2_02_desc: "Veniți când trebuie să veniți. Pentru noi contează mai mult decât anii de experiență.",
-    s2_03_title: "Responsabilitate", s2_03_desc: "Vehiculul și coletele sunt în mâinile dumneavoastră. Noi avem încredere — Dvs. purtați responsabilitatea.",
+    s2_03_title: "Responsabilitate", s2_03_desc: "Vehiculul și coletele sunt în mâinile dumneavoastră. Noi vi le încredințăm, iar dumneavoastră purtați responsabilitatea.",
     s2_04_title: "Cunoștințe de limbă", s2_04_desc: "Germana de bază este suficientă pentru început. În depozit vorbim DE, RU, RO, TR.",
 
-    s3_kicker: "03 — Ziua de lucru",
+    s3_kicker: "02 — Ziua de lucru",
     s3_h2_a: "Cum arată o ", s3_h2_b: "zi de lucru", s3_h2_c: ".",
     s3_lede: "Descrisă cinstit — de la primul scan la depozit până la sfârșitul programului. Spunem orele așa cum sunt.",
     s3_t1_time: "06:45 – 07:00", s3_t1_loc: "Sosirea la depozit", s3_t1_title: "Ajungere la vehicul",
@@ -376,25 +410,25 @@ const T = {
     s3_t7_desc: "În prima-două luni planificați ceva mai mult timp — până la 16:00 sau 17:00 este normal cât timp învățați traseul. Un coleg cu experiență este lângă Dvs. tot timpul.",
     s3_close_strong: "Toate detaliile", s3_close_a: " — condiții individuale, ore exacte, sarcini concrete — ", s3_close_strong2: "le discutăm la interviu.", s3_close_b: " Vrem să știți la ce vă angajați, înainte de a semna.",
 
-    s4_kicker: "04 — Posturi vacante",
+    s4_kicker: "03 — Posturi vacante",
     s4_h2_a: "În prezent ", s4_h2_b: "căutăm", s4_h2_c: ".",
-    s4_lede: "Trei posturi active la locațiile noastre. Dacă nu se potrivește nimic — aplicația spontană este oricând deschisă.",
+    s4_lede: "Trei posturi deschise la locațiile noastre. Dacă nu se potrivește nimic, ne bucurăm să primim o candidatură spontană.",
     tag_active: "Activ", tag_initiativ: "Spontan", tag_full: "Normă întreagă", tag_part: "Jumătate de normă", tag_fullpart: "Normă întreagă · Jumătate",
     loc_nbg: "Nürnberg", loc_crl: "Crailsheim", loc_both: "Nürnberg · Crailsheim",
     s4_j1_title: "Curier de colete (m/f/d)", s4_j1_desc: "Trasee zilnice de livrare în orașul Nürnberg și împrejurimi. Angajare permanentă cu contract german, instruire cu coleg experimentat.",
     s4_j2_title: "Curier de colete (m/f/d)", s4_j2_desc: "Livrare în și în jurul Crailsheim. Model jumătate de normă — compatibil cu familia sau studiile. Permis categoria B necesar.",
-    s4_j3_title: "Încărcător / descărcător (m/f/d)", s4_j3_desc: "Lucrări de încărcare la depozitul Crailsheim. Tură de dimineață din zorii zilei. Rezistență fizică, fără permis necesar.",
+    s4_j3_title: "Încărcător / descărcător (m/f/d)", s4_j3_desc: "Lucrări de încărcare la depozitul Crailsheim. Tură de dimineață, început în zori. Contează rezistența fizică, permisul nu este necesar.",
     s4_j4_title: "Aplicație spontană", s4_j4_desc: "Niciun post potrivit? Trimiteți totuși documentele. Pentru oameni buni găsim mereu un loc — chiar și în afara posturilor publicate.",
 
-    s5_kicker: "05 — Voci din echipă",
+    s5_kicker: "04 — Voci din echipă",
     s5_h2_a: "Povești reale — ", s5_h2_b: "în curând aici", s5_h2_c: ".",
-    s5_lede: "Adunăm acum povești de la șoferii noștri — cu fotografie, nume și acord. Primele povești vor urma în săptămânile următoare.",
+    s5_lede: "Adunăm acum povești de la șoferii noștri — cu fotografie și nume, dacă sunt de acord. Primele vor urma în săptămânile următoare.",
     voice_demo: "Demo · foto va urma",
     voice_courier: "Curier", voice_dispatch: "Dispecerat", voice_loader: "Încărcător", voice_workshop: "Atelier",
 
-    s6_kicker: "06 — Întrebări frecvente",
+    s6_kicker: "05 — Întrebări frecvente",
     s6_h2_a: "Ce întreabă ", s6_h2_b: "adesea candidații", s6_h2_c: ".",
-    s6_lede: "Dacă întrebarea Dvs. nu este aici — scrieți-ne. Răspundem personal, de obicei în două zile lucrătoare.",
+    s6_lede: "Dacă întrebarea Dvs. nu este aici — scrieți-ne. Răspundem personal.",
     s6_q1: "Ce documente îmi trebuie pentru aplicație?",
     s6_a1: "Un CV scurt este suficient pentru primul pas. Permisul, actele de ședere (dacă e cazul) și cazierul le discutăm la interviu. Dacă lipsește ceva, vă spunem direct — nu trebuie să clarificați totul în avans.",
     s6_q2: "Și dacă germana mea nu e perfectă?",
@@ -412,15 +446,24 @@ const T = {
     s6_q8: "Cât de repede primesc răspuns?",
     s6_a8: "Examinăm fiecare cerere cu atenție și vă contactăm personal de îndată ce avem un răspuns concret.",
 
-    s7_kicker: "07 — Locații",
+    s7_kicker: "06 — Locații",
     s7_h2_a: "Două locații, ", s7_h2_b: "un dispecerat", s7_h2_c: ".",
-    s7_lede: "Nürnberg este sediul, Crailsheim este filiala. Ambele depozite sunt direct accesibile — o vizită este posibilă oricând după înțelegere.",
+    s7_lede: "Nürnberg este sediul, Crailsheim este filiala. Ambele depozite pot fi vizitate oricând, în baza unei programări.",
     loc_hq: "Sediu", loc_branch: "Filială",
     loc_addr: "Adresă", loc_tel: "Telefon", loc_mail: "E-Mail",
-    loc_hours: "Program", loc_hours_val: "L–V 07:00–20:00 · S 07:00–12:00",
+    loc_hours: "Program", loc_hours_val: "L–V 07:00–18:00 · S 07:00–12:00",
+    loc_hours_nbg: "L–V 07:00–18:00 · S 07:00–12:00",
+    loc_hours_crl: "L–V 07:00–17:00 · S 07:00–12:00",
+    loc_tel_crl: "+49 — va fi confirmat de administrator",
     loc_more: "Mai multe despre locație", loc_route: "Planifică ruta",
+    bew_steps_label: "Șase pași până la prima zi de lucru",
+    bew_contact_label: "Contact direct pentru aplicație",
+    ueber_h1: "Despre noi",
+    ueber_lede: "Această pagină este în pregătire.",
+    ueber_body: "În curând veți afla aici mai multe despre Cuma Gün Kuriertransporte e.K. — familia din spatele companiei, trei decenii de experiență în domeniu, valorile noastre și parteneriatul nostru cu United Parcel Service.",
+    ueber_home: "Înapoi la pagina principală",
 
-    s8_kicker: "08 — Aplicație",
+    s8_kicker: "07 — Aplicație",
     s8_h2_a: "Un formular scurt. ", s8_h2_b: "Un răspuns onest", s8_h2_c: ".",
     s8_lede: "Scrieți-ne. Dacă vă potriviți, vă contactăm personal de îndată ce am examinat documentele dvs.",
     s8_b1: "Examinarea atentă a fiecărei cereri",
@@ -432,7 +475,7 @@ const T = {
     form_title: "Aplicația Dvs.",
     form_sub: "Câmpurile cu * sunt obligatorii. Documentele pot fi atașate mai jos.",
     form_vorname: "Prenume *", form_nachname: "Nume *", form_telefon: "Telefon *", form_email: "E-Mail *",
-    form_position: "Poziție", form_standort: "Locație preferată", form_around: "Împrejurimile Nürnberg",
+    form_position: "Poziție", form_standort: "Locație preferată", form_around: "Împrejurimile Nürnberg", form_no_pref: "indiferent / fără preferință",
     form_sprache: "Limbă pentru apel",
     form_pos1: "Curier Nürnberg (Normă întreagă)", form_pos2: "Curier Crailsheim (Jumătate)",
     form_pos3: "Încărcător Crailsheim", form_pos4: "Aplicație spontană",
@@ -474,17 +517,22 @@ const T = {
 
   tr: {
     brand_sub: "1995'te kuruldu",
-    nav_prozess: "Başvuru süreci", nav_arbeitstag: "İş günü", nav_stellen: "Açık pozisyonlar",
+    nav_prozess: "Başvuru süreci", nav_arbeitstag: "İş günü", nav_ueber: "Hakkımızda", nav_stellen: "Açık pozisyonlar",
     nav_standorte: "Konumlar", nav_faq: "SSS",
     cta_apply: "Şimdi başvurun", cta_apply_now: "Şimdi başvurun", cta_apply_arrow: "Şimdi başvurun",
     cta_day: "Bir iş günü nasıl geçer",
     demo_photo: "Demo foto · gerçek fotoğrafla değiştirilecek",
 
     hero_eyebrow: "Şu anda açık pozisyonlar · Nürnberg ve Crailsheim",
-    hero_h1: "Cuma Gün Kuriertransporte e.K.'de kurye sürücüsü olun.",
+    hero_h1: "Cuma Gün Kuriertransporte e.K.'de paket dağıtıcısı olun.",
+    hero_ups: "Dünyanın en büyük paket servisi UPS adına",
     hero_sub: "Aile şirketi, Eylül 1995'te kuruldu.",
-    hero_lede: "Otuz yıllık deneyime sahip, aileye ait bir lojistik işletmesi. Sürekli istihdam, Alman iş sözleşmesi, sevkiyatla doğrudan iletişim — çağrı merkezi yok, bilet sistemi yok.",
+    hero_lede: "Otuz yılı aşkın süredir işletme aile elinde. Bizde verilen söz tutulur ve size adil koşullarda, Alman iş sözleşmeli sürekli bir istihdam sunuyoruz.",
     hero_caption: "Kendi araçlarımız · kendi personelimiz",
+    hero_founder_badge: "FOTOĞRAF YAKINDA",
+    hero_founder_name: "Cuma Gün",
+    hero_founder_role: "Sahibi ve Genel Müdür",
+    hero_founder_note: "Demo — gerçek fotoğrafla değiştirilecek",
     stat1_unit: "yıl", stat1_label: "Aile şirketi, Eylül 1995'te kuruldu",
     stat2_unit: "konum", stat2_label: "Genel merkez Nürnberg · Şube Crailsheim",
     stat3_unit: "dil", stat3_label: "Almanca, Rusça, Romence ve Türkçe — depo gündeminde",
@@ -498,17 +546,17 @@ const T = {
     s1_04_title: "Deneme sürüşü mümkün", s1_04_desc: "İsterseniz imzalamadan önce bir gün yan koltukta gelirsiniz.",
     s1_05_title: "İş sözleşmesi", s1_05_desc: "Sürekli istihdam, Alman sözleşmesi, şeffaf koşullar — gri modeller yok.",
     s1_06_title: "İlk gün", s1_06_desc: "Yanınızda deneyimli bir meslektaşla başlarsınız — kimse yalnız yola çıkmaz.",
-    s1_close_strong: "Üç iş günü içinde yanıt.", s1_close_rest: "Doğrudan konuşmayı mı tercih edersiniz?",
+    s1_close_strong: "Şahsen geri döneriz.", s1_close_rest: "Doğrudan konuşmayı mı tercih edersiniz?",
 
-    s2_kicker: "02 — Gereksinimler",
+    s2_kicker: "01 — Gereksinimler",
     s2_h2_a: "Yanınızda ", s2_h2_b: "getirmeniz gerekenler", s2_h2_c: ".",
-    s2_lede: "Az resmi şart, günlük işte sayılan şey için yüksek beklenti. Tecrübe yardımcı olur ama şart değil — sizi yetiştiririz.",
+    s2_lede: "Az resmi şart, ama günlük işte önemli olan konularda net beklentiler. Tecrübe yardımcı olur ama şart değil. Sizi biz yetiştiririz.",
     s2_01_title: "B sınıfı ehliyet", s2_01_desc: "Turlarımız için şart. C1 veya C artıdır, ama koşul değildir.",
     s2_02_title: "Güvenilirlik", s2_02_desc: "Gelmeniz gereken zamanda gelirsiniz. Bizim için bu, yıllarca tecrübeden daha önemli.",
-    s2_03_title: "Sorumluluk", s2_03_desc: "Araç ve gönderiler sizin elinizde. Biz güveniriz — siz sorumluluk taşırsınız.",
+    s2_03_title: "Sorumluluk", s2_03_desc: "Araç ve gönderiler sizin elinizde. Bunu size emanet ediyoruz, sorumluluğunu da siz taşıyorsunuz.",
     s2_04_title: "Dil bilgisi", s2_04_desc: "Başlangıç için temel Almanca yeterli. Depoda DE, RU, RO, TR konuşuruz.",
 
-    s3_kicker: "03 — İş günü",
+    s3_kicker: "02 — İş günü",
     s3_h2_a: "Bir ", s3_h2_b: "iş günü", s3_h2_c: " nasıl görünür.",
     s3_lede: "Dürüst anlatıldı — depodaki ilk taramadan paydosa kadar. Saatleri olduğu gibi söylüyoruz.",
     s3_t1_time: "06:45 – 07:00", s3_t1_loc: "Depoya varış", s3_t1_title: "Araç başında olmak",
@@ -527,25 +575,25 @@ const T = {
     s3_t7_desc: "İlk bir-iki ay biraz fazla zaman ayırın — rotayı öğrenirken 16:00 veya 17:00'ye kadar normaldir. Deneyimli bir meslektaş tüm bu süre boyunca yanınızdadır.",
     s3_close_strong: "Tüm detayları", s3_close_a: " — bireysel koşullar, kesin saatler, somut görevler — ", s3_close_strong2: "iş görüşmesinde konuşuruz.", s3_close_b: " İmzalamadan önce neye girdiğinizi bilmenizi isteriz.",
 
-    s4_kicker: "04 — Açık pozisyonlar",
+    s4_kicker: "03 — Açık pozisyonlar",
     s4_h2_a: "Şu anda ", s4_h2_b: "aradığımız", s4_h2_c: ".",
-    s4_lede: "Konumlarımızda üç aktif pozisyon. Uygun bir şey yoksa — spontane başvuru her zaman açıktır.",
+    s4_lede: "Konumlarımızda üç açık pozisyon. Uygun bir şey yoksa, spontane başvurunuzu memnuniyetle bekleriz.",
     tag_active: "Aktif", tag_initiativ: "Spontane", tag_full: "Tam zamanlı", tag_part: "Yarı zamanlı", tag_fullpart: "Tam · Yarı zamanlı",
     loc_nbg: "Nürnberg", loc_crl: "Crailsheim", loc_both: "Nürnberg · Crailsheim",
     s4_j1_title: "Paket kuryesi (e/k/d)", s4_j1_desc: "Nürnberg şehri ve civarında günlük teslimat turları. Alman iş sözleşmesiyle sürekli istihdam, deneyimli meslektaşla eğitim.",
     s4_j2_title: "Paket kuryesi (e/k/d)", s4_j2_desc: "Crailsheim ve çevresinde teslimat. Yarı zamanlı model — aile veya öğrenimle uyumlu. B sınıfı ehliyet gereklidir.",
-    s4_j3_title: "Yükleme / boşaltma elemanı (e/k/d)", s4_j3_desc: "Crailsheim deposunda yükleme işleri. Erken saatlerden sabah vardiyası. Fiziksel dayanıklılık, ehliyet gerekmez.",
+    s4_j3_title: "Yükleme / boşaltma elemanı (e/k/d)", s4_j3_desc: "Crailsheim deposunda yükleme işleri. Sabah vardiyası, erken saatlerde başlar. Fiziksel dayanıklılık önemlidir, ehliyet gerekmez.",
     s4_j4_title: "Spontane başvuru", s4_j4_desc: "Size uygun iş yok mu? Belgelerinizi yine de gönderin. İyi insanlara her zaman yer buluruz — açık pozisyonların dışında bile.",
 
-    s5_kicker: "05 — Ekipten sesler",
+    s5_kicker: "04 — Ekipten sesler",
     s5_h2_a: "Gerçek hikayeler — ", s5_h2_b: "yakında burada", s5_h2_c: ".",
-    s5_lede: "Şu anda sürücülerimizden hikayeler topluyoruz — fotoğraflı, isimli, onaylı. İlk hikayeler önümüzdeki haftalarda gelecek.",
+    s5_lede: "Şu anda sürücülerimizden hikayeler topluyoruz — onların onayıyla, fotoğraf ve isimle. İlki önümüzdeki haftalarda gelecek.",
     voice_demo: "Demo · foto yakında",
     voice_courier: "Kurye sürücüsü", voice_dispatch: "Sevkiyat", voice_loader: "Yükleyici", voice_workshop: "Atölye",
 
-    s6_kicker: "06 — Sık sorulanlar",
+    s6_kicker: "05 — Sık sorulanlar",
     s6_h2_a: "Adayların ", s6_h2_b: "sık sorduğu şeyler", s6_h2_c: ".",
-    s6_lede: "Sorunuz burada yoksa — bize yazın. Genellikle iki iş günü içinde şahsen yanıt veriyoruz.",
+    s6_lede: "Sorunuz burada yoksa — bize yazın. Şahsen yanıt veriyoruz.",
     s6_q1: "Başvuru için hangi belgelere ihtiyacım var?",
     s6_a1: "İlk adım için kısa bir özgeçmiş yeterlidir. Ehliyet, ikamet belgesi (gerekirse) ve sabıka kaydını şahsi görüşmede ele alırız. Eksik bir şey varsa direkt söyleriz — her şeyi önceden çözmek zorunda değilsiniz.",
     s6_q2: "Almancam mükemmel değilse?",
@@ -563,15 +611,24 @@ const T = {
     s6_q8: "Ne kadar hızlı yanıt alırım?",
     s6_a8: "Her başvuruyu dikkatle inceler ve somut bir yanıtımız olur olmaz size şahsen geri döneriz.",
 
-    s7_kicker: "07 — Konumlar",
+    s7_kicker: "06 — Konumlar",
     s7_h2_a: "İki konum, ", s7_h2_b: "tek sevkiyat", s7_h2_c: ".",
     s7_lede: "Nürnberg genel merkez, Crailsheim şubedir. Her iki depo da doğrudan ulaşılabilir — randevuyla her an ziyaret mümkündür.",
     loc_hq: "Genel merkez", loc_branch: "Şube",
     loc_addr: "Adres", loc_tel: "Telefon", loc_mail: "E-posta",
-    loc_hours: "Çalışma saatleri", loc_hours_val: "Pzt–Cum 07:00–20:00 · Cmt 07:00–12:00",
+    loc_hours: "Çalışma saatleri", loc_hours_val: "Pzt–Cum 07:00–18:00 · Cmt 07:00–12:00",
+    loc_hours_nbg: "Pzt–Cum 07:00–18:00 · Cmt 07:00–12:00",
+    loc_hours_crl: "Pzt–Cum 07:00–17:00 · Cmt 07:00–12:00",
+    loc_tel_crl: "+49 — genel müdür tarafından onaylanacak",
     loc_more: "Konum hakkında daha fazlası", loc_route: "Rota planla",
+    bew_steps_label: "Altı adımda ilk iş gününe",
+    bew_contact_label: "Başvuru için doğrudan iletişim",
+    ueber_h1: "Hakkımızda",
+    ueber_lede: "Bu sayfa şu anda hazırlanıyor.",
+    ueber_body: "Çok yakında burada Cuma Gün Kuriertransporte e.K. hakkında daha fazlasını öğreneceksiniz — şirketin arkasındaki aile, otuz yıllık sektör deneyimi, değerlerimiz ve United Parcel Service ile ortaklığımız.",
+    ueber_home: "Ana sayfaya dön",
 
-    s8_kicker: "08 — Başvuru",
+    s8_kicker: "07 — Başvuru",
     s8_h2_a: "Kısa bir form. ", s8_h2_b: "Dürüst bir yanıt", s8_h2_c: ".",
     s8_lede: "Bize yazın. Bize uyuyorsanız, belgelerinizi inceledikten sonra size şahsen geri dönüş yaparız.",
     s8_b1: "Her başvurunun titiz incelenmesi",
@@ -583,7 +640,7 @@ const T = {
     form_title: "Başvurunuz",
     form_sub: "* işaretli alanlar zorunludur. Belgeleri aşağıda ekleyebilirsiniz.",
     form_vorname: "Ad *", form_nachname: "Soyad *", form_telefon: "Telefon *", form_email: "E-posta *",
-    form_position: "Pozisyon", form_standort: "Tercih edilen konum", form_around: "Nürnberg çevresi",
+    form_position: "Pozisyon", form_standort: "Tercih edilen konum", form_around: "Nürnberg çevresi", form_no_pref: "fark etmez / tercihim yok",
     form_sprache: "Geri arama dili",
     form_pos1: "Kurye Nürnberg (Tam zamanlı)", form_pos2: "Kurye Crailsheim (Yarı zamanlı)",
     form_pos3: "Yükleyici Crailsheim", form_pos4: "Spontane başvuru",
@@ -787,45 +844,72 @@ document.addEventListener('DOMContentLoaded', () => {
   const fileInput = document.getElementById('files');
   const fileList = document.getElementById('filelist');
   const filesState = [];
-  const renderFiles = () => {
-    fileList.innerHTML = '';
-    filesState.forEach((f, i) => {
-      const it = document.createElement('div');
-      it.className = 'filelist__item';
-      it.innerHTML = `<span>${f.name} · ${(f.size/1024/1024).toFixed(2)} MB</span><button type="button" aria-label="Entfernen">×</button>`;
-      it.querySelector('button').addEventListener('click', () => { filesState.splice(i,1); renderFiles(); });
-      fileList.appendChild(it);
+  if (drop && fileInput && fileList) {
+    const renderFiles = () => {
+      fileList.innerHTML = '';
+      filesState.forEach((f, i) => {
+        const it = document.createElement('div');
+        it.className = 'filelist__item';
+        it.innerHTML = `<span>${f.name} · ${(f.size/1024/1024).toFixed(2)} MB</span><button type="button" aria-label="Entfernen">×</button>`;
+        it.querySelector('button').addEventListener('click', () => { filesState.splice(i,1); renderFiles(); });
+        fileList.appendChild(it);
+      });
+    };
+    fileInput.addEventListener('change', e => {
+      [...e.target.files].forEach(f => { if (f.size <= 10*1024*1024) filesState.push(f); });
+      renderFiles();
     });
-  };
-  fileInput.addEventListener('change', e => {
-    [...e.target.files].forEach(f => { if (f.size <= 10*1024*1024) filesState.push(f); });
-    renderFiles();
-  });
-  ['dragenter','dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('dragover'); }));
-  ['dragleave','drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('dragover'); }));
-  drop.addEventListener('drop', e => {
-    [...e.dataTransfer.files].forEach(f => {
-      if (/\.(pdf|docx?|DOCX?|PDF)$/i.test(f.name) && f.size <= 10*1024*1024) filesState.push(f);
+    ['dragenter','dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('dragover'); }));
+    ['dragleave','drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('dragover'); }));
+    drop.addEventListener('drop', e => {
+      [...e.dataTransfer.files].forEach(f => {
+        if (/\.(pdf|docx?|DOCX?|PDF)$/i.test(f.name) && f.size <= 10*1024*1024) filesState.push(f);
+      });
+      renderFiles();
     });
-    renderFiles();
-  });
+  }
 
-  /* ---------- FORM submit ---------- */
+  /* ---------- FORM submit + routing ---------- */
+  // Application emails route by selected "Bevorzugter Standort".
+  // NOTE: actual delivery needs a backend later — this only resolves recipients.
+  const BEWERBUNG_MAIL = {
+    nbg: 'nürnberg-bewerbung@guen-transporte.de',
+    crl: 'crailsheim-bewerbung@guen-transporte.de',
+  };
+  function resolveRecipients(standort) {
+    switch (standort) {
+      case 'Nürnberg':  return [BEWERBUNG_MAIL.nbg];
+      case 'Crailsheim': return [BEWERBUNG_MAIL.crl];
+      case 'Umgebung':   return [BEWERBUNG_MAIL.nbg]; // Umgebung Nürnberg → Nürnberg
+      case 'egal':       return [BEWERBUNG_MAIL.nbg, BEWERBUNG_MAIL.crl]; // keine Präferenz → beide (CC)
+      default:           return [BEWERBUNG_MAIL.nbg];
+    }
+  }
   const form = document.getElementById('applyForm');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    // simple validation
-    const required = ['vorname','nachname','telefon','email'];
-    let ok = true;
-    required.forEach(id => {
-      const el = document.getElementById(id);
-      if (!el.value.trim()) { el.style.borderBottomColor = '#c44'; ok = false; }
-      else el.style.borderBottomColor = '';
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      // simple validation
+      const required = ['vorname','nachname','telefon','email'];
+      let ok = true;
+      required.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el.value.trim()) { el.style.borderBottomColor = '#c44'; ok = false; }
+        else el.style.borderBottomColor = '';
+      });
+      if (!document.getElementById('dsgvo').checked) ok = false;
+      if (!ok) return;
+
+      // Resolve routing (no backend yet — TODO: POST to server / mail API)
+      const standort = document.getElementById('standort') ? document.getElementById('standort').value : 'Nürnberg';
+      const recipients = resolveRecipients(standort);
+      // TODO(v0.6+): send the application + uploaded files (filesState) to these recipients.
+      // For "egal" both addresses receive it (second as CC).
+      console.info('[Bewerbung] Standort:', standort, '→ Empfänger:', recipients.join(', '));
+
+      document.getElementById('formSuccess').classList.add('show');
     });
-    if (!document.getElementById('dsgvo').checked) ok = false;
-    if (!ok) return;
-    document.getElementById('formSuccess').classList.add('show');
-  });
+  }
 
   /* ---------- MARQUEE render ---------- */
   renderMarquee(initLang);
