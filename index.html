@@ -78,6 +78,7 @@ body {
   background: #FAFAF7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
 }
 
 /* Subtle paper texture */
@@ -129,9 +130,9 @@ h1, h2, h3, h4, h5 {
 
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 clamp(20px, 3vw, 40px);
   position: relative;
   z-index: 2;
 }
@@ -463,7 +464,14 @@ section { padding: 100px 0; position: relative; }
   font-size: 13px;
   color: var(--ink-muted);
 }
-.founder__note { margin-top: 4px; }
+.founder__note {
+  margin-top: 6px;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--bronze);
+  letter-spacing: 0.005em;
+}
 @media (max-width: 560px) {
   .founder { width: 180px; }
 }
@@ -520,8 +528,8 @@ section { padding: 100px 0; position: relative; }
 }
 
 .hero h1 {
-  font-size: clamp(38px, 5.5vw, 68px);
-  letter-spacing: -0.025em;
+  font-size: clamp(34px, 4.4vw, 48px);
+  letter-spacing: -0.022em;
   margin-bottom: 26px;
 }
 .hero h1 .bronze {
@@ -710,8 +718,8 @@ section { padding: 100px 0; position: relative; }
           </div>
           <figcaption class="founder__cap">
             <span class="founder__name" data-i18n="hero_founder_name">Cuma Gün</span>
-            <span class="founder__role" data-i18n="hero_founder_role">Inhaber &amp; Geschäftsführer</span>
-            <span class="founder__note demo-note" data-i18n="hero_founder_note">Demo — wird durch echtes Foto ersetzt</span>
+            <span class="founder__role" data-i18n="hero_founder_role">Geschäftsinhaber</span>
+            <span class="founder__note" data-i18n="hero_founder_note">Nicht Verlässlichkeit, sondern Zuverlässigkeit</span>
           </figcaption>
         </figure>
         <div class="hero__text">
@@ -719,7 +727,7 @@ section { padding: 100px 0; position: relative; }
             <span class="dot"></span>
             <span data-i18n="hero_eyebrow">Aktuell offene Stellen · Nürnberg &amp; Crailsheim</span>
           </div>
-          <h1 data-i18n="hero_h1">Werden Sie Paketzusteller bei Cuma Gün Kuriertransporte e.K.</h1>
+          <h1 data-i18n="hero_h1">Werden Sie Paketzusteller bei Cuma&nbsp;Gün Kuriertransporte&nbsp;e.&nbsp;K.</h1>
           <p class="hero__ups" data-i18n="hero_ups">Im Auftrag von UPS, dem weltgrößten Paketdienst</p>
           <p class="hero__lede" data-i18n="hero_lede">Seit über drei Jahrzehnten ist der Betrieb in Familienhand. Bei uns gilt das gesprochene Wort, und Sie bekommen eine Festanstellung mit deutschem Arbeitsvertrag zu fairen Bedingungen.</p>
           <div class="hero__cta">
@@ -778,7 +786,7 @@ section { padding: 100px 0; position: relative; }
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/></svg>
         </div>
         <h3 class="req-title" data-i18n="s2_03_title">Verantwortung</h3>
-        <p class="req-desc" data-i18n="s2_03_desc">Fahrzeug und Sendungen liegen in Ihrer Hand. Wir vertrauen Ihnen das an, und Sie tragen die Verantwortung.</p>
+        <p class="req-desc" data-i18n="s2_03_desc">Sie sind das Gesicht unserer Firma auf der Straße. Fahrzeug und Fracht in sicheren Händen. Wir zählen auf Sie!</p>
       </div>
       <div class="req-card">
         <div class="req-icon">
@@ -843,12 +851,16 @@ section { padding: 100px 0; position: relative; }
 
     <div class="timeline reveal">
       <div class="tl-row">
-        <div class="tl-time mono" data-i18n="s3_t1_time">06:45 – 07:00 Uhr</div>
+        <div class="tl-time mono" data-i18n="s3_t1_time">07:00 Uhr</div>
         <div class="tl-axis"><span class="tl-dot"></span></div>
         <div class="tl-body">
           <div class="tl-loc" data-i18n="s3_t1_loc">Ankunft am Depot</div>
-          <h4 class="tl-title" data-i18n="s3_t1_title">Eintreffen am Fahrzeug</h4>
+          <h4 class="tl-title" data-i18n="s3_t1_title">Arbeitsbeginn</h4>
           <p class="tl-desc" data-i18n="s3_t1_desc">Der Arbeitstag beginnt um 07:00 Uhr am Fahrzeug. Etwas früher zu kommen ist eine persönliche Entscheidung — niemand setzt das voraus, niemand drängt.</p>
+          <div class="tl-photo">
+            <img loading="lazy" src="https://images.pexels.com/photos/6699420/pexels-photo-6699420.jpeg?auto=compress&cs=tinysrgb&w=640" alt="" />
+            <span class="tl-cap">Symbolbild</span>
+          </div>
         </div>
       </div>
       <div class="tl-row">
@@ -857,20 +869,24 @@ section { padding: 100px 0; position: relative; }
         <div class="tl-body">
           <div class="tl-loc" data-i18n="s3_t2_loc">Tour vorbereiten</div>
           <h4 class="tl-title" data-i18n="s3_t2_title">Pakete scannen, sortieren, prüfen</h4>
-          <p class="tl-desc" data-i18n="s3_t2_desc">Sie scannen Ihre Sendungen, sortieren sie nach Stopp-Reihenfolge und prüfen die Express-Sendungen. Sobald alle Pakete bereit sind, fahren Sie los — in der Regel in der ersten Hälfte der achten Stunde.</p>
+          <p class="tl-desc" data-i18n="s3_t2_desc">Ladung richten: Sendungen scannen, nach Stopps sortieren, Express-Pakete prüfen. Abfahrt: planmäßig zwischen 08:15 und 08:30 Uhr. Kaffeezeit ist immer drin.</p>
           <div class="tl-photo">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80" alt="" />
-            <span class="demo-note" data-i18n="demo_photo">Demo-Foto · wird durch echte Aufnahme ersetzt</span>
+            <img loading="lazy" src="https://images.pexels.com/photos/6699411/pexels-photo-6699411.jpeg?auto=compress&cs=tinysrgb&w=640" alt="" />
+            <span class="tl-cap">Symbolbild</span>
           </div>
         </div>
       </div>
       <div class="tl-row">
-        <div class="tl-time mono" data-i18n="s3_t3_time">08:30 – Nachmittag</div>
+        <div class="tl-time mono" data-i18n="s3_t3_time">08:30 – 13:00 Uhr</div>
         <div class="tl-axis"><span class="tl-dot"></span></div>
         <div class="tl-body">
           <div class="tl-loc" data-i18n="s3_t3_loc">Auf Tour</div>
           <h4 class="tl-title" data-i18n="s3_t3_title">Ihre Route, Ihr Rhythmus</h4>
-          <p class="tl-desc" data-i18n="s3_t3_desc">Sie fahren Ihre feste Route. Die Express-Sendungen werden im Vorfeld mit der Disposition abgestimmt — Sie haben Klarheit über die Tagestermine, ohne Überraschungen mittendrin.</p>
+          <p class="tl-desc" data-i18n="s3_t3_desc">Sie sind auf Ihrer vertrauten Route unterwegs. Express-Sendungen planen wir vorab gemeinsam mit der Disposition — denn beim Express wartet der Kunde. Das gibt Ihnen maximale Planungssicherheit für den Tag, ohne Stress und Überraschungen zwischendurch.</p>
+          <div class="tl-photo">
+            <img loading="lazy" src="https://images.pexels.com/photos/6869065/pexels-photo-6869065.jpeg?auto=compress&cs=tinysrgb&w=640" alt="" />
+            <span class="tl-cap">Symbolbild</span>
+          </div>
         </div>
       </div>
       <div class="tl-row">
@@ -879,16 +895,24 @@ section { padding: 100px 0; position: relative; }
         <div class="tl-body">
           <div class="tl-loc" data-i18n="s3_t4_loc">Pause</div>
           <h4 class="tl-title" data-i18n="s3_t4_title">Gesetzlich vorgeschriebene Pause</h4>
-          <p class="tl-desc" data-i18n="s3_t4_desc">Die Pause ist nach 4,5 Stunden Fahrtzeit gesetzlich vorgeschrieben. Den genauen Zeitpunkt wählen Sie selbst entlang Ihrer Route — meistens liegt sie zwischen 13:00 und 13:45 Uhr.</p>
+          <p class="tl-desc" data-i18n="s3_t4_desc">Sie ist ein Muss: gesetzlich vorgeschrieben und fest eingeplant. Flexibel unterwegs planbar (Richtwert: 13:00 bis 13:45 Uhr).</p>
+          <div class="tl-photo">
+            <img loading="lazy" src="https://images.pexels.com/photos/6699404/pexels-photo-6699404.jpeg?auto=compress&cs=tinysrgb&w=640" alt="" />
+            <span class="tl-cap">Symbolbild</span>
+          </div>
         </div>
       </div>
       <div class="tl-row">
-        <div class="tl-time mono" data-i18n="s3_t5_time">13:45 – 15:30 Uhr</div>
+        <div class="tl-time mono" data-i18n="s3_t5_time">13:45 – 16:00 Uhr</div>
         <div class="tl-axis"><span class="tl-dot"></span></div>
         <div class="tl-body">
           <div class="tl-loc" data-i18n="s3_t5_loc">Restzustellung &amp; Abholungen</div>
           <h4 class="tl-title" data-i18n="s3_t5_title">Zweite Tageshälfte</h4>
-          <p class="tl-desc" data-i18n="s3_t5_desc">Nach der Pause stellen Sie die verbleibenden Pakete zu. Parallel laufen die Abholungen — sowohl spontane, die im Tagesverlauf hinzukommen, als auch regelmäßige bei Vertrags-Abholkunden. Bis 15:00 / 15:30 Uhr sind Sie zurück am Depot.</p>
+          <p class="tl-desc" data-i18n="s3_t5_desc">Nach der Pause die verbleibenden Pakete ausliefern. Parallel feste Vertragskunden anfahren und spontane Tagesaufträge übernehmen. Zwischen 15:30 und 16:00 Uhr Rückkehr ins Center.</p>
+          <div class="tl-photo">
+            <img loading="lazy" src="https://images.pexels.com/photos/6699418/pexels-photo-6699418.jpeg?auto=compress&cs=tinysrgb&w=640" alt="" />
+            <span class="tl-cap">Symbolbild</span>
+          </div>
         </div>
       </div>
       <div class="tl-row">
@@ -897,7 +921,11 @@ section { padding: 100px 0; position: relative; }
         <div class="tl-body">
           <div class="tl-loc" data-i18n="s3_t6_loc">Depot &amp; Feierabend</div>
           <h4 class="tl-title" data-i18n="s3_t6_title">Abschluss am Depot</h4>
-          <p class="tl-desc" data-i18n="s3_t6_desc">Bei Bedarf das Fahrzeug waschen. Wenn auf der Tour etwas zu besprechen war, klären Sie das direkt mit der Disposition. Danach Feierabend.</p>
+          <p class="tl-desc" data-i18n="s3_t6_desc">Bei Bedarf das Fahrzeug waschen. Etwaige Vorkommnisse oder Probleme auf der Tour direkt mit der Disposition klären. Tour ordnungsgemäß im System abschließen. Feierabend.</p>
+          <div class="tl-photo">
+            <img loading="lazy" src="https://images.pexels.com/photos/6169869/pexels-photo-6169869.jpeg?auto=compress&cs=tinysrgb&w=640" alt="" />
+            <span class="tl-cap">Symbolbild</span>
+          </div>
         </div>
       </div>
       <div class="tl-row">
@@ -906,7 +934,11 @@ section { padding: 100px 0; position: relative; }
         <div class="tl-body">
           <div class="tl-loc" data-i18n="s3_t7_loc">Einarbeitung</div>
           <h4 class="tl-title" data-i18n="s3_t7_title">Lernzeit ist Arbeitszeit</h4>
-          <p class="tl-desc" data-i18n="s3_t7_desc">In den ersten ein bis zwei Monaten planen Sie etwas mehr Zeit ein — bis 16:00 oder 17:00 Uhr ist normal, solange Sie die Route noch lernen. Ein erfahrener Kollege ist die ganze Zeit an Ihrer Seite.</p>
+          <p class="tl-desc" data-i18n="s3_t7_desc">Aller Anfang ist schwer, deshalb lassen wir Sie nicht allein: In der ersten Woche sind Sie Beifahrer. Ein erfahrener Kollege zeigt Ihnen die Tour. Unser Job verlangt echtes Können und ist kein Beruf für jedermann — das wissen wir. Planen Sie in der ersten Zeit ruhig etwas mehr Spielraum ein. Bis Sie die Route perfekt kennen, kann es auch mal 16:00 oder 17:00 Uhr werden. Machen Sie sich keine Sorgen: Ihre Arbeitszeit wird natürlich komplett erfasst.</p>
+          <div class="tl-photo">
+            <img loading="lazy" src="https://images.pexels.com/photos/6699406/pexels-photo-6699406.jpeg?auto=compress&cs=tinysrgb&w=640" alt="" />
+            <span class="tl-cap">Symbolbild</span>
+          </div>
         </div>
       </div>
     </div>
@@ -961,7 +993,19 @@ section { padding: 100px 0; position: relative; }
   z-index: 1;
 }
 .tl-dot--bronze { background: var(--navy); }
+.tl-body {
+  display: grid;
+  grid-template-columns: 248px 1fr;
+  grid-template-areas:
+    "photo loc"
+    "photo title"
+    "photo desc";
+  column-gap: 26px;
+  row-gap: 0;
+  align-items: start;
+}
 .tl-loc {
+  grid-area: loc;
   font-family: 'Geist Mono', monospace;
   font-size: 11.5px;
   letter-spacing: 0.06em;
@@ -970,12 +1014,14 @@ section { padding: 100px 0; position: relative; }
   margin-bottom: 6px;
 }
 .tl-title {
-  font-size: 22px;
+  grid-area: title;
+  font-size: clamp(19px, 1.6vw, 22px);
   font-weight: 600;
   color: var(--navy);
   margin: 0 0 10px;
 }
 .tl-desc {
+  grid-area: desc;
   margin: 0;
   font-size: 15.5px;
   color: var(--ink-muted);
@@ -983,14 +1029,30 @@ section { padding: 100px 0; position: relative; }
   line-height: 1.6;
 }
 .tl-photo {
-  margin-top: 16px;
-  display: flex; align-items: center; gap: 14px;
+  grid-area: photo;
+  position: relative;
+  align-self: start;
+  margin-top: 4px;
+  width: 100%;
 }
 .tl-photo img {
-  width: 120px; height: 80px;
+  display: block;
+  width: 100%;
+  height: 180px;
   object-fit: cover;
-  border-radius: 8px;
-  filter: grayscale(0.15);
+  border-radius: 10px;
+  filter: grayscale(0.12) contrast(1.02);
+}
+.tl-cap {
+  position: absolute;
+  right: 8px; bottom: 8px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background: rgba(20,20,26,0.6);
+  padding: 3px 7px;
+  border-radius: 5px;
 }
 
 .tl-closer {
@@ -1007,7 +1069,16 @@ section { padding: 100px 0; position: relative; }
   .tl-row { grid-template-columns: 32px 1fr; gap: 14px; }
   .tl-time { grid-column: 2; padding-top: 0; font-size: 12px; }
   .tl-axis { grid-column: 1; grid-row: 1 / span 2; padding-top: 4px; }
-  .tl-body { grid-column: 2; }
+  .tl-body {
+    grid-column: 2;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "loc"
+      "title"
+      "desc";
+  }
+  .tl-photo { max-width: 360px; margin-top: 0; margin-bottom: 14px; }
   .tl-title { font-size: 19px; }
 }
 </style>
@@ -1103,7 +1174,7 @@ section { padding: 100px 0; position: relative; }
 .tag--active { background: var(--bronze); color: #fff; }
 .tag--initiativ { background: var(--navy); color: #fff; }
 .job__title {
-  font-size: 24px;
+  font-size: clamp(20px, 1.7vw, 24px);
   font-weight: 600;
   color: var(--navy);
   margin: 0;
@@ -1148,7 +1219,7 @@ section { padding: 100px 0; position: relative; }
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: marquee 40s linear infinite;
+  animation: marquee 80s linear infinite;
 }
 .marquee:hover .marquee__track { animation-play-state: paused; }
 @keyframes marquee {
@@ -1427,7 +1498,7 @@ section { padding: 100px 0; position: relative; }
   margin-bottom: 8px;
 }
 .loc__city {
-  font-size: 32px;
+  font-size: clamp(26px, 2.4vw, 32px);
   font-weight: 600;
   margin: 0 0 24px;
   color: var(--navy);
@@ -1956,7 +2027,7 @@ section { padding: 100px 0; position: relative; }
     </button>
     <div class="empmodal__grid">
       <div class="empmodal__left">
-        <div class="empmodal__portrait" id="empInitials">SH</div>
+        <img class="empmodal__portrait" id="empPortrait" alt="" />
         <div class="empmodal__tenure" id="empTenure">22 JAHRE IM TEAM</div>
       </div>
       <div class="empmodal__right">
@@ -2027,34 +2098,33 @@ section { padding: 100px 0; position: relative; }
   .empmodal__grid { grid-template-columns: 1fr; }
 }
 .empmodal__left {
-  background: var(--beige);
-  padding: 40px 32px;
-  display: flex; flex-direction: column; align-items: center; gap: 18px;
+  background: #F1ECE1;
+  padding: 28px;
+  display: flex; flex-direction: column; align-items: stretch; justify-content: center; gap: 16px;
   border-radius: 20px 0 0 20px;
 }
 @media (max-width: 760px) {
-  .empmodal__left { border-radius: 20px 20px 0 0; padding: 32px; }
+  .empmodal__left { border-radius: 20px 20px 0 0; padding: 28px; }
 }
 .empmodal__portrait {
-  width: 220px; height: 220px;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 16px;
-  background: linear-gradient(135deg, #0E2A47 0%, #1d4170 100%);
-  color: var(--bronze);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Geist', sans-serif;
-  font-size: 72px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  filter: grayscale(0.2) saturate(0.85);
   box-shadow: var(--shadow-md);
 }
 .empmodal__tenure {
   font-family: 'Geist Mono', monospace;
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
   color: #fff;
-  background: var(--bronze);
-  padding: 7px 14px;
-  border-radius: 999px;
+  background: #B98B36;
+  padding: 14px;
+  border-radius: 12px;
 }
 .empmodal__right {
   padding: 40px;

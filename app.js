@@ -20,15 +20,15 @@ const T = {
 
     /* HERO */
     hero_eyebrow: "Aktuell offene Stellen · Nürnberg & Crailsheim",
-    hero_h1: "Werden Sie Paketzusteller bei Cuma Gün Kuriertransporte e.K.",
+    hero_h1: "Werden Sie Paketzusteller bei Cuma\u00A0Gün Kuriertransporte\u00A0e.\u00A0K.",
     hero_ups: "Im Auftrag von UPS, dem weltgrößten Paketdienst",
     hero_sub: "Familienunternehmen, gegründet im September 1995.",
     hero_lede: "Seit über drei Jahrzehnten ist der Betrieb in Familienhand. Bei uns gilt das gesprochene Wort, und Sie bekommen eine Festanstellung mit deutschem Arbeitsvertrag zu fairen Bedingungen.",
     hero_caption: "Eigene Fahrzeuge · eigenes Personal",
     hero_founder_badge: "FOTO FOLGT",
     hero_founder_name: "Cuma Gün",
-    hero_founder_role: "Inhaber & Geschäftsführer",
-    hero_founder_note: "Demo — wird durch echtes Foto ersetzt",
+    hero_founder_role: "Geschäftsinhaber",
+    hero_founder_note: "Nicht Verlässlichkeit, sondern Zuverlässigkeit",
     stat1_unit: "Jahre", stat1_label: "Familienunternehmen, gegründet im September 1995",
     stat2_unit: "Standorte", stat2_label: "Hauptsitz Nürnberg · Niederlassung Crailsheim",
     stat3_unit: "Sprachen", stat3_label: "Deutsch, Russisch, Rumänisch und Türkisch im Depot-Alltag",
@@ -51,27 +51,27 @@ const T = {
     s2_lede: "Wenige formale Voraussetzungen, aber klare Erwartungen an das, was im Alltag zählt. Berufserfahrung hilft, ist aber kein Muss. Wir arbeiten Sie ein.",
     s2_01_title: "Führerschein Klasse B", s2_01_desc: "Voraussetzung für unsere Touren. Klasse C1 oder C ist ein Plus, aber keine Bedingung.",
     s2_02_title: "Verlässlichkeit", s2_02_desc: "Sie kommen, wenn Sie kommen sollen. Für uns zählt das mehr als Berufsjahre.",
-    s2_03_title: "Verantwortung", s2_03_desc: "Fahrzeug und Sendungen liegen in Ihrer Hand. Wir vertrauen Ihnen das an, und Sie tragen die Verantwortung.",
+    s2_03_title: "Verantwortung", s2_03_desc: "Sie sind das Gesicht unserer Firma auf der Straße. Fahrzeug und Fracht in sicheren Händen. Wir zählen auf Sie!",
     s2_04_title: "Sprachkenntnisse", s2_04_desc: "Grundkenntnisse Deutsch reichen für den Start. Im Depot sprechen wir DE, RU, RO, TR.",
 
     /* S3 */
     s3_kicker: "02 — Arbeitstag",
     s3_h2_a: "Wie ein ", s3_h2_b: "Arbeitstag", s3_h2_c: " aussieht.",
     s3_lede: "Ehrlich beschrieben — vom ersten Scan am Depot bis zum Feierabend. Wir nennen die Zeiten so, wie sie wirklich sind.",
-    s3_t1_time: "06:45 – 07:00 Uhr", s3_t1_loc: "Ankunft am Depot", s3_t1_title: "Eintreffen am Fahrzeug",
+    s3_t1_time: "07:00 Uhr", s3_t1_loc: "Ankunft am Depot", s3_t1_title: "Arbeitsbeginn",
     s3_t1_desc: "Der Arbeitstag beginnt um 07:00 Uhr am Fahrzeug. Etwas früher zu kommen ist eine persönliche Entscheidung — niemand setzt das voraus, niemand drängt.",
     s3_t2_time: "07:00 – 08:30 Uhr", s3_t2_loc: "Tour vorbereiten", s3_t2_title: "Pakete scannen, sortieren, prüfen",
-    s3_t2_desc: "Sie scannen Ihre Sendungen, sortieren sie nach Stopp-Reihenfolge und prüfen die Express-Sendungen. Sobald alle Pakete bereit sind, fahren Sie los — in der Regel in der ersten Hälfte der achten Stunde.",
-    s3_t3_time: "08:30 – Nachmittag", s3_t3_loc: "Auf Tour", s3_t3_title: "Ihre Route, Ihr Rhythmus",
-    s3_t3_desc: "Sie fahren Ihre feste Route. Die Express-Sendungen werden im Vorfeld mit der Disposition abgestimmt — Sie haben Klarheit über die Tagestermine, ohne Überraschungen mittendrin.",
+    s3_t2_desc: "Ladung richten: Sendungen scannen, nach Stopps sortieren, Express-Pakete prüfen. Abfahrt: planmäßig zwischen 08:15 und 08:30 Uhr. Kaffeezeit ist immer drin.",
+    s3_t3_time: "08:30 – 13:00 Uhr", s3_t3_loc: "Auf Tour", s3_t3_title: "Ihre Route, Ihr Rhythmus",
+    s3_t3_desc: "Sie sind auf Ihrer vertrauten Route unterwegs. Express-Sendungen planen wir vorab gemeinsam mit der Disposition — denn beim Express wartet der Kunde. Das gibt Ihnen maximale Planungssicherheit für den Tag, ohne Stress und Überraschungen zwischendurch.",
     s3_t4_time: "13:00 – 13:45 Uhr", s3_t4_loc: "Pause", s3_t4_title: "Gesetzlich vorgeschriebene Pause",
-    s3_t4_desc: "Die Pause ist nach 4,5 Stunden Fahrtzeit gesetzlich vorgeschrieben. Den genauen Zeitpunkt wählen Sie selbst entlang Ihrer Route — meistens liegt sie zwischen 13:00 und 13:45 Uhr.",
-    s3_t5_time: "13:45 – 15:30 Uhr", s3_t5_loc: "Restzustellung & Abholungen", s3_t5_title: "Zweite Tageshälfte",
-    s3_t5_desc: "Nach der Pause stellen Sie die verbleibenden Pakete zu. Parallel laufen die Abholungen — sowohl spontane, die im Tagesverlauf hinzukommen, als auch regelmäßige bei Vertrags-Abholkunden. Bis 15:00 / 15:30 Uhr sind Sie zurück am Depot.",
+    s3_t4_desc: "Sie ist ein Muss: gesetzlich vorgeschrieben und fest eingeplant. Flexibel unterwegs planbar (Richtwert: 13:00 bis 13:45 Uhr).",
+    s3_t5_time: "13:45 – 16:00 Uhr", s3_t5_loc: "Restzustellung & Abholungen", s3_t5_title: "Zweite Tageshälfte",
+    s3_t5_desc: "Nach der Pause die verbleibenden Pakete ausliefern. Parallel feste Vertragskunden anfahren und spontane Tagesaufträge übernehmen. Zwischen 15:30 und 16:00 Uhr Rückkehr ins Center.",
     s3_t6_time: "Nach der Tour", s3_t6_loc: "Depot & Feierabend", s3_t6_title: "Abschluss am Depot",
-    s3_t6_desc: "Bei Bedarf das Fahrzeug waschen. Wenn auf der Tour etwas zu besprechen war, klären Sie das direkt mit der Disposition. Danach Feierabend.",
+    s3_t6_desc: "Bei Bedarf das Fahrzeug waschen. Etwaige Vorkommnisse oder Probleme auf der Tour direkt mit der Disposition klären. Tour ordnungsgemäß im System abschließen. Feierabend.",
     s3_t7_time: "Erste Wochen", s3_t7_loc: "Einarbeitung", s3_t7_title: "Lernzeit ist Arbeitszeit",
-    s3_t7_desc: "In den ersten ein bis zwei Monaten planen Sie etwas mehr Zeit ein — bis 16:00 oder 17:00 Uhr ist normal, solange Sie die Route noch lernen. Ein erfahrener Kollege ist die ganze Zeit an Ihrer Seite.",
+    s3_t7_desc: "Aller Anfang ist schwer, deshalb lassen wir Sie nicht allein: In der ersten Woche sind Sie Beifahrer. Ein erfahrener Kollege zeigt Ihnen die Tour. Unser Job verlangt echtes Können und ist kein Beruf für jedermann — das wissen wir. Planen Sie in der ersten Zeit ruhig etwas mehr Spielraum ein. Bis Sie die Route perfekt kennen, kann es auch mal 16:00 oder 17:00 Uhr werden. Machen Sie sich keine Sorgen: Ihre Arbeitszeit wird natürlich komplett erfasst.",
     s3_close_strong: "Alle Details", s3_close_a: " — individuelle Konditionen, genaue Stunden, konkrete Aufgaben — ", s3_close_strong2: "besprechen wir im Vorstellungsgespräch.", s3_close_b: " Sie sollen wissen, worauf Sie sich einlassen, bevor Sie unterschreiben.",
 
     /* S4 */
@@ -194,15 +194,15 @@ const T = {
     demo_photo: "Демо-фото · будет заменено реальным снимком",
 
     hero_eyebrow: "Открытые вакансии · Нюрнберг и Крайльсхайм",
-    hero_h1: "Станьте доставщиком посылок в компании Cuma Gün Kuriertransporte e.K.",
+    hero_h1: "Станьте доставщиком посылок в компании Cuma\u00A0Gün Kuriertransporte\u00A0e.\u00A0K.",
     hero_ups: "По поручению UPS — крупнейшей в мире службы доставки посылок",
     hero_sub: "Семейное предприятие, основано в сентябре 1995 года.",
     hero_lede: "Уже более трёх десятилетий предприятие находится в руках семьи. У нас слово остаётся словом, и Вы получаете постоянную работу с немецким трудовым договором на честных условиях.",
     hero_caption: "Свой автопарк · свой персонал",
     hero_founder_badge: "ФОТО СКОРО",
     hero_founder_name: "Cuma Gün",
-    hero_founder_role: "Владелец и управляющий",
-    hero_founder_note: "Демо — будет заменено реальным фото",
+    hero_founder_role: "Владелец компании",
+    hero_founder_note: "Nicht Verlässlichkeit, sondern Zuverlässigkeit",
     stat1_unit: "лет", stat1_label: "Семейное предприятие, основано в сентябре 1995 года",
     stat2_unit: "локации", stat2_label: "Главный офис Нюрнберг · Филиал Крайльсхайм",
     stat3_unit: "языка", stat3_label: "Немецкий, русский, румынский и турецкий — повседневно в депо",
@@ -223,7 +223,7 @@ const T = {
     s2_lede: "Мало формальных требований, но чёткие ожидания к тому, что действительно важно в работе. Опыт помогает, но не обязателен — мы Вас всему обучим.",
     s2_01_title: "Права категории B", s2_01_desc: "Обязательное условие для наших маршрутов. C1 или C — плюс, но не требование.",
     s2_02_title: "Надёжность", s2_02_desc: "Вы приходите, когда нужно прийти. Для нас это важнее, чем годы стажа.",
-    s2_03_title: "Ответственность", s2_03_desc: "Машина и отправления — в Ваших руках. Мы доверяем это Вам, и Вы несёте ответственность.",
+    s2_03_title: "Ответственность", s2_03_desc: "На дороге вы — лицо нашей компании. Автомобиль и груз в надёжных руках. Мы на вас рассчитываем!",
     s2_04_title: "Знание языка", s2_04_desc: "Базового немецкого достаточно для старта. В депо мы говорим на DE, RU, RO, TR.",
 
     s3_kicker: "02 — Рабочий день",
@@ -359,15 +359,15 @@ const T = {
     demo_photo: "Foto demo · va fi înlocuită cu o imagine reală",
 
     hero_eyebrow: "Posturi vacante acum · Nürnberg și Crailsheim",
-    hero_h1: "Deveniți livrator de colete la Cuma Gün Kuriertransporte e.K.",
+    hero_h1: "Deveniți livrator de colete la Cuma\u00A0Gün Kuriertransporte\u00A0e.\u00A0K.",
     hero_ups: "În numele UPS, cel mai mare serviciu de colete din lume",
     hero_sub: "Afacere de familie, fondată în septembrie 1995.",
     hero_lede: "De peste trei decenii, firma este condusă de familie. La noi, cuvântul dat se ține, iar dumneavoastră primiți un loc de muncă stabil, cu contract german, în condiții corecte.",
     hero_caption: "Vehicule proprii · personal propriu",
     hero_founder_badge: "FOTO URMEAZĂ",
     hero_founder_name: "Cuma Gün",
-    hero_founder_role: "Proprietar și administrator",
-    hero_founder_note: "Demo — va fi înlocuit cu o fotografie reală",
+    hero_founder_role: "Proprietarul firmei",
+    hero_founder_note: "Nicht Verlässlichkeit, sondern Zuverlässigkeit",
     stat1_unit: "ani", stat1_label: "Afacere de familie, fondată în septembrie 1995",
     stat2_unit: "locații", stat2_label: "Sediul Nürnberg · Filiala Crailsheim",
     stat3_unit: "limbi", stat3_label: "Germană, rusă, română și turcă în depozit",
@@ -388,7 +388,7 @@ const T = {
     s2_lede: "Puține cerințe formale, dar așteptări clare la ceea ce contează zilnic. Experiența ajută, dar nu este obligatorie. Vă instruim noi.",
     s2_01_title: "Permis categoria B", s2_01_desc: "Necesar pentru traseele noastre. Categoria C1 sau C este un plus, dar nu o condiție.",
     s2_02_title: "Seriozitate", s2_02_desc: "Veniți când trebuie să veniți. Pentru noi contează mai mult decât anii de experiență.",
-    s2_03_title: "Responsabilitate", s2_03_desc: "Vehiculul și coletele sunt în mâinile dumneavoastră. Noi vi le încredințăm, iar dumneavoastră purtați responsabilitatea.",
+    s2_03_title: "Responsabilitate", s2_03_desc: "Pe drum, dumneavoastră sunteți chipul firmei noastre. Vehiculul și marfa sunt pe mâini sigure. Contăm pe dumneavoastră!",
     s2_04_title: "Cunoștințe de limbă", s2_04_desc: "Germana de bază este suficientă pentru început. În depozit vorbim DE, RU, RO, TR.",
 
     s3_kicker: "02 — Ziua de lucru",
@@ -524,15 +524,15 @@ const T = {
     demo_photo: "Demo foto · gerçek fotoğrafla değiştirilecek",
 
     hero_eyebrow: "Şu anda açık pozisyonlar · Nürnberg ve Crailsheim",
-    hero_h1: "Cuma Gün Kuriertransporte e.K.'de paket dağıtıcısı olun.",
+    hero_h1: "Cuma\u00A0Gün Kuriertransporte\u00A0e.\u00A0K.'de paket dağıtıcısı olun.",
     hero_ups: "Dünyanın en büyük paket servisi UPS adına",
     hero_sub: "Aile şirketi, Eylül 1995'te kuruldu.",
     hero_lede: "Otuz yılı aşkın süredir işletme aile elinde. Bizde verilen söz tutulur ve size adil koşullarda, Alman iş sözleşmeli sürekli bir istihdam sunuyoruz.",
     hero_caption: "Kendi araçlarımız · kendi personelimiz",
     hero_founder_badge: "FOTOĞRAF YAKINDA",
     hero_founder_name: "Cuma Gün",
-    hero_founder_role: "Sahibi ve Genel Müdür",
-    hero_founder_note: "Demo — gerçek fotoğrafla değiştirilecek",
+    hero_founder_role: "Şirket sahibi",
+    hero_founder_note: "Nicht Verlässlichkeit, sondern Zuverlässigkeit",
     stat1_unit: "yıl", stat1_label: "Aile şirketi, Eylül 1995'te kuruldu",
     stat2_unit: "konum", stat2_label: "Genel merkez Nürnberg · Şube Crailsheim",
     stat3_unit: "dil", stat3_label: "Almanca, Rusça, Romence ve Türkçe — depo gündeminde",
@@ -553,7 +553,7 @@ const T = {
     s2_lede: "Az resmi şart, ama günlük işte önemli olan konularda net beklentiler. Tecrübe yardımcı olur ama şart değil. Sizi biz yetiştiririz.",
     s2_01_title: "B sınıfı ehliyet", s2_01_desc: "Turlarımız için şart. C1 veya C artıdır, ama koşul değildir.",
     s2_02_title: "Güvenilirlik", s2_02_desc: "Gelmeniz gereken zamanda gelirsiniz. Bizim için bu, yıllarca tecrübeden daha önemli.",
-    s2_03_title: "Sorumluluk", s2_03_desc: "Araç ve gönderiler sizin elinizde. Bunu size emanet ediyoruz, sorumluluğunu da siz taşıyorsunuz.",
+    s2_03_title: "Sorumluluk", s2_03_desc: "Yolda firmamızın yüzü sizsiniz. Araç ve yük güvenli ellerde. Size güveniyoruz!",
     s2_04_title: "Dil bilgisi", s2_04_desc: "Başlangıç için temel Almanca yeterli. Depoda DE, RU, RO, TR konuşuruz.",
 
     s3_kicker: "02 — İş günü",
@@ -689,7 +689,7 @@ function applyLang(lang) {
     const key = el.getAttribute('data-i18n');
     if (dict[key] != null) {
       // allow HTML in a few entries
-      if (key === 'form_drop' || key === 'form_dsgvo') el.innerHTML = dict[key];
+      if (key === 'form_drop' || key === 'form_dsgvo' || /^s3_t\d_desc$/.test(key)) el.innerHTML = dict[key];
       else el.textContent = dict[key];
     }
   });
@@ -947,7 +947,7 @@ function renderMarquee(lang) {
 const EMPLOYEES = [
   {
     id: 'ismail',
-    photo: 'https://images.unsplash.com/photo-1607349913338-fca6f7fc42d0?auto=format&fit=crop&w=600&q=80',
+    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
     initials: 'İK', name: 'İsmail K.',
     roleKey: 'voice_courier', role: 'Kurierfahrer', loc: 'Nürnberg', loc_key: 'loc_nbg',
     tenure: { de: '14 Jahre im Team', ru: '14 лет в команде', ro: '14 ani în echipă', tr: '14 yıldır ekipte' },
@@ -967,7 +967,7 @@ const EMPLOYEES = [
   },
   {
     id: 'andrei',
-    photo: 'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=600&q=80',
+    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
     initials: 'AP', name: 'Andrei P.',
     roleKey: 'voice_dispatch', role: 'Disposition', loc: 'Nürnberg', loc_key: 'loc_nbg',
     tenure: { de: '9 Jahre im Team', ru: '9 лет в команде', ro: '9 ani în echipă', tr: '9 yıldır ekipte' },
@@ -987,7 +987,7 @@ const EMPLOYEES = [
   },
   {
     id: 'marina',
-    photo: 'https://images.unsplash.com/photo-1606166187734-a4cb74079037?auto=format&fit=crop&w=600&q=80',
+    photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80',
     initials: 'MS', name: 'Marina S.',
     roleKey: 'voice_courier', role: 'Kurierfahrerin', loc: 'Crailsheim', loc_key: 'loc_crl',
     tenure: { de: '6 Jahre im Team', ru: '6 лет в команде', ro: '6 ani în echipă', tr: '6 yıldır ekipte' },
@@ -1007,7 +1007,7 @@ const EMPLOYEES = [
   },
   {
     id: 'stefan',
-    photo: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80',
+    photo: 'https://images.unsplash.com/photo-1557862921-37829c790f19?auto=format&fit=crop&w=600&q=80',
     initials: 'SH', name: 'Stefan H.',
     roleKey: 'voice_courier', role: 'Kurierfahrer', loc: 'Crailsheim', loc_key: 'loc_crl',
     tenure: { de: '22 Jahre im Team', ru: '22 года в команде', ro: '22 ani în echipă', tr: '22 yıldır ekipte' },
@@ -1027,7 +1027,7 @@ const EMPLOYEES = [
   },
   {
     id: 'elena',
-    photo: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80',
+    photo: 'https://images.unsplash.com/photo-1542596594-649edbc13630?auto=format&fit=crop&w=600&q=80',
     initials: 'EV', name: 'Elena V.',
     roleKey: 'voice_loader', role: 'Be- und Entladerin', loc: 'Crailsheim', loc_key: 'loc_crl',
     tenure: { de: '4 Jahre im Team', ru: '4 года в команде', ro: '4 ani în echipă', tr: '4 yıldır ekipte' },
@@ -1047,7 +1047,7 @@ const EMPLOYEES = [
   },
   {
     id: 'halil',
-    photo: 'https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=600&q=80',
+    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80',
     initials: 'HY', name: 'Halil Y.',
     roleKey: 'voice_workshop', role: 'Werkstatt', loc: 'Nürnberg', loc_key: 'loc_nbg',
     tenure: { de: '11 Jahre im Team', ru: '11 лет в команде', ro: '11 ani în echipă', tr: '11 yıldır ekipte' },
@@ -1064,6 +1064,126 @@ const EMPLOYEES = [
       ro: '<p>Mă ocup de flotă din 2015. Reparații mici, pregătirea pentru ITP, schimbat roți — totul în casă, nimeni nu așteaptă două săptămâni un atelier.</p><p>Economisește bani, dar mai important — nervii șoferilor. O mașină stricată dimineața la depozit nu e o dramă aici, ci o jumătate de oră întârziere.</p>',
       tr: '<p>2015\'ten beri filoyla ilgileniyorum. Küçük tamirat, muayene hazırlığı, lastik değişimi — her şey içeride, kimse iki hafta atölye beklemiyor.</p><p>Bu para tasarrufu sağlıyor ama daha önemlisi: sürücülerin sinirini koruyor. Sabahleyin depoda bozuk bir araç burada dram değil, yarım saatlik gecikme.</p>'
     }
+  },
+  {
+    id: 'murat',
+    photo: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=600&q=80',
+    initials: 'MD', name: 'Murat D.',
+    roleKey: 'voice_courier', role: 'Kurierfahrer', loc: 'Nürnberg', loc_key: 'loc_nbg',
+    tenure: { de: '7 Jahre im Team', ru: '7 лет в команде', ro: '7 ani în echipă', tr: '7 yıldır ekipte' },
+    langs: ['DE', 'TR'],
+    quote: {
+      de: '„Mein erster Chef hat gesagt: Fahr, als wäre jedes Paket für deine Mutter. Das mache ich bis heute."',
+      ru: '«Мой первый начальник сказал: вози так, будто каждая посылка для твоей мамы. Так и делаю до сих пор.»',
+      ro: '„Primul meu șef a spus: condu ca și cum fiecare colet ar fi pentru mama ta. Așa fac până azi."',
+      tr: '"İlk patronum dedi ki: her paket annen içinmiş gibi sür. Bugüne kadar öyle yapıyorum."'
+    },
+    story: {
+      de: '<p>Ich bin 2019 angefangen, gleich nach dem Führerschein. Anfangs war ich Beifahrer bei einem älteren Kollegen — heute habe ich meine eigene feste Tour im Nürnberger Norden.</p><p>Was ich schätze: Man sieht jeden Tag dieselben Gesichter. Die Leute kennen mich, ich kenne sie. Das ist mehr Nachbarschaft als Logistik.</p>',
+      ru: '<p>Я начал в 2019 году, сразу после получения прав. Сначала был помощником у старшего коллеги — сегодня у меня свой постоянный маршрут на севере Нюрнберга.</p><p>Что я ценю: каждый день видишь одни и те же лица. Люди знают меня, я знаю их. Это больше похоже на соседство, чем на логистику.</p>',
+      ro: '<p>Am început în 2019, imediat după permis. La început eram pasager la un coleg mai în vârstă — astăzi am propriul traseu fix în nordul orașului Nürnberg.</p><p>Ce apreciez: vezi aceleași fețe în fiecare zi. Oamenii mă cunosc, eu îi cunosc. E mai degrabă vecinătate decât logistică.</p>',
+      tr: '<p>2019\'da, ehliyeti alır almaz başladım. Başta yaşlı bir meslektaşın yanında yardımcıydım — bugün Nürnberg\'in kuzeyinde kendi sabit turum var.</p><p>Değer verdiğim şey: her gün aynı yüzleri görüyorsun. İnsanlar beni tanıyor, ben onları. Bu lojistikten çok komşuluk.</p>'
+    }
+  },
+  {
+    id: 'olesya',
+    photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80',
+    initials: 'OK', name: 'Olesya K.',
+    roleKey: 'voice_dispatch', role: 'Disposition', loc: 'Crailsheim', loc_key: 'loc_crl',
+    tenure: { de: '5 Jahre im Team', ru: '5 лет в команде', ro: '5 ani în echipă', tr: '5 yıldır ekipte' },
+    langs: ['DE', 'RU'],
+    quote: {
+      de: '„Eine gute Tour plant man nicht am Bildschirm. Man plant sie mit dem, was die Fahrer dir morgens erzählen."',
+      ru: '«Хороший маршрут не планируют у экрана. Его планируют по тому, что водители рассказывают тебе утром.»',
+      ro: '„Un traseu bun nu se planifică pe ecran. Se planifică cu ce îți spun șoferii dimineața."',
+      tr: '"İyi bir tur ekranda planlanmaz. Sürücülerin sana sabah anlattıklarıyla planlanır."'
+    },
+    story: {
+      de: '<p>Ich habe in Crailsheim als Quereinsteigerin angefangen — vorher Büro, gar nichts mit Logistik. Die ersten Wochen habe ich nur zugehört, wie die erfahrenen Kollegen disponieren.</p><p>Heute halte ich morgens die Fäden zusammen: wer fährt was, wer springt ein, wo klemmt es. Es ist ein bisschen wie ein Orchester — laut, aber im Takt.</p>',
+      ru: '<p>Я пришла в Крайльсхайм со стороны — раньше офис, ничего общего с логистикой. Первые недели я просто слушала, как опытные коллеги распределяют работу.</p><p>Сегодня по утрам я держу всё в руках: кто что везёт, кто подменяет, где затык. Это немного как оркестр — громко, но в такт.</p>',
+      ro: '<p>Am început la Crailsheim ca om venit din alt domeniu — înainte birou, nimic legat de logistică. Primele săptămâni doar am ascultat cum dispecerează colegii experimentați.</p><p>Astăzi dimineața țin firele împreună: cine conduce ce, cine intervine, unde se blochează. E un pic ca o orchestră — zgomotoasă, dar în ritm.</p>',
+      tr: '<p>Crailsheim\'a farklı bir alandan geldim — önceden ofis, lojistikle alakası yok. İlk haftalar sadece deneyimli meslektaşların nasıl sevkiyat yaptığını dinledim.</p><p>Bugün sabahları her şeyi bir arada tutuyorum: kim neyi sürüyor, kim devreye giriyor, nerede tıkanıyor. Biraz orkestra gibi — gürültülü ama tempoda.</p>'
+    }
+  },
+  {
+    id: 'dragos',
+    photo: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=600&q=80',
+    initials: 'DM', name: 'Dragoș M.',
+    roleKey: 'voice_loader', role: 'Be- und Entlader', loc: 'Crailsheim', loc_key: 'loc_crl',
+    tenure: { de: '3 Jahre im Team', ru: '3 года в команде', ro: '3 ani în echipă', tr: '3 yıldır ekipte' },
+    langs: ['DE', 'RO'],
+    quote: {
+      de: '„Wenn ich sauber lade, kommt der Fahrer schneller los. Das ist mein Beitrag — und der zählt."',
+      ru: '«Если я грузлю аккуратно, водитель быстрее выезжает. Это мой вклад — и он важен.»',
+      ro: '„Dacă încarc ordonat, șoferul pleacă mai repede. Asta e contribuția mea — și contează."',
+      tr: '"Düzgün yüklersem, sürücü daha hızlı çıkar. Bu benim katkım — ve önemli."'
+    },
+    story: {
+      de: '<p>Ich bin vor drei Jahren aus Rumänien gekommen, mit wenig Deutsch und viel Bereitschaft. Im Depot wurde mir alles gezeigt — ohne große Worte, einfach durch Mitmachen.</p><p>Beladen ist Kopfarbeit: Was zuerst raus muss, kommt zuletzt rein. Wer das kann, spart dem ganzen Team Zeit. Darauf bin ich stolz.</p>',
+      ru: '<p>Я приехал из Румынии три года назад, с небольшим немецким и большой готовностью. В депо мне всё показали — без лишних слов, просто на деле.</p><p>Погрузка — это работа головой: то, что выгружать первым, грузишь последним. Кто это умеет, экономит время всей команде. Этим я горжусь.</p>',
+      ro: '<p>Am venit din România acum trei ani, cu puțină germană și multă disponibilitate. În depozit mi s-a arătat totul — fără vorbe multe, pur și simplu prin a face.</p><p>Încărcatul e muncă de gândire: ce trebuie scos primul intră ultimul. Cine știe asta economisește timp pentru toată echipa. De asta sunt mândru.</p>',
+      tr: '<p>Üç yıl önce Romanya\'dan geldim, az Almanca ve çok istekle. Depoda bana her şey gösterildi — büyük laflar olmadan, sadece yaparak.</p><p>Yükleme kafa işi: ilk çıkacak olan en son girer. Bunu bilen tüm ekibe zaman kazandırır. Bununla gurur duyuyorum.</p>'
+    }
+  },
+  {
+    id: 'katja',
+    photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80',
+    initials: 'KR', name: 'Katja R.',
+    roleKey: 'voice_courier', role: 'Kurierfahrerin', loc: 'Nürnberg', loc_key: 'loc_nbg',
+    tenure: { de: '8 Jahre im Team', ru: '8 лет в команде', ro: '8 ani în echipă', tr: '8 yıldır ekipte' },
+    langs: ['DE', 'RU'],
+    quote: {
+      de: '„Viele denken, das sei ein Männerjob. Ich fahre seit acht Jahren — und keiner fragt mehr."',
+      ru: '«Многие думают, что это мужская работа. Я за рулём восемь лет — и больше никто не спрашивает.»',
+      ro: '„Mulți cred că e o muncă de bărbați. Conduc de opt ani — și nimeni nu mai întreabă."',
+      tr: '"Çoğu bunun erkek işi olduğunu düşünür. Sekiz yıldır sürüyorum — ve artık kimse sormuyor."'
+    },
+    story: {
+      de: '<p>Ich bin 2018 eingestiegen, eher zufällig — eine Bekannte hat mich mitgenommen. Geblieben bin ich, weil man hier nach Leistung gemessen wird, nicht nach Vorurteil.</p><p>Meine Tour ist anspruchsvoll: Innenstadt, enge Höfe, viel Fußweg. Ich mag genau das. Am Ende des Tages weiß ich, was ich geschafft habe.</p>',
+      ru: '<p>Я пришла в 2018 году, скорее случайно — знакомая позвала с собой. Осталась потому, что здесь ценят по результату, а не по предубеждению.</p><p>Мой маршрут непростой: центр города, тесные дворы, много пешком. Именно это мне и нравится. В конце дня я знаю, что сделала.</p>',
+      ro: '<p>Am intrat în 2018, cam din întâmplare — o cunoștință m-a luat cu ea. Am rămas pentru că aici ești măsurat după performanță, nu după prejudecăți.</p><p>Traseul meu e solicitant: centrul orașului, curți înguste, mult mers pe jos. Exact asta îmi place. La sfârșitul zilei știu ce am realizat.</p>',
+      tr: '<p>2018\'de, biraz tesadüfen başladım — bir tanıdığım beni yanında götürdü. Kaldım çünkü burada önyargıya göre değil, performansa göre ölçülüyorsun.</p><p>Turum zorlu: şehir merkezi, dar avlular, çok yürüyüş. Tam da bunu seviyorum. Günün sonunda ne başardığımı biliyorum.</p>'
+    }
+  },
+  {
+    id: 'thomas',
+    photo: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?auto=format&fit=crop&w=600&q=80',
+    initials: 'TB', name: 'Thomas B.',
+    roleKey: 'voice_workshop', role: 'Werkstatt', loc: 'Crailsheim', loc_key: 'loc_crl',
+    tenure: { de: '17 Jahre im Team', ru: '17 лет в команде', ro: '17 ani în echipă', tr: '17 yıldır ekipte' },
+    langs: ['DE'],
+    quote: {
+      de: '„Ich höre einem Motor an, was ihm fehlt — oft bevor die Warnleuchte angeht."',
+      ru: '«Я слышу по мотору, чего ему не хватает — часто ещё до того, как загорится индикатор.»',
+      ro: '„Aud la un motor ce îi lipsește — adesea înainte să se aprindă becul de avertizare."',
+      tr: '"Bir motorun neyi eksik olduğunu sesinden anlarım — çoğu zaman uyarı ışığı yanmadan önce."'
+    },
+    story: {
+      de: '<p>Ich schraube seit 2009 an unseren Fahrzeugen. Angefangen habe ich in einer freien Werkstatt, dann hat mich Cuma Gün geholt, um die eigene Flotte aufzubauen.</p><p>Heute kenne ich jeden Transporter persönlich — welcher zickt im Winter, welcher braucht früher neue Bremsen. Dieses Wissen kauft man nicht, das wächst.</p>',
+      ru: '<p>Я ремонтирую наши машины с 2009 года. Начинал в независимой мастерской, потом Cuma Gün позвали меня, чтобы создать собственный автопарк.</p><p>Сегодня я знаю каждый фургон лично — какой капризничает зимой, какому раньше нужны тормоза. Такие знания не купишь, они нарастают.</p>',
+      ro: '<p>Repar vehiculele noastre din 2009. Am început într-un atelier independent, apoi m-a chemat Cuma Gün să construiesc flota proprie.</p><p>Astăzi cunosc fiecare furgonetă personal — care face nazuri iarna, care are nevoie mai devreme de frâne. Cunoștințele astea nu se cumpără, cresc.</p>',
+      tr: '<p>2009\'dan beri araçlarımızı tamir ediyorum. Bağımsız bir atölyede başladım, sonra Cuma Gün kendi filosunu kurmam için beni aldı.</p><p>Bugün her kamyoneti şahsen tanıyorum — hangisi kışın huysuzlanır, hangisinin erken frene ihtiyacı var. Bu bilgi satın alınmaz, büyür.</p>'
+    }
+  },
+  {
+    id: 'larisa',
+    photo: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=600&q=80',
+    initials: 'LN', name: 'Larisa N.',
+    roleKey: 'voice_loader', role: 'Be- und Entladerin', loc: 'Nürnberg', loc_key: 'loc_nbg',
+    tenure: { de: '4 Jahre im Team', ru: '4 года в команде', ro: '4 ani în echipă', tr: '4 yıldır ekipte' },
+    langs: ['DE', 'RU', 'RO'],
+    quote: {
+      de: '„Im Depot zählt nicht, woher du kommst. Es zählt, ob man sich auf dich verlassen kann."',
+      ru: '«В депо неважно, откуда ты. Важно, можно ли на тебя положиться.»',
+      ro: '„În depozit nu contează de unde vii. Contează dacă se poate baza cineva pe tine."',
+      tr: '"Depoda nereden geldiğin önemli değil. Sana güvenilip güvenilemeyeceği önemli."'
+    },
+    story: {
+      de: '<p>Ich arbeite in der Frühschicht am Nürnberger Depot. Wir sortieren, scannen, beladen — bevor die Stadt überhaupt wach ist, sind die ersten Touren schon unterwegs.</p><p>Ich spreche drei Sprachen, und das hilft jeden Tag. Wenn ein neuer Kollege noch kein Deutsch kann, übersetze ich kurz — und schon läuft es.</p>',
+      ru: '<p>Я работаю в утреннюю смену в нюрнбергском депо. Мы сортируем, сканируем, грузим — ещё до того, как город проснётся, первые маршруты уже в пути.</p><p>Я говорю на трёх языках, и это помогает каждый день. Если новый коллега ещё не знает немецкого, я коротко перевожу — и дело идёт.</p>',
+      ro: '<p>Lucrez în tura de dimineață la depozitul din Nürnberg. Sortăm, scanăm, încărcăm — înainte ca orașul să se trezească, primele trasee sunt deja pe drum.</p><p>Vorbesc trei limbi și asta ajută în fiecare zi. Dacă un coleg nou nu știe încă germană, traduc pe scurt — și totul merge.</p>',
+      tr: '<p>Nürnberg deposunda sabah vardiyasında çalışıyorum. Ayırıyor, tarıyor, yüklüyoruz — şehir uyanmadan önce ilk turlar çoktan yolda.</p><p>Üç dil konuşuyorum ve bu her gün işe yarıyor. Yeni bir meslektaş henüz Almanca bilmiyorsa kısaca çeviriyorum — ve iş yürüyor.</p>'
+    }
   }
 ];
 
@@ -1074,7 +1194,8 @@ function openEmployeeModal(id) {
   const lang = localStorage.getItem('cg_lang') || 'de';
   const dict = T[lang] || T.de;
   const modal = document.getElementById('empModal');
-  document.getElementById('empInitials').textContent = emp.initials;
+  document.getElementById('empPortrait').src = emp.photo;
+  document.getElementById('empPortrait').alt = emp.name;
   document.getElementById('empTenure').textContent = (emp.tenure[lang] || emp.tenure.de).toUpperCase();
   document.getElementById('empName').textContent = emp.name;
   document.getElementById('empRole').textContent = `${dict[emp.roleKey] || emp.role} · ${dict[emp.loc_key] || emp.loc}`;
