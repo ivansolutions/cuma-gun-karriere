@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Über uns · Cuma Gün Kuriertransporte e.K.</title>
+<title>Karriere · Cuma Gün Kuriertransporte e.K.</title>
 <meta name="description" content="Paketzusteller werden bei Cuma Gün Kuriertransporte e.K. — Familienunternehmen seit September 1995, im Auftrag von United Parcel Service. Standorte Nürnberg und Crailsheim." />
 
 <!-- OpenGraph -->
@@ -78,6 +78,7 @@ body {
   background: #FAFAF7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
 }
 
 /* Subtle paper texture */
@@ -463,20 +464,35 @@ section { padding: 100px 0; position: relative; }
   font-size: 13px;
   color: var(--ink-muted);
 }
-.founder__note { margin-top: 4px; }
+.founder__note {
+  margin-top: 6px;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--bronze);
+  letter-spacing: 0.005em;
+}
 @media (max-width: 560px) {
   .founder { width: 180px; }
 }
 
 /* New hero text lines */
 .hero__ups {
-  font-family: 'Inter Tight', sans-serif;
-  font-style: italic;
-  font-size: clamp(15px, 1.4vw, 18px);
-  color: var(--ink);
-  margin: -8px 0 18px;
-  max-width: 46ch;
-  line-height: 1.45;
+  font-family: 'Geist', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19.5px; /* RU-bound: longest version fits the ~684px column on one line with a small safety margin */
+  color: var(--bronze);
+  text-decoration: none;
+  white-space: nowrap;
+  margin: -2px 0 22px;
+  max-width: none;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+/* Below the two-column breakpoint the line may wrap / scale down — never overflow */
+@media (max-width: 1140px) {
+  .hero__ups { white-space: normal; font-size: clamp(16px, 4.6vw, 19.5px); }
 }
 .hero__sub {
   font-family: 'Geist', sans-serif;
@@ -512,8 +528,8 @@ section { padding: 100px 0; position: relative; }
 }
 
 .hero h1 {
-  font-size: clamp(38px, 5.5vw, 68px);
-  letter-spacing: -0.025em;
+  font-size: clamp(34px, 4.4vw, 48px);
+  letter-spacing: -0.022em;
   margin-bottom: 26px;
 }
 .hero h1 .bronze {
@@ -645,7 +661,7 @@ section { padding: 100px 0; position: relative; }
 <!-- ============== HEADER ============== -->
 <header class="header" id="header">
   <div class="container header__inner">
-    <a href="index.html" class="brand">
+    <a href="#top" class="brand">
       <img class="brand__logo" src="https://guen-transporte.com/wp-content/uploads/2025/06/Guen_logo_by_it_jessing.jpg" alt="Cuma Gün Logo" />
       <span class="brand__text">
         <span class="brand__name">Cuma Gün Kuriertransporte e.K.</span>
@@ -654,9 +670,9 @@ section { padding: 100px 0; position: relative; }
     </a>
     <nav class="nav">
       <a href="ueber-uns.html" data-i18n="nav_ueber">Über uns</a>
-      <a href="index.html#stellen" data-i18n="nav_stellen">Offene Stellen</a>
-      <a href="index.html#standorte" data-i18n="nav_standorte">Standorte</a>
-      <a href="index.html#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="#stellen" data-i18n="nav_stellen">Offene Stellen</a>
+      <a href="#standorte" data-i18n="nav_standorte">Standorte</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
     </nav>
     <div class="header__right">
       <div class="lang" id="lang">
@@ -673,7 +689,7 @@ section { padding: 100px 0; position: relative; }
           </div>
         </div>
       </div>
-      <a href="index.html#bewerbung" class="btn btn--primary header__cta" data-i18n="cta_apply">Jetzt bewerben</a>
+      <a href="#bewerbung" class="btn btn--primary header__cta" data-i18n="cta_apply">Jetzt bewerben</a>
       <button class="burger" id="burger" aria-label="Menu"><span></span></button>
     </div>
   </div>
@@ -682,67 +698,1191 @@ section { padding: 100px 0; position: relative; }
 <!-- Mobile nav -->
 <div class="mobile-nav" id="mobileNav">
   <a href="ueber-uns.html" data-i18n="nav_ueber">Über uns</a>
-  <a href="index.html#stellen" data-i18n="nav_stellen">Offene Stellen</a>
-  <a href="index.html#standorte" data-i18n="nav_standorte">Standorte</a>
-  <a href="index.html#faq" data-i18n="nav_faq">FAQ</a>
+  <a href="#stellen" data-i18n="nav_stellen">Offene Stellen</a>
+  <a href="#standorte" data-i18n="nav_standorte">Standorte</a>
+  <a href="#faq" data-i18n="nav_faq">FAQ</a>
   <a href="tel:+499116323697" style="font-family:'Geist Mono',monospace;font-size:16px;color:var(--ink-muted);">+49 911 6323697</a>
-  <a href="index.html#bewerbung" class="btn btn--primary mobile-cta" data-i18n="cta_apply">Jetzt bewerben</a>
+  <a href="#bewerbung" class="btn btn--primary mobile-cta" data-i18n="cta_apply">Jetzt bewerben</a>
 </div>
 
 <a id="top"></a>
 
-
-
-<!-- ============== ÜBER UNS (placeholder) ============== -->
-<main>
-<section class="ueber">
+<!-- ============== HERO ============== -->
+<section class="hero">
   <div class="container">
-    <div class="section-kicker"><span data-i18n="nav_ueber">Über uns</span></div>
-    <h1 class="ueber__h1" data-i18n="ueber_h1">Über uns</h1>
-    <p class="ueber__lede" data-i18n="ueber_lede">Diese Seite wird derzeit vorbereitet.</p>
-    <p class="ueber__body" data-i18n="ueber_body">Schon bald erfahren Sie hier mehr über Cuma Gün Kuriertransporte e.K. — die Familie hinter dem Unternehmen, drei Jahrzehnte Branchenerfahrung, unsere Werte, und unsere Partnerschaft mit United Parcel Service.</p>
-    <div class="ueber__cta">
-      <a href="index.html" class="btn btn--ghost" data-i18n="ueber_home">Zurück zur Startseite</a>
-      <a href="index.html#bewerbung" class="btn btn--primary"><span data-i18n="cta_apply">Jetzt bewerben</span> <span class="arrow">→</span></a>
+    <div class="hero__grid">
+      <div class="hero__left">
+        <figure class="founder">
+          <div class="founder__photo">
+            <span class="founder__badge mono" data-i18n="hero_founder_badge">FOTO FOLGT</span>
+          </div>
+          <figcaption class="founder__cap">
+            <span class="founder__name" data-i18n="hero_founder_name">Cuma Gün</span>
+            <span class="founder__role" data-i18n="hero_founder_role">Geschäftsinhaber</span>
+          </figcaption>
+        </figure>
+        <div class="hero__text">
+          <div class="hero__eyebrow">
+            <span class="dot"></span>
+            <span data-i18n="hero_eyebrow">Aktuell offene Stellen · Nürnberg &amp; Crailsheim</span>
+          </div>
+          <h1 data-i18n="hero_h1">Werden Sie Paketzusteller bei Cuma&nbsp;Gün Kuriertransporte&nbsp;e.&nbsp;K.</h1>
+          <p class="hero__ups" data-i18n="hero_ups">Im Auftrag von UPS, dem weltgrößten Paketdienst</p>
+          <p class="hero__lede" data-i18n="hero_lede">Seit über drei Jahrzehnten ist der Betrieb in Familienhand. Bei uns gilt das gesprochene Wort, und Sie bekommen eine Festanstellung mit deutschem Arbeitsvertrag zu fairen Bedingungen.</p>
+          <div class="hero__cta">
+            <a href="#bewerbung" class="btn btn--primary"><span data-i18n="cta_apply_now">Jetzt bewerben</span> <span class="arrow">→</span></a>
+            <a href="#arbeitstag" class="btn btn--ghost" data-i18n="cta_day">Wie ein Arbeitstag aussieht</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero__photo-wrap">
+        <img class="hero__photo" src="images/ups-crafter.jpg" alt="Schwarzer UPS-Transporter (VW Crafter) von Cuma Gün Kuriertransporte" />
+        <div class="hero__caption" data-i18n="hero_caption">Eigene Fahrzeuge · eigenes Personal</div>
+      </div>
     </div>
-    <div class="ueber__note demo-note" data-i18n="legal_placeholder">Platzhalter · wird vor Veröffentlichung finalisiert</div>
+
+    <div class="hero__stats" id="heroStats">
+      <div class="stat">
+        <div class="stat__num"><span class="accent" data-count="30">0</span><span class="unit" data-i18n="stat1_unit">Jahre</span></div>
+        <div class="stat__label" data-i18n="stat1_label">Familienunternehmen, gegründet im September 1995</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num"><span class="accent" data-count="2">0</span><span class="unit" data-i18n="stat2_unit">Standorte</span></div>
+        <div class="stat__label" data-i18n="stat2_label">Hauptsitz Nürnberg · Niederlassung Crailsheim</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num"><span class="accent" data-count="4">0</span><span class="unit" data-i18n="stat3_unit">Sprachen</span></div>
+        <div class="stat__label" data-i18n="stat3_label">Deutsch, Russisch, Rumänisch und Türkisch im Depot-Alltag</div>
+      </div>
+    </div>
   </div>
 </section>
-</main>
+
+<!-- ============== 02 ANFORDERUNGEN ============== -->
+<section id="anforderungen">
+  <div class="container">
+    <div class="section-kicker"><span data-i18n="s2_kicker">01 — Anforderungen</span></div>
+    <h2 class="section-h2"><span data-i18n="s2_h2_a">Was Sie </span><span class="em" data-i18n="s2_h2_b">mitbringen sollten</span><span data-i18n="s2_h2_c">.</span></h2>
+    <p class="section-lede" data-i18n="s2_lede">Wenige formale Voraussetzungen, aber klare Erwartungen an das, was im Alltag zählt. Berufserfahrung hilft, ist aber kein Muss. Wir arbeiten Sie ein.</p>
+
+    <div class="req-grid reveal">
+      <div class="req-card">
+        <div class="req-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><circle cx="8" cy="14.5" r="1"/></svg>
+        </div>
+        <h3 class="req-title" data-i18n="s2_01_title">Führerschein Klasse B</h3>
+        <p class="req-desc" data-i18n="s2_01_desc">Voraussetzung für unsere Touren. Klasse C1 oder C ist ein Plus, aber keine Bedingung.</p>
+      </div>
+      <div class="req-card">
+        <div class="req-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h3 class="req-title" data-i18n="s2_02_title">Zuverlässigkeit</h3>
+        <p class="req-desc" data-i18n="s2_02_desc">Sie kommen, wenn Sie kommen sollen. Für uns zählt das mehr als Berufsjahre.</p>
+      </div>
+      <div class="req-card">
+        <div class="req-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/></svg>
+        </div>
+        <h3 class="req-title" data-i18n="s2_03_title">Verantwortung</h3>
+        <p class="req-desc" data-i18n="s2_03_desc">Sie sind das Gesicht unserer Firma auf der Straße. Fahrzeug und Fracht in sicheren Händen. Wir zählen auf Sie!</p>
+      </div>
+      <div class="req-card">
+        <div class="req-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        </div>
+        <h3 class="req-title" data-i18n="s2_04_title">Sprachkenntnisse</h3>
+        <p class="req-desc" data-i18n="s2_04_desc">Grundkenntnisse Deutsch reichen für den Start. Im Depot sprechen wir DE, RU, RO, TR.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <style>
-.ueber {
-  padding: 184px 0 120px;
-  min-height: calc(100vh - 360px);
-  display: flex;
-  align-items: center;
+.req-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
-.ueber .container { max-width: 1000px; }
-.ueber__h1 {
-  font-size: clamp(44px, 6vw, 80px);
-  letter-spacing: -0.025em;
-  margin-bottom: 22px;
+@media (max-width: 700px) {
+  .req-grid { grid-template-columns: 1fr; }
 }
-.ueber__lede {
-  font-family: 'Geist', sans-serif;
-  font-size: clamp(20px, 2vw, 26px);
+.req-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.req-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(185,139,54,0.3);
+}
+.req-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: var(--bronze-soft);
   color: var(--bronze);
-  font-weight: 500;
-  margin: 0 0 24px;
-  letter-spacing: -0.01em;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
 }
-.ueber__body {
-  font-size: clamp(17px, 1.4vw, 19px);
+.req-title {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--navy);
+}
+.req-desc {
+  margin: 0;
+  font-size: 15.5px;
   color: var(--ink-muted);
-  max-width: 64ch;
-  line-height: 1.65;
-  margin: 0 0 40px;
+  line-height: 1.55;
 }
-.ueber__cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
-.ueber__note { display: inline-block; }
-@media (max-width: 768px) { .ueber { padding: 150px 0 90px; } }
 </style>
 
+<!-- ============== 03 ARBEITSTAG ============== -->
+<section id="arbeitstag" class="section--beige">
+  <div class="container">
+    <div class="section-kicker"><span data-i18n="s3_kicker">02 — Arbeitstag</span></div>
+    <h2 class="section-h2"><span data-i18n="s3_h2_a">Wie ein </span><span class="em" data-i18n="s3_h2_b">Arbeitstag</span><span data-i18n="s3_h2_c"> aussieht.</span></h2>
+    <p class="section-lede" data-i18n="s3_lede">Ehrlich beschrieben — vom ersten Scan am Depot bis zum Feierabend. Wir nennen die Zeiten so, wie sie wirklich sind.</p>
+
+    <div class="timeline reveal">
+      <div class="tl-row">
+        <div class="tl-time mono" data-i18n="s3_t1_time">07:00 Uhr</div>
+        <div class="tl-axis"><span class="tl-dot"></span></div>
+        <div class="tl-body">
+          <h4 class="tl-title" data-i18n="s3_t1_title">Arbeitsbeginn</h4>
+          <p class="tl-desc" data-i18n="s3_t1_desc">Der Arbeitstag beginnt um 07:00 Uhr am Fahrzeug. Etwas früher zu kommen ist eine persönliche Entscheidung — niemand setzt das voraus, niemand drängt.</p>
+          <div class="tl-photo">
+            <img loading="lazy" src="https://images.pexels.com/photos/6699420/pexels-photo-6699420.jpeg?auto=compress&cs=tinysrgb&w=640" alt="" />
+            <span class="tl-cap">Symbolbild</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time mono" data-i18n="s3_t2_time">07:00 – 08:30 Uhr</div>
+        <div class="tl-axis"><span class="tl-dot"></span></div>
+        <div class="tl-body">
+          <h4 class="tl-title" data-i18n="s3_t2_title">Vorbereitung & Abfahrt</h4>
+          <p class="tl-desc" data-i18n="s3_t2_desc"><strong>Ladung Richten:</strong> Sendungen scannen, nach Stopps schlichten, Express-Pakete prüfen.<br><br><strong>Abfahrt:</strong> Planmäßig zwischen 08:15 und 08:30 Uhr<br><br>Kaffeezeit ist immer drin</p>
+          <div class="tl-photo">
+            <img loading="lazy" src="images/at-verladung.jpg" alt="Pakete am Depot, bereit zur Verladung" />
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time mono" data-i18n="s3_t3_time">08:30 – 13:00 Uhr</div>
+        <div class="tl-axis"><span class="tl-dot"></span></div>
+        <div class="tl-body">
+          <h4 class="tl-title" data-i18n="s3_t3_title">Ihre Route, Ihr Rhythmus</h4>
+          <p class="tl-desc" data-i18n="s3_t3_desc">Sie sind auf Ihrer vertrauten Route unterwegs. Express-Sendungen planen wir vorab gemeinsam mit der Disposition - die Kunden warten. Das gibt Ihnen maximale Planungssicherheit für den Tag – ohne Stress und Überraschungen zwischendurch.</p>
+          <div class="tl-photo">
+            <img loading="lazy" src="images/at-cockpit.jpg" alt="Cockpit eines VW Crafter mit Navigation und Scanner" />
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time mono" data-i18n="s3_t4_time">13:00 – 13:45 Uhr</div>
+        <div class="tl-axis"><span class="tl-dot"></span></div>
+        <div class="tl-body">
+          <h4 class="tl-title" data-i18n="s3_t4_title">Pause (Mittag)</h4>
+          <p class="tl-desc" data-i18n="s3_t4_desc">Sie ist ein Muss: Gesetzlich vorgeschrieben nach spätestens 4,5 Stunden Lenkzeit.<br><br>Flexibel unterwegs planbar (Richtwert: 13:00 bis 13:45 Uhr).</p>
+          <div class="tl-photo">
+            <img loading="lazy" src="https://images.pexels.com/photos/6699404/pexels-photo-6699404.jpeg?auto=compress&cs=tinysrgb&w=640" alt="" />
+            <span class="tl-cap">Symbolbild</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time mono" data-i18n="s3_t5_time">13:45 – 16:00 Uhr</div>
+        <div class="tl-axis"><span class="tl-dot"></span></div>
+        <div class="tl-body">
+          <h4 class="tl-title" data-i18n="s3_t5_title">Zweite Tageshälfte</h4>
+          <p class="tl-desc" data-i18n="s3_t5_desc">Nach der Pause die verbleibenden Pakete ausliefern. Parallel feste Vertragskunden anfahren und spontane Tagesaufträge übernehmen. Zwischen 15:30 und 16:00 Uhr Rückkehr ins Center.</p>
+          <div class="tl-photo">
+            <img loading="lazy" src="images/at-laderaum-beladen.jpg" alt="Beladener Laderaum eines Zustellfahrzeugs" />
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time mono" data-i18n="s3_t6_time"></div>
+        <div class="tl-axis"><span class="tl-dot"></span></div>
+        <div class="tl-body">
+          <h4 class="tl-title" data-i18n="s3_t6_title">Nach der Tour</h4>
+          <p class="tl-desc" data-i18n="s3_t6_desc">Bei Bedarf das Fahrzeug waschen.<br><br>Etwaige Vorkommnisse oder Probleme auf der Tour direkt mit der Disposition klären.<br><br>Tour ordnungsgemäß im System abschließen.<br><br>Feierabend.</p>
+          <div class="tl-photo">
+            <img loading="lazy" src="images/at-laderaum-leer.jpg" alt="Aufgeräumter, leerer Laderaum mit Sackkarre" />
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time mono" data-i18n="s3_t7_time"></div>
+        <div class="tl-axis"><span class="tl-dot tl-dot--bronze"></span></div>
+        <div class="tl-body">
+          <h4 class="tl-title" data-i18n="s3_t7_title">Erste Wochen</h4>
+          <p class="tl-desc" data-i18n="s3_t7_desc">Aller Anfang ist schwer, deshalb lassen wir Sie nicht allein: In der ersten Woche sind Sie Beifahrer. Ein erfahrener Kollege zeigt Ihnen die Tour. Unser Job verlangt echtes Können und ist kein Beruf für jedermann — das wissen wir. Planen Sie in der ersten Zeit ruhig etwas mehr Spielraum ein. Bis Sie die Route perfekt kennen, kann es auch mal 16:00 oder 17:00 Uhr werden. Machen Sie sich keine Sorgen: Ihre Arbeitszeit wird natürlich komplett erfasst.</p>
+          <div class="tl-photo">
+            <img loading="lazy" src="https://images.pexels.com/photos/6699406/pexels-photo-6699406.jpeg?auto=compress&cs=tinysrgb&w=640" alt="" />
+            <span class="tl-cap">Symbolbild</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-closer">
+      <p><strong data-i18n="s3_close_strong">Alle Details</strong><span data-i18n="s3_close_a"> — individuelle Konditionen, genaue Stunden, konkrete Aufgaben — </span><strong data-i18n="s3_close_strong2">besprechen wir im Vorstellungsgespräch.</strong><span data-i18n="s3_close_b"> Sie sollen wissen, worauf Sie sich einlassen, bevor Sie unterschreiben.</span></p>
+    </div>
+  </div>
+</section>
+
+<style>
+.timeline { position: relative; }
+.tl-row {
+  display: grid;
+  grid-template-columns: 200px 60px 1fr;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px 0;
+  position: relative;
+}
+.tl-row:last-child::after { display: none; }
+.tl-time {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  letter-spacing: 0.02em;
+  padding-top: 4px;
+}
+.tl-axis {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+.tl-axis::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: -40px;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(185,139,54,0.5), rgba(185,139,54,0.2));
+  transform: translateX(-50%);
+}
+.tl-row:last-child .tl-axis::before { display: none; }
+.tl-dot {
+  position: relative;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--bronze);
+  box-shadow: 0 0 0 5px rgba(244,241,234,1), 0 0 0 6px rgba(185,139,54,0.25);
+  z-index: 1;
+}
+.tl-dot--bronze { background: var(--navy); }
+.tl-body {
+  display: grid;
+  grid-template-columns: 248px 1fr;
+  grid-template-areas:
+    "photo title"
+    "photo desc"
+    "photo .";
+  grid-template-rows: auto auto 1fr;
+  column-gap: 26px;
+  row-gap: 0;
+  align-items: start;
+  align-content: start;
+}
+.tl-title {
+  grid-area: title;
+  font-size: clamp(19px, 1.6vw, 22px);
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0 0 10px;
+}
+.tl-desc {
+  grid-area: desc;
+  margin: 0;
+  font-size: 15.5px;
+  color: var(--ink-muted);
+  max-width: 60ch;
+  line-height: 1.6;
+}
+.tl-photo {
+  grid-area: photo;
+  position: relative;
+  align-self: start;
+  margin-top: 4px;
+  width: 100%;
+}
+.tl-photo img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: grayscale(0.12) contrast(1.02);
+}
+.tl-cap {
+  position: absolute;
+  right: 8px; bottom: 8px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background: rgba(20,20,26,0.6);
+  padding: 3px 7px;
+  border-radius: 5px;
+}
+
+.tl-closer {
+  margin-top: 48px;
+  padding: 28px 32px;
+  border-radius: var(--radius);
+  background: var(--bronze-soft);
+  border: 1px solid rgba(185,139,54,0.25);
+}
+.tl-closer p { margin: 0; font-size: 16px; color: var(--ink); line-height: 1.6; }
+.tl-closer strong { color: var(--navy); }
+
+@media (max-width: 768px) {
+  .tl-row { grid-template-columns: 32px 1fr; gap: 14px; }
+  .tl-time { grid-column: 2; padding-top: 0; font-size: 12px; }
+  .tl-axis { grid-column: 1; grid-row: 1 / span 2; padding-top: 4px; }
+  .tl-body {
+    grid-column: 2;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "loc"
+      "title"
+      "desc";
+  }
+  .tl-photo { max-width: 360px; margin-top: 0; margin-bottom: 14px; }
+  .tl-title { font-size: 19px; }
+}
+</style>
+
+<!-- ============== 04 OFFENE STELLEN ============== -->
+<section id="stellen">
+  <div class="container">
+    <div class="section-kicker"><span data-i18n="s4_kicker">03 — Offene Stellen</span></div>
+    <h2 class="section-h2"><span data-i18n="s4_h2_a">Aktuell </span><span class="em" data-i18n="s4_h2_b">suchen wir</span><span data-i18n="s4_h2_c">.</span></h2>
+    <p class="section-lede" data-i18n="s4_lede">Drei offene Stellen an unseren Standorten. Ist nichts Passendes dabei, freuen wir uns über Ihre Initiativbewerbung.</p>
+
+    <div class="jobs reveal">
+      <article class="job" data-position="zusteller-nbg" data-location="Nürnberg">
+        <div class="job__tags">
+          <span class="tag tag--active" data-i18n="tag_active">Aktiv</span>
+          <span class="tag" data-i18n="loc_nbg">Nürnberg</span>
+          <span class="tag" data-i18n="tag_full">Vollzeit</span>
+        </div>
+        <h3 class="job__title" data-i18n="s4_j1_title">Paketzusteller (m/w/d)</h3>
+        <p class="job__desc" data-i18n="s4_j1_desc">Tägliche Zustelltouren im Stadtgebiet Nürnberg und Umgebung. Festanstellung mit deutschem Arbeitsvertrag, Einarbeitung mit erfahrenem Kollegen.</p>
+        <button class="job__apply"><span data-i18n="cta_apply_arrow">Jetzt bewerben</span> <span class="arrow">→</span></button>
+      </article>
+      <article class="job" data-position="zusteller-crl" data-location="Crailsheim">
+        <div class="job__tags">
+          <span class="tag tag--active" data-i18n="tag_active">Aktiv</span>
+          <span class="tag" data-i18n="loc_crl">Crailsheim</span>
+          <span class="tag" data-i18n="tag_full">Vollzeit</span>
+        </div>
+        <h3 class="job__title" data-i18n="s4_j2_title">Paketzusteller (m/w/d)</h3>
+        <p class="job__desc" data-i18n="s4_j2_desc">Zustellung in und um Crailsheim. Feste Vollzeitstelle mit geregelten Touren. Klasse-B-Führerschein erforderlich.</p>
+        <button class="job__apply"><span data-i18n="cta_apply_arrow">Jetzt bewerben</span> <span class="arrow">→</span></button>
+      </article>
+      <article class="job" data-position="lader-crl" data-location="Crailsheim">
+        <div class="job__tags">
+          <span class="tag tag--active" data-i18n="tag_active">Aktiv</span>
+          <span class="tag" data-i18n="loc_crl">Crailsheim</span>
+          <span class="tag" data-i18n="tag_part">Teilzeit</span>
+        </div>
+        <h3 class="job__title" data-i18n="s4_j3_title">Be- und Entlader (m/w/d)</h3>
+        <p class="job__desc" data-i18n="s4_j3_desc">Verladearbeiten am Depot Crailsheim. Frühschicht, Beginn am frühen Morgen. Körperliche Belastbarkeit ist wichtig, ein Führerschein nicht nötig.</p>
+        <button class="job__apply"><span data-i18n="cta_apply_arrow">Jetzt bewerben</span> <span class="arrow">→</span></button>
+      </article>
+      <article class="job job--initiativ" data-position="initiativ" data-location="">
+        <div class="job__tags">
+          <span class="tag tag--initiativ" data-i18n="tag_initiativ">Initiativ</span>
+          <span class="tag" data-i18n="loc_both">Nürnberg · Crailsheim</span>
+        </div>
+        <h3 class="job__title" data-i18n="s4_j4_title">Initiativbewerbung</h3>
+        <p class="job__desc" data-i18n="s4_j4_desc">Kein passender Job dabei? Schicken Sie uns trotzdem Ihre Unterlagen. Gute Leute finden bei uns immer einen Platz — auch außerhalb der aktuell ausgeschriebenen Stellen.</p>
+        <button class="job__apply"><span data-i18n="cta_apply_arrow">Jetzt bewerben</span> <span class="arrow">→</span></button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+.jobs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .jobs { grid-template-columns: 1fr; }
+}
+.job {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  display: flex; flex-direction: column; gap: 16px;
+  transition: transform 0.2s cubic-bezier(.2,.7,.2,1), box-shadow 0.2s, border-color 0.2s;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.job:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(185,139,54,0.4);
+}
+.job--initiativ {
+  background: var(--bronze-soft);
+  border-color: rgba(185,139,54,0.3);
+}
+.job__tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag {
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(91,91,97,0.08);
+  color: var(--ink-muted);
+}
+.tag--active { background: var(--bronze); color: #fff; }
+.tag--initiativ { background: var(--navy); color: #fff; }
+.job__title {
+  font-size: clamp(20px, 1.7vw, 24px);
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0;
+}
+.job__desc { margin: 0; color: var(--ink-muted); font-size: 15.5px; line-height: 1.55; flex: 1; }
+.job__apply {
+  align-self: flex-start;
+  color: var(--bronze);
+  font-weight: 500;
+  font-size: 15px;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0;
+}
+.job__apply .arrow { transition: transform 0.2s; display: inline-block; }
+.job:hover .job__apply .arrow { transform: translateX(6px); }
+</style>
+
+
+<!-- ============== 05 STIMMEN MARQUEE ============== -->
+<section id="stimmen">
+  <div class="container">
+    <div class="section-kicker"><span data-i18n="s5_kicker">04 — Stimmen aus dem Team</span></div>
+    <h2 class="section-h2"><span data-i18n="s5_h2_a">Echte Geschichten — </span><span class="em" data-i18n="s5_h2_b">in Kürze hier</span><span data-i18n="s5_h2_c">.</span></h2>
+    <p class="section-lede" data-i18n="s5_lede">Wir sammeln gerade Geschichten unserer Fahrer — mit Foto und Namen, sofern sie einverstanden sind. Die ersten folgen in den nächsten Wochen.</p>
+  </div>
+  <div class="marquee" id="marquee">
+    <div class="marquee__track">
+      <!-- 6 cards × 2 for seamless loop -->
+      <!-- Will be filled by JS to keep markup short -->
+    </div>
+  </div>
+</section>
+
+<style>
+.marquee {
+  overflow: hidden;
+  padding: 20px 0 40px;
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee__track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: marquee 80s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.voice {
+  width: 300px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+}
+.voice__photo {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  filter: grayscale(0.2) saturate(0.85);
+}
+.voice__meta {
+  padding: 16px 20px;
+}
+.voice__role {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.voice__loc {
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+.voice__badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  background: rgba(14,42,71,0.85);
+  color: #fff;
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  padding: 5px 9px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+}
+</style>
+
+<!-- ============== 06 FAQ ============== -->
+<section id="faq" class="section--beige">
+  <div class="container">
+    <div class="section-kicker"><span data-i18n="s6_kicker">05 — Häufige Fragen</span></div>
+    <h2 class="section-h2"><span data-i18n="s6_h2_a">Was Bewerber </span><span class="em" data-i18n="s6_h2_b">oft fragen</span><span data-i18n="s6_h2_c">.</span></h2>
+    <p class="section-lede" data-i18n="s6_lede">Wenn Ihre Frage nicht dabei ist — schreiben Sie uns. Wir antworten persönlich.</p>
+
+    <div class="faq reveal">
+      <div class="faq__item open">
+        <button class="faq__q">
+          <span class="faq__num mono">01</span>
+          <span class="faq__text" data-i18n="s6_q1">Welche Unterlagen brauche ich für die Bewerbung?</span>
+          <span class="faq__toggle"><span></span><span></span></span>
+        </button>
+        <div class="faq__a"><p data-i18n="s6_a1">Ein kurzer Lebenslauf reicht für den ersten Schritt. Führerschein, Aufenthaltspapiere (falls zutreffend) und ein Führungszeugnis besprechen wir im persönlichen Gespräch. Wenn etwas fehlt, sagen wir es direkt — Sie müssen nicht alles vorab klären.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">
+          <span class="faq__num mono">02</span>
+          <span class="faq__text" data-i18n="s6_q2">Was, wenn mein Deutsch nicht perfekt ist?</span>
+          <span class="faq__toggle"><span></span><span></span></span>
+        </button>
+        <div class="faq__a"><p data-i18n="s6_a2">Wir hatten in den letzten drei Jahrzehnten Kollegen aus über zwanzig Ländern. Verständliches Deutsch reicht für den Start. Im Alltag sprechen wir auch Russisch, Rumänisch und Türkisch — niemand wird abgewiesen, weil ein Wort fehlt.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">
+          <span class="faq__num mono">03</span>
+          <span class="faq__text" data-i18n="s6_q3">Wie wird die Vergütung besprochen?</span>
+          <span class="faq__toggle"><span></span><span></span></span>
+        </button>
+        <div class="faq__a"><p data-i18n="s6_a3">Persönlich im Vorstellungsgespräch. Wir nennen keine Lockzahlen auf der Webseite, weil die Vergütung von Einsatzort, Tour und Erfahrung abhängt. Im Gespräch sagen wir Ihnen eine konkrete Zahl — und die gilt auch.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">
+          <span class="faq__num mono">04</span>
+          <span class="faq__text" data-i18n="s6_q4">Ist das eine Festanstellung?</span>
+          <span class="faq__toggle"><span></span><span></span></span>
+        </button>
+        <div class="faq__a"><p data-i18n="s6_a4">Ja. Festanstellung mit deutschem Arbeitsvertrag, allen Sozialleistungen und regulärer Lohnabrechnung. Keine Scheinselbstständigkeit, keine grauen Modelle.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">
+          <span class="faq__num mono">05</span>
+          <span class="faq__text" data-i18n="s6_q5">Wie sieht der erste Arbeitstag aus?</span>
+          <span class="faq__toggle"><span></span><span></span></span>
+        </button>
+        <div class="faq__a"><p data-i18n="s6_a5">Sie kommen morgens ins Depot, lernen die Kollegen kennen und fahren die erste Woche als Beifahrer mit. Erst wenn Sie sich sicher fühlen, übernehmen Sie eine eigene Tour. Niemand wird ins kalte Wasser geworfen.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">
+          <span class="faq__num mono">06</span>
+          <span class="faq__text" data-i18n="s6_q6">Wie lange dauert die Einarbeitung?</span>
+          <span class="faq__toggle"><span></span><span></span></span>
+        </button>
+        <div class="faq__a"><p data-i18n="s6_a6">In der Regel ein bis zwei Wochen, bei Bedarf länger. Es gibt keine festen Stoppuhren — Sie übernehmen eine Tour, wenn Sie und Ihr Einarbeiter sich einig sind, dass es passt.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">
+          <span class="faq__num mono">07</span>
+          <span class="faq__text" data-i18n="s6_q7">Wo wird gefahren?</span>
+          <span class="faq__toggle"><span></span><span></span></span>
+        </button>
+        <div class="faq__a"><p data-i18n="s6_a7">Der Schwerpunkt liegt aktuell auf Nürnberg und Umgebung. Crailsheim ist der zweite Standort. Weitere Einsatzorte sind nach Absprache möglich.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">
+          <span class="faq__num mono">08</span>
+          <span class="faq__text" data-i18n="s6_q8">Wie schnell bekomme ich eine Antwort?</span>
+          <span class="faq__toggle"><span></span><span></span></span>
+        </button>
+        <div class="faq__a"><p data-i18n="s6_a8">Wir prüfen jede Bewerbung sorgfältig und melden uns persönlich, sobald wir eine konkrete Antwort haben.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.faq { display: flex; flex-direction: column; gap: 0; }
+.faq__item {
+  border-top: 1px solid var(--line);
+}
+.faq__item:last-child { border-bottom: 1px solid var(--line); }
+.faq__q {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 48px 1fr 40px;
+  gap: 18px;
+  align-items: center;
+  padding: 28px 8px;
+  text-align: left;
+}
+.faq__num { color: var(--bronze); font-size: 13px; letter-spacing: 0.04em; padding-top: 4px; align-self: flex-start; }
+.faq__text {
+  font-family: 'Geist', sans-serif;
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+.faq__toggle {
+  position: relative;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  flex-shrink: 0;
+  justify-self: end;
+  transition: background 0.25s, border-color 0.25s;
+}
+.faq__toggle span {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 14px; height: 1.5px;
+  background: var(--navy);
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s, background 0.25s;
+}
+.faq__toggle span:last-child { transform: translate(-50%, -50%) rotate(90deg); }
+.faq__item.open .faq__toggle { background: var(--bronze); border-color: var(--bronze); }
+.faq__item.open .faq__toggle span { background: #fff; }
+.faq__item.open .faq__toggle span:last-child { transform: translate(-50%, -50%) rotate(0deg); }
+
+.faq__a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(.2,.7,.2,1);
+}
+.faq__a > p {
+  overflow: hidden;
+  margin: 0;
+  padding: 0 8px 0 74px;
+  color: var(--ink-muted);
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 70ch;
+}
+.faq__item.open .faq__a { grid-template-rows: 1fr; }
+.faq__item.open .faq__a > p { padding: 0 8px 28px 74px; }
+
+@media (max-width: 700px) {
+  .faq__q { grid-template-columns: 32px 1fr 36px; gap: 12px; padding: 22px 4px; }
+  .faq__a > p { padding-left: 44px; }
+  .faq__item.open .faq__a > p { padding-left: 44px; padding-bottom: 22px; }
+}
+</style>
+
+<!-- ============== 07 STANDORTE ============== -->
+<section id="standorte">
+  <div class="container">
+    <div class="section-kicker"><span data-i18n="s7_kicker">06 — Standorte</span></div>
+    <h2 class="section-h2"><span data-i18n="s7_h2_a">Zwei Standorte, </span><span class="em" data-i18n="s7_h2_b">eine Disposition</span><span data-i18n="s7_h2_c">.</span></h2>
+    <p class="section-lede" data-i18n="s7_lede">Nürnberg ist der Hauptsitz, Crailsheim die Niederlassung. Beide Depots können Sie nach Absprache jederzeit besuchen.</p>
+
+    <div class="loc-grid reveal">
+      <article class="loc">
+        <div class="loc__map">
+          <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Koblenzer%20Str.%2013%2C%2090451%20N%C3%BCrnberg&output=embed" title="Karte Nürnberg"></iframe>
+        </div>
+        <div class="loc__body">
+          <span class="loc__tag" data-i18n="loc_hq">Hauptsitz</span>
+          <h3 class="loc__city">Nürnberg</h3>
+          <dl class="loc__dl">
+            <dt data-i18n="loc_addr">Adresse</dt><dd>Koblenzer Str. 13, 90451 Nürnberg</dd>
+            <dt data-i18n="loc_tel">Telefon</dt><dd><a href="tel:+499116323697">+49 911 6323697</a></dd>
+            <dt data-i18n="loc_mail">E-Mail</dt><dd><a href="mailto:nürnberg-bewerbung@guen-transporte.de">nürnberg-bewerbung@guen-transporte.de</a></dd>
+            <dt data-i18n="loc_hours">Öffnungszeiten</dt><dd data-i18n="loc_hours_nbg">Mo–Fr 07:00–18:00 · Sa 07:00–12:00</dd>
+          </dl>
+          <div class="loc__cta">
+            <a href="#standorte" class="loc__link"><span data-i18n="loc_more">Mehr zum Standort</span> <span class="arrow">→</span></a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Koblenzer+Str.+13,+90451+N%C3%BCrnberg" target="_blank" rel="noopener" class="btn btn--ghost" style="padding:10px 18px;font-size:13.5px;" data-i18n="loc_route">Route planen</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="loc">
+        <div class="loc__map">
+          <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Wittauer%20Stra%C3%9Fe%201%2C%2074564%20Crailsheim&output=embed" title="Karte Crailsheim"></iframe>
+        </div>
+        <div class="loc__body">
+          <span class="loc__tag" data-i18n="loc_branch">Niederlassung</span>
+          <h3 class="loc__city">Crailsheim</h3>
+          <dl class="loc__dl">
+            <dt data-i18n="loc_addr">Adresse</dt><dd>Wittauer Straße 1, 74564 Crailsheim</dd>
+            <dt data-i18n="loc_tel">Telefon</dt><dd data-i18n="loc_tel_crl">+49 — wird vom Geschäftsführer bestätigt</dd>
+            <dt data-i18n="loc_mail">E-Mail</dt><dd><a href="mailto:crailsheim-bewerbung@guen-transporte.de">crailsheim-bewerbung@guen-transporte.de</a></dd>
+            <dt data-i18n="loc_hours">Öffnungszeiten</dt><dd data-i18n="loc_hours_crl">Mo–Fr 07:00–17:00 · Sa 07:00–12:00</dd>
+          </dl>
+          <div class="loc__cta">
+            <a href="#standorte" class="loc__link"><span data-i18n="loc_more">Mehr zum Standort</span> <span class="arrow">→</span></a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Wittauer+Stra%C3%9Fe+1,+74564+Crailsheim" target="_blank" rel="noopener" class="btn btn--ghost" style="padding:10px 18px;font-size:13.5px;" data-i18n="loc_route">Route planen</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+.loc-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+@media (max-width: 900px) { .loc-grid { grid-template-columns: 1fr; } }
+.loc {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.loc__map {
+  aspect-ratio: 16/9;
+  background: var(--beige);
+}
+.loc__map iframe {
+  width: 100%; height: 100%;
+  border: 0;
+  filter: saturate(0.85) contrast(0.97);
+}
+.loc__body { padding: 32px; }
+.loc__tag {
+  display: inline-block;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--bronze);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.loc__city {
+  font-size: clamp(26px, 2.4vw, 32px);
+  font-weight: 600;
+  margin: 0 0 24px;
+  color: var(--navy);
+}
+.loc__dl {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px 16px;
+  margin: 0 0 24px;
+  font-size: 14.5px;
+}
+.loc__dl dt { color: var(--ink-muted); font-weight: 400; }
+.loc__dl dd { margin: 0; color: var(--ink); }
+.loc__dl a:hover { color: var(--bronze); }
+.loc__cta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.loc__link { font-weight: 500; color: var(--bronze); display: inline-flex; align-items: center; gap: 6px; }
+.loc__link .arrow { display:inline-block; transition: transform 0.2s; }
+.loc__link:hover .arrow { transform: translateX(4px); }
+
+@media (max-width: 480px) {
+  .loc__dl { grid-template-columns: 1fr; gap: 2px 0; }
+  .loc__dl dt { margin-top: 8px; }
+}
+</style>
+
+<!-- ============== 08 BEWERBUNG ============== -->
+<section id="bewerbung" class="section--dark">
+  <div class="container">
+    <div class="bew-head">
+      <div class="section-kicker"><span data-i18n="s8_kicker">07 — Bewerbung</span></div>
+      <h2 class="section-h2"><span data-i18n="s8_h2_a">Ein kurzes Formular. </span><span class="em" data-i18n="s8_h2_b">Eine ehrliche Antwort</span><span data-i18n="s8_h2_c">.</span></h2>
+      <p class="section-lede" data-i18n="s8_lede">Schreiben Sie uns. Wenn Sie zu uns passen, melden wir uns persönlich bei Ihnen, sobald wir Ihre Unterlagen geprüft haben.</p>
+    </div>
+
+    <div class="bew-grid">
+      <div class="bew-left">
+        <div class="vsteps__label mono" data-i18n="bew_steps_label">In sechs Schritten zum ersten Arbeitstag</div>
+        <ol class="vsteps">
+          <li class="vstep">
+            <span class="vstep__num mono">01</span>
+            <div class="vstep__body">
+              <div class="vstep__title" data-i18n="s1_01_title">Bewerbung senden</div>
+              <p class="vstep__desc" data-i18n="s1_01_desc">Unterlagen über das Formular hochladen — oder direkt anrufen.</p>
+            </div>
+          </li>
+          <li class="vstep">
+            <span class="vstep__num mono">02</span>
+            <div class="vstep__body">
+              <div class="vstep__title" data-i18n="s1_02_title">Bitte warten — wir melden uns</div>
+              <p class="vstep__desc" data-i18n="s1_02_desc">Nach Prüfung Ihrer Bewerbung melden wir uns persönlich bei Ihnen, sobald wir eine konkrete Antwort haben.</p>
+            </div>
+          </li>
+          <li class="vstep">
+            <span class="vstep__num mono">03</span>
+            <div class="vstep__body">
+              <div class="vstep__title" data-i18n="s1_03_title">Persönliches Gespräch</div>
+              <p class="vstep__desc" data-i18n="s1_03_desc">Sie kommen am Depot vorbei — wir besprechen Tour, Standort, Konditionen.</p>
+            </div>
+          </li>
+          <li class="vstep">
+            <span class="vstep__num mono">04</span>
+            <div class="vstep__body">
+              <div class="vstep__title" data-i18n="s1_04_title">Probefahrt möglich</div>
+              <p class="vstep__desc" data-i18n="s1_04_desc">Wenn Sie möchten, fahren Sie einen Tag als Beifahrer mit, bevor Sie unterschreiben.</p>
+            </div>
+          </li>
+          <li class="vstep">
+            <span class="vstep__num mono">05</span>
+            <div class="vstep__body">
+              <div class="vstep__title" data-i18n="s1_05_title">Arbeitsvertrag</div>
+              <p class="vstep__desc" data-i18n="s1_05_desc">Festanstellung, deutscher Vertrag, transparente Konditionen — keine grauen Modelle.</p>
+            </div>
+          </li>
+          <li class="vstep">
+            <span class="vstep__num mono">06</span>
+            <div class="vstep__body">
+              <div class="vstep__title" data-i18n="s1_06_title">Erster Tag</div>
+              <p class="vstep__desc" data-i18n="s1_06_desc">Sie starten mit einem erfahrenen Kollegen an Ihrer Seite — niemand fährt allein los.</p>
+            </div>
+          </li>
+        </ol>
+
+        <ul class="bullets">
+          <li data-i18n="s8_b1">Sorgfältige Prüfung jeder Bewerbung</li>
+          <li data-i18n="s8_b2">Erstgespräch persönlich oder telefonisch</li>
+          <li data-i18n="s8_b3">Probefahrt vor Vertragsunterschrift möglich</li>
+          <li data-i18n="s8_b4">Datenverarbeitung gemäß DSGVO</li>
+        </ul>
+
+        <div class="bew-contact">
+          <div class="bew-contact__label" data-i18n="bew_contact_label">Direkter Kontakt zur Bewerbung</div>
+          <a class="bew-contact__mail" href="mailto:nürnberg-bewerbung@guen-transporte.de"><span class="bew-contact__city mono" data-i18n="loc_nbg">Nürnberg</span>nürnberg-bewerbung@guen-transporte.de</a>
+          <a class="bew-contact__mail" href="mailto:crailsheim-bewerbung@guen-transporte.de"><span class="bew-contact__city mono" data-i18n="loc_crl">Crailsheim</span>crailsheim-bewerbung@guen-transporte.de</a>
+        </div>
+      </div>
+
+      <form class="form-card" id="applyForm" novalidate>
+        <div class="form-kicker mono" data-i18n="form_kicker">Bewerbung senden</div>
+        <h3 class="form-title" data-i18n="form_title">Ihre Bewerbung</h3>
+        <p class="form-sub" data-i18n="form_sub">Felder mit * sind Pflicht. Unterlagen können Sie direkt unten anhängen.</p>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="vorname" data-i18n="form_vorname">Vorname *</label>
+            <input id="vorname" name="vorname" type="text" required />
+          </div>
+          <div class="field">
+            <label for="nachname" data-i18n="form_nachname">Nachname *</label>
+            <input id="nachname" name="nachname" type="text" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="telefon" data-i18n="form_telefon">Telefon *</label>
+            <input id="telefon" name="telefon" type="tel" required />
+          </div>
+          <div class="field">
+            <label for="email" data-i18n="form_email">E-Mail *</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="position" data-i18n="form_position">Position</label>
+          <select id="position" name="position">
+            <option value="zusteller-nbg" data-i18n="form_pos1">Paketzusteller Nürnberg (Vollzeit)</option>
+            <option value="zusteller-crl" data-i18n="form_pos2">Paketzusteller Crailsheim (Vollzeit)</option>
+            <option value="lader-crl" data-i18n="form_pos3">Be- und Entlader Crailsheim (Teilzeit)</option>
+            <option value="initiativ" data-i18n="form_pos4">Initiativbewerbung</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="standort" data-i18n="form_standort">Bevorzugter Standort</label>
+            <select id="standort" name="standort">
+              <option value="Nürnberg">Nürnberg</option>
+              <option value="Crailsheim">Crailsheim</option>
+              <option value="Umgebung" data-i18n="form_around">Umgebung Nürnberg</option>
+              <option value="egal" data-i18n="form_no_pref">egal / keine Präferenz</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="sprache" data-i18n="form_sprache">Sprache für Rückruf</label>
+            <select id="sprache" name="sprache">
+              <option value="de">Deutsch</option>
+              <option value="ru">Русский</option>
+              <option value="ro">Română</option>
+              <option value="tr">Türkçe</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label data-i18n="form_files">Unterlagen (PDF/DOC/DOCX, max. 10 MB)</label>
+          <label class="drop" id="drop">
+            <input type="file" id="files" accept=".pdf,.doc,.docx" multiple style="display:none;" />
+            <div class="drop__inner">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+              <span class="drop__text" data-i18n="form_drop">Hierher ziehen oder <u>klicken zum Auswählen</u></span>
+              <span class="drop__hint mono" data-i18n="form_drop_hint">PDF · DOC · DOCX · max. 10 MB</span>
+            </div>
+          </label>
+          <div class="filelist" id="filelist"></div>
+        </div>
+
+        <label class="checkbox">
+          <input type="checkbox" id="dsgvo" required />
+          <span data-i18n="form_dsgvo">Ich willige in die Verarbeitung meiner Daten gemäß <a href="#datenschutz" data-legal="privacy" style="color:var(--bronze);text-decoration:underline;">Datenschutzerklärung</a> ein. *</span>
+        </label>
+
+        <button type="submit" class="btn btn--bronze form-submit"><span data-i18n="form_submit">Bewerbung senden</span> <span class="arrow">→</span></button>
+
+        <div class="form-success" id="formSuccess">
+          <div class="form-success__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div class="form-success__title" data-i18n="form_ok_title">Vielen Dank!</div>
+          <p class="form-success__text" data-i18n="form_ok_text">Wir haben Ihre Bewerbung erhalten. Nach Prüfung Ihrer Unterlagen melden wir uns persönlich bei Ihnen.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+.bew-head { max-width: 62ch; margin-bottom: 56px; }
+.bew-head .section-h2 { color: #fff; }
+.bew-grid {
+  display: grid; grid-template-columns: 1fr 1.05fr; gap: 60px;
+  align-items: start;
+}
+@media (max-width: 900px) { .bew-grid { grid-template-columns: 1fr; gap: 44px; } }
+
+/* Vertical Bewerbungsprozess timeline */
+.vsteps__label {
+  font-size: 12px; letter-spacing: 0.06em;
+  color: var(--bronze);
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.vsteps {
+  list-style: none; margin: 0 0 38px; padding: 0;
+  position: relative;
+}
+.vstep {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 18px;
+  padding-bottom: 26px;
+}
+.vstep:last-child { padding-bottom: 0; }
+/* connecting vertical bronze line */
+.vstep::before {
+  content: "";
+  position: absolute;
+  left: 21px; top: 44px; bottom: -4px;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(185,139,54,0.55), rgba(185,139,54,0.18));
+}
+.vstep:last-child::before { display: none; }
+.vstep__num {
+  position: relative;
+  z-index: 1;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(185,139,54,0.5);
+  background: var(--navy);
+  color: var(--bronze);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+}
+.vstep__title {
+  font-family: 'Geist', sans-serif;
+  font-size: 16.5px;
+  font-weight: 600;
+  color: #fff;
+  margin: 9px 0 5px;
+  line-height: 1.25;
+}
+.vstep__desc {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(242,239,229,0.7);
+  line-height: 1.55;
+}
+
+.form-grid {
+  display: grid; grid-template-columns: 1fr 1.05fr; gap: 60px;
+  align-items: flex-start;
+}
+@media (max-width: 900px) { .form-grid { grid-template-columns: 1fr; gap: 40px; } }
+.form-left .section-h2 { color: #fff; }
+.bullets {
+  list-style: none; padding: 0; margin: 0 0 36px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.bullets li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15.5px;
+  color: rgba(242,239,229,0.85);
+}
+.bullets li::before {
+  content: ""; position: absolute; left: 0; top: 9px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--bronze);
+}
+.form-contact {
+  border-top: 1px solid rgba(242,239,229,0.15);
+  padding-top: 24px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.form-contact__label { font-size: 13px; color: rgba(242,239,229,0.6); }
+.form-contact__phone {
+  font-family: 'Geist', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.form-contact__phone:hover { color: var(--bronze); }
+.form-contact__mail { color: rgba(242,239,229,0.75); font-size: 14.5px; }
+.form-contact__mail:hover { color: var(--bronze); }
+
+.bew-contact {
+  border-top: 1px solid rgba(242,239,229,0.15);
+  padding-top: 22px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.bew-contact__label {
+  font-size: 13px;
+  color: rgba(242,239,229,0.6);
+  margin-bottom: 2px;
+}
+.bew-contact__mail {
+  display: flex; align-items: baseline; gap: 10px;
+  color: rgba(242,239,229,0.82);
+  font-size: 14.5px;
+  transition: color .15s;
+}
+.bew-contact__mail:hover { color: var(--bronze); }
+.bew-contact__city {
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  flex-shrink: 0;
+  min-width: 78px;
+}
+
+.form-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 40px;
+  color: var(--ink);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+  position: relative;
+}
+@media (max-width: 600px) { .form-card { padding: 28px 24px; } }
+.form-kicker {
+  font-size: 12px; letter-spacing: 0.06em;
+  color: var(--bronze);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.form-title { font-size: 28px; margin: 0 0 6px; }
+.form-sub { color: var(--ink-muted); font-size: 14.5px; margin: 0 0 28px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+
+.field { margin-bottom: 18px; display: flex; flex-direction: column; }
+.field label {
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.field input, .field select {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 8px 0 10px;
+  background: transparent;
+  font-size: 15.5px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus {
+  border-bottom-color: var(--bronze);
+}
+.field select { appearance: none; cursor: pointer; background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%235B5B61' stroke-width='1.5'><path d='M1 1l5 5 5-5'/></svg>") no-repeat right 4px center; padding-right: 22px; }
+
+.drop {
+  display: block;
+  border: 1.5px dashed var(--line);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.drop:hover, .drop.dragover { border-color: var(--bronze); background: var(--bronze-soft); }
+.drop__inner { display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--ink-muted); }
+.drop__text { font-size: 14.5px; }
+.drop__text u { color: var(--bronze); text-decoration-color: var(--bronze); }
+.drop__hint { font-size: 11px; color: var(--ink-muted); opacity: 0.7; }
+.filelist { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+.filelist__item { font-size: 13px; color: var(--ink); padding: 6px 10px; background: var(--bg); border-radius: 8px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.filelist__item button { color: var(--ink-muted); font-size: 18px; line-height: 1; }
+
+.checkbox {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13.5px; color: var(--ink-muted);
+  margin-bottom: 24px;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.checkbox input { margin-top: 3px; accent-color: var(--bronze); }
+
+.form-submit { width: 100%; justify-content: center; padding: 14px 22px; font-size: 15.5px; }
+
+.form-success {
+  position: absolute; inset: 0;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 60px 40px;
+  display: none;
+  flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+}
+.form-success.show { display: flex; }
+.form-success__icon {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--bronze-soft);
+  color: var(--bronze);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.form-success__title { font-family: 'Geist', sans-serif; font-size: 26px; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
+.form-success__text { color: var(--ink-muted); max-width: 38ch; }
+</style>
 
 <!-- ============== FOOTER ============== -->
 <footer class="footer">
@@ -751,30 +1891,23 @@ section { padding: 100px 0; position: relative; }
       <div class="footer__col">
         <div class="footer__brand">Cuma Gün<br/>Kuriertransporte e.K.</div>
         <p class="footer__tagline" data-i18n="footer_tagline">Familiengeführter Kurierdienst seit September 1995.</p>
-        <div class="footer__socials">
-          <a href="#" aria-label="Facebook" class="social"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22V13h3l.5-4h-3.5V6.5c0-1.2.3-2 2-2H17V1.1C16.6 1 15.4.9 14 .9c-3 0-5 1.8-5 5.2V9H6v4h3v9h4.5z"/></svg></a>
-          <a href="#" aria-label="LinkedIn" class="social"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.6 0h4.37v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 7v7.44h-4.56v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.5V22H7.82V8z"/></svg></a>
-          <a href="#" aria-label="Instagram" class="social"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg></a>
-          <a href="#" aria-label="Kununu" class="social social--text"><span>k</span></a>
-          <a href="#" aria-label="XING" class="social social--text"><span>X</span></a>
-        </div>
       </div>
       <div class="footer__col">
         <h5 class="footer__h" data-i18n="footer_menu">Menü</h5>
         <ul>
           <li><a href="ueber-uns.html" data-i18n="nav_ueber">Über uns</a></li>
-          <li><a href="index.html#arbeitstag" data-i18n="nav_arbeitstag">Arbeitstag</a></li>
-          <li><a href="index.html#stellen" data-i18n="nav_stellen">Offene Stellen</a></li>
-          <li><a href="index.html#standorte" data-i18n="nav_standorte">Standorte</a></li>
-          <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
-          <li><a href="index.html#bewerbung" data-i18n="cta_apply">Jetzt bewerben</a></li>
+          <li><a href="#arbeitstag" data-i18n="nav_arbeitstag">Arbeitstag</a></li>
+          <li><a href="#stellen" data-i18n="nav_stellen">Offene Stellen</a></li>
+          <li><a href="#standorte" data-i18n="nav_standorte">Standorte</a></li>
+          <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="#bewerbung" data-i18n="cta_apply">Jetzt bewerben</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h5 class="footer__h" data-i18n="footer_locations">Standorte</h5>
         <ul>
-          <li><a href="nuernberg.html"><strong>Nürnberg</strong> · Koblenzer Str. 13</a></li>
-          <li><a href="crailsheim.html"><strong>Crailsheim</strong> · Wittauer Str. 1</a></li>
+          <li><a href="#standorte"><strong>Nürnberg</strong> · Koblenzer Str. 13</a></li>
+          <li><a href="#standorte"><strong>Crailsheim</strong> · Wittauer Str. 1</a></li>
           <li><a href="tel:+499116323697">+49 911 6323697</a></li>
           <li><a href="mailto:nürnberg-bewerbung@guen-transporte.de">nürnberg-bewerbung@guen-transporte.de</a></li>
           <li><a href="mailto:crailsheim-bewerbung@guen-transporte.de">crailsheim-bewerbung@guen-transporte.de</a></li>
@@ -794,7 +1927,7 @@ section { padding: 100px 0; position: relative; }
     <div class="footer__bottom">
       <span>© 2026 Cuma Gün Kuriertransporte e.K.</span>
       <span data-i18n="footer_family">Familienunternehmen · Sitz Nürnberg</span>
-      <span class="footer__lang demo-note">Übersetzungen DE/RU/RO/TR — wird noch finalisiert</span>
+      <span class="footer__lang demo-note">Übersetzungen DE/RU/RO/TR — werden noch finalisiert</span>
     </div>
   </div>
 </footer>
@@ -864,6 +1997,172 @@ section { padding: 100px 0; position: relative; }
   font-size: 14px;
   letter-spacing: -0.02em;
 }
+</style>
+
+<!-- ============== EMPLOYEE MODAL ============== -->
+<div class="empmodal" id="empModal" aria-hidden="true" role="dialog">
+  <div class="empmodal__backdrop" data-close></div>
+  <div class="empmodal__card" role="document">
+    <button class="empmodal__close" data-close aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="empmodal__grid">
+      <div class="empmodal__left">
+        <img class="empmodal__portrait" id="empPortrait" alt="" />
+        <div class="empmodal__tenure" id="empTenure">22 JAHRE IM TEAM</div>
+      </div>
+      <div class="empmodal__right">
+        <div class="empmodal__kicker mono" data-i18n="emp_kicker">MITARBEITERGESCHICHTE</div>
+        <h3 class="empmodal__name" id="empName">Stefan H.</h3>
+        <div class="empmodal__role" id="empRole">Kurierfahrer · Crailsheim</div>
+        <div class="empmodal__langs" id="empLangs"></div>
+        <blockquote class="empmodal__quote" id="empQuote">„…"</blockquote>
+        <div class="empmodal__story" id="empStory"></div>
+        <div class="empmodal__cta">
+          <a href="#bewerbung" class="btn btn--primary" data-close data-i18n="cta_apply">Jetzt bewerben</a>
+          <button class="btn btn--ghost" data-close data-i18n="emp_back">Zurück zur Übersicht</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.empmodal {
+  position: fixed; inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+.empmodal.open { display: flex; }
+.empmodal__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(6,21,40,0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: empFade .2s ease;
+}
+.empmodal__card {
+  position: relative;
+  width: 100%; max-width: 960px;
+  max-height: 90vh;
+  overflow: auto;
+  background: var(--surface);
+  border-radius: 20px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+  animation: empPop .22s cubic-bezier(.2,.7,.2,1);
+}
+@keyframes empFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes empPop {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+.empmodal__close {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink);
+  transition: background .2s, color .2s;
+  z-index: 2;
+}
+.empmodal__close:hover { background: var(--navy); color: #fff; }
+.empmodal__grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 0;
+}
+@media (max-width: 760px) {
+  .empmodal__grid { grid-template-columns: 1fr; }
+}
+.empmodal__left {
+  background: #F1ECE1;
+  padding: 28px;
+  display: flex; flex-direction: column; align-items: stretch; justify-content: center; gap: 16px;
+  border-radius: 20px 0 0 20px;
+}
+@media (max-width: 760px) {
+  .empmodal__left { border-radius: 20px 20px 0 0; padding: 28px; }
+}
+.empmodal__portrait {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 16px;
+  filter: grayscale(0.2) saturate(0.85);
+  box-shadow: var(--shadow-md);
+}
+.empmodal__tenure {
+  font-family: 'Geist Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background: #B98B36;
+  padding: 14px;
+  border-radius: 12px;
+}
+.empmodal__right {
+  padding: 40px;
+}
+@media (max-width: 760px) { .empmodal__right { padding: 32px 24px; } }
+.empmodal__kicker {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--bronze);
+  margin-bottom: 14px;
+}
+.empmodal__name {
+  font-family: 'Geist', sans-serif;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+}
+.empmodal__role {
+  font-size: 15px;
+  color: var(--ink-muted);
+  margin-bottom: 14px;
+}
+.empmodal__langs {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.empmodal__langs span {
+  font-family: 'Geist Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-muted);
+}
+.empmodal__quote {
+  margin: 0 0 20px;
+  padding: 16px 0 16px 18px;
+  border-left: 3px solid var(--bronze);
+  font-family: 'Geist', sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.5;
+}
+.empmodal__story {
+  font-size: 15px;
+  color: var(--ink-muted);
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+.empmodal__story p { margin: 0 0 12px; }
+.empmodal__cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.voice { cursor: pointer; transition: transform .25s, box-shadow .25s; }
+.voice:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 </style>
 
 <!-- ============== LEGAL MODAL (Impressum / DSGVO / AGB / BFSG) ============== -->
@@ -943,7 +2242,6 @@ section { padding: 100px 0; position: relative; }
   text-transform: uppercase;
 }
 </style>
-
 
 <!-- ============== COOKIE CONSENT BANNER (slim bottom bar) ============== -->
 <div class="cookies" id="cookies" aria-hidden="true" role="dialog" aria-labelledby="cookiesTitle">
@@ -1171,7 +2469,7 @@ section { padding: 100px 0; position: relative; }
 </style>
 
 <!-- Sticky apply CTA -->
-<a href="index.html#bewerbung" class="sticky-apply btn btn--bronze" id="stickyApply">
+<a href="#bewerbung" class="sticky-apply btn btn--bronze" id="stickyApply">
   <span data-i18n="cta_apply">Jetzt bewerben</span>
   <span class="arrow">→</span>
 </a>
