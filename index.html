@@ -12,7 +12,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://guen-transporte.com/wp-content/uploads/2025/06/panorama_transporter_bearbeitet-2.png" />
 
-<link rel="icon" href="https://guen-transporte.com/wp-content/uploads/2025/06/cropped-Guen_logo_by_it_jessing-270x270.jpg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22110%20134%20925%20685%22%3E%3Cpath%20d%3D%22M%20764%20637%20L%20764%20806%20L%20881%20805%20L%20808%20697%20Z%20M%20778%20563%20L%20941%20806%20L%201022%20806%20L%20856%20562%20Z%20M%20574%20148%20L%20571%20149%20L%20124%20806%20L%20569%20806%20L%20569%20591%20L%20415%20591%20L%20371%20655%20L%20501%20656%20L%20501%20740%20L%20252%20741%20L%20251%20738%20L%20574%20264%20L%20659%20387%20L%20735%20387%20Z%22%20fill%3D%22%2306243D%22%20fill-rule%3D%22evenodd%22%2F%3E%3Cpath%20d%3D%22M%20509%20436%20L%20467%20499%20L%20629%20500%20L%20629%20806%20L%20700%20806%20L%20700%20508%20L%20818%20507%20L%20818%20505%20L%20770%20436%20Z%22%20fill%3D%22%23b98b36%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E" />
 
 <!-- Fonts: Geist + Inter Tight + Geist Mono -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -211,8 +211,8 @@ section { padding: 100px 0; position: relative; }
   flex-shrink: 0;
 }
 .brand__logo {
-  height: 38px; width: auto;
-  border-radius: 6px;
+  height: 42px; width: auto;
+  display: block;
   flex-shrink: 0;
 }
 .brand__text {
@@ -224,17 +224,19 @@ section { padding: 100px 0; position: relative; }
 }
 .brand__name {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 17px;
   color: var(--navy);
   letter-spacing: -0.005em;
   white-space: nowrap;
 }
 .brand__sub {
-  font-family: 'Geist Mono', monospace;
-  font-size: 10.5px;
-  color: var(--ink-muted);
-  letter-spacing: 0.04em;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  white-space: nowrap;
 }
+.brand__co { color: var(--navy); font-weight: 600; }
+.brand__est { color: var(--ink-muted); }
 
 .nav { display: flex; gap: 28px; margin-left: 24px; }
 .nav a {
@@ -662,10 +664,10 @@ section { padding: 100px 0; position: relative; }
 <header class="header" id="header">
   <div class="container header__inner">
     <a href="#top" class="brand">
-      <img class="brand__logo" src="https://guen-transporte.com/wp-content/uploads/2025/06/Guen_logo_by_it_jessing.jpg" alt="Cuma Gün Logo" />
+      <svg class="brand__logo" viewBox="110 134 925 685" role="img" aria-label="Cuma Gün Kuriertransporte e.K. Logo"><path d="M 764 637 L 764 806 L 881 805 L 808 697 Z M 778 563 L 941 806 L 1022 806 L 856 562 Z M 574 148 L 571 149 L 124 806 L 569 806 L 569 591 L 415 591 L 371 655 L 501 656 L 501 740 L 252 741 L 251 738 L 574 264 L 659 387 L 735 387 Z" fill="#06243D" fill-rule="evenodd"></path><path d="M 509 436 L 467 499 L 629 500 L 629 806 L 700 806 L 700 508 L 818 507 L 818 505 L 770 436 Z" fill="#b98b36" fill-rule="evenodd"></path></svg>
       <span class="brand__text">
-        <span class="brand__name">Cuma Gün Kuriertransporte e.K.</span>
-        <span class="brand__sub" data-i18n="brand_sub">gegründet 1995</span>
+        <span class="brand__name">Cuma Gün</span>
+        <span class="brand__sub"><span class="brand__co">Kuriertransporte e.K.</span> <span class="brand__est"><span aria-hidden="true">·</span> <span data-i18n="brand_sub">gegründet 1995</span></span></span>
       </span>
     </a>
     <nav class="nav">
