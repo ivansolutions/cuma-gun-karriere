@@ -222,20 +222,19 @@ section { padding: 100px 0; position: relative; }
   .brand__name { font-size: 13.5px; }
 }
 .brand__name {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 17px;
-  color: var(--navy);
+  color: #0e2a47;
   letter-spacing: -0.005em;
   white-space: nowrap;
 }
 .brand__sub {
   font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
   white-space: nowrap;
 }
-.brand__co { color: var(--navy); font-weight: 600; }
-.brand__est { color: var(--ink-muted); }
+.brand__co { color: inherit; font-weight: inherit; }
 
 .nav { display: flex; gap: 28px; margin-left: 24px; }
 .nav a {
@@ -650,8 +649,8 @@ section { padding: 100px 0; position: relative; }
     <a href="index.html" class="brand">
       <svg class="brand__logo" viewBox="110 134 925 685" role="img" aria-label="Cuma Gün Kuriertransporte e.K. Logo"><path d="M 764 637 L 764 806 L 881 805 L 808 697 Z M 778 563 L 941 806 L 1022 806 L 856 562 Z M 574 148 L 571 149 L 124 806 L 569 806 L 569 591 L 415 591 L 371 655 L 501 656 L 501 740 L 252 741 L 251 738 L 574 264 L 659 387 L 735 387 Z" fill="#06243D" fill-rule="evenodd"></path><path d="M 509 436 L 467 499 L 629 500 L 629 806 L 700 806 L 700 508 L 818 507 L 818 505 L 770 436 Z" fill="#b98b36" fill-rule="evenodd"></path></svg>
       <span class="brand__text">
-        <span class="brand__name">Cuma Gün</span>
-        <span class="brand__sub"><span class="brand__co">Kuriertransporte e.K.</span> <span class="brand__est"><span aria-hidden="true">·</span> <span data-i18n="brand_sub">gegründet 1995</span></span></span>
+        <span class="brand__name"><span class="brand__co">Cuma Gün</span> Kuriertransporte e.K.</span>
+        <span class="brand__sub" data-i18n="brand_sub">Seit 1995</span>
       </span>
     </a>
     <nav class="nav">

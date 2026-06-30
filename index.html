@@ -223,20 +223,19 @@ section { padding: 100px 0; position: relative; }
   .brand__name { font-size: 13.5px; }
 }
 .brand__name {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 17px;
-  color: var(--navy);
+  color: #0e2a47;
   letter-spacing: -0.005em;
   white-space: nowrap;
 }
 .brand__sub {
   font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
   white-space: nowrap;
 }
-.brand__co { color: var(--navy); font-weight: 600; }
-.brand__est { color: var(--ink-muted); }
+.brand__co { color: inherit; font-weight: inherit; }
 
 .nav { display: flex; gap: 28px; margin-left: 24px; }
 .nav a {
@@ -545,6 +544,7 @@ section { padding: 100px 0; position: relative; }
   margin: 0 0 36px;
   max-width: 52ch;
   line-height: 1.6;
+  text-align: justify;
 }
 
 .hero__cta { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -666,8 +666,8 @@ section { padding: 100px 0; position: relative; }
     <a href="#top" class="brand">
       <svg class="brand__logo" viewBox="110 134 925 685" role="img" aria-label="Cuma Gün Kuriertransporte e.K. Logo"><path d="M 764 637 L 764 806 L 881 805 L 808 697 Z M 778 563 L 941 806 L 1022 806 L 856 562 Z M 574 148 L 571 149 L 124 806 L 569 806 L 569 591 L 415 591 L 371 655 L 501 656 L 501 740 L 252 741 L 251 738 L 574 264 L 659 387 L 735 387 Z" fill="#06243D" fill-rule="evenodd"></path><path d="M 509 436 L 467 499 L 629 500 L 629 806 L 700 806 L 700 508 L 818 507 L 818 505 L 770 436 Z" fill="#b98b36" fill-rule="evenodd"></path></svg>
       <span class="brand__text">
-        <span class="brand__name">Cuma Gün</span>
-        <span class="brand__sub"><span class="brand__co">Kuriertransporte e.K.</span> <span class="brand__est"><span aria-hidden="true">·</span> <span data-i18n="brand_sub">gegründet 1995</span></span></span>
+        <span class="brand__name"><span class="brand__co">Cuma Gün</span> Kuriertransporte e.K.</span>
+        <span class="brand__sub" data-i18n="brand_sub">Seit 1995</span>
       </span>
     </a>
     <nav class="nav">
@@ -728,9 +728,9 @@ section { padding: 100px 0; position: relative; }
             <span class="dot"></span>
             <span data-i18n="hero_eyebrow">Aktuell offene Stellen · Nürnberg &amp; Crailsheim</span>
           </div>
-          <h1 data-i18n="hero_h1">Werden Sie Paketzusteller bei Cuma&nbsp;Gün Kuriertransporte&nbsp;e.&nbsp;K.</h1>
+          <h1 data-i18n="hero_h1">Werden Sie Paketzusteller bei Cuma&nbsp;Gün Kuriertransporte&nbsp;e.K.</h1>
           <p class="hero__ups" data-i18n="hero_ups">Im Auftrag von UPS, dem weltgrößten Paketdienst</p>
-          <p class="hero__lede" data-i18n="hero_lede">Seit über drei Jahrzehnten ist der Betrieb in Familienhand. Bei uns gilt das gesprochene Wort, und Sie bekommen eine Festanstellung mit deutschem Arbeitsvertrag zu fairen Bedingungen.</p>
+          <p class="hero__lede" data-i18n="hero_lede">Über drei Jahrzehnte Branchenerfahrung mit Werten, die heute seltener werden: Handschlagqualität, absolute Krisensicherheit, Festanstellung zu fairen Bedingungen.</p>
           <div class="hero__cta">
             <a href="#bewerbung" class="btn btn--primary"><span data-i18n="cta_apply_now">Jetzt bewerben</span> <span class="arrow">→</span></a>
             <a href="#arbeitstag" class="btn btn--ghost" data-i18n="cta_day">Wie ein Arbeitstag aussieht</a>
@@ -750,7 +750,7 @@ section { padding: 100px 0; position: relative; }
       </div>
       <div class="stat">
         <div class="stat__num"><span class="accent" data-count="2">0</span><span class="unit" data-i18n="stat2_unit">Standorte</span></div>
-        <div class="stat__label" data-i18n="stat2_label">Hauptsitz Nürnberg · Niederlassung Crailsheim</div>
+        <div class="stat__label" data-i18n="stat2_label">Nürnberg · Crailsheim</div>
       </div>
       <div class="stat">
         <div class="stat__num"><span class="accent" data-count="4">0</span><span class="unit" data-i18n="stat3_unit">Sprachen</span></div>
@@ -764,7 +764,7 @@ section { padding: 100px 0; position: relative; }
 <section id="anforderungen">
   <div class="container">
     <div class="section-kicker"><span data-i18n="s2_kicker">01 — Anforderungen</span></div>
-    <h2 class="section-h2"><span data-i18n="s2_h2_a">Was Sie </span><span class="em" data-i18n="s2_h2_b">mitbringen sollten</span><span data-i18n="s2_h2_c">.</span></h2>
+    <h2 class="section-h2"><span data-i18n="s2_h2_a">Was Sie </span><span class="em" data-i18n="s2_h2_b">mitbringen sollten</span><span data-i18n="s2_h2_c">:</span></h2>
     <p class="section-lede" data-i18n="s2_lede">Wenige formale Voraussetzungen, aber klare Erwartungen an das, was im Alltag zählt. Berufserfahrung hilft, ist aber kein Muss. Wir arbeiten Sie ein.</p>
 
     <div class="req-grid reveal">
@@ -847,28 +847,16 @@ section { padding: 100px 0; position: relative; }
 <section id="arbeitstag" class="section--beige">
   <div class="container">
     <div class="section-kicker"><span data-i18n="s3_kicker">02 — Arbeitstag</span></div>
-    <h2 class="section-h2"><span data-i18n="s3_h2_a">Wie ein </span><span class="em" data-i18n="s3_h2_b">Arbeitstag</span><span data-i18n="s3_h2_c"> aussieht.</span></h2>
+    <h2 class="section-h2"><span data-i18n="s3_h2_a">Wie ein </span><span class="em" data-i18n="s3_h2_b">Arbeitstag</span><span data-i18n="s3_h2_c"> aussieht:</span></h2>
     <p class="section-lede" data-i18n="s3_lede">Ehrlich beschrieben — vom ersten Scan am Depot bis zum Feierabend. Wir nennen die Zeiten so, wie sie wirklich sind.</p>
 
     <div class="timeline reveal">
-      <div class="tl-row">
-        <div class="tl-time mono" data-i18n="s3_t1_time">07:00 Uhr</div>
-        <div class="tl-axis"><span class="tl-dot"></span></div>
-        <div class="tl-body">
-          <h4 class="tl-title" data-i18n="s3_t1_title">Arbeitsbeginn</h4>
-          <p class="tl-desc" data-i18n="s3_t1_desc">Der Arbeitstag beginnt um 07:00 Uhr am Fahrzeug. Etwas früher zu kommen ist eine persönliche Entscheidung — niemand setzt das voraus, niemand drängt.</p>
-          <div class="tl-photo">
-            <img loading="lazy" src="https://images.pexels.com/photos/6699420/pexels-photo-6699420.jpeg?auto=compress&cs=tinysrgb&w=640" alt="" />
-            <span class="tl-cap">Symbolbild</span>
-          </div>
-        </div>
-      </div>
       <div class="tl-row">
         <div class="tl-time mono" data-i18n="s3_t2_time">07:00 – 08:30 Uhr</div>
         <div class="tl-axis"><span class="tl-dot"></span></div>
         <div class="tl-body">
           <h4 class="tl-title" data-i18n="s3_t2_title">Vorbereitung & Abfahrt</h4>
-          <p class="tl-desc" data-i18n="s3_t2_desc"><strong>Ladung Richten:</strong> Sendungen scannen, nach Stopps schlichten, Express-Pakete prüfen.<br><br><strong>Abfahrt:</strong> Planmäßig zwischen 08:15 und 08:30 Uhr<br><br>Kaffeezeit ist immer drin</p>
+          <p class="tl-desc" data-i18n="s3_t2_desc">Der Arbeitstag beginnt um 07:00 Uhr am Fahrzeug. Etwas früher zu kommen ist eine persönliche Entscheidung — niemand setzt das voraus, niemand drängt.<br><strong>Ladung richten:</strong> Sendungen scannen, nach Stopps schlichten, Express-Pakete prüfen.<br><strong>Abfahrt:</strong> Planmäßig zwischen 08:15 und 08:30 Uhr.<br>Kaffeezeit ist immer drin.</p>
           <div class="tl-photo">
             <img loading="lazy" src="images/at-verladung.jpg" alt="Pakete am Depot, bereit zur Verladung" />
           </div>
@@ -892,8 +880,7 @@ section { padding: 100px 0; position: relative; }
           <h4 class="tl-title" data-i18n="s3_t4_title">Pause (Mittag)</h4>
           <p class="tl-desc" data-i18n="s3_t4_desc">Sie ist ein Muss: Gesetzlich vorgeschrieben nach spätestens 4,5 Stunden Lenkzeit.<br><br>Flexibel unterwegs planbar (Richtwert: 13:00 bis 13:45 Uhr).</p>
           <div class="tl-photo">
-            <img loading="lazy" src="https://images.pexels.com/photos/6699404/pexels-photo-6699404.jpeg?auto=compress&cs=tinysrgb&w=640" alt="" />
-            <span class="tl-cap">Symbolbild</span>
+            <img loading="lazy" src="images/at-pause.jpg" alt="Fahrer macht Pause mit Kaffee neben dem Lieferfahrzeug" />
           </div>
         </div>
       </div>
@@ -913,7 +900,7 @@ section { padding: 100px 0; position: relative; }
         <div class="tl-axis"><span class="tl-dot"></span></div>
         <div class="tl-body">
           <h4 class="tl-title" data-i18n="s3_t6_title">Nach der Tour</h4>
-          <p class="tl-desc" data-i18n="s3_t6_desc">Bei Bedarf das Fahrzeug waschen.<br><br>Etwaige Vorkommnisse oder Probleme auf der Tour direkt mit der Disposition klären.<br><br>Tour ordnungsgemäß im System abschließen.<br><br>Feierabend.</p>
+          <p class="tl-desc" data-i18n="s3_t6_desc">Bei Bedarf das Fahrzeug waschen. Etwaige Vorkommnisse oder Probleme auf der Tour direkt mit der Disposition klären. Tour ordnungsgemäß im System abschließen. Feierabend.</p>
           <div class="tl-photo">
             <img loading="lazy" src="images/at-laderaum-leer.jpg" alt="Aufgeräumter, leerer Laderaum mit Sackkarre" />
           </div>
@@ -927,7 +914,6 @@ section { padding: 100px 0; position: relative; }
           <p class="tl-desc" data-i18n="s3_t7_desc">Aller Anfang ist schwer, deshalb lassen wir Sie nicht allein: In der ersten Woche sind Sie Beifahrer. Ein erfahrener Kollege zeigt Ihnen die Tour. Unser Job verlangt echtes Können und ist kein Beruf für jedermann — das wissen wir. Planen Sie in der ersten Zeit ruhig etwas mehr Spielraum ein. Bis Sie die Route perfekt kennen, kann es auch mal 16:00 oder 17:00 Uhr werden. Machen Sie sich keine Sorgen: Ihre Arbeitszeit wird natürlich komplett erfasst.</p>
           <div class="tl-photo">
             <img loading="lazy" src="https://images.pexels.com/photos/6699406/pexels-photo-6699406.jpeg?auto=compress&cs=tinysrgb&w=640" alt="" />
-            <span class="tl-cap">Symbolbild</span>
           </div>
         </div>
       </div>
@@ -1070,7 +1056,7 @@ section { padding: 100px 0; position: relative; }
 <section id="stellen">
   <div class="container">
     <div class="section-kicker"><span data-i18n="s4_kicker">03 — Offene Stellen</span></div>
-    <h2 class="section-h2"><span data-i18n="s4_h2_a">Aktuell </span><span class="em" data-i18n="s4_h2_b">suchen wir</span><span data-i18n="s4_h2_c">.</span></h2>
+    <h2 class="section-h2"><span data-i18n="s4_h2_a">Aktuell </span><span class="em" data-i18n="s4_h2_b">suchen wir</span><span data-i18n="s4_h2_c">:</span></h2>
     <p class="section-lede" data-i18n="s4_lede">Drei offene Stellen an unseren Standorten. Ist nichts Passendes dabei, freuen wir uns über Ihre Initiativbewerbung.</p>
 
     <div class="jobs reveal">
@@ -1097,11 +1083,11 @@ section { padding: 100px 0; position: relative; }
       <article class="job" data-position="lader-crl" data-location="Crailsheim">
         <div class="job__tags">
           <span class="tag tag--active" data-i18n="tag_active">Aktiv</span>
-          <span class="tag" data-i18n="loc_crl">Crailsheim</span>
+          <span class="tag" data-i18n="loc_nbg">Nürnberg</span>
           <span class="tag" data-i18n="tag_part">Teilzeit</span>
         </div>
         <h3 class="job__title" data-i18n="s4_j3_title">Be- und Entlader (m/w/d)</h3>
-        <p class="job__desc" data-i18n="s4_j3_desc">Verladearbeiten am Depot Crailsheim. Frühschicht, Beginn am frühen Morgen. Körperliche Belastbarkeit ist wichtig, ein Führerschein nicht nötig.</p>
+        <p class="job__desc" data-i18n="s4_j3_desc">Verladearbeiten am Depot Nürnberg. Frühschicht, Beginn am frühen Morgen. Körperliche Belastbarkeit ist wichtig, ein Führerschein nicht nötig.</p>
         <button class="job__apply"><span data-i18n="cta_apply_arrow">Jetzt bewerben</span> <span class="arrow">→</span></button>
       </article>
       <article class="job job--initiativ" data-position="initiativ" data-location="">
@@ -1180,7 +1166,7 @@ section { padding: 100px 0; position: relative; }
 <section id="stimmen">
   <div class="container">
     <div class="section-kicker"><span data-i18n="s5_kicker">04 — Stimmen aus dem Team</span></div>
-    <h2 class="section-h2"><span data-i18n="s5_h2_a">Echte Geschichten — </span><span class="em" data-i18n="s5_h2_b">in Kürze hier</span><span data-i18n="s5_h2_c">.</span></h2>
+    <h2 class="section-h2"><span data-i18n="s5_h2_a">Echte Geschichten — </span><span class="em" data-i18n="s5_h2_b">in Kürze hier</span><span data-i18n="s5_h2_c">:</span></h2>
     <p class="section-lede" data-i18n="s5_lede">Wir sammeln gerade Geschichten unserer Fahrer — mit Foto und Namen, sofern sie einverstanden sind. Die ersten folgen in den nächsten Wochen.</p>
   </div>
   <div class="marquee" id="marquee">
@@ -1255,8 +1241,7 @@ section { padding: 100px 0; position: relative; }
 <section id="faq" class="section--beige">
   <div class="container">
     <div class="section-kicker"><span data-i18n="s6_kicker">05 — Häufige Fragen</span></div>
-    <h2 class="section-h2"><span data-i18n="s6_h2_a">Was Bewerber </span><span class="em" data-i18n="s6_h2_b">oft fragen</span><span data-i18n="s6_h2_c">.</span></h2>
-    <p class="section-lede" data-i18n="s6_lede">Wenn Ihre Frage nicht dabei ist — schreiben Sie uns. Wir antworten persönlich.</p>
+    <h2 class="section-h2"><span data-i18n="s6_h2_a">Was Bewerber </span><span class="em" data-i18n="s6_h2_b">oft fragen</span><span data-i18n="s6_h2_c">:</span></h2>
 
     <div class="faq reveal">
       <div class="faq__item open">
@@ -1265,7 +1250,7 @@ section { padding: 100px 0; position: relative; }
           <span class="faq__text" data-i18n="s6_q1">Welche Unterlagen brauche ich für die Bewerbung?</span>
           <span class="faq__toggle"><span></span><span></span></span>
         </button>
-        <div class="faq__a"><p data-i18n="s6_a1">Ein kurzer Lebenslauf reicht für den ersten Schritt. Führerschein, Aufenthaltspapiere (falls zutreffend) und ein Führungszeugnis besprechen wir im persönlichen Gespräch. Wenn etwas fehlt, sagen wir es direkt — Sie müssen nicht alles vorab klären.</p></div>
+        <div class="faq__a"><p data-i18n="s6_a1">Ein übersichtlicher Lebenslauf sowie aktuelles Foto reicht für den ersten Schritt. Ein klar strukturierter Lebenslauf ist für Sie von großem Vorteil.<br><br>Wir gehen davon aus, dass alle notwendigen Dokumente — wie <strong>Führerschein</strong> und <strong>Aufenthaltspapiere</strong> — gültig vorliegen und bereitgehalten werden.<br><br>Wir freuen uns auf Ihre Bewerbung!</p></div>
       </div>
       <div class="faq__item">
         <button class="faq__q">
@@ -1273,15 +1258,15 @@ section { padding: 100px 0; position: relative; }
           <span class="faq__text" data-i18n="s6_q2">Was, wenn mein Deutsch nicht perfekt ist?</span>
           <span class="faq__toggle"><span></span><span></span></span>
         </button>
-        <div class="faq__a"><p data-i18n="s6_a2">Wir hatten in den letzten drei Jahrzehnten Kollegen aus über zwanzig Ländern. Verständliches Deutsch reicht für den Start. Im Alltag sprechen wir auch Russisch, Rumänisch und Türkisch — niemand wird abgewiesen, weil ein Wort fehlt.</p></div>
+        <div class="faq__a"><p data-i18n="s6_a2">Hauptsache, wir verstehen uns: Für den Start reicht verständliches Deutsch völlig aus. Niemand wird abgewiesen, weil mal ein Wort fehlt.</p></div>
       </div>
       <div class="faq__item">
         <button class="faq__q">
           <span class="faq__num mono">03</span>
-          <span class="faq__text" data-i18n="s6_q3">Wie wird die Vergütung besprochen?</span>
+          <span class="faq__text" data-i18n="s6_q3">Was verdiene ich?</span>
           <span class="faq__toggle"><span></span><span></span></span>
         </button>
-        <div class="faq__a"><p data-i18n="s6_a3">Persönlich im Vorstellungsgespräch. Wir nennen keine Lockzahlen auf der Webseite, weil die Vergütung von Einsatzort, Tour und Erfahrung abhängt. Im Gespräch sagen wir Ihnen eine konkrete Zahl — und die gilt auch.</p></div>
+        <div class="faq__a"><p data-i18n="s6_a3">Sie erhalten eine Festanstellung mit einem festen, sicheren Monatsgehalt auf Basis einer 40-Stunden-Woche, zuzüglich Spesen. Die Details besprechen wir transparent im persönlichen Gespräch.</p></div>
       </div>
       <div class="faq__item">
         <button class="faq__q">
@@ -1294,34 +1279,10 @@ section { padding: 100px 0; position: relative; }
       <div class="faq__item">
         <button class="faq__q">
           <span class="faq__num mono">05</span>
-          <span class="faq__text" data-i18n="s6_q5">Wie sieht der erste Arbeitstag aus?</span>
-          <span class="faq__toggle"><span></span><span></span></span>
-        </button>
-        <div class="faq__a"><p data-i18n="s6_a5">Sie kommen morgens ins Depot, lernen die Kollegen kennen und fahren die erste Woche als Beifahrer mit. Erst wenn Sie sich sicher fühlen, übernehmen Sie eine eigene Tour. Niemand wird ins kalte Wasser geworfen.</p></div>
-      </div>
-      <div class="faq__item">
-        <button class="faq__q">
-          <span class="faq__num mono">06</span>
           <span class="faq__text" data-i18n="s6_q6">Wie lange dauert die Einarbeitung?</span>
           <span class="faq__toggle"><span></span><span></span></span>
         </button>
-        <div class="faq__a"><p data-i18n="s6_a6">In der Regel ein bis zwei Wochen, bei Bedarf länger. Es gibt keine festen Stoppuhren — Sie übernehmen eine Tour, wenn Sie und Ihr Einarbeiter sich einig sind, dass es passt.</p></div>
-      </div>
-      <div class="faq__item">
-        <button class="faq__q">
-          <span class="faq__num mono">07</span>
-          <span class="faq__text" data-i18n="s6_q7">Wo wird gefahren?</span>
-          <span class="faq__toggle"><span></span><span></span></span>
-        </button>
-        <div class="faq__a"><p data-i18n="s6_a7">Der Schwerpunkt liegt aktuell auf Nürnberg und Umgebung. Crailsheim ist der zweite Standort. Weitere Einsatzorte sind nach Absprache möglich.</p></div>
-      </div>
-      <div class="faq__item">
-        <button class="faq__q">
-          <span class="faq__num mono">08</span>
-          <span class="faq__text" data-i18n="s6_q8">Wie schnell bekomme ich eine Antwort?</span>
-          <span class="faq__toggle"><span></span><span></span></span>
-        </button>
-        <div class="faq__a"><p data-i18n="s6_a8">Wir prüfen jede Bewerbung sorgfältig und melden uns persönlich, sobald wir eine konkrete Antwort haben.</p></div>
+        <div class="faq__a"><p data-i18n="s6_a6">In der ersten Woche fahren Sie bei einem Kollegen mit. Danach werden Sie beim selbstständigen Fahren weiterhin tatkräftig unterstützt. So stellen wir sicher, dass unsere Kunden wie gewohnt bestens betreut werden und Sie in Ruhe eingearbeitet werden.</p></div>
       </div>
     </div>
   </div>
@@ -1402,7 +1363,7 @@ section { padding: 100px 0; position: relative; }
 <section id="standorte">
   <div class="container">
     <div class="section-kicker"><span data-i18n="s7_kicker">06 — Standorte</span></div>
-    <h2 class="section-h2"><span data-i18n="s7_h2_a">Zwei Standorte, </span><span class="em" data-i18n="s7_h2_b">eine Disposition</span><span data-i18n="s7_h2_c">.</span></h2>
+    <h2 class="section-h2"><span data-i18n="s7_h2_a">Zwei Standorte, </span><span class="em" data-i18n="s7_h2_b">eine Disposition</span><span data-i18n="s7_h2_c">:</span></h2>
     <p class="section-lede" data-i18n="s7_lede">Nürnberg ist der Hauptsitz, Crailsheim die Niederlassung. Beide Depots können Sie nach Absprache jederzeit besuchen.</p>
 
     <div class="loc-grid reveal">
@@ -1512,7 +1473,7 @@ section { padding: 100px 0; position: relative; }
   <div class="container">
     <div class="bew-head">
       <div class="section-kicker"><span data-i18n="s8_kicker">07 — Bewerbung</span></div>
-      <h2 class="section-h2"><span data-i18n="s8_h2_a">Ein kurzes Formular. </span><span class="em" data-i18n="s8_h2_b">Eine ehrliche Antwort</span><span data-i18n="s8_h2_c">.</span></h2>
+      <h2 class="section-h2"><span data-i18n="s8_h2_a">Ein kurzes Formular. </span><span class="em" data-i18n="s8_h2_b">Eine ehrliche Antwort</span><span data-i18n="s8_h2_c">:</span></h2>
       <p class="section-lede" data-i18n="s8_lede">Schreiben Sie uns. Wenn Sie zu uns passen, melden wir uns persönlich bei Ihnen, sobald wir Ihre Unterlagen geprüft haben.</p>
     </div>
 
