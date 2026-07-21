@@ -38,7 +38,7 @@ const T = {
     s1_lede: "Klare Wege, keine Überraschungen. Vom ersten Klick bis zur Probefahrt erklären wir Ihnen, was als Nächstes passiert.",
     s1_01_title: "Bewerbung senden", s1_01_desc: "Unterlagen über das Formular hochladen — oder direkt anrufen.",
     s1_02_title: "Bitte warten — wir melden uns", s1_02_desc: "Nach Prüfung Ihrer Bewerbung melden wir uns persönlich bei Ihnen, sobald wir eine konkrete Antwort haben.",
-    s1_03_title: "Persönliches Gespräch", s1_03_desc: "Sie kommen am Depot vorbei — wir besprechen Tour, Standort, Konditionen.",
+    s1_03_title: "Persönliches Gespräch & Schnuppertag", s1_03_desc: "Ist nicht nur möglich, sondern ausdrücklich gewünscht. Uns ist es wichtig, dass Sie vorab ein klares Bild von Ihren Aufgaben und unserem Team bekommen, bevor wir uns für eine gemeinsame Zusammenarbeit entscheiden.",
     s1_04_title: "Probefahrt möglich", s1_04_desc: "Wenn Sie möchten, fahren Sie einen Tag als Beifahrer mit, bevor Sie unterschreiben.",
     s1_05_title: "Arbeitsvertrag", s1_05_desc: "Festanstellung, deutscher Vertrag, transparente Konditionen — keine grauen Modelle.",
     s1_06_title: "Erster Tag", s1_06_desc: "Sie starten mit einem erfahrenen Kollegen an Ihrer Seite — niemand fährt allein los.",
@@ -77,7 +77,7 @@ const T = {
     s4_kicker: "03 — Offene Stellen",
     s4_h2_a: "Aktuell ", s4_h2_b: "suchen wir", s4_h2_c: ":",
     s4_lede: "Drei offene Stellen an unseren Standorten. Ist nichts Passendes dabei, freuen wir uns über Ihre Initiativbewerbung.",
-    tag_active: "Aktiv", tag_initiativ: "Initiativ", tag_full: "Vollzeit", tag_part: "Teilzeit", tag_fullpart: "Vollzeit · Teilzeit",
+    tag_active: "Aktiv", tag_initiativ: "Initiativ", tag_full: "Vollzeit", tag_part: "Teilzeit", tag_mini: "Minijob", tag_fullpart: "Vollzeit · Teilzeit",
     loc_nbg: "Nürnberg", loc_crl: "Crailsheim", loc_both: "Nürnberg · Crailsheim",
     s4_j1_title: "Paketzusteller (m/w/d)", s4_j1_desc: "Tägliche Zustelltouren im Stadtgebiet Nürnberg und Umgebung. Festanstellung mit deutschem Arbeitsvertrag, Einarbeitung mit erfahrenem Kollegen.",
     s4_j2_title: "Paketzusteller (m/w/d)", s4_j2_desc: "Zustellung in und um Crailsheim. Feste Vollzeitstelle mit geregelten Touren. Klasse-B-Führerschein erforderlich.",
@@ -96,7 +96,7 @@ const T = {
     s6_h2_a: "Was Bewerber ", s6_h2_b: "oft fragen", s6_h2_c: ":",
     s6_lede: "Wenn Ihre Frage nicht dabei ist — schreiben Sie uns. Wir antworten persönlich.",
     s6_q1: "Welche Unterlagen brauche ich für die Bewerbung?",
-    s6_a1: "Ein übersichtlicher Lebenslauf sowie aktuelles Foto reicht für den ersten Schritt. Ein klar strukturierter Lebenslauf ist für Sie von großem Vorteil.<br><br>Wir gehen davon aus, dass alle notwendigen Dokumente — wie <strong>Führerschein</strong> und <strong>Aufenthaltspapiere</strong> — gültig vorliegen und bereitgehalten werden.<br><br>Wir freuen uns auf Ihre Bewerbung!",
+    s6_a1: "Ein übersichtlicher Lebenslauf sowie <strong>aktuelles Foto</strong> reicht für den ersten Schritt. Ein klar strukturierter <strong>Lebenslauf</strong> ist für Sie von großem Vorteil.<br><br>Wir gehen davon aus, dass alle notwendigen Dokumente — wie <strong>Führerschein</strong> und <strong>Aufenthaltspapiere</strong> — gültig vorliegen und bereitgehalten werden.<br><br>Wir freuen uns auf Ihre Bewerbung!",
     s6_q2: "Was, wenn mein Deutsch nicht perfekt ist?",
     s6_a2: "Hauptsache, wir verstehen uns: Für den Start reicht verständliches Deutsch völlig aus. Niemand wird abgewiesen, weil mal ein Wort fehlt.",
     s6_q3: "Was verdiene ich?",
@@ -114,20 +114,20 @@ const T = {
 
     /* S7 */
     s7_kicker: "06 — Standorte",
-    s7_h2_a: "Zwei Standorte, ", s7_h2_b: "eine Disposition", s7_h2_c: ":",
-    s7_lede: "Nürnberg ist der Hauptsitz, Crailsheim die Niederlassung. Beide Depots können Sie nach Absprache jederzeit besuchen.",
+    s7_h2_a: "Zwei Standorte", s7_h2_b: "eine Disposition", s7_h2_c: ":",
+    s7_lede: "Wir verfügen über zwei Niederlassungen in Nürnberg und Crailsheim. Ihr künftiger Arbeitsort sowie der Ort des Bewerbungsgesprächs richten sich nach dem Standort, für den Sie sich bewerben.",
     loc_hq: "Hauptsitz", loc_branch: "Niederlassung",
     loc_addr: "Adresse", loc_tel: "Telefon", loc_mail: "E-Mail",
     loc_hours: "Öffnungszeiten", loc_hours_val: "Mo–Fr 07:00–18:00 · Sa 07:00–12:00",
     loc_hours_nbg: "Mo–Fr 07:00–18:00 · Sa 07:00–12:00",
     loc_hours_crl: "Mo–Fr 07:00–17:00 · Sa 07:00–12:00",
-    loc_tel_crl: "+49 — wird vom Geschäftsführer bestätigt",
+    loc_tel_crl: "+49 7951 468943",
     loc_more: "Mehr zum Standort", loc_route: "Route planen",
     bew_steps_label: "In sechs Schritten zum ersten Arbeitstag",
     bew_contact_label: "Direkter Kontakt zur Bewerbung",
     ueber_h1: "Über uns",
     ueber_lede: "Diese Seite wird derzeit vorbereitet.",
-    ueber_body: "Schon bald erfahren Sie hier mehr über Cuma Gün Kuriertransporte e.K. — die Familie hinter dem Unternehmen, drei Jahrzehnte Branchenerfahrung, unsere Werte, und unsere Partnerschaft mit United Parcel Service.",
+    ueber_body: "Wir blicken auf eine über 30-jährige, erfolgreiche Partnerschaft mit United Parcel Service zurück. Neben unserer fundierten Branchenerfahrung zeichnet uns vor allem die enorme Loyalität unseres Teams aus: Zahlreiche Kolleginnen und Kollegen sind seit 10, 15, 20 oder sogar über 25 Jahren fest bei uns an Bord. Viele andere haben uns bis zu ihrer Vollzeitrente begleitet und wurden von uns dankend verabschiedet.",
     ueber_home: "Zurück zur Startseite",
 
     /* S8 */
@@ -146,7 +146,7 @@ const T = {
     form_position: "Position", form_standort: "Bevorzugter Standort", form_around: "Umgebung Nürnberg", form_no_pref: "egal / keine Präferenz",
     form_sprache: "Sprache für Rückruf",
     form_pos1: "Paketzusteller Nürnberg (Vollzeit)", form_pos2: "Paketzusteller Crailsheim (Vollzeit)",
-    form_pos3: "Be- und Entlader Crailsheim (Teilzeit)", form_pos4: "Initiativbewerbung",
+    form_pos3: "Be- und Entlader Nürnberg (Minijob)", form_pos4: "Initiativbewerbung",
     form_files: "Unterlagen (PDF/DOC/DOCX, max. 10 MB)",
     form_drop: "Hierher ziehen oder <u>klicken zum Auswählen</u>",
     form_drop_hint: "PDF · DOC · DOCX · max. 10 MB",
@@ -156,7 +156,7 @@ const T = {
     form_ok_text: "Wir haben Ihre Bewerbung erhalten. Nach Prüfung Ihrer Unterlagen melden wir uns persönlich bei Ihnen.",
 
     /* Footer */
-    footer_tagline: "Familiengeführter Kurierdienst seit September 1995.",
+    footer_tagline: "seit September 1995",
     footer_menu: "Menü", footer_locations: "Standorte", footer_legal: "Rechtliches",
     footer_imprint: "Impressum", footer_privacy: "Datenschutzerklärung", footer_a11y: "Barrierefreiheitserklärung",
     footer_family: "Familienunternehmen · Sitz Nürnberg",
@@ -869,7 +869,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Application emails route by selected "Bevorzugter Standort".
   // NOTE: actual delivery needs a backend later — this only resolves recipients.
   const BEWERBUNG_MAIL = {
-    nbg: 'nürnberg-bewerbung@guen-transporte.de',
+    nbg: 'nuernberg-bewerbung@guen-transporte.de',
     crl: 'crailsheim-bewerbung@guen-transporte.de',
   };
   function resolveRecipients(standort) {
@@ -943,7 +943,7 @@ function renderMarquee(lang) {
 const EMPLOYEES = [
   {
     id: 'ismail',
-    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+    photo: (window.__resources&&window.__resources.emp1) || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
     initials: 'İK', name: 'İsmail K.',
     roleKey: 'voice_courier', role: 'Kurierfahrer', loc: 'Nürnberg', loc_key: 'loc_nbg',
     tenure: { de: '14 Jahre im Team', ru: '14 лет в команде', ro: '14 ani în echipă', tr: '14 yıldır ekipte' },
@@ -963,7 +963,7 @@ const EMPLOYEES = [
   },
   {
     id: 'andrei',
-    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
+    photo: (window.__resources&&window.__resources.emp2) || 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
     initials: 'AP', name: 'Andrei P.',
     roleKey: 'voice_dispatch', role: 'Disposition', loc: 'Nürnberg', loc_key: 'loc_nbg',
     tenure: { de: '9 Jahre im Team', ru: '9 лет в команде', ro: '9 ani în echipă', tr: '9 yıldır ekipte' },
@@ -983,7 +983,7 @@ const EMPLOYEES = [
   },
   {
     id: 'marina',
-    photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80',
+    photo: (window.__resources&&window.__resources.emp3) || 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80',
     initials: 'MS', name: 'Marina S.',
     roleKey: 'voice_courier', role: 'Kurierfahrerin', loc: 'Crailsheim', loc_key: 'loc_crl',
     tenure: { de: '6 Jahre im Team', ru: '6 лет в команде', ro: '6 ani în echipă', tr: '6 yıldır ekipte' },
@@ -1003,7 +1003,7 @@ const EMPLOYEES = [
   },
   {
     id: 'stefan',
-    photo: 'https://images.unsplash.com/photo-1557862921-37829c790f19?auto=format&fit=crop&w=600&q=80',
+    photo: (window.__resources&&window.__resources.emp4) || 'https://images.unsplash.com/photo-1557862921-37829c790f19?auto=format&fit=crop&w=600&q=80',
     initials: 'SH', name: 'Stefan H.',
     roleKey: 'voice_courier', role: 'Kurierfahrer', loc: 'Crailsheim', loc_key: 'loc_crl',
     tenure: { de: '22 Jahre im Team', ru: '22 года в команде', ro: '22 ani în echipă', tr: '22 yıldır ekipte' },
@@ -1023,7 +1023,7 @@ const EMPLOYEES = [
   },
   {
     id: 'elena',
-    photo: 'https://images.unsplash.com/photo-1542596594-649edbc13630?auto=format&fit=crop&w=600&q=80',
+    photo: (window.__resources&&window.__resources.emp5) || 'https://images.unsplash.com/photo-1542596594-649edbc13630?auto=format&fit=crop&w=600&q=80',
     initials: 'EV', name: 'Elena V.',
     roleKey: 'voice_loader', role: 'Be- und Entladerin', loc: 'Crailsheim', loc_key: 'loc_crl',
     tenure: { de: '4 Jahre im Team', ru: '4 года в команде', ro: '4 ani în echipă', tr: '4 yıldır ekipte' },
@@ -1043,7 +1043,7 @@ const EMPLOYEES = [
   },
   {
     id: 'halil',
-    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80',
+    photo: (window.__resources&&window.__resources.emp6) || 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80',
     initials: 'HY', name: 'Halil Y.',
     roleKey: 'voice_workshop', role: 'Werkstatt', loc: 'Nürnberg', loc_key: 'loc_nbg',
     tenure: { de: '11 Jahre im Team', ru: '11 лет в команде', ro: '11 ani în echipă', tr: '11 yıldır ekipte' },
@@ -1063,7 +1063,7 @@ const EMPLOYEES = [
   },
   {
     id: 'murat',
-    photo: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=600&q=80',
+    photo: (window.__resources&&window.__resources.emp7) || 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=600&q=80',
     initials: 'MD', name: 'Murat D.',
     roleKey: 'voice_courier', role: 'Kurierfahrer', loc: 'Nürnberg', loc_key: 'loc_nbg',
     tenure: { de: '7 Jahre im Team', ru: '7 лет в команде', ro: '7 ani în echipă', tr: '7 yıldır ekipte' },
@@ -1083,7 +1083,7 @@ const EMPLOYEES = [
   },
   {
     id: 'olesya',
-    photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80',
+    photo: (window.__resources&&window.__resources.emp8) || 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80',
     initials: 'OK', name: 'Olesya K.',
     roleKey: 'voice_dispatch', role: 'Disposition', loc: 'Crailsheim', loc_key: 'loc_crl',
     tenure: { de: '5 Jahre im Team', ru: '5 лет в команде', ro: '5 ani în echipă', tr: '5 yıldır ekipte' },
@@ -1103,7 +1103,7 @@ const EMPLOYEES = [
   },
   {
     id: 'dragos',
-    photo: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=600&q=80',
+    photo: (window.__resources&&window.__resources.emp9) || 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=600&q=80',
     initials: 'DM', name: 'Dragoș M.',
     roleKey: 'voice_loader', role: 'Be- und Entlader', loc: 'Crailsheim', loc_key: 'loc_crl',
     tenure: { de: '3 Jahre im Team', ru: '3 года в команде', ro: '3 ani în echipă', tr: '3 yıldır ekipte' },
@@ -1123,7 +1123,7 @@ const EMPLOYEES = [
   },
   {
     id: 'katja',
-    photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80',
+    photo: (window.__resources&&window.__resources.emp10) || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80',
     initials: 'KR', name: 'Katja R.',
     roleKey: 'voice_courier', role: 'Kurierfahrerin', loc: 'Nürnberg', loc_key: 'loc_nbg',
     tenure: { de: '8 Jahre im Team', ru: '8 лет в команде', ro: '8 ani în echipă', tr: '8 yıldır ekipte' },
@@ -1143,7 +1143,7 @@ const EMPLOYEES = [
   },
   {
     id: 'thomas',
-    photo: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?auto=format&fit=crop&w=600&q=80',
+    photo: (window.__resources&&window.__resources.emp11) || 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?auto=format&fit=crop&w=600&q=80',
     initials: 'TB', name: 'Thomas B.',
     roleKey: 'voice_workshop', role: 'Werkstatt', loc: 'Crailsheim', loc_key: 'loc_crl',
     tenure: { de: '17 Jahre im Team', ru: '17 лет в команде', ro: '17 ani în echipă', tr: '17 yıldır ekipte' },
@@ -1163,7 +1163,7 @@ const EMPLOYEES = [
   },
   {
     id: 'larisa',
-    photo: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=600&q=80',
+    photo: (window.__resources&&window.__resources.emp12) || 'https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=600&q=80',
     initials: 'LN', name: 'Larisa N.',
     roleKey: 'voice_loader', role: 'Be- und Entladerin', loc: 'Nürnberg', loc_key: 'loc_nbg',
     tenure: { de: '4 Jahre im Team', ru: '4 года в команде', ro: '4 ani în echipă', tr: '4 yıldır ekipte' },
