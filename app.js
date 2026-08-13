@@ -81,6 +81,7 @@ const T = {
     s4_lede: "Drei offene Stellen an unseren Standorten. Ist nichts Passendes dabei, freuen wir uns über Ihre Initiativbewerbung.",
     tag_active: "Aktiv", tag_initiativ: "Initiativ", tag_full: "Vollzeit", tag_part: "Teilzeit", tag_mini: "Minijob", tag_fullpart: "Vollzeit · Teilzeit",
     loc_nbg: "Nürnberg", loc_crl: "Crailsheim", loc_both: "Nürnberg · Crailsheim",
+    badge_total: "Jahre insgesamt",
     s4_j1_title: "Paketzusteller (m/w/d)", s4_j1_desc: "Tägliche Zustelltouren im Stadtgebiet Nürnberg und Umgebung. Festanstellung mit deutschem Arbeitsvertrag, Einarbeitung mit erfahrenem Kollegen.",
     s4_j2_title: "Paketzusteller (m/w/d)", s4_j2_desc: "Zustellung in und um Crailsheim. Feste Vollzeitstelle mit geregelten Touren. Klasse-B-Führerschein erforderlich.",
     s4_j3_title: "Be- und Entlader (m/w/d)", s4_j3_desc: "Verladearbeiten am Depot Nürnberg. Frühschicht, Beginn am frühen Morgen. Körperliche Belastbarkeit ist wichtig, ein Führerschein nicht nötig.",
@@ -89,7 +90,7 @@ const T = {
     /* S5 */
     s5_kicker: "04 – Stimmen aus dem Team",
     s5_h2_a: "Echte Geschichten – ", s5_h2_b: "aus unserem Team", s5_h2_c: ":",
-    s5_lede: "Sieben Kolleginnen und Kollegen aus Nürnberg – mit Foto, Namen und eigenen Worten. Karte antippen für die ganze Geschichte.",
+    s5_lede: "Kolleginnen und Kollegen aus Nürnberg und Crailsheim – mit Foto, Namen und eigenen Worten. Karte antippen für die ganze Geschichte.",
     voice_demo: "Demo · Foto folgt",
     voice_courier: "Kurierfahrer", voice_dispatch: "Disposition", voice_loader: "Be- und Entlader", voice_workshop: "Werkstatt",
 
@@ -238,6 +239,7 @@ const T = {
     s4_lede: "Три открытые вакансии на наших локациях. Если подходящего нет, будем рады Вашей инициативной заявке.",
     tag_active: "Активна", tag_initiativ: "Инициативная", tag_full: "Полная занятость", tag_part: "Частичная", tag_mini: "Мини-работа", tag_fullpart: "Полная · Частичная",
     loc_nbg: "Нюрнберг", loc_crl: "Крайльсхайм", loc_both: "Нюрнберг · Крайльсхайм",
+    badge_total: "года в сумме",
     s4_j1_title: "Курьер-доставщик (м/ж/д)", s4_j1_desc: "Ежедневные маршруты по Нюрнбергу и окрестностям. Постоянное трудоустройство, немецкий договор, ввод в работу с опытным коллегой.",
     s4_j2_title: "Курьер-доставщик (м/ж/д)", s4_j2_desc: "Доставка в Крайльсхайме и окрестностях. Постоянная работа на полную занятость с регулярными маршрутами. Права категории B обязательны.",
     s4_j3_title: "Грузчик / разгрузчик (м/ж/д)", s4_j3_desc: "Погрузочные работы в депо Крайльсхайма. Ранняя смена, начало ранним утром. Важна физическая выносливость, права не требуются.",
@@ -390,6 +392,7 @@ const T = {
     s4_lede: "Trei posturi deschise la locațiile noastre. Dacă nu se potrivește nimic, ne bucurăm să primim o candidatură spontană.",
     tag_active: "Activ", tag_initiativ: "Spontan", tag_full: "Normă întreagă", tag_part: "Jumătate de normă", tag_mini: "Minijob", tag_fullpart: "Normă întreagă · Jumătate",
     loc_nbg: "Nürnberg", loc_crl: "Crailsheim", loc_both: "Nürnberg · Crailsheim",
+    badge_total: "ani în total",
     s4_j1_title: "Curier de colete (m/f/d)", s4_j1_desc: "Trasee zilnice de livrare în orașul Nürnberg și împrejurimi. Angajare permanentă cu contract german, instruire cu coleg experimentat.",
     s4_j2_title: "Curier de colete (m/f/d)", s4_j2_desc: "Livrare în și în jurul Crailsheim. Post fix cu normă întreagă și trasee regulate. Permis categoria B necesar.",
     s4_j3_title: "Încărcător / descărcător (m/f/d)", s4_j3_desc: "Lucrări de încărcare la depozitul Crailsheim. Tură de dimineață, început în zori. Contează rezistența fizică, permisul nu este necesar.",
@@ -542,6 +545,7 @@ const T = {
     s4_lede: "Konumlarımızda üç açık pozisyon. Uygun bir şey yoksa, spontane başvurunuzu memnuniyetle bekleriz.",
     tag_active: "Aktif", tag_initiativ: "Spontane", tag_full: "Tam zamanlı", tag_part: "Yarı zamanlı", tag_mini: "Minijob", tag_fullpart: "Tam · Yarı zamanlı",
     loc_nbg: "Nürnberg", loc_crl: "Crailsheim", loc_both: "Nürnberg · Crailsheim",
+    badge_total: "yıl toplam",
     s4_j1_title: "Paket kuryesi (e/k/d)", s4_j1_desc: "Nürnberg şehri ve civarında günlük teslimat turları. Alman iş sözleşmesiyle sürekli istihdam, deneyimli meslektaşla eğitim.",
     s4_j2_title: "Paket kuryesi (e/k/d)", s4_j2_desc: "Crailsheim ve çevresinde teslimat. Düzenli turlarla sabit tam zamanlı pozisyon. B sınıfı ehliyet gereklidir.",
     s4_j3_title: "Yükleme / boşaltma elemanı (e/k/d)", s4_j3_desc: "Crailsheim deposunda yükleme işleri. Sabah vardiyası, erken saatlerde başlar. Fiziksel dayanıklılık önemlidir, ehliyet gerekmez.",
@@ -687,25 +691,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const langMenu = document.getElementById('langMenu');
   const langToggle = document.getElementById('langToggle');
   if (langMenu) {
+    const langWrap = document.getElementById('lang') || langMenu.parentElement;
+    const setLangOpen = on => {
+      langWrap.classList.toggle('lang--open', on);
+      if (langToggle) langToggle.setAttribute('aria-expanded', on ? 'true' : 'false');
+    };
+    const langIsOpen = () => langWrap.classList.contains('lang--open');
     langMenu.querySelectorAll('button').forEach(btn => {
       btn.addEventListener('click', () => {
         const lang = btn.dataset.lang;
         localStorage.setItem('cg_lang', lang);
         applyLang(lang);
         renderMarquee(lang);
-        // blur to dismiss :focus-within
+        setLangOpen(false);
         if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
       });
     });
-    // toggle on click for touch / keyboard
     if (langToggle) {
       langToggle.addEventListener('click', e => {
         e.preventDefault();
-        // toggling focus state via blur/focus
-        if (document.activeElement === langToggle) langToggle.blur();
-        else langToggle.focus();
+        setLangOpen(!langIsOpen());
       });
     }
+    document.addEventListener('click', e => {
+      if (langIsOpen() && !langWrap.contains(e.target)) setLangOpen(false);
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && langIsOpen()) {
+        setLangOpen(false);
+        if (langToggle) langToggle.focus();
+      }
+    });
   }
 
   /* ---------- HEADER scroll state ---------- */
@@ -817,7 +833,7 @@ document.addEventListener('DOMContentLoaded', () => {
         io.unobserve(en.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0, rootMargin: '0px 0px 12% 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   /* ---------- STEPS stagger reveal ---------- */
@@ -830,7 +846,7 @@ document.addEventListener('DOMContentLoaded', () => {
           stepsIO.unobserve(steps);
         }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0, rootMargin: '0px 0px 12% 0px' });
     stepsIO.observe(steps);
   }
 
@@ -1011,7 +1027,7 @@ function renderMarquee(lang) {
   if (!track) return;
   const html = EMPLOYEES.map(e => `
     <div class="voice" data-emp="${e.id}" data-since="${e.since}">
-      <span class="voice__badge">${tenureLabel(e.since, lang)}</span>
+      <span class="voice__badge">${tenureLabel(e.since, lang, e.periods)}</span>
       <img class="voice__photo" loading="lazy" width="800" height="800" src="${e.photo}" alt="${e.alt}" />
       <div class="voice__meta">
         <div class="voice__name">${e.name}</div>
@@ -1035,7 +1051,28 @@ function tenureYears(since) {
   if (now.getMonth() + 1 < m) n -= 1;
   return Math.max(0, n);
 }
-function tenureLabel(since, lang) {
+function monthsBetween(from, to) {
+  const f = String(from || '').split('-'), t = String(to || '').split('-');
+  const fy = parseInt(f[0], 10), fm = parseInt(f[1], 10) || 1;
+  const ty = parseInt(t[0], 10), tm = parseInt(t[1], 10) || 1;
+  if (!fy || !ty) return 0;
+  return Math.max(0, (ty - fy) * 12 + (tm - fm));
+}
+/* Total tenure across breaks: past periods + current stretch, rounded to 0.5 y */
+function tenureTotalYears(since, periods) {
+  const now = new Date();
+  const today = now.getFullYear() + '-' + (now.getMonth() + 1);
+  let months = monthsBetween(since, today);
+  (periods || []).forEach(p => { months += monthsBetween(p.from, p.to); });
+  return Math.round((months / 12) * 2) / 2;
+}
+function tenureLabel(since, lang, periods) {
+  if (periods && periods.length) {
+    const dict = T[lang] || T.de;
+    const total = tenureTotalYears(since, periods);
+    const num = String(total).replace('.', ',');
+    return num + ' ' + (dict.badge_total || T.de.badge_total);
+  }
   const n = tenureYears(since);
   if (lang === 'ru') {
     const m100 = n % 100, m10 = n % 10;
@@ -1065,8 +1102,7 @@ const EMPLOYEES = [
     since: '2006-07',
     alt: 'Saman A., Fahrer am Standort Nürnberg, vor seinem Zustellfahrzeug',
     langs: ['DE'],
-    quote: { de: '„20 Jahre – das bedeutet lange Treue und viel Erfahrung.“' },
-    story: { de: '<p>Ich bin seit 2006 dabei. In zwanzig Jahren sind so viele Touren zusammengekommen, dass ich die Stadt nicht vom Navi kenne.</p><p>Erfahrung heißt, nicht über jeden Schritt nachdenken zu müssen. Man weiß, wo man hält, wie man den Wagen lädt, was man vorher erledigt, um später keine Zeit zu verlieren.</p>' }
+    quote: { de: '„20 Jahre – das bedeutet lange Treue und viel Erfahrung.“' }
   },
   {
     id: 'osman',
@@ -1076,8 +1112,7 @@ const EMPLOYEES = [
     since: '2002-10',
     alt: 'Osman Y., Fahrer am Standort Nürnberg, vor seinem Zustellfahrzeug',
     langs: ['DE'],
-    quote: { de: '„Nach 23 Jahren im Beruf sind es nur noch ein paar Jahre bis zur Rente. Das schaffe ich auch noch locker!“' },
-    story: { de: '<p>Ich arbeite seit 2002 hier. Angefangen habe ich noch mit den alten Fahrzeugen – heute gebe ich weiter, was ich weiß, an die, die neu dazukommen.</p><p>Nach so vielen Jahren ist die Arbeit ein vertrauter Rhythmus geworden. Morgens der Wagen, dann die Tour – und der Tag läuft.</p>' }
+    quote: { de: '„Nach 23 Jahren im Job habe ich jetzt noch genau drei Jahre bis zur Rente. Die schaffe ich auch noch locker!“' }
   },
   {
     id: 'aytac',
@@ -1087,8 +1122,7 @@ const EMPLOYEES = [
     since: '2008-01',
     alt: 'Aytac Y., Fahrer am Standort Nürnberg, vor seinem Zustellfahrzeug',
     langs: ['DE'],
-    quote: { de: '„Nach 18 Jahren in diesem Job brauche ich gar nicht mehr nachzudenken – das ist mir absolut ins Blut übergegangen.“' },
-    story: { de: '<p>Ich fahre seit 2008 hier. Früher musste ich mir jede Abzweigung und jede Adresse merken, heute machen es die Hände von allein.</p><p>Langweilig wird es deshalb nicht. Wenn das Handwerkliche sitzt, bleibt mehr Aufmerksamkeit für die Menschen, zu denen man kommt.</p>' }
+    quote: { de: '„Nach 18 Jahren in diesem Job brauche ich gar nicht mehr nachzudenken – das ist mir absolut ins Blut übergegangen.“' }
   },
   {
     id: 'nicola',
@@ -1098,8 +1132,7 @@ const EMPLOYEES = [
     since: '2010-04',
     alt: 'Nicola C., Fahrer eines 7,5-Tonners am Standort Nürnberg',
     langs: ['DE'],
-    quote: { de: '„Die Arbeit ist ein Teil von mir geworden. Woanders würde mir etwas fehlen.“' },
-    story: { de: '<p>Ich fahre seit 2010 den 7,5-Tonner. In dieser Zeit ist mir die Stadt bis ins Detail vertraut geworden: wo man halten kann, wo morgens kein Durchkommen ist, wo eine Adresse nicht auf Anhieb zu finden ist.</p><p>Bei einem Fahrzeug dieser Größe entscheidet die Ruhe. Nicht hetzen, einen Schritt vorausdenken, rechtzeitig anhalten. Das lernt man nicht in einer Woche – das kommt mit den Kilometern.</p>' }
+    quote: { de: '„Die Arbeit ist ein Teil von mir geworden. Deshalb frage ich mich manchmal, ob ich woanders überhaupt noch etwas finde, das so gut zu mir passt.“' }
   },
   {
     id: 'helmut',
@@ -1109,8 +1142,7 @@ const EMPLOYEES = [
     since: '2011-02',
     alt: 'Helmut H., Fahrer am Standort Nürnberg, vor seinem Zustellfahrzeug',
     langs: ['DE'],
-    quote: { de: '„Selbst nach 15 Jahren macht die Arbeit immer noch Spaß und Freude – ich bin jeden Tag aufs Neue motiviert.“' },
-    story: { de: '<p>Ich bin seit 2011 dabei. Fünfzehn Jahre am selben Ort – und immer noch nicht das Gefühl, mich zur Arbeit zwingen zu müssen.</p><p>Vieles hängt davon ab, mit wem man arbeitet. Hier ist das Team so, dass man morgens ohne Last losfährt und abends ruhig nach Hause geht.</p>' }
+    quote: { de: '„Mein Name ist Helmut H., ich bin 59 Jahre alt und verheiratet. Selbst nach 15 Jahren macht die Arbeit immer noch Spaß und Freude, und ich bin jeden Tag aufs Neue motiviert für meine Kunden!“' }
   },
   {
     id: 'santana',
@@ -1120,8 +1152,7 @@ const EMPLOYEES = [
     since: '2024-07',
     alt: 'Santana F., Fahrer am Standort Nürnberg, vor seinem Zustellfahrzeug',
     langs: ['DE'],
-    quote: { de: '„Ich komme aus Kuba und bin froh und dankbar für diese Chance hier.“' },
-    story: { de: '<p>Ich bin seit 2024 dabei. In einem neuen Land anzufangen ist nicht leicht – erst recht, wenn die Sprache noch schwerfällt.</p><p>Man hat mir geholfen, in Ruhe hineinzufinden, ohne Hetze. Heute fahre ich meine Tour wie alle anderen auch.</p>' }
+    quote: { de: '„Ich komme aus Kuba und bin echt froh und dankbar für diese tolle Chance hier.“' }
   },
   {
     id: 'yanes',
@@ -1131,8 +1162,58 @@ const EMPLOYEES = [
     since: '2025-04',
     alt: 'Yanes S., Be- und Entlader am Standort Nürnberg im Depot',
     langs: ['DE'],
-    quote: { de: '„Ich komme aus Spanien und bin froh über die Teilzeitstelle hier. Nach dem Umzug hat mir das sehr geholfen, im neuen Alltag anzukommen.“' },
-    story: { de: '<p>Ich arbeite seit 2025 hier. Die Teilzeitstelle war genau das Richtige für die erste Zeit nach dem Umzug.</p><p>Be- und Entladen ist körperliche Arbeit, aber vom ersten Tag an verständlich. Man kommt, macht seins und weiß, dass es an einem hängt, ob der Wagen pünktlich rausgeht.</p>' }
+    quote: { de: '„Ich komme aus Spanien und bin echt froh über die Teilzeitstelle hier. Das hat mir nach dem Umzug super geholfen, im neuen Alltag anzukommen!“' }
+  },
+  {
+    id: 'stanislav',
+    photo: 'images/team/stanislav-d.jpg',
+    initials: 'SD', name: 'Stanislav D.',
+    role: 'Fahrer', loc: 'Nürnberg', loc_key: 'loc_nbg',
+    since: '2010-10',
+    alt: 'Stanislav D., Fahrer am Standort Nürnberg, am Steuer seines Zustellfahrzeugs',
+    langs: ['DE'],
+    quote: { de: '„Nach einem kurzen Ausflug in einen anderen Bereich habe ich festgestellt, dass mein Platz hier ist. Ich bin froh, wieder zurück zu sein, da ich mich in diesem Team und Umfeld einfach am wohlsten fühle.“' }
+  },
+  {
+    id: 'ivan',
+    photo: 'images/team/ivan-d.jpg',
+    initials: 'ID', name: 'Ivan D.',
+    role: 'Fahrer', loc: 'Nürnberg', loc_key: 'loc_nbg',
+    since: '2025-02',
+    periods: [ { from: '2017-07', to: '2019-07' } ],
+    alt: 'Ivan D., Fahrer am Standort Nürnberg, vor seinem Zustellfahrzeug',
+    langs: ['DE'],
+    quote: { de: '„Es kam so, dass ich zurückkommen musste – und man hat mich ohne große Fragen wieder aufgenommen. So etwas bleibt hängen.“' }
+  },
+  {
+    id: 'nadeem',
+    photo: 'images/team/iqbal-n.jpg',
+    initials: 'NI', name: 'Nadeem I.',
+    role: 'Werkstatt', loc: 'Crailsheim', loc_key: 'loc_crl',
+    since: '2021-05',
+    alt: 'Nadeem I., Mitarbeiter in der Werkstatt am Standort Crailsheim',
+    langs: ['DE'],
+    quote: { de: '„Ich bin Nadeem ich bin seit fünf Jahren bei der Firma Gün tätig. Am Anfang war ich Zusteller. Jetzt bin ich in der Werkstatt tätig aber wenn ich ab und zu noch fahren muss, das macht mir großen Spaß.“' }
+  },
+  {
+    id: 'razvan',
+    photo: 'images/team/razvan-s.jpg',
+    initials: 'RS', name: 'Razvan S.',
+    role: 'Fahrer', loc: 'Crailsheim', loc_key: 'loc_crl',
+    since: '2019-07',
+    alt: 'Razvan S., Fahrer am Standort Crailsheim, im Laderaum seines Zustellfahrzeugs',
+    langs: ['DE'],
+    quote: { de: '„Ich bin Razvan. Bin seit ca. 7 Jahren Zusteller bei der Firma Cuma Gün in Crailsheim. Ich bin gerne Zusteller und bekomme sehr häufig positive Rückmeldungen von meinem Arbeitgeber, dass Ich meine Arbeit sehr gut erledige. Vor 2 Jahren betraute mich mein Arbeitgeber mit zusätzlichen Aufgaben, wo ich wieder etwas Neues lernen konnte und Ich auch mittlerweile mit Ausbildungsaufgaben für Kollegen betraut bin.“' }
+  },
+  {
+    id: 'fanel',
+    photo: 'images/team/fanel-v.jpg',
+    initials: 'FV', name: 'Fanel V.',
+    role: 'Fahrer', loc: 'Crailsheim', loc_key: 'loc_crl',
+    since: '2024-07',
+    alt: 'Fanel V., Fahrer am Standort Crailsheim, bei der Paketsortierung',
+    langs: ['DE'],
+    quote: { de: '„Hallo, ich heiße Fanel. Ich bin erst seit kurzem Teil der Firma Cuma Gün Crailsheim. Die ersten Wochen waren sehr anstrengend und fordernd für mich. Im Laufe der Zeit und mit der Entwicklung einer täglichen Routine machte mir aber die Zustellarbeit immer mehr Spaß. Jetzt freut es mich, dass ich Zusteller bei der Firma Gün bin und Ich mache meinen Job sehr gerne.“' }
   }
 ];
 
@@ -1145,11 +1226,10 @@ function openEmployeeModal(id) {
   const modal = document.getElementById('empModal');
   document.getElementById('empPortrait').src = emp.photo;
   document.getElementById('empPortrait').alt = emp.name;
-  document.getElementById('empTenure').textContent = tenureLabel(emp.since, lang).toUpperCase();
+  document.getElementById('empTenure').textContent = tenureLabel(emp.since, lang, emp.periods).toUpperCase();
   document.getElementById('empName').textContent = emp.name;
   document.getElementById('empRole').textContent = `${emp.role} · ${dict[emp.loc_key] || emp.loc}`;
   document.getElementById('empQuote').textContent = emp.quote[lang] || emp.quote.de;
-  document.getElementById('empStory').innerHTML = emp.story[lang] || emp.story.de;
   const langs = document.getElementById('empLangs');
   langs.innerHTML = emp.langs.map(l => `<span>${l}</span>`).join('');
   modal.classList.add('open');

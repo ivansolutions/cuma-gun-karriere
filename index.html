@@ -268,8 +268,11 @@ section { padding: 100px 0; position: relative; }
   color: var(--navy);
   transition: border-color .2s, background .2s, color .2s;
 }
-.lang:hover .lang__toggle,
-.lang:focus-within .lang__toggle { border-color: var(--bronze); color: var(--bronze); }
+@media (hover: hover) and (pointer: fine) {
+  .lang:hover .lang__toggle { border-color: var(--bronze); color: var(--bronze); }
+}
+.lang:focus-within .lang__toggle,
+.lang--open .lang__toggle { border-color: var(--bronze); color: var(--bronze); }
 .lang__chev {
   width: 9px; height: 9px;
   border-right: 1.5px solid currentColor;
@@ -278,8 +281,11 @@ section { padding: 100px 0; position: relative; }
   margin-left: 2px;
   transition: transform .2s;
 }
-.lang:hover .lang__chev,
-.lang:focus-within .lang__chev { transform: rotate(-135deg) translateY(0); }
+@media (hover: hover) and (pointer: fine) {
+  .lang:hover .lang__chev { transform: rotate(-135deg) translateY(0); }
+}
+.lang:focus-within .lang__chev,
+.lang--open .lang__chev { transform: rotate(-135deg) translateY(0); }
 .lang__menu {
   position: absolute;
   top: 100%;
@@ -293,8 +299,11 @@ section { padding: 100px 0; position: relative; }
   transition-delay: 200ms; /* grace period on close */
   z-index: 60;
 }
-.lang:hover .lang__menu,
-.lang:focus-within .lang__menu {
+@media (hover: hover) and (pointer: fine) {
+  .lang:hover .lang__menu { opacity: 1; visibility: visible; transform: translateY(0); transition-delay: 0ms; }
+}
+.lang:focus-within .lang__menu,
+.lang--open .lang__menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -1232,7 +1241,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
   <div class="container stimmen__head">
     <div class="stimmen__intro">
       <h2 class="section-h2"><span data-i18n="s5_h2_a">Echte Geschichten – </span><span class="em" data-i18n="s5_h2_b">aus unserem Team</span><span class="em" data-i18n="s5_h2_c">:</span></h2>
-      <p class="section-lede" data-i18n="s5_lede">Sieben Kolleginnen und Kollegen aus Nürnberg – mit Foto, Namen und eigenen Worten. Karte antippen für die ganze Geschichte.</p>
+      <p class="section-lede" data-i18n="s5_lede">Kolleginnen und Kollegen aus Nürnberg und Crailsheim – mit Foto, Namen und eigenen Worten. Karte antippen für die ganze Geschichte.</p>
     </div>
     <div class="stimmen__gallery">
       <img class="stimmen__shot stimmen__shot--wide" src="images/team/gruppe-team.jpg" width="1600" height="640" loading="lazy" alt="Das Team des Standorts Nürnberg" />
@@ -2085,7 +2094,6 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         <div class="empmodal__role" id="empRole">Kurierfahrer · Crailsheim</div>
         <div class="empmodal__langs" id="empLangs"></div>
         <blockquote class="empmodal__quote" id="empQuote">„…“</blockquote>
-        <div class="empmodal__story" id="empStory"></div>
         <div class="empmodal__cta">
           <a href="#bewerbung" class="btn btn--primary" data-close data-i18n="cta_apply">Jetzt bewerben</a>
           <button class="btn btn--ghost" data-close data-i18n="emp_back">Zurück zur Übersicht</button>
@@ -2212,22 +2220,18 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
   color: var(--ink-muted);
 }
 .empmodal__quote {
-  margin: 0 0 20px;
-  padding: 16px 0 16px 18px;
+  margin: 32px 0;
+  max-width: 30em;
+  padding: 0 0 0 20px;
   border-left: 3px solid var(--bronze);
   font-family: "Geist", system-ui, sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   font-style: italic;
   color: var(--navy);
-  line-height: 1.5;
+  line-height: 1.55;
+  text-wrap: pretty;
 }
-.empmodal__story {
-  font-size: 15px;
-  color: var(--ink-muted);
-  line-height: 1.65;
-  margin-bottom: 28px;
-}
-.empmodal__story p { margin: 0 0 12px; }
+@media (max-width: 760px) { .empmodal__quote { font-size: 18px; } }
 .empmodal__cta { display: flex; gap: 12px; flex-wrap: wrap; }
 .voice { cursor: pointer; transition: transform .25s, box-shadow .25s; }
 .voice:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }

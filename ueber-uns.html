@@ -267,8 +267,11 @@ section { padding: 100px 0; position: relative; }
   color: var(--navy);
   transition: border-color .2s, background .2s, color .2s;
 }
-.lang:hover .lang__toggle,
-.lang:focus-within .lang__toggle { border-color: var(--bronze); color: var(--bronze); }
+@media (hover: hover) and (pointer: fine) {
+  .lang:hover .lang__toggle { border-color: var(--bronze); color: var(--bronze); }
+}
+.lang:focus-within .lang__toggle,
+.lang--open .lang__toggle { border-color: var(--bronze); color: var(--bronze); }
 .lang__chev {
   width: 9px; height: 9px;
   border-right: 1.5px solid currentColor;
@@ -277,8 +280,11 @@ section { padding: 100px 0; position: relative; }
   margin-left: 2px;
   transition: transform .2s;
 }
-.lang:hover .lang__chev,
-.lang:focus-within .lang__chev { transform: rotate(-135deg) translateY(0); }
+@media (hover: hover) and (pointer: fine) {
+  .lang:hover .lang__chev { transform: rotate(-135deg) translateY(0); }
+}
+.lang:focus-within .lang__chev,
+.lang--open .lang__chev { transform: rotate(-135deg) translateY(0); }
 .lang__menu {
   position: absolute;
   top: 100%;
@@ -292,8 +298,11 @@ section { padding: 100px 0; position: relative; }
   transition-delay: 200ms; /* grace period on close */
   z-index: 60;
 }
-.lang:hover .lang__menu,
-.lang:focus-within .lang__menu {
+@media (hover: hover) and (pointer: fine) {
+  .lang:hover .lang__menu { opacity: 1; visibility: visible; transform: translateY(0); transition-delay: 0ms; }
+}
+.lang:focus-within .lang__menu,
+.lang--open .lang__menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
