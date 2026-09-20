@@ -11,7 +11,14 @@
 <meta property="og:title" content="Karriere · Cuma Gün – Kuriertransporte e. K." />
 <meta property="og:description" content="Werden Sie Paketzusteller bei einem familiengeführten Logistikbetrieb mit 30 Jahren Erfahrung – im Auftrag von United Parcel Service." />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://guen-transporte.com/wp-content/uploads/2025/06/panorama_transporter_bearbeitet-2.png" />
+<!-- Domain-bound URLs (keep together — change all four on a domain move) -->
+<meta property="og:url" content="https://guen-transporte.com/ueber-uns.html" />
+<link rel="canonical" href="https://guen-transporte.com/ueber-uns.html" />
+<meta property="og:image" content="https://guen-transporte.com/images/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Schwarzer UPS-Transporter von Cuma Gün – Kuriertransporte e. K." />
+<meta name="twitter:card" content="summary_large_image" />
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22110%20134%20925%20685%22%3E%3Cpath%20d%3D%22M%20764%20637%20L%20764%20806%20L%20881%20805%20L%20808%20697%20Z%20M%20778%20563%20L%20941%20806%20L%201022%20806%20L%20856%20562%20Z%20M%20574%20148%20L%20571%20149%20L%20124%20806%20L%20569%20806%20L%20569%20591%20L%20415%20591%20L%20371%20655%20L%20501%20656%20L%20501%20740%20L%20252%20741%20L%20251%20738%20L%20574%20264%20L%20659%20387%20L%20735%20387%20Z%22%20fill%3D%22%2306243D%22%20fill-rule%3D%22evenodd%22%2F%3E%3Cpath%20d%3D%22M%20509%20436%20L%20467%20499%20L%20629%20500%20L%20629%20806%20L%20700%20806%20L%20700%20508%20L%20818%20507%20L%20818%20505%20L%20770%20436%20Z%22%20fill%3D%22%23b98b36%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E" />
 
@@ -251,84 +258,6 @@ section { padding: 100px 0; position: relative; }
 
 .header__right { margin-left: auto; display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
 
-/* ===== Language dropdown ===== */
-.lang {
-  position: relative;
-  font-family: "Geist Mono", ui-monospace, "SF Mono", Consolas, monospace;
-}
-.lang__toggle {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 7px 10px 7px 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--navy);
-  transition: border-color .2s, background .2s, color .2s;
-}
-@media (hover: hover) and (pointer: fine) {
-  .lang:hover .lang__toggle { border-color: var(--bronze); color: var(--bronze); }
-}
-.lang:focus-within .lang__toggle,
-.lang--open .lang__toggle { border-color: var(--bronze); color: var(--bronze); }
-.lang__chev {
-  width: 9px; height: 9px;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: rotate(45deg) translateY(-2px);
-  margin-left: 2px;
-  transition: transform .2s;
-}
-@media (hover: hover) and (pointer: fine) {
-  .lang:hover .lang__chev { transform: rotate(-135deg) translateY(0); }
-}
-.lang:focus-within .lang__chev,
-.lang--open .lang__chev { transform: rotate(-135deg) translateY(0); }
-.lang__menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  padding-top: 6px;       /* invisible bridge so hover doesn't break */
-  min-width: 140px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-4px);
-  transition: opacity .2s ease, visibility .2s ease, transform .2s ease;
-  transition-delay: 200ms; /* grace period on close */
-  z-index: 60;
-}
-@media (hover: hover) and (pointer: fine) {
-  .lang:hover .lang__menu { opacity: 1; visibility: visible; transform: translateY(0); transition-delay: 0ms; }
-}
-.lang:focus-within .lang__menu,
-.lang--open .lang__menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  transition-delay: 0ms; /* open immediately */
-}
-.lang__menu-inner {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: 0 12px 32px rgba(14,42,71,0.10);
-  padding: 6px;
-  display: flex; flex-direction: column;
-}
-.lang__menu button {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 9px 12px;
-  border-radius: 8px;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--ink);
-  text-align: left;
-  transition: background .15s, color .15s;
-}
-.lang__menu button:hover { background: var(--bronze-soft); color: var(--bronze); }
-.lang__menu button .lang__name { color: var(--ink-muted); font-family: "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 11.5px; letter-spacing: 0; }
-.lang__menu button:hover .lang__name { color: var(--bronze); }
 
 .header__phone {
   font-size: 14px; font-weight: 500; color: var(--ink);
@@ -386,7 +315,6 @@ section { padding: 100px 0; position: relative; }
 }
 @media (max-width: 430px) {
   .header__right { gap: 6px; }
-  .lang__toggle { padding: 7px 8px 7px 10px; }
 }
 
 /* Mobile nav panel */
@@ -427,14 +355,6 @@ section { padding: 100px 0; position: relative; }
   font-size: 16px; color: var(--ink-muted);
   min-height: 44px; display: flex; align-items: center; margin-top: 8px;
 }
-.mobile-nav__langs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-.mobile-nav__langs button {
-  min-height: 44px; padding: 10px 18px;
-  border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
-  font-family: "Geist Mono", ui-monospace, "SF Mono", Consolas, monospace;
-  font-size: 12px; letter-spacing: 0.06em; color: var(--navy); cursor: pointer;
-}
-.mobile-nav__langs button[aria-current="true"] { border-color: var(--bronze); color: var(--bronze); background: var(--bronze-soft); }
 .mobile-nav .mobile-cta { margin-top: 24px; color: #fff; justify-content: center; min-height: 52px; align-self: flex-start; }
 
 /* ============== HERO ============== */
@@ -724,20 +644,6 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
       <a href="index.html#faq" data-i18n="nav_faq">FAQ</a>
     </nav>
     <div class="header__right">
-      <div class="lang" id="lang">
-        <button class="lang__toggle" id="langToggle" aria-haspopup="listbox" aria-expanded="false">
-          <span id="langCurrent">DE</span>
-          <span class="lang__chev" aria-hidden="true"></span>
-        </button>
-        <div class="lang__menu" id="langMenu" role="listbox">
-          <div class="lang__menu-inner">
-            <button data-lang="de" role="option"><span>DE</span><span class="lang__name">Deutsch</span></button>
-            <button data-lang="ru" role="option"><span>RU</span><span class="lang__name">Русский</span></button>
-            <button data-lang="ro" role="option"><span>RO</span><span class="lang__name">Română</span></button>
-            <button data-lang="tr" role="option"><span>TR</span><span class="lang__name">Türkçe</span></button>
-          </div>
-        </div>
-      </div>
       <a href="index.html#bewerbung" class="btn btn--primary header__cta" data-i18n="cta_apply">Jetzt bewerben</a>
       <button class="burger" id="burger" aria-label="Menu"><span></span></button>
     </div>
@@ -756,12 +662,6 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
     <a href="index.html#faq" data-i18n="nav_faq">FAQ</a>
   </nav>
   <a class="mobile-nav__tel" href="tel:+499116323697">+49 911 6323697</a>
-  <div class="mobile-nav__langs" id="mnavLangs">
-    <button type="button" data-lang="de">DE</button>
-    <button type="button" data-lang="ru">RU</button>
-    <button type="button" data-lang="ro">RO</button>
-    <button type="button" data-lang="tr">TR</button>
-  </div>
   <a href="index.html#bewerbung" class="btn btn--primary mobile-cta" data-i18n="cta_apply">Jetzt bewerben</a>
 </div>
 
@@ -857,9 +757,8 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
     <div class="footer__bottom">
       <span>© 2026 Cuma Gün – Kuriertransporte e. K.</span>
       <span data-i18n="footer_family">Familienunternehmen · Nürnberg und Crailsheim</span>
-      <span class="footer__lang demo-note">Übersetzungen DE/RU/RO/TR – werden noch finalisiert</span>
     </div>
-    <p class="footer__credit">Erstellt von <span>IVAN HQ</span></p>
+    <p class="footer__credit">Erstellt von <a class="footer__credit-link" href="https://ivanhq.com" target="_blank" rel="noopener noreferrer">IVAN HQ</a></p>
   </div>
 </footer>
 
@@ -908,9 +807,11 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
   font-size: 12.5px;
   color: rgba(242,239,229,0.5);
 }
-.footer__lang { color: rgba(242,239,229,0.45); }
 .footer__credit { margin-top: 16px; font-size: 11.5px; letter-spacing: .01em; color: rgba(242,239,229,0.32); }
 .footer__credit span { color: rgba(242,239,229,0.5); font-weight: 600; }
+.footer__credit-link { display: inline-block; min-height: 44px; line-height: 44px; margin: -14px 0; color: rgba(242,239,229,0.5); font-weight: 600; text-decoration: none; transition: color .2s; }
+.footer__credit-link:hover, .footer__credit-link:focus-visible { color: #B98B36; text-decoration: underline; }
+.footer__credit-link:focus-visible { outline: 2px solid #B98B36; outline-offset: 3px; }
 .footer__socials { display: flex; gap: 8px; margin-top: 18px; }
 .social {
   width: 36px; height: 36px;

@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Selbstgehostete Schriften – Cuma Gün – Kuriertransporte e. K.
+   Keine externen Font-CDNs, keine Verbindung zu Google Fonts.
+
+   Geist / Geist Mono  – © 2023 Vercel, SIL Open Font License 1.1 (OFL-Geist.txt)
+   Inter Tight         – © 2020 Rasmus Andersson, SIL Open Font License 1.1
+                         (OFL-InterTight.txt)
+
+   Variable Fonts: ein Datei pro Familie deckt 100–900 ab.
+   Inter Tight ist auf Latin + Latin Extended reduziert (Subset).
+   ========================================================================== */
+
+@font-face {
+  font-family: "Inter Tight";
+  src: url("InterTight-Variable.woff2") format("woff2-variations"),
+       url("InterTight-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Tight";
+  src: url("InterTight-Italic-Variable.woff2") format("woff2-variations"),
+       url("InterTight-Italic-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("Geist-Variable.woff2") format("woff2-variations"),
+       url("Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("Geist-Italic-Variable.woff2") format("woff2-variations"),
+       url("Geist-Italic-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("GeistMono-Variable.woff2") format("woff2-variations"),
+       url("GeistMono-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
