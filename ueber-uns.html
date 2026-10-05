@@ -12,9 +12,9 @@
 <meta property="og:description" content="Werden Sie Paketzusteller bei einem familiengeführten Logistikbetrieb mit 30 Jahren Erfahrung – im Auftrag von United Parcel Service." />
 <meta property="og:type" content="website" />
 <!-- Domain-bound URLs (keep together — change all four on a domain move) -->
-<meta property="og:url" content="https://guen-transporte.com/ueber-uns.html" />
-<link rel="canonical" href="https://guen-transporte.com/ueber-uns.html" />
-<meta property="og:image" content="https://guen-transporte.com/images/og-image.jpg" />
+<meta property="og:url" content="https://www.guen-transporte.de/ueber-uns.html" />
+<link rel="canonical" href="https://www.guen-transporte.de/ueber-uns.html" />
+<meta property="og:image" content="https://www.guen-transporte.de/images/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Schwarzer UPS-Transporter von Cuma Gün – Kuriertransporte e. K." />
@@ -76,7 +76,7 @@
 <style>
 /* ===== Reset & base ===== */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 92px; }
 body {
   margin: 0;
   font-family: "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -290,7 +290,7 @@ section { padding: 100px 0; position: relative; }
   70% { box-shadow: 0 0 0 14px rgba(14,42,71,0); }
   100% { box-shadow: 0 0 0 0 rgba(14,42,71,0); }
 }
-.btn--bronze { background: var(--bronze); color: #fff; }
+.btn--bronze { background: #B98B36; color: #06243D; }
 .btn--bronze:hover { background: #a47a2c; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(185,139,54,0.3); }
 .btn--ghost { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
 .btn--ghost:hover { background: var(--navy); color: #fff; }
@@ -625,6 +625,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
 <div id="preview-banner">Vorschau – diese Seite befindet sich im Aufbau</div>
 
 <!-- ============== HEADER ============== -->
@@ -670,7 +671,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
 
 
 <!-- ============== ÜBER UNS (placeholder) ============== -->
-<main>
+<main id="main" tabindex="-1">
 <section class="ueber">
   <div class="container">
     <h1 class="ueber__h1" data-i18n="ueber_h1">Über uns</h1>
@@ -727,7 +728,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         <p class="footer__tagline" data-i18n="footer_tagline">Familiengeführter Kurierdienst seit September 1995.</p>
       </div>
       <div class="footer__col">
-        <h5 class="footer__h" data-i18n="footer_menu">Menü</h5>
+        <h4 class="footer__h" data-i18n="footer_menu">Menü</h4>
         <ul>
           <li><a href="ueber-uns.html" data-i18n="nav_ueber">Über uns</a></li>
           <li><a href="index.html#arbeitstag" data-i18n="nav_arbeitstag">Arbeitstag</a></li>
@@ -738,14 +739,14 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         </ul>
       </div>
       <div class="footer__col">
-        <h5 class="footer__h" data-i18n="footer_locations">Standorte</h5>
+        <h4 class="footer__h" data-i18n="footer_locations">Standorte</h4>
         <ul>
           <li><strong>Nürnberg</strong><br/>Koblenzer Str. 13<br/><a href="mailto:nuernberg-bewerbung@guen-transporte.de">nuernberg-bewerbung@guen-transporte.de</a></li>
           <li><strong>Crailsheim</strong><br/>Wittauer Str. 1<br/><a href="mailto:crailsheim-bewerbung@guen-transporte.de">crailsheim-bewerbung@guen-transporte.de</a></li>
         </ul>
       </div>
       <div class="footer__col">
-        <h5 class="footer__h" data-i18n="footer_legal">Rechtliches</h5>
+        <h4 class="footer__h" data-i18n="footer_legal">Rechtliches</h4>
         <ul>
           <li><a href="index.html#impressum" data-i18n="footer_imprint">Impressum</a></li>
           <li><a href="index.html#datenschutz" data-i18n="footer_privacy">Datenschutzerklärung</a></li>
@@ -879,6 +880,14 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
   body .sticky-apply { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .cta-bar { transition: none; } }
+.skip-link{position:absolute;left:16px;top:-120px;z-index:10000;padding:12px 18px;background:var(--navy);color:#fff;border-radius:8px;font-weight:600;text-decoration:none}.skip-link:focus{top:16px;outline:2px solid var(--bronze);outline-offset:2px}
+#main:focus{outline:none}
+.marquee__controls{display:flex;justify-content:flex-end;margin-top:32px;margin-bottom:-28px}
+.marquee__pause{min-height:44px;padding:0 18px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--navy);font-family:"Geist",system-ui,sans-serif;font-weight:500;font-size:14px;cursor:pointer}
+.marquee__pause:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+@media (hover:hover){.marquee__pause:hover{border-color:var(--navy)}}
+.marquee.is-paused .marquee__track,.marquee:focus-within .marquee__track{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){.marquee__track,.hero__photo,.dot,.btn--primary,.sticky-apply{animation:none !important}.marquee{overflow-x:auto}.marquee__track{transform:none}.marquee__controls{display:none}}
 /* Any open overlay hides the bar and the desktop pill alike */
 body.overlay-open .cta-bar,
 body.overlay-open .sticky-apply { display: none; }

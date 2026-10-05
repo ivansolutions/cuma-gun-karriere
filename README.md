@@ -28,6 +28,9 @@ Lokal ansehen:
 python3 -m http.server 8000
 ```
 
+Die Schriften werden über `fetch` geladen und brauchen einen echten Server —
+ein Doppelklick auf `index.html` (file://) zeigt Ersatzschriften.
+
 ## Datenschutz
 
 * **Keine Cookies, kein localStorage, kein Tracking.** Es gibt keinen
@@ -36,7 +39,7 @@ python3 -m http.server 8000
   Verbindung zu Google Fonts oder einem anderen CDN.
 * **Karten laden erst nach ausdrücklicher Zustimmung.** Die beiden
   Standortkarten sind durch eine Platzhalterfläche mit der Schaltfläche
-  „Interaktive Karte laden“ ersetzt. Erst ein Klick setzt `src` auf die
+  „Interaktive Karte laden" ersetzt. Erst ein Klick setzt `src` auf die
   Karten-URL; vorher verlässt kein Request den Browser.
 * Alle Personenfotos sind mit Einwilligung der abgebildeten Personen
   veröffentlicht. Scheidet eine Person aus dem Unternehmen aus, ist ihre
@@ -44,30 +47,35 @@ python3 -m http.server 8000
 
 ## Schriften
 
-| Familie     | Lizenz                        | Datei                                |
-|-------------|-------------------------------|--------------------------------------|
-| Geist       | SIL OFL 1.1 (© Vercel)        | `fonts/OFL-Geist.txt`                |
-| Geist Mono  | SIL OFL 1.1 (© Vercel)        | `fonts/OFL-Geist.txt`                |
-| Inter Tight | SIL OFL 1.1 (© R. Andersson)  | `fonts/OFL-InterTight.txt`           |
+| Familie     | Lizenz                        | Lizenzdatei                |
+|-------------|-------------------------------|----------------------------|
+| Geist       | SIL OFL 1.1 (© Vercel)        | `fonts/OFL-Geist.txt`      |
+| Geist Mono  | SIL OFL 1.1 (© Vercel)        | `fonts/OFL-Geist.txt`      |
+| Inter Tight | SIL OFL 1.1 (© R. Andersson)  | `fonts/OFL-InterTight.txt` |
 
-Variable Fonts, je eine Datei pro Schnitt, Gewichtsbereich 100–900.
+Variable Fonts, Gewichtsbereich 100–900, je eine Datei pro Schnitt.
 Inter Tight ist auf Latin und Latin Extended reduziert.
 
 ## Vor dem Livegang zu erledigen
 
-1. **`noindex` entfernen.** Beide Seiten tragen derzeit
+1. **TLS-Zertifikat.** Die Domain `guen-transporte.de` antwortet derzeit nur
+   über HTTP; der Browser meldet „Nicht sicher". Die Datenschutzerklärung
+   sagt dagegen zu, dass die Übertragung SSL/TLS-verschlüsselt erfolgt. Vor
+   der Umstellung muss ein Zertifikat für `guen-transporte.de` **und**
+   `www.guen-transporte.de` vorliegen und HTTPS erzwungen werden.
+2. **`noindex` entfernen.** Beide Seiten tragen
    `<meta name="robots" content="noindex, nofollow">`. Das Tag darf erst am
    Tag der Domain-Umstellung entfernt werden — vorher würden Suchmaschinen
    die Vorschauadresse indexieren und es entstünden zwei Adressen mit
    demselben Inhalt.
-2. **Domain-gebundene URLs prüfen.** Im `<head>` von `index.html` stehen vier
-   Angaben mit fester Domain (`og:url`, `canonical`, `og:image` und die
-   Bildmaße). Sie sind auf `https://guen-transporte.com/` gesetzt und müssen
-   bei einem Domainwechsel gemeinsam geändert werden.
-3. **Bewerbungsformular anbinden.** Das Formular führt derzeit keine
-   Übertragung aus: nach dem Absenden erscheint nur ein Hinweis, die
-   Unterlagen vorerst per E-Mail zu senden. Ein serverseitiger Empfang samt
-   Dateiupload (`Lebenslauf`, `Zeugnisse`) steht noch aus; die
+3. **Hauptadresse festlegen.** Im `<head>` beider Seiten stehen `og:url`,
+   `canonical` und `og:image` auf `https://www.guen-transporte.de/`. Die
+   Variante ohne `www` sollte per 301 dorthin weiterleiten. Bei einem
+   Wechsel der Hauptadresse sind alle drei Angaben je Seite gemeinsam zu
+   ändern.
+4. **Bewerbungsformular anbinden.** Das Formular überträgt derzeit nichts:
+   nach dem Absenden erscheint nur ein Hinweis. Ein serverseitiger Empfang
+   samt Dateiupload (`Lebenslauf`, `Zeugnisse`) steht noch aus; die
    Empfängerlogik nach Standort liegt in `app.js` (`resolveRecipients`).
    Sobald übertragen wird, ist die Datenschutzerklärung um die Beschreibung
    dieser Verarbeitung zu ergänzen.
@@ -85,4 +93,4 @@ nur an dieser einen Stelle ändern.
 
 Gestaltung und Code: IVAN HQ. Inhalte, Fotos und Firmenangaben:
 Cuma Gün – Kuriertransporte e. K. Die Schriften stehen unter der SIL Open
-Font License 1.1, siehe die beiliegenden Lizenzdateien in `fonts/`.
+Font License 1.1, siehe die Lizenzdateien in `fonts/`.

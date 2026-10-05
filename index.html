@@ -12,9 +12,9 @@
 <meta property="og:description" content="Werden Sie Paketzusteller bei einem familiengeführten Logistikbetrieb mit 30 Jahren Erfahrung – im Auftrag von United Parcel Service." />
 <meta property="og:type" content="website" />
 <!-- Domain-bound URLs (keep together — change all four on a domain move) -->
-<meta property="og:url" content="https://guen-transporte.com/" />
-<link rel="canonical" href="https://guen-transporte.com/" />
-<meta property="og:image" content="https://guen-transporte.com/images/og-image.jpg" />
+<meta property="og:url" content="https://www.guen-transporte.de/" />
+<link rel="canonical" href="https://www.guen-transporte.de/" />
+<meta property="og:image" content="https://www.guen-transporte.de/images/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Schwarzer UPS-Transporter von Cuma Gün – Kuriertransporte e. K." />
@@ -76,7 +76,7 @@
 <style>
 /* ===== Reset & base ===== */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 92px; }
 body {
   margin: 0;
   font-family: "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -291,7 +291,7 @@ section { padding: 100px 0; position: relative; }
   70% { box-shadow: 0 0 0 14px rgba(14,42,71,0); }
   100% { box-shadow: 0 0 0 0 rgba(14,42,71,0); }
 }
-.btn--bronze { background: var(--bronze); color: #fff; }
+.btn--bronze { background: #B98B36; color: #06243D; }
 .btn--bronze:hover { background: #a47a2c; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(185,139,54,0.3); }
 .btn--ghost { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
 .btn--ghost:hover { background: var(--navy); color: #fff; }
@@ -502,6 +502,13 @@ section { padding: 100px 0; position: relative; }
 @media (max-width: 768px) {
   .hero__stats { grid-template-columns: 1fr; gap: 28px; margin-top: 40px; }
 }
+@media (min-width: 769px) {
+  .hero__stats { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; }
+  .hero__stats .stat { flex: 0 1 auto; max-width: 340px; }
+  .hero__stats .stat:last-child { text-align: right; }
+  .hero__stats .stat:last-child .stat__num { justify-content: flex-end; }
+  .hero__stats .stat:last-child .stat__label { margin-left: auto; }
+}
 .stat__num {
   font-family: "Geist", system-ui, sans-serif;
   font-size: clamp(48px, 5vw, 64px);
@@ -514,7 +521,7 @@ section { padding: 100px 0; position: relative; }
   align-items: baseline;
   gap: 4px;
 }
-.stat__num .accent { color: var(--bronze); }
+.stat__num .accent { color: var(--bronze); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .stat__num .unit { font-size: 0.45em; color: var(--ink-muted); font-weight: 500; margin-left: 6px; }
 .stat__label {
   font-size: 14.5px;
@@ -565,6 +572,11 @@ body .sticky-apply { transition: transform .2s ease, opacity .2s ease; }
 @media (max-width: 1149.98px) {
   body .sticky-apply.is-hidden { transform: translateY(calc(100% + 24px)); opacity: 0; pointer-events: none; }
 }
+body .sticky-apply.is-first-screen {
+  transform: translateY(calc(100% + 24px));
+  opacity: 0;
+  pointer-events: none;
+}
 @media (prefers-reduced-motion: reduce) { body .sticky-apply { transition: none; } }
 /* Never let the CTA glow through an open overlay */
 body:has(.empmodal.open) .sticky-apply,
@@ -584,6 +596,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
 <div id="preview-banner">Vorschau – diese Seite befindet sich im Aufbau</div>
 
 <!-- ============== HEADER ============== -->
@@ -627,6 +640,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
 <a id="top"></a>
 
 <!-- ============== HERO ============== -->
+<main id="main" tabindex="-1">
 <section class="hero">
   <div class="container">
     <div class="hero__grid">
@@ -644,7 +658,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         </div>
       </div>
       <div class="hero__photo-wrap">
-        <img class="hero__photo" src="images/ups-crafter.jpg" alt="Schwarzer UPS-Transporter (VW Crafter) von Cuma Gün – Kuriertransporte e. K." />
+        <img class="hero__photo" src="images/ups-crafter.jpg" width="1800" height="1200" alt="Schwarzer UPS-Transporter (VW Crafter) von Cuma Gün – Kuriertransporte e. K." />
         <div class="hero__caption" data-i18n="hero_caption">Eigene Fahrzeuge · eigenes Personal</div>
       </div>
     </div>
@@ -655,12 +669,12 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         <div class="stat__label" data-i18n="stat1_label">Familienunternehmen, gegründet im September 1995</div>
       </div>
       <div class="stat">
-        <div class="stat__num"><span class="accent">2</span><span class="unit" data-i18n="stat2_unit">Standorte</span></div>
+        <div class="stat__num"><span class="accent" data-count="2">2</span><span class="unit" data-i18n="stat2_unit">Standorte</span></div>
         <div class="stat__label" data-i18n="stat2_label">Nürnberg · Crailsheim</div>
       </div>
       <div class="stat">
-        <div class="stat__num"><span class="accent">4</span><span class="unit" data-i18n="stat3_unit">Sprachen</span></div>
-        <div class="stat__label" data-i18n="stat3_label">Deutsch, Russisch, Rumänisch und Türkisch im Depot-Alltag</div>
+        <div class="stat__num"><span class="accent" data-count="120" data-suffix="+">120+</span><span class="unit" data-i18n="stat3_unit">Mitarbeiter</span></div>
+        <div class="stat__label" data-i18n="stat3_label">An beiden Standorten: Fahrer, Lader und Werkstatt</div>
       </div>
     </div>
   </div>
@@ -759,10 +773,10 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         <div class="tl-time mono" data-i18n="s3_t2_time">07:00–08:30 Uhr</div>
         <div class="tl-axis"><span class="tl-dot"></span></div>
         <div class="tl-body">
-          <h4 class="tl-title" data-i18n="s3_t2_title">Vorbereitung & Abfahrt</h4>
+          <h3 class="tl-title" data-i18n="s3_t2_title">Vorbereitung & Abfahrt</h3>
           <p class="tl-desc" data-i18n="s3_t2_desc">Der Arbeitstag beginnt um 07:00 Uhr am Fahrzeug. Etwas früher zu kommen ist eine persönliche Entscheidung – niemand setzt das voraus, niemand drängt.<br><strong>Ladung richten:</strong> Sendungen scannen, nach Stopps schlichten, Express-Pakete prüfen.<br><strong>Abfahrt:</strong> Planmäßig zwischen 08:15 und 08:30 Uhr.<br>Kaffeezeit ist immer drin.</p>
           <div class="tl-photo">
-            <img loading="lazy" src="images/at-verladung.jpg" alt="Pakete am Depot, bereit zur Verladung" />
+            <img loading="lazy" src="images/at-verladung.jpg" width="1067" height="1600" alt="Pakete am Depot, bereit zur Verladung" />
           </div>
         </div>
       </div>
@@ -770,10 +784,10 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         <div class="tl-time mono" data-i18n="s3_t3_time">08:30–13:00 Uhr</div>
         <div class="tl-axis"><span class="tl-dot"></span></div>
         <div class="tl-body">
-          <h4 class="tl-title" data-i18n="s3_t3_title">Ihre Route, Ihr Rhythmus</h4>
+          <h3 class="tl-title" data-i18n="s3_t3_title">Ihre Route, Ihr Rhythmus</h3>
           <p class="tl-desc" data-i18n="s3_t3_desc">Sie sind auf Ihrer vertrauten Route unterwegs. Express-Sendungen planen wir vorab gemeinsam mit der Disposition – die Kunden warten. Das gibt Ihnen maximale Planungssicherheit für den Tag – ohne Stress und Überraschungen zwischendurch.</p>
           <div class="tl-photo">
-            <img loading="lazy" src="images/at-cockpit.jpg" alt="Cockpit eines VW Crafter mit Navigation und Scanner" />
+            <img loading="lazy" src="images/at-cockpit.jpg" width="1600" height="1067" alt="Cockpit eines VW Crafter mit Navigation und Scanner" />
           </div>
         </div>
       </div>
@@ -781,10 +795,10 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         <div class="tl-time mono" data-i18n="s3_t4_time">13:00–13:45 Uhr</div>
         <div class="tl-axis"><span class="tl-dot"></span></div>
         <div class="tl-body">
-          <h4 class="tl-title" data-i18n="s3_t4_title">Pause (Mittag)</h4>
+          <h3 class="tl-title" data-i18n="s3_t4_title">Pause (Mittag)</h3>
           <p class="tl-desc" data-i18n="s3_t4_desc">Sie ist ein Muss: Gesetzlich vorgeschrieben nach spätestens 4,5 Stunden Lenkzeit.<br><br>Flexibel unterwegs planbar (Richtwert: 13:00 bis 13:45 Uhr).</p>
           <div class="tl-photo">
-            <img loading="lazy" src="images/at-pause.jpg" alt="Fahrer macht Pause mit Kaffee neben dem Lieferfahrzeug" />
+            <img loading="lazy" src="images/at-pause.jpg" width="1536" height="1024" alt="Fahrer macht Pause mit Kaffee neben dem Lieferfahrzeug" />
           </div>
         </div>
       </div>
@@ -792,10 +806,10 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         <div class="tl-time mono" data-i18n="s3_t5_time">13:45–16:00 Uhr</div>
         <div class="tl-axis"><span class="tl-dot"></span></div>
         <div class="tl-body">
-          <h4 class="tl-title" data-i18n="s3_t5_title">Zweite Tageshälfte</h4>
+          <h3 class="tl-title" data-i18n="s3_t5_title">Zweite Tageshälfte</h3>
           <p class="tl-desc" data-i18n="s3_t5_desc">Nach der Pause die verbleibenden Pakete ausliefern. Parallel feste Vertragskunden anfahren und spontane Tagesaufträge übernehmen. Zwischen 15:30 und 16:00 Uhr Rückkehr ins Center.</p>
           <div class="tl-photo">
-            <img loading="lazy" src="images/at-laderaum-beladen.jpg" alt="Beladener Laderaum eines Zustellfahrzeugs" />
+            <img loading="lazy" src="images/at-laderaum-beladen.jpg" width="1067" height="1600" alt="Beladener Laderaum eines Zustellfahrzeugs" />
           </div>
         </div>
       </div>
@@ -803,10 +817,10 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         <div class="tl-time mono" data-i18n="s3_t6_time"></div>
         <div class="tl-axis"><span class="tl-dot"></span></div>
         <div class="tl-body">
-          <h4 class="tl-title" data-i18n="s3_t6_title">Nach der Tour</h4>
+          <h3 class="tl-title" data-i18n="s3_t6_title">Nach der Tour</h3>
           <p class="tl-desc" data-i18n="s3_t6_desc">Bei Bedarf das Fahrzeug waschen. Etwaige Vorkommnisse oder Probleme auf der Tour direkt mit der Disposition klären. Tour ordnungsgemäß im System abschließen. Feierabend.</p>
           <div class="tl-photo">
-            <img loading="lazy" src="images/at-laderaum-leer.jpg" alt="Aufgeräumter, leerer Laderaum mit Sackkarre" />
+            <img loading="lazy" src="images/at-laderaum-leer.jpg" width="1067" height="1600" alt="Aufgeräumter, leerer Laderaum mit Sackkarre" />
           </div>
         </div>
       </div>
@@ -814,7 +828,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         <div class="tl-time mono" data-i18n="s3_t7_time"></div>
         <div class="tl-axis"><span class="tl-dot tl-dot--bronze"></span></div>
         <div class="tl-body">
-          <h4 class="tl-title" data-i18n="s3_t7_title">Erste Wochen</h4>
+          <h3 class="tl-title" data-i18n="s3_t7_title">Erste Wochen</h3>
           <p class="tl-desc" data-i18n="s3_t7_desc">Aller Anfang ist schwer, deshalb lassen wir Sie nicht allein: In der ersten Woche sind Sie Beifahrer. Ein erfahrener Kollege zeigt Ihnen die Tour. Unser Job verlangt echtes Können und ist kein Beruf für jedermann – das wissen wir. Planen Sie in der ersten Zeit ruhig etwas mehr Spielraum ein. Bis Sie die Route perfekt kennen, kann es auch mal 16:00 oder 17:00 Uhr werden. Machen Sie sich keine Sorgen: Ihre Arbeitszeit wird natürlich komplett erfasst.</p>
           <div class="tl-photo">
             <img loading="lazy" src="images/at-einarbeitung.jpg" width="1600" height="1067" alt="Erfahrener Kollege zeigt einem neuen Mitarbeiter den Scanner im Laderaum" />
@@ -1080,6 +1094,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
       </div>
     </div>
   </div>
+  <div class="container marquee__controls"><button type="button" class="marquee__pause" id="marqueePause" aria-pressed="false" aria-controls="marquee">Bewegung pausieren</button></div>
   <div class="marquee" id="marquee">
     <div class="marquee__track">
       <!-- 6 cards × 2 for seamless loop -->
@@ -1184,44 +1199,44 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
 
     <div class="faq reveal">
       <div class="faq__item open">
-        <button class="faq__q">
+        <button class="faq__q" aria-expanded="true" aria-controls="faq-a1">
           <span class="faq__num mono">01</span>
           <span class="faq__text" data-i18n="s6_q1">Welche Unterlagen brauche ich für die Bewerbung?</span>
           <span class="faq__toggle"><span></span><span></span></span>
         </button>
-        <div class="faq__a"><p data-i18n="s6_a1">Ein übersichtlicher Lebenslauf sowie <strong>aktuelles Foto</strong> reicht für den ersten Schritt. Ein klar strukturierter <strong>Lebenslauf</strong> ist für Sie von großem Vorteil.<br><br>Wir gehen davon aus, dass alle notwendigen Dokumente – wie <strong>Führerschein</strong> und <strong>Aufenthaltspapiere</strong> – gültig vorliegen und bereitgehalten werden.<br><br>Wir freuen uns auf Ihre Bewerbung!</p></div>
+        <div class="faq__a" id="faq-a1"><p data-i18n="s6_a1">Ein übersichtlicher Lebenslauf sowie <strong>aktuelles Foto</strong> reicht für den ersten Schritt. Ein klar strukturierter <strong>Lebenslauf</strong> ist für Sie von großem Vorteil.<br><br>Wir gehen davon aus, dass alle notwendigen Dokumente – wie <strong>Führerschein</strong> und <strong>Aufenthaltspapiere</strong> – gültig vorliegen und bereitgehalten werden.<br><br>Wir freuen uns auf Ihre Bewerbung!</p></div>
       </div>
       <div class="faq__item">
-        <button class="faq__q">
+        <button class="faq__q" aria-expanded="false" aria-controls="faq-a2">
           <span class="faq__num mono">02</span>
           <span class="faq__text" data-i18n="s6_q2">Was, wenn mein Deutsch nicht perfekt ist?</span>
           <span class="faq__toggle"><span></span><span></span></span>
         </button>
-        <div class="faq__a"><p data-i18n="s6_a2">Hauptsache, wir verstehen uns: Für den Start reicht verständliches Deutsch völlig aus. Niemand wird abgewiesen, weil mal ein Wort fehlt.</p></div>
+        <div class="faq__a" id="faq-a2"><p data-i18n="s6_a2">Hauptsache, wir verstehen uns: Für den Start reicht verständliches Deutsch völlig aus. Niemand wird abgewiesen, weil mal ein Wort fehlt.</p></div>
       </div>
       <div class="faq__item">
-        <button class="faq__q">
+        <button class="faq__q" aria-expanded="false" aria-controls="faq-a3">
           <span class="faq__num mono">03</span>
           <span class="faq__text" data-i18n="s6_q3">Was verdiene ich?</span>
           <span class="faq__toggle"><span></span><span></span></span>
         </button>
-        <div class="faq__a"><p data-i18n="s6_a3">Sie erhalten eine Festanstellung mit einem festen, sicheren Monatsgehalt auf Basis einer 40-Stunden-Woche, zuzüglich Spesen. Die Details besprechen wir transparent im persönlichen Gespräch.</p></div>
+        <div class="faq__a" id="faq-a3"><p data-i18n="s6_a3">Sie erhalten eine Festanstellung mit einem festen, sicheren Monatsgehalt auf Basis einer 40-Stunden-Woche, zuzüglich Spesen. Die Details besprechen wir transparent im persönlichen Gespräch.</p></div>
       </div>
       <div class="faq__item">
-        <button class="faq__q">
+        <button class="faq__q" aria-expanded="false" aria-controls="faq-a4">
           <span class="faq__num mono">04</span>
           <span class="faq__text" data-i18n="s6_q4">Ist das eine Festanstellung?</span>
           <span class="faq__toggle"><span></span><span></span></span>
         </button>
-        <div class="faq__a"><p data-i18n="s6_a4">Ja. Festanstellung mit deutschem Arbeitsvertrag, allen Sozialleistungen und regulärer Lohnabrechnung. Keine Scheinselbstständigkeit, keine grauen Modelle.</p></div>
+        <div class="faq__a" id="faq-a4"><p data-i18n="s6_a4">Ja. Festanstellung mit deutschem Arbeitsvertrag, allen Sozialleistungen und regulärer Lohnabrechnung. Keine Scheinselbstständigkeit, keine grauen Modelle.</p></div>
       </div>
       <div class="faq__item">
-        <button class="faq__q">
+        <button class="faq__q" aria-expanded="false" aria-controls="faq-a5">
           <span class="faq__num mono">05</span>
           <span class="faq__text" data-i18n="s6_q6">Wie lange dauert die Einarbeitung?</span>
           <span class="faq__toggle"><span></span><span></span></span>
         </button>
-        <div class="faq__a"><p data-i18n="s6_a6">In der ersten Woche fahren Sie bei einem Kollegen mit. Danach werden Sie beim selbstständigen Fahren weiterhin tatkräftig unterstützt. So stellen wir sicher, dass unsere Kunden wie gewohnt bestens betreut werden und Sie in Ruhe eingearbeitet werden.</p></div>
+        <div class="faq__a" id="faq-a5"><p data-i18n="s6_a6">In der ersten Woche fahren Sie bei einem Kollegen mit. Danach werden Sie beim selbstständigen Fahren weiterhin tatkräftig unterstützt. So stellen wir sicher, dass unsere Kunden wie gewohnt bestens betreut werden und Sie in Ruhe eingearbeitet werden.</p></div>
       </div>
     </div>
   </div>
@@ -1431,12 +1446,11 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
   <div class="container">
     <div class="bew-head">
       <h2 class="section-h2"><span data-i18n="s8_h2_a">Ein kurzes Formular. </span><span class="em" data-i18n="s8_h2_b">Eine ehrliche Antwort</span><span class="em" data-i18n="s8_h2_c">:</span></h2>
-      <p class="section-lede" data-i18n="s8_lede">Schreiben Sie uns. Wenn Sie zu uns passen, melden wir uns persönlich bei Ihnen, sobald wir Ihre Unterlagen geprüft haben.</p>
     </div>
 
     <div class="bew-grid">
       <div class="bew-left">
-        <div class="vsteps__label mono" data-i18n="bew_steps_label">In sechs Schritten zum ersten Arbeitstag</div>
+        <div class="vsteps__label mono" data-i18n="bew_steps_label">In fünf Schritten zum ersten Arbeitstag</div>
         <ol class="vsteps">
           <li class="vstep">
             <span class="vstep__num mono">01</span>
@@ -1482,9 +1496,8 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         </div>
       </div>
 
-      <form class="form-card" id="applyForm" novalidate>
-        <div class="form-kicker mono" data-i18n="form_kicker">Bewerbung senden</div>
-        <h3 class="form-title" data-i18n="form_title">Ihre Bewerbung</h3>
+      <form class="form-card" id="applyForm" novalidate aria-labelledby="formTitle">
+        <h3 class="form-title visually-hidden" id="formTitle" data-i18n="form_title">Ihre Bewerbung</h3>
         <p class="form-sub" data-i18n="form_sub">Felder mit * sind Pflicht. Unterlagen können Sie direkt unten anhängen.</p>
 
         <div class="form-row">
@@ -1507,6 +1520,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
             <input id="email" name="email" type="email" required />
           </div>
         </div>
+        <div class="form-row">
         <div class="field">
           <label for="position" data-i18n="form_position">Position</label>
           <select id="position" name="position">
@@ -1516,25 +1530,13 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
             <option value="initiativ" data-i18n="form_pos4">Initiativbewerbung</option>
           </select>
         </div>
-        <div class="form-row">
-          <div class="field">
-            <label for="standort" data-i18n="form_standort">Bevorzugter Standort</label>
-            <select id="standort" name="standort">
-              <option value="Nürnberg">Nürnberg</option>
-              <option value="Crailsheim">Crailsheim</option>
-              <option value="Umgebung" data-i18n="form_around">Umgebung Nürnberg</option>
-              <option value="egal" data-i18n="form_no_pref">egal / keine Präferenz</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="sprache" data-i18n="form_sprache">Sprache für Rückruf</label>
-            <select id="sprache" name="sprache">
-              <option value="de">Deutsch</option>
-              <option value="ru">Русский</option>
-              <option value="ro">Română</option>
-              <option value="tr">Türkçe</option>
-            </select>
-          </div>
+        <div class="field">
+          <label for="standort" data-i18n="form_standort">Bevorzugter Standort</label>
+          <select id="standort" name="standort">
+            <option value="Nürnberg">Nürnberg</option>
+            <option value="Crailsheim">Crailsheim</option>
+          </select>
+        </div>
         </div>
 
         <div class="field">
@@ -1606,6 +1608,20 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
   background: linear-gradient(to bottom, rgba(185,139,54,0.55), rgba(185,139,54,0.18));
 }
 .vstep:last-child::before { display: none; }
+/* Bewerbung fits one desktop screen */
+#bewerbung { padding-top: 44px; padding-bottom: 44px; }
+@media (min-width: 901px) {
+  #bewerbung .section-h2 { font-size: 38px; margin-bottom: 14px; }
+  #bewerbung .bew-head   { margin-bottom: 34px; }
+}
+#bewerbung .vsteps      { margin-bottom: 22px; }
+#bewerbung .vstep       { padding-bottom: 15px; gap: 14px; grid-template-columns: 36px 1fr; }
+#bewerbung .vstep:last-child { padding-bottom: 0; }
+#bewerbung .vstep__num  { width: 36px; height: 36px; font-size: 12px; }
+#bewerbung .vstep::before { left: 17px; top: 36px; }
+#bewerbung .vstep__title  { font-size: 15.5px; margin: 5px 0 3px; }
+#bewerbung .vstep__desc   { font-size: 13.5px; line-height: 1.45; }
+#bewerbung .bew-contact   { padding-top: 16px; gap: 6px; }
 .vstep__num {
   position: relative;
   z-index: 1;
@@ -1700,7 +1716,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
 .form-card {
   background: var(--surface);
   border-radius: var(--radius);
-  padding: 40px;
+  padding: 30px;
   color: var(--ink);
   box-shadow: 0 24px 60px rgba(0,0,0,0.25);
   position: relative;
@@ -1713,6 +1729,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
   margin-bottom: 10px;
 }
 .form-title { font-size: 28px; margin: 0 0 6px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .form-sub { color: var(--ink-muted); font-size: 14.5px; margin: 0 0 28px; }
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -1753,6 +1770,14 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
 .drop__text { font-size: 14.5px; }
 .drop__text u { color: var(--bronze); text-decoration-color: var(--bronze); }
 .drop__hint { font-size: 11px; color: var(--ink-muted); opacity: 0.7; }
+.drop { padding: 14px 16px; text-align: left; }
+.drop__inner { flex-direction: row; align-items: center; gap: 10px; }
+.drop__hint { margin-left: auto; white-space: nowrap; }
+@media (max-width: 500px) {
+  .drop { padding: 18px; text-align: center; }
+  .drop__inner { flex-direction: column; }
+  .drop__hint { margin-left: 0; }
+}
 .filelist { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
 .filelist__item { font-size: 13px; color: var(--ink); padding: 6px 10px; background: var(--bg); border-radius: 8px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .filelist__item button { color: var(--ink-muted); font-size: 18px; line-height: 1; }
@@ -1791,6 +1816,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
 </style>
 
 <!-- ============== FOOTER ============== -->
+</main>
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
@@ -1799,7 +1825,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         <p class="footer__tagline" data-i18n="footer_tagline">seit September 1995</p>
       </div>
       <div class="footer__col">
-        <h5 class="footer__h" data-i18n="footer_menu">Menü</h5>
+        <h4 class="footer__h" data-i18n="footer_menu">Menü</h4>
         <ul>
           <li><a href="ueber-uns.html" data-i18n="nav_ueber">Über uns</a></li>
           <li><a href="#arbeitstag" data-i18n="nav_arbeitstag">Arbeitstag</a></li>
@@ -1810,14 +1836,14 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         </ul>
       </div>
       <div class="footer__col">
-        <h5 class="footer__h" data-i18n="footer_locations">Standorte</h5>
+        <h4 class="footer__h" data-i18n="footer_locations">Standorte</h4>
         <ul>
           <li><strong>Nürnberg</strong><br/>Koblenzer Str. 13<br/><a href="mailto:nuernberg-bewerbung@guen-transporte.de">nuernberg-bewerbung@guen-transporte.de</a></li>
           <li><strong>Crailsheim</strong><br/>Wittauer Str. 1<br/><a href="mailto:crailsheim-bewerbung@guen-transporte.de">crailsheim-bewerbung@guen-transporte.de</a></li>
         </ul>
       </div>
       <div class="footer__col">
-        <h5 class="footer__h" data-i18n="footer_legal">Rechtliches</h5>
+        <h4 class="footer__h" data-i18n="footer_legal">Rechtliches</h4>
         <ul>
           <li><a href="#impressum" data-legal="imprint" data-i18n="footer_imprint">Impressum</a></li>
           <li><a href="#datenschutz" data-legal="privacy" data-i18n="footer_privacy">Datenschutzerklärung</a></li>
@@ -1916,13 +1942,13 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
     <div class="empmodal__grid">
       <div class="empmodal__left">
         <img class="empmodal__portrait" id="empPortrait" alt="" />
-        <div class="empmodal__tenure" id="empTenure">22 JAHRE IM TEAM</div>
+        <div class="empmodal__tenure" id="empTenure"></div>
       </div>
       <div class="empmodal__right">
         <div class="empmodal__kicker mono" data-i18n="emp_kicker">MITARBEITERGESCHICHTE</div>
-        <h3 class="empmodal__name" id="empName">Stefan H.</h3>
-        <div class="empmodal__role" id="empRole">Kurierfahrer · Crailsheim</div>
-        <blockquote class="empmodal__quote" id="empQuote">„…“</blockquote>
+        <h3 class="empmodal__name" id="empName"></h3>
+        <div class="empmodal__role" id="empRole"></div>
+        <blockquote class="empmodal__quote" id="empQuote"></blockquote>
         <div class="empmodal__cta">
           <a href="#bewerbung" class="btn btn--primary" data-close data-i18n="cta_apply">Jetzt bewerben</a>
           <button class="btn btn--ghost" data-close data-i18n="emp_back">Zurück zur Übersicht</button>
@@ -2189,6 +2215,14 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
   body .sticky-apply { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .cta-bar { transition: none; } }
+.skip-link{position:absolute;left:16px;top:-120px;z-index:10000;padding:12px 18px;background:var(--navy);color:#fff;border-radius:8px;font-weight:600;text-decoration:none}.skip-link:focus{top:16px;outline:2px solid var(--bronze);outline-offset:2px}
+#main:focus{outline:none}
+.marquee__controls{display:flex;justify-content:flex-end;margin-top:32px;margin-bottom:-28px}
+.marquee__pause{min-height:44px;padding:0 18px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--navy);font-family:"Geist",system-ui,sans-serif;font-weight:500;font-size:14px;cursor:pointer}
+.marquee__pause:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+@media (hover:hover){.marquee__pause:hover{border-color:var(--navy)}}
+.marquee.is-paused .marquee__track,.marquee:focus-within .marquee__track{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){.marquee__track,.hero__photo,.dot,.btn--primary,.sticky-apply{animation:none !important}.marquee{overflow-x:auto}.marquee__track{transform:none}.marquee__controls{display:none}}
 /* Any open overlay hides the bar and the desktop pill alike */
 body.overlay-open .cta-bar,
 body.overlay-open .sticky-apply { display: none; }
@@ -2217,7 +2251,7 @@ body.overlay-open .sticky-apply { display: none; }
 <div id="legal-a11y-body" hidden>
 <p>Wir möchten, dass sich alle Interessierten auf dieser Seite über offene Stellen informieren und mit uns Kontakt aufnehmen können – unabhängig davon, wie sie die Seite bedienen.</p>
 <h3>Was wir umgesetzt haben</h3>
-<ul><li>durchgehende semantische Struktur mit Überschriftenebenen, damit Vorleseprogramme die Seite sinnvoll wiedergeben</li><li>vollständige Bedienbarkeit über die Tastatur, sichtbare Fokusmarkierung auf allen Bedienelementen</li><li>Alternativtexte für Bilder, die Informationen tragen</li><li>Farbkontraste, die auch bei eingeschränktem Sehvermögen ausreichen</li><li>Textgrößen, die sich über die Browsereinstellungen vergrößern lassen, ohne dass Inhalte verloren gehen</li><li>Inhalte in vier Sprachen: Deutsch, Russisch, Rumänisch und Türkisch</li></ul>
+<ul><li>durchgehende semantische Struktur mit Überschriftenebenen, damit Vorleseprogramme die Seite sinnvoll wiedergeben</li><li>vollständige Bedienbarkeit über die Tastatur, sichtbare Fokusmarkierung auf allen Bedienelementen</li><li>Alternativtexte für Bilder, die Informationen tragen</li><li>Farbkontraste, die auch bei eingeschränktem Sehvermögen ausreichen</li><li>Textgrößen, die sich über die Browsereinstellungen vergrößern lassen, ohne dass Inhalte verloren gehen</li></ul>
 <h3>Was noch offen ist</h3>
 <p>Eine förmliche Prüfung nach der Norm EN 301 549 beziehungsweise den WCAG 2.1 haben wir bisher nicht durchführen lassen. Einzelne Bereiche können daher noch Hürden enthalten, die uns nicht bekannt sind.</p>
 <h3>Wenn Sie auf ein Hindernis stoßen</h3>

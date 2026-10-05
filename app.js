@@ -27,7 +27,7 @@ const T = {
     hero_caption: "Eigene Fahrzeuge · eigenes Personal",
     stat1_unit: "Jahre", stat1_label: "Familienunternehmen, gegründet im September 1995",
     stat2_unit: "Standorte", stat2_label: "Nürnberg · Crailsheim",
-    stat3_unit: "Sprachen", stat3_label: "Deutsch, Russisch, Rumänisch und Türkisch im Depot-Alltag",
+    stat3_unit: "Mitarbeiter", stat3_label: "An beiden Standorten: Fahrer, Lader und Werkstatt",
 
     /* S1 */
     s1_kicker: "01 – Bewerbungsprozess",
@@ -121,7 +121,7 @@ const T = {
     loc_hours_crl: "Mo–Fr 07:00–17:00 · Sa 07:00–12:00",
     loc_tel_crl: "+49 7951 468943",
     loc_more: "Mehr zum Standort", loc_route: "Route planen",
-    bew_steps_label: "In sechs Schritten zum ersten Arbeitstag",
+    bew_steps_label: "In fünf Schritten zum ersten Arbeitstag",
     bew_contact_label: "Direkter Kontakt zur Bewerbung",
     ueber_h1: "Über uns",
     ueber_lede: "Diese Seite wird derzeit vorbereitet.",
@@ -131,18 +131,15 @@ const T = {
     /* S8 */
     s8_kicker: "07 – Bewerbung",
     s8_h2_a: "Ein kurzes Formular. ", s8_h2_b: "Eine ehrliche Antwort", s8_h2_c: ":",
-    s8_lede: "Schreiben Sie uns. Wenn Sie zu uns passen, melden wir uns persönlich bei Ihnen, sobald wir Ihre Unterlagen geprüft haben.",
     s8_b1: "Sorgfältige Prüfung jeder Bewerbung",
     s8_b2: "Erstgespräch persönlich oder telefonisch",
     s8_b3: "Probefahrt vor Vertragsunterschrift möglich",
     s8_b4: "Datenverarbeitung gemäß DSGVO",
     s8_call: "Lieber direkt anrufen?",
-    form_kicker: "Bewerbung senden",
     form_title: "Ihre Bewerbung",
     form_sub: "Felder mit * sind Pflicht. Unterlagen können Sie direkt unten anhängen.",
     form_vorname: "Vorname *", form_nachname: "Nachname *", form_telefon: "Telefon *", form_email: "E-Mail *",
-    form_position: "Position", form_standort: "Bevorzugter Standort", form_around: "Umgebung Nürnberg", form_no_pref: "egal / keine Präferenz",
-    form_sprache: "Sprache für Rückruf",
+    form_position: "Position", form_standort: "Bevorzugter Standort",
     form_pos1: "Paketzusteller Nürnberg (Vollzeit)", form_pos2: "Paketzusteller Crailsheim (Vollzeit)",
     form_pos3: "Be- und Entlader Nürnberg (Minijob)", form_pos4: "Initiativbewerbung",
     form_files: "Unterlagen (PDF/DOC/DOCX, max. 10 MB)",
@@ -273,6 +270,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateSticky() {
       ticking = false;
       const y = window.pageYOffset;
+      const sticky = document.getElementById('stickyApply');
+      if (sticky) sticky.classList.toggle('is-first-screen',
+                                          y < window.innerHeight * 0.9);
       const doc = document.documentElement;
       const atTop = y <= THRESHOLD;
       const atBottom = y + window.innerHeight >= doc.scrollHeight - 2;
@@ -341,20 +341,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- STAT COUNT-UP (years since founding) ---------- */
-  const statYears = document.getElementById('statYears');
-  if (statYears) {
-    const parts = String(statYears.dataset.since || '1995-09').split('-');
-    const sinceYear = parseInt(parts[0], 10) || 1995;
-    const sinceMonth = parseInt(parts[1], 10) || 9; // September
-    const now = new Date();
-    // Subtract a year until the founding month has been reached.
-    let target = now.getFullYear() - sinceYear;
-    if (now.getMonth() + 1 < sinceMonth) target -= 1;
-    target = Math.max(0, target);
+  /* ---------- STAT COUNT-UP (all hero stats, started together) ---------- */
+  const heroStats = document.getElementById('heroStats');
+  if (heroStats) {
+    const yearsTarget = (el) => {
+      const parts = String(el.dataset.since || '1995-09').split('-');
+      const sinceYear = parseInt(parts[0], 10) || 1995;
+      const sinceMonth = parseInt(parts[1], 10) || 9; // September
+      const now = new Date();
+      // Subtract a year until the founding month has been reached.
+      let target = now.getFullYear() - sinceYear;
+      if (now.getMonth() + 1 < sinceMonth) target -= 1;
+      return Math.max(0, target);
+    };
+    const counters = Array.from(heroStats.querySelectorAll('.stat__num .accent')).map(el => {
+      const target = el.id === 'statYears' ? yearsTarget(el) : Math.max(0, parseInt(el.dataset.count, 10) || 0);
+      return { el, target, suffix: el.dataset.suffix || '' };
+    }).filter(c => c.el.id === 'statYears' || c.el.dataset.count != null);
+    counters.forEach(c => { c.el.textContent = c.target + c.suffix; });
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    statYears.textContent = target;
-    if (!reduce) {
+    if (!reduce && counters.length) {
+      // Lock each number to its final width so the space-between row does not shift while counting.
+      counters.forEach(c => {
+        c.el.style.display = 'inline-block';
+        c.el.style.minWidth = c.el.getBoundingClientRect().width + 'px';
+      });
       let raf = null;
       const animate = () => {
         if (raf) cancelAnimationFrame(raf);
@@ -363,17 +374,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const tick = (t0) => {
           const t = Math.min(1, (t0 - start) / dur);
           const eased = 1 - Math.pow(1 - t, 3);
-          statYears.textContent = Math.round(eased * target);
+          counters.forEach(c => { c.el.textContent = Math.round(eased * c.target) + c.suffix; });
           if (t < 1) raf = requestAnimationFrame(tick);
-          else { statYears.textContent = target; raf = null; }
+          else { counters.forEach(c => { c.el.textContent = c.target + c.suffix; }); raf = null; }
         };
-        statYears.textContent = 0;
+        counters.forEach(c => { c.el.textContent = 0 + c.suffix; });
         raf = requestAnimationFrame(tick);
       };
       if ('IntersectionObserver' in window) {
         new IntersectionObserver(entries => {
           entries.forEach(en => { if (en.isIntersecting) animate(); });
-        }, { threshold: 0, rootMargin: '0px 0px -8% 0px' }).observe(statYears);
+        }, { threshold: 0, rootMargin: '0px 0px -8% 0px' }).observe(heroStats);
       }
     }
   }
@@ -384,6 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // close others
       document.querySelectorAll('.faq__item').forEach(i => { if (i !== item) i.classList.remove('open'); });
       item.classList.toggle('open');
+      document.querySelectorAll('.faq__item').forEach(i => { const q = i.querySelector('.faq__q'); if (q) q.setAttribute('aria-expanded', String(i.classList.contains('open'))); });
     });
   });
 
@@ -399,8 +411,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const opt = [...locSel.options].find(o => o.value === loc);
         if (opt) locSel.value = loc;
       }
-      document.getElementById('bewerbung').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setTimeout(() => document.getElementById('vorname')?.focus(), 700);
+      scrollToApply();
+      setTimeout(() => document.getElementById('vorname')?.focus({ preventScroll: true }), 700);
     };
     job.querySelector('.job__apply').addEventListener('click', apply);
     job.addEventListener('click', e => {
@@ -459,13 +471,9 @@ document.addEventListener('DOMContentLoaded', () => {
     crl: 'crailsheim-bewerbung@guen-transporte.de',
   };
   function resolveRecipients(standort) {
-    switch (standort) {
-      case 'Nürnberg':  return [BEWERBUNG_MAIL.nbg];
-      case 'Crailsheim': return [BEWERBUNG_MAIL.crl];
-      case 'Umgebung':   return [BEWERBUNG_MAIL.nbg]; // Umgebung Nürnberg → Nürnberg
-      case 'egal':       return [BEWERBUNG_MAIL.nbg, BEWERBUNG_MAIL.crl]; // keine Präferenz → beide (CC)
-      default:           return [BEWERBUNG_MAIL.nbg];
-    }
+    return standort === 'Crailsheim'
+      ? [BEWERBUNG_MAIL.crl]
+      : [BEWERBUNG_MAIL.nbg];
   }
   const form = document.getElementById('applyForm');
   if (form) {
@@ -486,7 +494,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const standort = document.getElementById('standort') ? document.getElementById('standort').value : 'Nürnberg';
       const recipients = resolveRecipients(standort);
       // TODO(v0.6+): send the application + uploaded files (filesState) to these recipients.
-      // For "egal" both addresses receive it (second as CC).
       console.info('[Bewerbung] Standort:', standort, '→ Empfänger:', recipients.join(', '));
 
       document.getElementById('formSuccess').classList.add('show');
@@ -759,3 +766,29 @@ document.addEventListener('DOMContentLoaded', openLegalFromHash);
    The data-legal handler above already preventDefault+stopPropagation,
    so the bronze "Datenschutzerklärung" inside the checkbox label opens
    the modal instead of toggling the checkbox. */
+
+/* ---------- SCROLL TO APPLICATION ----------
+   Land on the section; if the first form field would still be off-screen
+   (narrow layout, steps list stacked above the form), land on the form card. */
+function scrollToApply() {
+  const OFFSET = 92;
+  const sec   = document.getElementById('bewerbung');
+  const form  = document.getElementById('applyForm');
+  const first = document.getElementById('vorname');
+  if (!sec || !form || !first) return;
+  const y = el => el.getBoundingClientRect().top + window.scrollY;
+  const secTarget = y(sec) - OFFSET;
+  const fitsOnScreen = (y(first) - secTarget) < (window.innerHeight - 80);
+  const target = fitsOnScreen ? secTarget : y(form) - OFFSET;
+  window.scrollTo({ top: target, behavior: 'smooth' });
+}
+document.addEventListener('click', e => {
+  const link = e.target.closest('a[href="#bewerbung"]');
+  if (!link) return;
+  e.preventDefault();
+  /* Let menu/modal close handlers release the scroll lock first. */
+  requestAnimationFrame(scrollToApply);
+});
+
+/* ---------- Marquee pause (a11y) ---------- */
+(function(){const init=()=>{const b=document.getElementById('marqueePause'),m=document.getElementById('marquee');if(!b||!m)return;b.addEventListener('click',()=>{const p=m.classList.toggle('is-paused');b.setAttribute('aria-pressed',String(p));b.textContent=p?'Bewegung fortsetzen':'Bewegung pausieren';});};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();})();
