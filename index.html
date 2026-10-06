@@ -1500,7 +1500,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         </div>
       </div>
 
-      <form class="form-card" id="applyForm" novalidate aria-labelledby="formTitle" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+      <form class="form-card" id="applyForm" novalidate aria-labelledby="formTitle" action="bewerbung.php" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
         <h3 class="form-title visually-hidden" id="formTitle" data-i18n="form_title">Ihre Bewerbung</h3>
         <p class="form-sub" data-i18n="form_sub">Felder mit * sind Pflicht. Unterlagen können Sie direkt unten anhängen.</p>
 
@@ -1546,7 +1546,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         <div class="field">
           <label data-i18n="form_files">Unterlagen (PDF, Word oder Foto, zusammen max. 10 MB)</label>
           <label class="drop" id="drop">
-            <input type="file" id="files" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.heic,.heif,image/*" multiple style="display:none;" />
+            <input type="file" id="files" name="attachment[]" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.heic,.heif,image/*" multiple style="display:none;" />
             <div class="drop__inner">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
               <span class="drop__text" data-i18n="form_drop">Hierher ziehen oder <u>klicken zum Auswählen</u></span>
@@ -2326,7 +2326,7 @@ body.overlay-open .sticky-apply { display: none; }
 <h3>6. Bewerbung über das Online-Formular oder per E-Mail</h3>
 
 <p>Sie können sich über das Bewerbungsformular auf dieser Website oder per E-Mail bewerben. Wir verarbeiten dabei die von Ihnen übermittelten Angaben und Unterlagen, etwa Name, Telefonnummer, E-Mail-Adresse, gewünschte Stelle und Standort, Lebenslauf, Anschreiben und Zeugnisse.</p>
-<p>Für die technische Übermittlung des Bewerbungsformulars nutzen wir den Dienst FormSubmit (formsubmit.co). Wenn Sie das Formular absenden, werden Ihre Angaben und angehängten Unterlagen an die Server dieses Dienstes übertragen und von dort als E-Mail an das Bewerbungspostfach des von Ihnen gewählten Standorts weitergeleitet. Der Dienst kann die Übermittlung zu Zwecken der Zustellung vorübergehend speichern. Eine Verarbeitung außerhalb der Europäischen Union, insbesondere in den USA, kann dabei nicht ausgeschlossen werden. Wenn Sie dies nicht wünschen, senden Sie Ihre Bewerbung bitte direkt per E-Mail an nuernberg-bewerbung@guen-transporte.de oder crailsheim-bewerbung@guen-transporte.de.</p>
+<p>Wenn Sie das Bewerbungsformular absenden, werden Ihre Angaben und angehängten Unterlagen verschlüsselt an unseren Webserver übertragen und von dort als E-Mail an das Bewerbungspostfach des von Ihnen gewählten Standorts gesendet. Auf dem Webserver werden sie nicht gespeichert. Externe Formular-Dienste setzen wir nicht ein.</p>
 <p>Zweck der Verarbeitung ist die Prüfung Ihrer Eignung für die ausgeschriebene Stelle und die Durchführung des Bewerbungsverfahrens.</p>
 <p>Rechtsgrundlage ist Art. 88 Abs. 1 DSGVO in Verbindung mit § 26 Abs. 1 BDSG. Die Verarbeitung ist für die Entscheidung über die Begründung eines Beschäftigungsverhältnisses erforderlich.</p>
 <p>Im Falle einer Absage bewahren wir Ihre Daten zur Abwehr möglicher Rechtsansprüche, etwa nach dem Allgemeinen Gleichbehandlungsgesetz, für längstens sechs Monate nach Versand der Absage auf und löschen sie anschließend. Rechtsgrundlage hierfür ist Art. 6 Abs. 1 lit. f DSGVO; das berechtigte Interesse besteht in der Beweisführung in einem möglichen Rechtsstreit.</p>

@@ -73,41 +73,47 @@ Inter Tight ist auf Latin und Latin Extended reduziert.
    Variante ohne `www` sollte per 301 dorthin weiterleiten. Bei einem
    Wechsel der Hauptadresse sind alle drei Angaben je Seite gemeinsam zu
    ändern.
-4. **Bewerbungsformular: Testkopie entfernen.** Das Formular sendet jede
-   Bewerbung samt Anhängen (PDF, Word, JPG/PNG/HEIC-Fotos, zusammen max. 10 MB) per E-Mail an
-   das Postfach des gewählten Standorts. Für den Testbetrieb geht eine Kopie
-   an eine Testadresse. Vor dem Livegang in `app.js` im Block `BEWERBUNG`
-   `kopie: ''` setzen.
+4. **Bewerbungsformular einrichten.** `bewerbung-config.php` mit dem
+   Postfach-Zugang anlegen (siehe unten) und eine Testbewerbung je Standort
+   senden.
 
 ## Bewerbungsformular
 
-Das Formular braucht keinen eigenen Server-Code und funktioniert deshalb auf
-jedem Hosting, auch auf rein statischem. Es wird an den Formular-Dienst
-FormSubmit (`formsubmit.co`) gesendet, der es als E-Mail weiterleitet und
-den Besucher danach auf `index.html?bewerbung=gesendet#bewerbung` zurückführt;
-dort erscheint die Dankesmeldung.
+Das Formular sendet an `bewerbung.php` im selben Ordner. Das Skript schickt
+jede Bewerbung samt Anhängen (PDF, Word, Fotos JPG/PNG/HEIC, zusammen max.
+10 MB) als E-Mail an das Postfach des gewählten Standorts:
 
-Einstellungen in `app.js`, Block `BEWERBUNG`:
+| Standort   | Postfach                                  |
+|------------|-------------------------------------------|
+| Nürnberg   | `nuernberg-bewerbung@guen-transporte.de`  |
+| Crailsheim | `crailsheim-bewerbung@guen-transporte.de` |
 
-| Feld         | Bedeutung                                              |
-|--------------|--------------------------------------------------------|
-| `dienst`     | Adresse des Formular-Dienstes                          |
-| `empfaenger` | Bewerbungspostfach je Standort (Nürnberg, Crailsheim)  |
-| `kopie`      | optionale Kopie jeder Bewerbung, im Livebetrieb leer   |
+Keine Fremddienste, keine Bibliotheken, keine Datenbank; auf dem Server wird
+nichts gespeichert. Antwort auf die E-Mail geht direkt an den Bewerber.
 
-**Einmalige Freischaltung je Postfach.** Bei der ersten Bewerbung an eine
-Adresse schickt FormSubmit an dieses Postfach eine E-Mail „Activate Form“.
-Erst nach dem Klick auf den Link darin werden Bewerbungen zugestellt. Das
-ist für `nuernberg-bewerbung@` und `crailsheim-bewerbung@` je einmal nötig.
-Nach dem Umzug auf die endgültige Domain mit einer Testbewerbung prüfen,
-ob die Zustellung weiter ohne neue Freischaltung funktioniert.
+**Voraussetzungen auf dem Server**
 
-Spamschutz: ein unsichtbares Feld `_honey`; Bewerbungen, in denen es
-ausgefüllt ist, verwirft der Dienst.
+* PHP ab 7.4 (getestet mit 8.3) mit `openssl`.
+* Upload-Grenzen mindestens: `upload_max_filesize = 10M`,
+  `post_max_size = 12M`, bei nginx zusätzlich `client_max_body_size 12m;`.
 
-Die Datenschutzerklärung (Abschnitt 6) nennt den Dienst. Wird ein anderer
-Dienst oder ein eigenes Server-Skript verwendet, sind `dienst` in `app.js`
-und Abschnitt 6 gemeinsam anzupassen.
+**Postfach-Zugang**
+
+`bewerbung-config.beispiel.php` als `bewerbung-config.php` kopieren und
+SMTP-Zugang eintragen. Empfohlen ist ein Postfach der eigenen Domain, z. B.
+über Microsoft 365 (`smtp.office365.com`, Port 587, `tls`; SMTP AUTH muss für
+das Postfach freigeschaltet sein). Ohne SMTP-Angaben versendet der Server über
+`mail()`; da `guen-transporte.de` per SPF nur Microsoft 365 als Absender
+zulässt, landen solche E-Mails aber wahrscheinlich im Spam.
+`bewerbung-config.php` enthält ein Passwort: nicht ins Git, nicht weitergeben.
+
+**Schutz**: unsichtbares Feld `_honey` gegen Bots; höchstens 5 Bewerbungen je
+IP-Adresse in 10 Minuten; Dateityp und Gesamtgröße werden im Browser und im
+Skript geprüft; Empfänger stehen nur im Skript, nicht im Browser.
+
+**Fehlersuche**: Scheitert der Versand, bekommt der Bewerber einen Hinweis mit
+der Bewerbungsadresse, und das Skript schreibt die Ursache ins PHP-Fehlerlog
+(ohne Zugangsdaten).
 
 ## Rechtstexte
 

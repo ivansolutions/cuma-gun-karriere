@@ -469,29 +469,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- FORM: Versand per E-Mail ----------
-     Funktioniert auf jedem Server, auch auf rein statischem Hosting: das Formular
-     geht an einen Formular-Dienst, der es als E-Mail an den gewählten Standort
-     weiterleitet und danach auf diese Seite zurückleitet.
-     Alles Einstellbare steht in BEWERBUNG. */
-  const BEWERBUNG = {
-    dienst: 'https://formsubmit.co/',             // Formular-Dienst, die Empfängeradresse wird angehängt
-    empfaenger: {                                  // Bewerbungen je Standort
-      'Nürnberg':   'nuernberg-bewerbung@guen-transporte.de',
-      'Crailsheim': 'crailsheim-bewerbung@guen-transporte.de',
-    },
-    kopie: 'ivan.deleu1@gmail.com',                // NUR FÜR DEN TEST: Kopie jeder Bewerbung. Vor dem Livegang leeren: kopie: ''
+     Das Formular geht an bewerbung.php im selben Ordner. Das Skript sendet die
+     Bewerbung samt Anhängen an das Postfach des gewählten Standorts.
+     Empfänger und Postfach-Zugang stehen nur auf dem Server (bewerbung-config.php),
+     nicht hier im Browser. Die Adressen unten dienen nur dem Hinweis bei Fehlern. */
+  const BEWERBUNG_MAIL = {
+    'Nürnberg':   'nuernberg-bewerbung@guen-transporte.de',
+    'Crailsheim': 'crailsheim-bewerbung@guen-transporte.de',
   };
   function resolveRecipients(standort) {
-    return [BEWERBUNG.empfaenger[standort] || BEWERBUNG.empfaenger['Nürnberg']];
+    return [BEWERBUNG_MAIL[standort] || BEWERBUNG_MAIL['Nürnberg']];
   }
   const form = document.getElementById('applyForm');
   if (form) {
-    const setHidden = (name, value) => {
-      let el = form.querySelector(`input[type=hidden][name="${name}"]`);
-      if (!el) { el = document.createElement('input'); el.type = 'hidden'; el.name = name; form.appendChild(el); }
-      el.value = value;
+    const showSuccess = () => {
+      document.getElementById('formSuccess').classList.add('show');
     };
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       const err = document.getElementById('formError');
       const required = ['vorname','nachname','telefon','email'];
@@ -512,34 +506,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const standort = document.getElementById('standort') ? document.getElementById('standort').value : 'Nürnberg';
       const posSel = document.getElementById('position');
-      const stelle = posSel ? posSel.selectedOptions[0].text : '';
-      const name = `${document.getElementById('vorname').value.trim()} ${document.getElementById('nachname').value.trim()}`;
-      const back = location.href.split('#')[0].split('?')[0] + '?bewerbung=gesendet#bewerbung';
+      const fd = new FormData(form);
+      fd.delete('attachment[]');
+      filesState.forEach(f => fd.append('attachment[]', f, f.name));
+      fd.set('Stelle', posSel ? posSel.selectedOptions[0].text : '');
 
-      setHidden('Stelle', stelle);
-      setHidden('_subject', `Bewerbung: ${stelle} – ${name}`);
-      setHidden('_template', 'table');
-      setHidden('_captcha', 'false');
-      setHidden('_next', back);
-      if (BEWERBUNG.kopie) setHidden('_cc', BEWERBUNG.kopie);
-
-      /* Dateien aus der Liste (auch per Drag & Drop) in das Dateifeld übernehmen */
-      const fileInput = document.getElementById('files');
-      if (fileInput && typeof DataTransfer !== 'undefined') {
-        const dt = new DataTransfer();
-        filesState.forEach(f => dt.items.add(f));
-        fileInput.files = dt.files;
-      }
-
-      form.action = BEWERBUNG.dienst + resolveRecipients(standort)[0];
       const btn = form.querySelector('.form-submit');
+      const label = btn ? btn.firstElementChild.textContent : '';
       if (btn) { btn.disabled = true; btn.firstElementChild.textContent = 'Wird gesendet …'; }
-      HTMLFormElement.prototype.submit.call(form);
+      let result = null;
+      try {
+        const res = await fetch(form.getAttribute('action'), { method: 'POST', body: fd, headers: { Accept: 'application/json' } });
+        result = await res.json().catch(() => null);
+        if (result && !res.ok) result.ok = false;
+      } catch (_) { result = null; }
+      if (btn) { btn.disabled = false; btn.firstElementChild.textContent = label; }
+
+      if (result && result.ok) {
+        showSuccess();
+        form.reset();
+        filesState.length = 0;
+        document.getElementById('filelist').innerHTML = '';
+      } else if (err) {
+        err.hidden = false;
+        err.textContent = (result && result.text) ? result.text
+          : 'Ihre Bewerbung konnte gerade nicht gesendet werden. Bitte senden Sie Ihre Unterlagen per E-Mail an ' + resolveRecipients(standort)[0] + '.';
+      }
     });
 
-    /* Rückkehr vom Formular-Dienst: Dank anzeigen und Adresse aufräumen */
+    /* Ohne JavaScript leitet bewerbung.php hierher zurück: Dank anzeigen */
     if (new URLSearchParams(location.search).get('bewerbung') === 'gesendet') {
-      document.getElementById('formSuccess').classList.add('show');
+      showSuccess();
       history.replaceState(null, '', location.pathname + '#bewerbung');
       requestAnimationFrame(() => document.getElementById('bewerbung')?.scrollIntoView());
     }
