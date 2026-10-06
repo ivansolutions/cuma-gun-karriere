@@ -35,7 +35,7 @@ const T = {
     s1_lede: "Klare Wege, keine Überraschungen. Vom ersten Klick bis zur Probefahrt erklären wir Ihnen, was als Nächstes passiert.",
     s1_01_title: "Bewerbung senden", s1_01_desc: "Unterlagen über das Formular hochladen – oder direkt anrufen.",
     s1_02_title: "Bitte warten – wir melden uns", s1_02_desc: "Nach Prüfung Ihrer Bewerbung melden wir uns persönlich bei Ihnen, sobald wir eine konkrete Antwort haben.",
-    s1_03_title: "Persönliches Gespräch & Schnuppertag", s1_03_desc: "Ist nicht nur möglich, sondern ausdrücklich gewünscht. Uns ist es wichtig, dass Sie vorab ein klares Bild von Ihren Aufgaben und unserem Team bekommen, bevor wir uns für eine gemeinsame Zusammenarbeit entscheiden.",
+    s1_03_title: "Persönliches Gespräch & Schnuppertag", s1_03_desc: "Ein persönliches Gespräch und ein Schnuppertag sind nicht nur möglich, sondern ausdrücklich erwünscht. Uns ist wichtig, dass Sie vorab ein klares Bild von Ihren Aufgaben und unserem Team bekommen, bevor wir uns für eine Zusammenarbeit entscheiden.",
     s1_04_title: "Probefahrt möglich", s1_04_desc: "Wenn Sie möchten, fahren Sie einen Tag als Beifahrer mit, bevor Sie unterschreiben.",
     s1_05_title: "Arbeitsvertrag", s1_05_desc: "Festanstellung, deutscher Vertrag, transparente Konditionen – keine grauen Modelle.",
     s1_06_title: "Erster Tag", s1_06_desc: "Sie starten mit einem erfahrenen Kollegen an Ihrer Seite – niemand fährt allein los.",
@@ -63,7 +63,7 @@ const T = {
     s3_t4_time: "13:00–13:45 Uhr", s3_t4_title: "Pause (Mittag)",
     s3_t4_desc: "Sie ist ein Muss: Gesetzlich vorgeschrieben nach spätestens 4,5 Stunden Lenkzeit.<br><br>Flexibel unterwegs planbar (Richtwert: 13:00 bis 13:45 Uhr).",
     s3_t5_time: "13:45–16:00 Uhr", s3_t5_title: "Zweite Tageshälfte",
-    s3_t5_desc: "Nach der Pause die verbleibenden Pakete ausliefern. Parallel feste Vertragskunden anfahren und spontane Tagesaufträge übernehmen. Zwischen 15:30 und 16:00 Uhr Rückkehr ins Center.",
+    s3_t5_desc: "Nach der Pause die verbleibenden Pakete ausliefern. Parallel feste Vertragskunden anfahren und spontane Tagesaufträge übernehmen. Zwischen 15:30 und 16:00 Uhr Rückkehr ins Depot.",
     s3_t6_time: "", s3_t6_title: "Nach der Tour",
     s3_t6_desc: "Bei Bedarf das Fahrzeug waschen. Etwaige Vorkommnisse oder Probleme auf der Tour direkt mit der Disposition klären. Tour ordnungsgemäß im System abschließen. Feierabend.",
     s3_t7_time: "", s3_t7_title: "Erste Wochen",
@@ -104,7 +104,7 @@ const T = {
     s6_q5: "Wie sieht der erste Arbeitstag aus?",
     s6_a5: "Sie kommen morgens ins Depot, lernen die Kollegen kennen und fahren die erste Woche als Beifahrer mit. Erst wenn Sie sich sicher fühlen, übernehmen Sie eine eigene Tour. Niemand wird ins kalte Wasser geworfen.",
     s6_q6: "Wie lange dauert die Einarbeitung?",
-    s6_a6: "In der ersten Woche fahren Sie bei einem Kollegen mit. Danach werden Sie beim selbstständigen Fahren weiterhin tatkräftig unterstützt. So stellen wir sicher, dass unsere Kunden wie gewohnt bestens betreut werden und Sie in Ruhe eingearbeitet werden.",
+    s6_a6: "In der ersten Woche fahren Sie bei einem Kollegen mit. Danach werden Sie beim selbstständigen Fahren weiterhin tatkräftig unterstützt. So stellen wir sicher, dass unsere Kunden wie gewohnt bestens betreut werden und Sie sich in Ruhe einarbeiten können.",
     s6_q7: "Wo wird gefahren?",
     s6_a7: "Der Schwerpunkt liegt aktuell auf Nürnberg und Umgebung. Crailsheim ist der zweite Standort. Weitere Einsatzorte sind nach Absprache möglich.",
     s6_q8: "Wie schnell bekomme ich eine Antwort?",
@@ -125,7 +125,7 @@ const T = {
     bew_contact_label: "Direkter Kontakt zur Bewerbung",
     ueber_h1: "Über uns",
     ueber_lede: "Diese Seite wird derzeit vorbereitet.",
-    ueber_body: "Wir blicken auf eine über 30-jährige, erfolgreiche Partnerschaft mit United Parcel Service zurück. Neben unserer fundierten Branchenerfahrung zeichnet uns vor allem die enorme Loyalität unseres Teams aus: Zahlreiche Kolleginnen und Kollegen sind seit 10, 15, 20 oder sogar über 25 Jahren fest bei uns an Bord. Viele andere haben uns bis zu ihrer Vollzeitrente begleitet und wurden von uns dankend verabschiedet.",
+    ueber_body: "Wir blicken auf eine über 30-jährige, erfolgreiche Partnerschaft mit United Parcel Service zurück. Neben unserer fundierten Branchenerfahrung zeichnet uns vor allem die enorme Loyalität unseres Teams aus: Zahlreiche Kolleginnen und Kollegen sind seit 10, 15, 20 oder sogar über 25 Jahren fest bei uns an Bord. Viele andere haben uns bis zur Rente begleitet und wurden von uns mit Dank verabschiedet.",
     ueber_home: "Zurück zur Startseite",
 
     /* S8 */
@@ -144,7 +144,7 @@ const T = {
     form_pos3: "Be- und Entlader Nürnberg (Minijob)", form_pos4: "Initiativbewerbung",
     form_files: "Unterlagen (PDF, Word oder Foto, zusammen max. 10 MB)",
     form_drop: "Hierher ziehen oder <u>klicken zum Auswählen</u>",
-    form_drop_hint: "PDF · DOC · DOCX · JPG · PNG · zusammen max. 10 MB",
+    form_drop_hint: "PDF · Word · JPG · PNG · HEIC · max. 10 MB",
     form_dsgvo: "Ich willige in die Verarbeitung meiner Daten gemäß <a href=\"#datenschutz\" data-legal=\"privacy\" style=\"color:var(--bronze);text-decoration:underline;\">Datenschutzerklärung</a> ein. *",
     form_submit: "Bewerbung senden",
     form_ok_title: "Vielen Dank!",
@@ -276,6 +276,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const doc = document.documentElement;
       const atTop = y <= THRESHOLD;
       const atBottom = y + window.innerHeight >= doc.scrollHeight - 2;
+      /* Über dem Formular verdeckt die Leiste sonst Felder und Absende-Knopf */
+      const bew = document.getElementById('bewerbung');
+      if (bew) { const r = bew.getBoundingClientRect(); if (r.top < window.innerHeight && r.bottom > 0) { setHidden(true); lastY = y; return; } }
       if (wide.matches || atTop || atBottom) { setHidden(false); lastY = y; return; }
       const delta = y - lastY;
       if (Math.abs(delta) < THRESHOLD) return;
@@ -415,9 +418,6 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => document.getElementById('vorname')?.focus({ preventScroll: true }), 700);
     };
     job.querySelector('.job__apply').addEventListener('click', apply);
-    job.addEventListener('click', e => {
-      if (e.target.closest('.job__apply')) apply();
-    });
 
     /* 3D tilt */
     let raf = null;
@@ -433,6 +433,14 @@ document.addEventListener('DOMContentLoaded', () => {
     job.addEventListener('mouseleave', () => { job.style.transform = ''; });
   });
 
+  /* Stelle gewählt → passender Standort (die E-Mail geht an den Standort) */
+  const STELLE_ORT = { 'zusteller-nbg': 'Nürnberg', 'zusteller-crl': 'Crailsheim', 'lader-nbg': 'Nürnberg' };
+  document.getElementById('position')?.addEventListener('change', e => {
+    const ort = STELLE_ORT[e.target.value];
+    const locSel = document.getElementById('standort');
+    if (ort && locSel) locSel.value = ort;
+  });
+
   /* ---------- FILE UPLOAD (drag & drop) ---------- */
   const drop = document.getElementById('drop');
   const fileInput = document.getElementById('files');
@@ -444,17 +452,23 @@ document.addEventListener('DOMContentLoaded', () => {
       filesState.forEach((f, i) => {
         const it = document.createElement('div');
         it.className = 'filelist__item';
-        it.innerHTML = `<span>${f.name} · ${(f.size/1024/1024).toFixed(2)} MB</span><button type="button" aria-label="Entfernen">×</button>`;
-        it.querySelector('button').addEventListener('click', () => { filesState.splice(i,1); renderFiles(); });
+        const label = document.createElement('span');
+        const kb = f.size / 1024;
+        label.textContent = `${f.name} · ${kb < 1024 ? Math.max(1, Math.round(kb)) + ' KB' : (kb / 1024).toFixed(1).replace('.', ',') + ' MB'}`;
+        const del = document.createElement('button');
+        del.type = 'button'; del.textContent = '×'; del.setAttribute('aria-label', 'Datei entfernen: ' + f.name);
+        del.addEventListener('click', () => { filesState.splice(i,1); renderFiles(); });
+        it.append(label, del);
         fileList.appendChild(it);
       });
     };
-    const MAX_BYTES = 10 * 1024 * 1024; /* Formular-Dienst: alle Anhänge zusammen max. 10 MB */
+    const MAX_BYTES = 10 * 1024 * 1024; /* bewerbung.php: alle Anhänge zusammen max. 10 MB */
     const addFiles = list => {
       const err = document.getElementById('formError');
       const skipped = [];
       [...list].forEach(f => {
         const total = filesState.reduce((n, x) => n + x.size, 0);
+        if (filesState.some(x => x.name === f.name && x.size === f.size)) return; /* schon angehängt */
         if (!/\.(pdf|docx?|jpe?g|png|hei[cf])$/i.test(f.name)) skipped.push(f.name + ' (nur PDF, Word oder Foto)');
         else if (total + f.size > MAX_BYTES) skipped.push(f.name + ' (zusammen über 10 MB)');
         else filesState.push(f);
@@ -462,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (err) { err.hidden = !skipped.length; err.textContent = skipped.length ? 'Nicht angehängt: ' + skipped.join(', ') : ''; }
       renderFiles();
     };
-    fileInput.addEventListener('change', e => { addFiles(e.target.files); });
+    fileInput.addEventListener('change', e => { addFiles(e.target.files); fileInput.value = ''; });
     ['dragenter','dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('dragover'); }));
     ['dragleave','drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('dragover'); }));
     drop.addEventListener('drop', e => { addFiles(e.dataTransfer.files); });
@@ -483,23 +497,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('applyForm');
   if (form) {
     const showSuccess = () => {
-      document.getElementById('formSuccess').classList.add('show');
+      const ok = document.getElementById('formSuccess');
+      ok.classList.add('show');
+      ok.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      ok.focus({ preventScroll: true });
+    };
+    const markField = (el, bad) => {
+      el.style.borderBottomColor = '';
+      if (bad) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid');
     };
     form.addEventListener('submit', async e => {
       e.preventDefault();
       const err = document.getElementById('formError');
       const required = ['vorname','nachname','telefon','email'];
-      let ok = true;
+      const invalid = [];
       required.forEach(id => {
         const el = document.getElementById(id);
-        if (!el.value.trim()) { el.style.borderBottomColor = '#c44'; ok = false; }
-        else el.style.borderBottomColor = '';
+        const bad = !el.value.trim() || (id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()));
+        markField(el, bad);
+        if (bad) invalid.push(el);
       });
-      const mail = document.getElementById('email');
-      if (mail.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail.value.trim())) { mail.style.borderBottomColor = '#c44'; ok = false; }
-      if (!document.getElementById('dsgvo').checked) ok = false;
-      if (!ok) {
+      const dsgvo = document.getElementById('dsgvo');
+      dsgvo.closest('.checkbox')?.classList.toggle('is-invalid', !dsgvo.checked);
+      if (!dsgvo.checked) { dsgvo.setAttribute('aria-invalid', 'true'); invalid.push(dsgvo); } else dsgvo.removeAttribute('aria-invalid');
+      if (invalid.length) {
         if (err) { err.hidden = false; err.textContent = 'Bitte füllen Sie alle Pflichtfelder (*) korrekt aus und stimmen Sie der Datenschutzerklärung zu.'; }
+        invalid[0].scrollIntoView({ block: 'center', behavior: 'smooth' });
+        invalid[0].focus({ preventScroll: true });
         return;
       }
       if (err) { err.hidden = true; err.textContent = ''; }
@@ -531,7 +555,13 @@ document.addEventListener('DOMContentLoaded', () => {
         err.hidden = false;
         err.textContent = (result && result.text) ? result.text
           : 'Ihre Bewerbung konnte gerade nicht gesendet werden. Bitte senden Sie Ihre Unterlagen per E-Mail an ' + resolveRecipients(standort)[0] + '.';
+        err.scrollIntoView({ block: 'center', behavior: 'smooth' });
       }
+    });
+
+    form.addEventListener('input', e => {
+      if (e.target.getAttribute && e.target.getAttribute('aria-invalid') === 'true') markField(e.target, false);
+      if (e.target.id === 'dsgvo' && e.target.checked) e.target.closest('.checkbox')?.classList.remove('is-invalid');
     });
 
     /* Ohne JavaScript leitet bewerbung.php hierher zurück: Dank anzeigen */
@@ -562,8 +592,20 @@ function renderMarquee() {
     </div>
   `).join('');
   track.innerHTML = html + html;
-  track.querySelectorAll('.voice').forEach(v => {
+  const voices = [...track.querySelectorAll('.voice')];
+  voices.forEach((v, i) => {
     v.addEventListener('click', () => openEmployeeModal(v.dataset.emp));
+    if (i < EMPLOYEES.length) {
+      v.setAttribute('role', 'button');
+      v.setAttribute('tabindex', '0');
+      v.setAttribute('aria-label', 'Geschichte von ' + v.querySelector('.voice__name').textContent + ' öffnen');
+      v.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openEmployeeModal(v.dataset.emp); }
+      });
+    } else {
+      v.setAttribute('aria-hidden', 'true'); /* zweite Hälfte: nur für die Endlos-Laufschrift */
+      v.inert = true;
+    }
   });
 }
 
@@ -713,6 +755,31 @@ const EMPLOYEES = [
   }
 ];
 
+/* ---------- MODAL FOCUS (Fokus ins Fenster, Tab bleibt drin, danach zurück) ---------- */
+let modalReturnFocus = null;
+function modalFocusIn(modal) {
+  /* nur beim ersten offenen Fenster merken (dieses ist bereits geöffnet) */
+  if (document.querySelectorAll('.empmodal.open, .legalmodal.open').length <= 1 && !modal.contains(document.activeElement)) modalReturnFocus = document.activeElement;
+  const btn = modal.querySelector('.empmodal__close');
+  if (btn) btn.focus({ preventScroll: true });
+}
+function modalFocusBack() {
+  if (document.querySelector('.empmodal.open, .legalmodal.open')) return;
+  if (modalReturnFocus && modalReturnFocus.focus && document.contains(modalReturnFocus)) modalReturnFocus.focus({ preventScroll: true });
+  modalReturnFocus = null;
+}
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Tab') return;
+  const open = [...document.querySelectorAll('.legalmodal.open, .empmodal.open')].pop();
+  if (!open) return;
+  const items = [...open.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')].filter(el => el.offsetParent !== null);
+  if (!items.length) return;
+  const first = items[0], last = items[items.length - 1];
+  if (!open.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+  else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+});
+
 /* ---------- EMPLOYEE MODAL ---------- */
 function openEmployeeModal(id) {
   const emp = EMPLOYEES.find(e => e.id === id);
@@ -728,13 +795,15 @@ function openEmployeeModal(id) {
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+  modalFocusIn(modal);
 }
 function closeEmployeeModal() {
   const modal = document.getElementById('empModal');
-  if (!modal) return;
+  if (!modal || !modal.classList.contains('open')) return;
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+  modalFocusBack();
 }
 document.addEventListener('click', e => {
   if (e.target.closest('[data-close]')) closeEmployeeModal();
@@ -770,14 +839,17 @@ function openLegalModal(kind) {
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+  modal.querySelector('.legalmodal__card').scrollTop = 0;
+  modalFocusIn(modal);
 }
 function closeLegalModal() {
   const modal = document.getElementById('legalModal');
-  if (!modal) return;
+  if (!modal || !modal.classList.contains('open')) return;
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden', 'true');
   // only release scroll if no other modal open
   if (!document.querySelector('.empmodal.open')) document.body.style.overflow = '';
+  modalFocusBack();
 }
 // Delegated click — any [data-legal] anywhere
 document.addEventListener('click', e => {
@@ -803,6 +875,7 @@ function openLegalFromHash() {
 }
 window.addEventListener('hashchange', openLegalFromHash);
 document.addEventListener('DOMContentLoaded', openLegalFromHash);
+window.addEventListener('load', () => { if (location.hash === '#bewerbung') setTimeout(scrollToApply, 150); });
 
 /* ---------- FORM PRIVACY LINK (Fix 15) ----------
    The data-legal handler above already preventDefault+stopPropagation,

@@ -1,23 +1,34 @@
 <?php
 /*
  * Vorlage für die Einstellungen des Bewerbungsformulars.
- * Kopieren als bewerbung-config.php (im selben Ordner wie bewerbung.php)
- * und nur die Werte eintragen, die vom Standard abweichen.
- * bewerbung-config.php enthält Zugangsdaten: nicht weitergeben, nicht ins Git.
+ * Kopieren als bewerbung-config.php – am besten eine Ebene ÜBER dem
+ * Website-Ordner (dort ist sie aus dem Web nicht erreichbar), sonst neben
+ * bewerbung.php mit gesperrtem Webzugriff (siehe README).
+ * Nur Werte eintragen, die vom Standard in bewerbung.php abweichen.
+ * Die Datei enthält ggf. Zugangsdaten: nicht weitergeben, nicht ins Git.
  */
 return [
-    // Versand über ein Postfach (empfohlen, z. B. Microsoft 365: smtp.office365.com, Port 587, tls).
-    // Ohne diese Angaben versendet der Server über die PHP-Funktion mail().
+    // Absender der Benachrichtigung (Pflicht, Adresse der eigenen Domain)
+    'absender' => 'bewerbung@guen-transporte.de',
+
+    // Variante A (empfohlen): Microsoft 365 Direct Send / Relay-Connector, ohne Anmeldung.
+    // IP-Adresse des Webservers in SPF bzw. Connector freigeben.
     'smtp' => [
-        'host'       => 'smtp.office365.com',
-        'port'       => 587,
+        'host'       => 'guentransporte-de01b.mail.protection.outlook.com',
+        'port'       => 25,
         'sicherheit' => 'tls',
-        'benutzer'   => 'bewerbung@guen-transporte.de',
+        'benutzer'   => '',
         'passwort'   => '',
     ],
 
-    // Absender der Benachrichtigung; leer = SMTP-Benutzer
-    // 'absender' => 'bewerbung@guen-transporte.de',
+    // Variante B: SMTP AUTH mit einem Postfach (siehe README zu Einschränkungen)
+    // 'smtp' => [
+    //     'host'       => 'smtp.office365.com',
+    //     'port'       => 587,
+    //     'sicherheit' => 'tls',
+    //     'benutzer'   => 'bewerbung@guen-transporte.de',
+    //     'passwort'   => '',
+    // ],
 
     // Empfänger je Standort (Standard siehe bewerbung.php)
     // 'empfaenger' => [
@@ -25,6 +36,6 @@ return [
     //     'Crailsheim' => 'crailsheim-bewerbung@guen-transporte.de',
     // ],
 
-    // Nur für Tests: Kopie jeder Bewerbung an diese Adresse
-    // 'kopie' => '',
+    // Ordner für die Sendebegrenzung (Standard: temporärer Ordner des Servers)
+    // 'sperrordner' => '/pfad/ausserhalb/des/webroots',
 ];
