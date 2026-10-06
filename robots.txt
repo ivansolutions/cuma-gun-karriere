@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /bewerbung.php
+Disallow: /bewerbung-config
+
+Sitemap: https://www.guen-transporte.de/sitemap.xml

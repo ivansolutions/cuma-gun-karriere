@@ -63,11 +63,11 @@ Inter Tight ist auf Latin und Latin Extended reduziert.
    sagt dagegen zu, dass die Übertragung SSL/TLS-verschlüsselt erfolgt. Vor
    der Umstellung muss ein Zertifikat für `guen-transporte.de` **und**
    `www.guen-transporte.de` vorliegen und HTTPS erzwungen werden.
-2. **`noindex` entfernen.** Beide Seiten tragen
-   `<meta name="robots" content="noindex, nofollow">`. Das Tag darf erst am
-   Tag der Domain-Umstellung entfernt werden — vorher würden Suchmaschinen
-   die Vorschauadresse indexieren und es entstünden zwei Adressen mit
-   demselben Inhalt.
+2. **Suchmaschinen.** Die Seiten sind für Suchmaschinen freigegeben
+   (kein `noindex`). `robots.txt` und `sitemap.xml` verweisen auf
+   `https://www.guen-transporte.de/`. Wird die Seite vorab unter einer
+   anderen Adresse getestet, dort per Server-Header
+   `X-Robots-Tag: noindex` sperren.
 3. **Hauptadresse festlegen.** Im `<head>` beider Seiten stehen `og:url`,
    `canonical` und `og:image` auf `https://www.guen-transporte.de/`. Die
    Variante ohne `www` sollte per 301 dorthin weiterleiten. Bei einem
