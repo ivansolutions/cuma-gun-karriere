@@ -1544,13 +1544,13 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         </div>
 
         <div class="field">
-          <label data-i18n="form_files">Unterlagen (PDF/DOC/DOCX, zusammen max. 10 MB)</label>
+          <label data-i18n="form_files">Unterlagen (PDF, Word oder Foto, zusammen max. 10 MB)</label>
           <label class="drop" id="drop">
-            <input type="file" id="files" name="attachment" accept=".pdf,.doc,.docx" multiple style="display:none;" />
+            <input type="file" id="files" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.heic,.heif,image/*" multiple style="display:none;" />
             <div class="drop__inner">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
               <span class="drop__text" data-i18n="form_drop">Hierher ziehen oder <u>klicken zum Auswählen</u></span>
-              <span class="drop__hint mono" data-i18n="form_drop_hint">PDF · DOC · DOCX · zusammen max. 10 MB</span>
+              <span class="drop__hint mono" data-i18n="form_drop_hint">PDF · DOC · DOCX · JPG · PNG · zusammen max. 10 MB</span>
             </div>
           </label>
           <div class="filelist" id="filelist"></div>

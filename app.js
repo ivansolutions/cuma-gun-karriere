@@ -142,9 +142,9 @@ const T = {
     form_position: "Position", form_standort: "Bevorzugter Standort",
     form_pos1: "Paketzusteller Nürnberg (Vollzeit)", form_pos2: "Paketzusteller Crailsheim (Vollzeit)",
     form_pos3: "Be- und Entlader Nürnberg (Minijob)", form_pos4: "Initiativbewerbung",
-    form_files: "Unterlagen (PDF/DOC/DOCX, zusammen max. 10 MB)",
+    form_files: "Unterlagen (PDF, Word oder Foto, zusammen max. 10 MB)",
     form_drop: "Hierher ziehen oder <u>klicken zum Auswählen</u>",
-    form_drop_hint: "PDF · DOC · DOCX · zusammen max. 10 MB",
+    form_drop_hint: "PDF · DOC · DOCX · JPG · PNG · zusammen max. 10 MB",
     form_dsgvo: "Ich willige in die Verarbeitung meiner Daten gemäß <a href=\"#datenschutz\" data-legal=\"privacy\" style=\"color:var(--bronze);text-decoration:underline;\">Datenschutzerklärung</a> ein. *",
     form_submit: "Bewerbung senden",
     form_ok_title: "Vielen Dank!",
@@ -455,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const skipped = [];
       [...list].forEach(f => {
         const total = filesState.reduce((n, x) => n + x.size, 0);
-        if (!/\.(pdf|docx?)$/i.test(f.name)) skipped.push(f.name + ' (nur PDF, DOC, DOCX)');
+        if (!/\.(pdf|docx?|jpe?g|png|hei[cf])$/i.test(f.name)) skipped.push(f.name + ' (nur PDF, Word oder Foto)');
         else if (total + f.size > MAX_BYTES) skipped.push(f.name + ' (zusammen über 10 MB)');
         else filesState.push(f);
       });

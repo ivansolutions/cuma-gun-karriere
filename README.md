@@ -74,7 +74,7 @@ Inter Tight ist auf Latin und Latin Extended reduziert.
    Wechsel der Hauptadresse sind alle drei Angaben je Seite gemeinsam zu
    ändern.
 4. **Bewerbungsformular: Testkopie entfernen.** Das Formular sendet jede
-   Bewerbung samt Anhängen (PDF/DOC/DOCX, zusammen max. 10 MB) per E-Mail an
+   Bewerbung samt Anhängen (PDF, Word, JPG/PNG/HEIC-Fotos, zusammen max. 10 MB) per E-Mail an
    das Postfach des gewählten Standorts. Für den Testbetrieb geht eine Kopie
    an eine Testadresse. Vor dem Livegang in `app.js` im Block `BEWERBUNG`
    `kopie: ''` setzen.
