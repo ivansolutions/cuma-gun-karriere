@@ -140,12 +140,13 @@ const T = {
     form_sub: "Felder mit * sind Pflicht. Unterlagen können Sie direkt unten anhängen.",
     form_vorname: "Vorname *", form_nachname: "Nachname *", form_telefon: "Telefon *", form_email: "E-Mail *",
     form_position: "Position", form_standort: "Bevorzugter Standort",
+    form_pos0: "Bitte wählen",
     form_pos1: "Paketzusteller Nürnberg (Vollzeit)", form_pos2: "Paketzusteller Crailsheim (Vollzeit)",
     form_pos3: "Be- und Entlader Nürnberg (Minijob)", form_pos4: "Initiativbewerbung",
     form_files: "Unterlagen (PDF, Word oder Foto, zusammen max. 10 MB)",
     form_drop: "Hierher ziehen oder <u>klicken zum Auswählen</u>",
     form_drop_hint: "PDF · Word · JPG · PNG · HEIC · max. 10 MB",
-    form_dsgvo: "Ich willige in die Verarbeitung meiner Daten gemäß <a href=\"#datenschutz\" data-legal=\"privacy\" style=\"color:var(--bronze);text-decoration:underline;\">Datenschutzerklärung</a> ein. *",
+    form_dsgvo: "Ich habe die <a href=\"#datenschutz\" data-legal=\"privacy\" style=\"color:var(--bronze);text-decoration:underline;\">Datenschutzerklärung</a> zur Kenntnis genommen. *",
     form_submit: "Bewerbung senden",
     form_ok_title: "Vielen Dank!",
     form_ok_text: "Ihre Bewerbung ist bei uns eingegangen. Wir melden uns so schnell wie möglich bei Ihnen.",
@@ -486,16 +487,21 @@ document.addEventListener('DOMContentLoaded', () => {
      Das Formular geht an bewerbung.php im selben Ordner. Das Skript sendet die
      Bewerbung samt Anhängen an das Postfach des gewählten Standorts.
      Empfänger und Postfach-Zugang stehen nur auf dem Server (bewerbung-config.php),
-     nicht hier im Browser. Die Adressen unten dienen nur dem Hinweis bei Fehlern. */
+     nicht hier im Browser. Adressen und Telefon unten dienen nur dem Hinweis,
+     falls der Server gar nicht antwortet; sonst nennt er sie selbst. */
   const BEWERBUNG_MAIL = {
     'Nürnberg':   'nuernberg-bewerbung@guen-transporte.de',
     'Crailsheim': 'crailsheim-bewerbung@guen-transporte.de',
   };
-  function resolveRecipients(standort) {
-    return [BEWERBUNG_MAIL[standort] || BEWERBUNG_MAIL['Nürnberg']];
-  }
+  const BEWERBUNG_TEL = {
+    'Nürnberg':   '+49 911 6323697',
+    'Crailsheim': '+49 7951 468943',
+  };
+  /* gleiche Regel wie gueltige_adresse() in bewerbung.php */
+  const EMAIL_OK = /^[^\s@"<>,;:()\\]+@[^\s@"<>,;:()\\]+\.[^\s@"<>,;:()\\.]{2,}$/;
   const form = document.getElementById('applyForm');
   if (form) {
+    const err = document.getElementById('formError');
     const showSuccess = () => {
       const ok = document.getElementById('formSuccess');
       ok.classList.add('show');
@@ -505,45 +511,82 @@ document.addEventListener('DOMContentLoaded', () => {
     const markField = (el, bad) => {
       el.style.borderBottomColor = '';
       if (bad) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid');
+      if (el.id === 'dsgvo') el.closest('.checkbox')?.classList.toggle('is-invalid', bad);
+    };
+    const links = (list, scheme) => list.map(w => {
+      const a = document.createElement('a');
+      a.href = scheme + (scheme === 'tel:' ? w.replace(/[^\d+]/g, '') : w);
+      a.textContent = w;
+      return a;
+    });
+    /* Fehlertext + Ausweg: Postfach und Telefon als anklickbare Links */
+    const showError = (text, mails, tels) => {
+      if (!err) return;
+      const strings = v => Array.isArray(v) ? v.filter(x => typeof x === 'string' && x) : [];
+      mails = strings(mails); tels = strings(tels);
+      err.textContent = text;
+      if (mails.length) {
+        err.append(' Sie können Ihre Unterlagen auch per E-Mail an ');
+        links(mails, 'mailto:').forEach((a, i) => { if (i) err.append(' oder '); err.append(a); });
+        err.append(' senden');
+        if (tels.length) {
+          err.append(' oder uns anrufen: ');
+          links(tels, 'tel:').forEach((a, i) => { if (i) err.append(' oder '); err.append(a); });
+        }
+        err.append('.');
+      }
+      err.hidden = false;
+      err.scrollIntoView({ block: 'center', behavior: 'smooth' });
     };
     form.addEventListener('submit', async e => {
       e.preventDefault();
-      const err = document.getElementById('formError');
+      const standort = document.getElementById('standort') ? document.getElementById('standort').value : 'Nürnberg';
+      const mail = [BEWERBUNG_MAIL[standort] || BEWERBUNG_MAIL['Nürnberg']];
+      const tel = [BEWERBUNG_TEL[standort] || BEWERBUNG_TEL['Nürnberg']];
+
+      /* Bewerbungsunterlagen nie unverschlüsselt senden */
+      const lokal = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+      if (location.protocol !== 'https:' && !lokal) {
+        showError('Diese Seite ist nicht verschlüsselt geöffnet. Bitte öffnen Sie sie über https:// und senden Sie das Formular erneut.', mail, tel);
+        return;
+      }
+
       const required = ['vorname','nachname','telefon','email'];
       const invalid = [];
       required.forEach(id => {
         const el = document.getElementById(id);
-        const bad = !el.value.trim() || (id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()));
+        const bad = !el.value.trim() || (id === 'email' && !EMAIL_OK.test(el.value.trim()));
         markField(el, bad);
         if (bad) invalid.push(el);
       });
       const dsgvo = document.getElementById('dsgvo');
-      dsgvo.closest('.checkbox')?.classList.toggle('is-invalid', !dsgvo.checked);
-      if (!dsgvo.checked) { dsgvo.setAttribute('aria-invalid', 'true'); invalid.push(dsgvo); } else dsgvo.removeAttribute('aria-invalid');
+      markField(dsgvo, !dsgvo.checked);
+      if (!dsgvo.checked) invalid.push(dsgvo);
       if (invalid.length) {
-        if (err) { err.hidden = false; err.textContent = 'Bitte füllen Sie alle Pflichtfelder (*) korrekt aus und stimmen Sie der Datenschutzerklärung zu.'; }
+        if (err) { err.hidden = false; err.textContent = 'Bitte füllen Sie alle Pflichtfelder (*) korrekt aus und bestätigen Sie den Hinweis zum Datenschutz.'; }
         invalid[0].scrollIntoView({ block: 'center', behavior: 'smooth' });
         invalid[0].focus({ preventScroll: true });
         return;
       }
       if (err) { err.hidden = true; err.textContent = ''; }
 
-      const standort = document.getElementById('standort') ? document.getElementById('standort').value : 'Nürnberg';
-      const posSel = document.getElementById('position');
       const fd = new FormData(form);
       fd.delete('attachment[]');
       filesState.forEach(f => fd.append('attachment[]', f, f.name));
-      fd.set('Stelle', posSel ? posSel.selectedOptions[0].text : '');
 
       const btn = form.querySelector('.form-submit');
       const label = btn ? btn.firstElementChild.textContent : '';
       if (btn) { btn.disabled = true; btn.firstElementChild.textContent = 'Wird gesendet …'; }
-      let result = null;
+      /* Langsames Mobilnetz: nach 2 Minuten abbrechen statt endlos „Wird gesendet …“ */
+      const ctrl = typeof AbortController === 'function' ? new AbortController() : null;
+      const timer = ctrl ? setTimeout(() => ctrl.abort(), 120000) : 0;
+      let res = null, result = null;
       try {
-        const res = await fetch(form.getAttribute('action'), { method: 'POST', body: fd, headers: { Accept: 'application/json' } });
+        res = await fetch(form.getAttribute('action'), { method: 'POST', body: fd, headers: { Accept: 'application/json' }, signal: ctrl ? ctrl.signal : undefined });
         result = await res.json().catch(() => null);
         if (result && !res.ok) result.ok = false;
       } catch (_) { result = null; }
+      clearTimeout(timer);
       if (btn) { btn.disabled = false; btn.firstElementChild.textContent = label; }
 
       if (result && result.ok) {
@@ -551,11 +594,17 @@ document.addEventListener('DOMContentLoaded', () => {
         form.reset();
         filesState.length = 0;
         document.getElementById('filelist').innerHTML = '';
-      } else if (err) {
-        err.hidden = false;
-        err.textContent = (result && result.text) ? result.text
-          : 'Ihre Bewerbung konnte gerade nicht gesendet werden. Bitte senden Sie Ihre Unterlagen per E-Mail an ' + resolveRecipients(standort)[0] + '.';
-        err.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      } else if (result && typeof result.text === 'string') {
+        showError(result.text, result.mail || mail, result.tel || tel);
+        const el = result.feld && document.getElementById(result.feld);
+        if (el) { markField(el, true); el.focus({ preventScroll: true }); }
+      } else if (res && res.status === 413) {
+        showError('Die Unterlagen sind zusammen zu groß. Erlaubt sind max. 10 MB.', mail, tel);
+      } else if (res && res.status < 500) {
+        showError('Ihre Bewerbung konnte gerade nicht gesendet werden.', mail, tel);
+      } else {
+        /* Keine Antwort oder Serverfehler: ob die E-Mail schon raus ist, wissen wir nicht */
+        showError('Die Verbindung wurde unterbrochen. Ihre Bewerbung ist möglicherweise trotzdem bei uns angekommen. Bitte senden Sie sie nicht sofort erneut, sondern melden Sie sich kurz bei uns.', mail, tel);
       }
     });
 
@@ -646,7 +695,7 @@ function tenureLabel(since, periods) {
 const EMPLOYEES = [
   {
     id: 'saman',
-    photo: 'images/team/saman-a.jpg',
+    photo: 'images/team/saman-a.webp',
     initials: 'SA', name: 'Saman A.',
     role: 'Fahrer', loc: 'Nürnberg', loc_key: 'loc_nbg',
     since: '2006-07',
@@ -655,7 +704,7 @@ const EMPLOYEES = [
   },
   {
     id: 'osman',
-    photo: 'images/team/osman-y.jpg',
+    photo: 'images/team/osman-y.webp',
     initials: 'OY', name: 'Osman Y.',
     role: 'Fahrer', loc: 'Nürnberg', loc_key: 'loc_nbg',
     since: '2002-10',
@@ -664,7 +713,7 @@ const EMPLOYEES = [
   },
   {
     id: 'aytac',
-    photo: 'images/team/aytac-y.jpg',
+    photo: 'images/team/aytac-y.webp',
     initials: 'AY', name: 'Aytac Y.',
     role: 'Fahrer', loc: 'Nürnberg', loc_key: 'loc_nbg',
     since: '2008-01',
@@ -673,7 +722,7 @@ const EMPLOYEES = [
   },
   {
     id: 'nicola',
-    photo: 'images/team/nicola-c.jpg',
+    photo: 'images/team/nicola-c.webp',
     initials: 'NC', name: 'Nicola C.',
     role: 'Fahrer 7,5 t', loc: 'Nürnberg', loc_key: 'loc_nbg',
     since: '2010-04',
@@ -682,7 +731,7 @@ const EMPLOYEES = [
   },
   {
     id: 'helmut',
-    photo: 'images/team/helmut-h.jpg',
+    photo: 'images/team/helmut-h.webp',
     initials: 'HH', name: 'Helmut H.',
     role: 'Fahrer', loc: 'Nürnberg', loc_key: 'loc_nbg',
     since: '2011-02',
@@ -691,7 +740,7 @@ const EMPLOYEES = [
   },
   {
     id: 'santana',
-    photo: 'images/team/santana-f.jpg',
+    photo: 'images/team/santana-f.webp',
     initials: 'SF', name: 'Santana F.',
     role: 'Fahrer', loc: 'Nürnberg', loc_key: 'loc_nbg',
     since: '2024-07',
@@ -700,7 +749,7 @@ const EMPLOYEES = [
   },
   {
     id: 'yanes',
-    photo: 'images/team/yanes-s.jpg',
+    photo: 'images/team/yanes-s.webp',
     initials: 'YS', name: 'Yanes S.',
     role: 'Be- und Entlader', loc: 'Nürnberg', loc_key: 'loc_nbg',
     since: '2025-04',
@@ -709,7 +758,7 @@ const EMPLOYEES = [
   },
   {
     id: 'stanislav',
-    photo: 'images/team/stanislav-d.jpg',
+    photo: 'images/team/stanislav-d.webp',
     initials: 'SD', name: 'Stanislav D.',
     role: 'Fahrer', loc: 'Nürnberg', loc_key: 'loc_nbg',
     since: '2010-10',
@@ -718,7 +767,7 @@ const EMPLOYEES = [
   },
   {
     id: 'ivan',
-    photo: 'images/team/ivan-d.jpg',
+    photo: 'images/team/ivan-d.webp',
     initials: 'ID', name: 'Ivan D.',
     role: 'Fahrer', loc: 'Nürnberg', loc_key: 'loc_nbg',
     since: '2025-02',
@@ -728,7 +777,7 @@ const EMPLOYEES = [
   },
   {
     id: 'nadeem',
-    photo: 'images/team/iqbal-n.jpg',
+    photo: 'images/team/iqbal-n.webp',
     initials: 'NI', name: 'Nadeem I.',
     role: 'Werkstatt', loc: 'Crailsheim', loc_key: 'loc_crl',
     since: '2021-05',
@@ -737,7 +786,7 @@ const EMPLOYEES = [
   },
   {
     id: 'razvan',
-    photo: 'images/team/razvan-s.jpg',
+    photo: 'images/team/razvan-s.webp',
     initials: 'RS', name: 'Razvan S.',
     role: 'Fahrer', loc: 'Crailsheim', loc_key: 'loc_crl',
     since: '2019-07',
@@ -746,7 +795,7 @@ const EMPLOYEES = [
   },
   {
     id: 'fanel',
-    photo: 'images/team/fanel-v.jpg',
+    photo: 'images/team/fanel-v.webp',
     initials: 'FV', name: 'Fanel V.',
     role: 'Fahrer', loc: 'Crailsheim', loc_key: 'loc_crl',
     since: '2024-07',

@@ -14,6 +14,8 @@
  */
 
 date_default_timezone_set('Europe/Berlin'); // Eingangszeit in deutscher Zeit, unabhängig vom Server
+ini_set('display_errors', '0'); // Fehlerdetails nie an Besucher, nur ins Fehlerprotokoll des Servers
+ini_set('log_errors', '1');
 
 $CONFIG = [
     // Bewerbungspostfach je Standort (Wert des Feldes „Bevorzugter Standort“)
@@ -21,13 +23,18 @@ $CONFIG = [
         'Nürnberg'   => 'nuernberg-bewerbung@guen-transporte.de',
         'Crailsheim' => 'crailsheim-bewerbung@guen-transporte.de',
     ],
-    'kopie'         => '',      // optionale Kopie jeder Bewerbung (nur für Tests)
+    // Telefon je Standort: wird bei einem Fehler zusammen mit dem Postfach genannt
+    'telefon' => [
+        'Nürnberg'   => '+49 911 6323697',
+        'Crailsheim' => '+49 7951 468943',
+    ],
+    'kopie'         => '',      // optionale Kopie jeder Bewerbung (nur ein internes Postfach)
     'absender'      => '',      // Absenderadresse; leer = SMTP-Benutzer. Für mail() Pflicht.
     'absender_name' => 'Website Cuma Gün – Bewerbung',
     'smtp' => [
         'host'       => '',     // leer = Versand über mail()
         'port'       => 587,
-        'sicherheit' => 'tls',  // 'tls' (STARTTLS) oder 'ssl' (Port 465)
+        'sicherheit' => 'tls',  // 'tls' (STARTTLS), 'ssl' (Port 465) oder 'keine' (nur ohne Anmeldung, z. B. internes Relay)
         'benutzer'   => '',     // leer = ohne Anmeldung (z. B. Relay oder Microsoft 365 Direct Send)
         'passwort'   => '',
     ],
@@ -35,9 +42,11 @@ $CONFIG = [
     'testordner'    => '',      // nur für Tests: E-Mail als .eml-Datei hier ablegen statt senden
     'max_bytes'     => 10 * 1024 * 1024, // alle Anhänge zusammen
     'danke_seite'   => 'index.html?bewerbung=gesendet#bewerbung',
+    'nur_https'     => true,    // Formular nur über HTTPS annehmen (Ausnahme: Aufruf vom Server selbst)
+    'hinter_proxy'  => false,   // true nur hinter eigenem Reverse-Proxy: dann zählen X-Forwarded-Proto/-Host/-For
 ];
 foreach ([dirname(__DIR__) . '/bewerbung-config.php', __DIR__ . '/bewerbung-config.php'] as $datei) {
-    if (is_file($datei)) {
+    if (@is_file($datei)) { // @: open_basedir kann den Ordner über der Website sperren
         $CONFIG = array_replace_recursive($CONFIG, (array) require $datei);
         break;
     }
@@ -65,29 +74,54 @@ $STELLEN = [
 
 $willJson = isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false;
 
-// Bei jedem Fehler erfährt der Bewerber, wohin er die Unterlagen stattdessen senden kann
-$POSTFACH_HINWEIS = implode(' oder ', array_values($CONFIG['empfaenger']));
+// Bei jedem Fehler erfährt der Bewerber, wohin er die Unterlagen stattdessen senden
+// oder wen er anrufen kann. Nach der Standortwahl nur noch dieser Standort.
+$HINWEIS_MAIL = array_values($CONFIG['empfaenger']);
+$HINWEIS_TEL = array_values((array) $CONFIG['telefon']);
 
-function antwort($ok, $text, $code = 200)
+function antwort($ok, $text, $code = 200, $feld = null)
 {
-    global $willJson, $CONFIG, $POSTFACH_HINWEIS;
-    if (!$ok && strpos($text, '@') === false) {
-        $text .= ' Sie können Ihre Unterlagen auch per E-Mail an ' . $POSTFACH_HINWEIS . ' senden.';
-    }
+    global $willJson, $CONFIG, $HINWEIS_MAIL, $HINWEIS_TEL;
     if (!$willJson && $ok) {
         header('Location: ' . $CONFIG['danke_seite'], true, 303);
         exit;
     }
     http_response_code($code);
     if ($willJson) {
+        $daten = ['ok' => $ok, 'text' => $text];
+        if (!$ok) {
+            $daten['mail'] = $HINWEIS_MAIL;
+            $daten['tel'] = $HINWEIS_TEL;
+            if ($feld !== null) {
+                $daten['feld'] = $feld;
+            }
+        }
         header('Content-Type: application/json; charset=utf-8');
-        echo json_encode(['ok' => $ok, 'text' => $text], JSON_UNESCAPED_UNICODE);
-    } else {
-        header('Content-Type: text/html; charset=utf-8');
-        echo '<!doctype html><meta charset="utf-8"><title>Bewerbung</title><p style="font:16px sans-serif;max-width:40em;margin:3em auto">'
-            . htmlspecialchars($text) . '</p><p style="font:16px sans-serif;max-width:40em;margin:1em auto"><a href="index.html#bewerbung">Zurück zum Formular</a></p>';
+        echo json_encode($daten, JSON_UNESCAPED_UNICODE);
+        exit;
     }
+    $p = '<p style="font:16px sans-serif;max-width:40em;margin:1em auto">';
+    $links = function (array $liste, $schema) {
+        return implode(' oder ', array_map(function ($w) use ($schema) {
+            $ziel = $schema === 'tel:' ? preg_replace('/[^\d+]/', '', $w) : $w;
+            return '<a href="' . $schema . htmlspecialchars($ziel) . '">' . htmlspecialchars($w) . '</a>';
+        }, $liste));
+    };
+    header('Content-Type: text/html; charset=utf-8');
+    echo '<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bewerbung</title>'
+        . '<div style="margin-top:2em">' . $p . htmlspecialchars($text) . '</p>';
+    if (!$ok && $HINWEIS_MAIL) {
+        echo $p . 'Sie können Ihre Unterlagen auch per E-Mail an ' . $links($HINWEIS_MAIL, 'mailto:') . ' senden'
+            . ($HINWEIS_TEL ? ' oder uns anrufen: ' . $links($HINWEIS_TEL, 'tel:') : '') . '.</p>';
+    }
+    echo $p . '<a href="index.html#bewerbung">Zurück zum Formular</a></p></div>';
     exit;
+}
+
+// Protokollzeile ohne Steuerzeichen (Werte aus der Anfrage sind fremd)
+function protokoll($text)
+{
+    error_log('Bewerbungsformular: ' . substr(preg_replace('/[\x00-\x1F\x7F]+/', ' ', $text), 0, 500));
 }
 
 // Einzeiliges Formularfeld: nur Text, ohne Steuerzeichen und Zeilenumbrüche, auf $max Zeichen gekürzt
@@ -134,19 +168,53 @@ function anzeigename($name)
 
 function gueltige_adresse($a)
 {
-    return is_string($a) && filter_var($a, FILTER_VALIDATE_EMAIL) && strpbrk($a, "\"<>,;:()\\ ") === false;
+    return is_string($a) && filter_var($a, FILTER_VALIDATE_EMAIL) && strpbrk($a, "\"<>,;:()\\ ") === false
+        && preg_match('/@[^@]+\.[^@.]{2,}$/', $a); // Domain mit Punkt, wie die Prüfung im Browser
+}
+
+// Einstellungen prüfen: ungültige Adressen fallen heraus und landen im Fehlerprotokoll
+foreach ($CONFIG['empfaenger'] as $ort => $adresse) {
+    if (!gueltige_adresse($adresse)) {
+        protokoll('ungültige Empfängeradresse für ' . $ort . ' in bewerbung-config.php');
+        unset($CONFIG['empfaenger'][$ort]);
+    }
+}
+$kopie = trim((string) $CONFIG['kopie']);
+if ($kopie !== '' && !gueltige_adresse($kopie)) {
+    protokoll('ungültige Kopie-Adresse in bewerbung-config.php, Kopie wird nicht gesendet');
+    $kopie = '';
+}
+$HINWEIS_MAIL = array_values($CONFIG['empfaenger']);
+if (!$CONFIG['empfaenger']) {
+    protokoll('kein gültiges Empfängerpostfach eingestellt (empfaenger in bewerbung-config.php)');
+    antwort(false, 'Das Bewerbungsformular ist gerade nicht erreichbar. Bitte rufen Sie uns an.', 503);
 }
 
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     antwort(false, 'Bitte nutzen Sie das Bewerbungsformular auf der Website.', 405);
 }
 
+$proxy = !empty($CONFIG['hinter_proxy']);
+
+// Bewerbungsunterlagen nur verschlüsselt annehmen
+$https = (!empty($_SERVER['HTTPS']) && strtolower((string) $_SERVER['HTTPS']) !== 'off')
+    || ($proxy && strtolower(trim(explode(',', (string) ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? ''))[0])) === 'https');
+$vomServer = in_array($_SERVER['REMOTE_ADDR'] ?? '', ['127.0.0.1', '::1'], true) && !$proxy;
+if (!empty($CONFIG['nur_https']) && !$https && !$vomServer) {
+    protokoll('Anfrage ohne HTTPS abgelehnt (HTTPS einrichten oder hinter_proxy prüfen)');
+    antwort(false, 'Bitte öffnen Sie die Website über https:// und senden Sie das Formular erneut.', 403);
+}
+
 // Nur Absendungen von dieser Website (Browser senden „Origin“ mit)
 if (!empty($_SERVER['HTTP_ORIGIN'])) {
     $herkunft = strtolower((string) parse_url($_SERVER['HTTP_ORIGIN'], PHP_URL_HOST));
-    $eigener = strtolower(preg_replace('/:\d+$/', '', (string) ($_SERVER['HTTP_HOST'] ?? '')));
+    $hostKopf = $proxy && !empty($_SERVER['HTTP_X_FORWARDED_HOST'])
+        ? trim(explode(',', (string) $_SERVER['HTTP_X_FORWARDED_HOST'])[0])
+        : (string) ($_SERVER['HTTP_HOST'] ?? '');
+    $eigener = strtolower(preg_replace('/:\d+$/', '', $hostKopf));
     if ($herkunft === '' || $herkunft !== $eigener) {
-        antwort(false, 'Bitte nutzen Sie das Bewerbungsformular auf unserer Website.', 403);
+        protokoll('fremde Herkunft abgelehnt: Origin ' . $_SERVER['HTTP_ORIGIN'] . ', Host ' . $hostKopf);
+        antwort(false, 'Bitte laden Sie die Seite neu und senden Sie das Formular erneut.', 403);
     }
 }
 
@@ -169,8 +237,14 @@ foreach ((array) glob($ordner . '/bewerbung-*.txt') as $alt) {
         @unlink($alt);
     }
 }
-$schluessel = hash_hmac('sha256', (string) ($_SERVER['REMOTE_ADDR'] ?? ''), __FILE__ . (string) @filemtime(__FILE__));
-$sperre = @fopen($ordner . '/bewerbung-' . substr($schluessel, 0, 32) . '.txt', 'c+');
+$ip = (string) ($_SERVER['REMOTE_ADDR'] ?? '');
+if ($proxy && !empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $kette = explode(',', (string) $_SERVER['HTTP_X_FORWARDED_FOR']);
+    $ip = trim(end($kette)); // der letzte Eintrag stammt vom eigenen Proxy
+}
+$schluessel = hash_hmac('sha256', $ip, __FILE__ . (string) @filemtime(__FILE__));
+$sperrDatei = $ordner . '/bewerbung-' . substr($schluessel, 0, 32) . '.txt';
+$sperre = @fopen($sperrDatei, 'c+');
 if ($sperre) {
     flock($sperre, LOCK_EX);
     $zeiten = array_filter(array_map('intval', explode(',', (string) stream_get_contents($sperre))), function ($t) use ($jetzt) { return $t > $jetzt - 600; });
@@ -179,7 +253,7 @@ if ($sperre) {
         antwort(false, 'Zu viele Bewerbungen in kurzer Zeit. Bitte versuchen Sie es später erneut.', 429);
     }
 } else {
-    error_log('Bewerbungsformular: Sendebegrenzung inaktiv, Ordner nicht beschreibbar: ' . $ordner);
+    protokoll('Sendebegrenzung inaktiv, Ordner nicht beschreibbar: ' . $ordner);
 }
 
 $vorname  = feld('vorname', 80);
@@ -187,22 +261,36 @@ $nachname = feld('nachname', 80);
 $telefon  = feld('telefon', 60);
 $email    = feld('email', 120);
 $position = feld('position', 40);
-$stelle   = isset($STELLEN[$position]) ? $STELLEN[$position] : feld('Stelle', 120);
+if ($position === '') {
+    $stelle = '';
+} elseif (isset($STELLEN[$position])) {
+    $stelle = $STELLEN[$position];
+} else {
+    // Stelle nur aus der eigenen Liste: unbekannter Wert (z. B. alte Seite im Cache) wird nicht übernommen
+    protokoll('unbekannte Stelle im Formular: ' . $position . ' (Liste $STELLEN in bewerbung.php prüfen)');
+    $stelle = 'unbekannt – bitte beim Bewerber nachfragen';
+}
 $standort = feld('standort', 40);
 
-// Standort zuerst bestimmen: Fehlermeldungen nennen dann das Postfach dieses Standorts
+// Standort zuerst bestimmen: Fehlermeldungen nennen dann Postfach und Telefon dieses Standorts
 if (isset($CONFIG['empfaenger'][$standort])) {
-    $POSTFACH_HINWEIS = $CONFIG['empfaenger'][$standort];
+    $HINWEIS_MAIL = [$CONFIG['empfaenger'][$standort]];
+    $HINWEIS_TEL = isset($CONFIG['telefon'][$standort]) ? [$CONFIG['telefon'][$standort]] : $HINWEIS_TEL;
 } else {
     $standort = array_keys($CONFIG['empfaenger'])[0];
 }
 $an = $CONFIG['empfaenger'][$standort];
 
-if ($vorname === '' || $nachname === '' || $telefon === '' || !gueltige_adresse($email)) {
-    antwort(false, 'Bitte füllen Sie alle Pflichtfelder korrekt aus.', 422);
+foreach (['vorname' => $vorname, 'nachname' => $nachname, 'telefon' => $telefon] as $f => $wert) {
+    if ($wert === '') {
+        antwort(false, 'Bitte füllen Sie alle Pflichtfelder aus.', 422, $f);
+    }
+}
+if (!gueltige_adresse($email)) {
+    antwort(false, 'Bitte prüfen Sie Ihre E-Mail-Adresse.', 422, 'email');
 }
 if (feld('Einwilligung') === '') {
-    antwort(false, 'Bitte stimmen Sie der Datenschutzerklärung zu.', 422);
+    antwort(false, 'Bitte bestätigen Sie den Hinweis zum Datenschutz.', 422, 'dsgvo');
 }
 
 // Anhänge: Endung, Dateianfang und Gesamtgröße prüfen
@@ -252,17 +340,29 @@ if (!empty($_FILES['attachment']) && is_array($_FILES['attachment']['name'])) {
 // Absender: aus den Einstellungen, nie aus der Anfrage
 $absender = $CONFIG['absender'] !== '' ? $CONFIG['absender'] : $CONFIG['smtp']['benutzer'];
 if (!gueltige_adresse($absender)) {
-    error_log('Bewerbungsformular: kein gültiger Absender eingestellt (absender bzw. smtp.benutzer in bewerbung-config.php)');
-    antwort(false, 'Ihre Bewerbung konnte gerade nicht gesendet werden. Bitte senden Sie Ihre Unterlagen per E-Mail an ' . $an . '.', 502);
+    protokoll('kein gültiger Absender eingestellt (absender bzw. smtp.benutzer in bewerbung-config.php)');
+    antwort(false, 'Ihre Bewerbung konnte gerade nicht gesendet werden.', 502);
 }
-$kopie = trim((string) $CONFIG['kopie']);
+// Verschlüsselung: nur bekannte Werte; Anmeldedaten nie unverschlüsselt
+$smtp = $CONFIG['smtp'];
+$smtp['sicherheit'] = strtolower(trim((string) $smtp['sicherheit']));
+if ($smtp['host'] !== '') {
+    if (!in_array($smtp['sicherheit'], ['tls', 'ssl', 'keine'], true)) {
+        protokoll("smtp.sicherheit muss 'tls', 'ssl' oder 'keine' sein (bewerbung-config.php)");
+        antwort(false, 'Ihre Bewerbung konnte gerade nicht gesendet werden.', 502);
+    }
+    if ($smtp['sicherheit'] === 'keine' && (string) $smtp['benutzer'] !== '') {
+        protokoll("smtp.sicherheit 'keine' mit Anmeldung ist nicht erlaubt (Passwort ginge unverschlüsselt über das Netz)");
+        antwort(false, 'Ihre Bewerbung konnte gerade nicht gesendet werden.', 502);
+    }
+}
 $name = $vorname . ' ' . $nachname;
 $betreff = 'Bewerbung: ' . ($stelle !== '' ? $stelle : 'ohne Stellenangabe') . ' – ' . $name;
 
 $zeilen = [
     'Neue Bewerbung über das Formular der Karriere-Website',
     '',
-    'Stelle:       ' . $stelle,
+    'Stelle:       ' . ($stelle !== '' ? $stelle : 'keine Angabe'),
     'Standort:     ' . $standort,
     '',
     'Vorname:      ' . $vorname,
@@ -271,7 +371,7 @@ $zeilen = [
     'E-Mail:       ' . $email,
     '',
     'Unterlagen:   ' . ($anhaenge ? implode(', ', array_column($anhaenge, 'name')) : 'keine'),
-    'Datenschutz:  Einwilligung erteilt',
+    'Datenschutz:  Hinweis zur Kenntnis genommen',
     'Eingang:      ' . date('d.m.Y H:i'),
     '',
     'Antworten Sie direkt auf diese E-Mail, um den Bewerber zu erreichen.',
@@ -291,7 +391,8 @@ if ($kopie !== '') {
     $kopf[] = 'Cc: <' . $kopie . '>';
 }
 $kopf[] = 'Subject: ' . kopfzeile($betreff);
-$kopf[] = 'Message-ID: <' . bin2hex(random_bytes(10)) . '@' . $domain . '>';
+$messageId = '<' . bin2hex(random_bytes(10)) . '@' . $domain . '>';
+$kopf[] = 'Message-ID: ' . $messageId;
 $kopf[] = 'MIME-Version: 1.0';
 $kopf[] = 'Content-Type: multipart/mixed; boundary="' . $grenze . '"';
 
@@ -308,7 +409,8 @@ foreach ($anhaenge as $a) {
 }
 $rumpf .= '--' . $grenze . "--\r\n";
 
-function smtp_senden(array $s, $von, array $an, $nachricht)
+// $an muss angenommen werden; $optional (die Kopie) darf scheitern, ohne die Bewerbung zu verlieren
+function smtp_senden(array $s, $von, array $an, array $optional, $nachricht)
 {
     $ziel = ($s['sicherheit'] === 'ssl' ? 'ssl://' : 'tcp://') . $s['host'] . ':' . (int) $s['port'];
     $verb = @stream_socket_client($ziel, $nr, $fehler, 20);
@@ -357,6 +459,13 @@ function smtp_senden(array $s, $von, array $an, $nachricht)
         foreach ($an as $adresse) {
             $befehl('RCPT TO:<' . $adresse . '>', 250);
         }
+        foreach ($optional as $adresse) {
+            try {
+                $befehl('RCPT TO:<' . $adresse . '>', 250);
+            } catch (RuntimeException $e) {
+                protokoll('Kopie nicht angenommen, Bewerbung geht trotzdem raus: ' . $e->getMessage());
+            }
+        }
         $befehl('DATA', 354);
         $nachricht = preg_replace('/^\./m', '..', $nachricht);
         $befehl($nachricht . "\r\n.", 250, 'DATA-Ende');
@@ -380,22 +489,43 @@ if ($sperre) {
     fclose($sperre);
 }
 
-$alleEmpfaenger = $kopie !== '' ? [$an, $kopie] : [$an];
 $nachricht = implode("\r\n", $kopf) . "\r\n\r\n" . $rumpf;
 
 if ($CONFIG['testordner'] !== '') {
+    $weg = 'Testordner';
     $ergebnis = @file_put_contents(rtrim($CONFIG['testordner'], '/') . '/' . date('Ymd-His') . '-' . bin2hex(random_bytes(3)) . '.eml', $nachricht) !== false
         ? true : 'Testordner nicht beschreibbar';
-} elseif ($CONFIG['smtp']['host'] !== '') {
-    $ergebnis = smtp_senden($CONFIG['smtp'], $absender, $alleEmpfaenger, $nachricht);
+} elseif ($smtp['host'] !== '') {
+    $weg = 'SMTP ' . $smtp['host'] . ':' . (int) $smtp['port'] . ($smtp['benutzer'] !== '' ? ' mit Anmeldung' : ' ohne Anmeldung');
+    $ergebnis = smtp_senden($smtp, $absender, [$an], $kopie !== '' ? [$kopie] : [], $nachricht);
 } else {
+    $weg = 'mail()';
     $mailKopf = array_values(array_filter($kopf, function ($z) { return strpos($z, 'To: ') !== 0 && strpos($z, 'Subject: ') !== 0; }));
     $ergebnis = mail($an, kopfzeile($betreff), $rumpf, implode("\r\n", $mailKopf), '-f' . escapeshellarg($absender)) ? true : 'mail() fehlgeschlagen';
 }
 
 if ($ergebnis !== true) {
-    error_log('Bewerbungsformular: Versand fehlgeschlagen: ' . $ergebnis);
-    antwort(false, 'Ihre Bewerbung konnte gerade nicht gesendet werden. Bitte senden Sie Ihre Unterlagen per E-Mail an ' . $an . '.', 502);
+    protokoll('Versand fehlgeschlagen über ' . $weg . ': ' . $ergebnis);
+    // Fehlversuch zählt nicht gegen die Sendebegrenzung: Eintrag dieser Anfrage wieder entfernen
+    if ($sperre && ($f = @fopen($sperrDatei, 'c+'))) {
+        flock($f, LOCK_EX);
+        $liste = array_filter(explode(',', (string) stream_get_contents($f)), 'strlen');
+        $treffer = array_search((string) $jetzt, $liste, true);
+        if ($treffer !== false) {
+            unset($liste[$treffer]);
+        }
+        ftruncate($f, 0);
+        rewind($f);
+        fwrite($f, implode(',', $liste));
+        fflush($f);
+        flock($f, LOCK_UN);
+        fclose($f);
+    }
+    antwort(false, 'Ihre Bewerbung konnte gerade nicht gesendet werden.', 502);
 }
+
+// Eine Zeile je gesendeter Bewerbung, ohne Personendaten: so lässt sich ein Eingang im Postfach nachverfolgen
+protokoll(sprintf('gesendet an Standort %s über %s, Message-ID %s, %d Anhänge, %d KB',
+    $standort, $weg, $messageId, count($anhaenge), (int) ceil(strlen($nachricht) / 1024)));
 
 antwort(true, 'Vielen Dank! Ihre Bewerbung ist bei uns eingegangen.');

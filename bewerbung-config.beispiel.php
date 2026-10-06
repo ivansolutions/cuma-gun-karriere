@@ -8,11 +8,12 @@
  * Die Datei enthält ggf. Zugangsdaten: nicht weitergeben, nicht ins Git.
  */
 return [
-    // Absender der Benachrichtigung (Pflicht, Adresse der eigenen Domain)
+    // Absender der Benachrichtigung (Pflicht): existierende Adresse der eigenen Domain
     'absender' => 'bewerbung@guen-transporte.de',
 
-    // Variante A (empfohlen): Microsoft 365 Direct Send / Relay-Connector, ohne Anmeldung.
-    // IP-Adresse des Webservers in SPF bzw. Connector freigeben.
+    // Variante A (empfohlen): Microsoft 365 über Connector mit der IP-Adresse des Webservers,
+    // ohne Anmeldung. Dieselben Werte gelten für Direct Send ohne Connector – das kann der
+    // Tenant aber abschalten (RejectDirectSend), deshalb den Connector bevorzugen (README).
     'smtp' => [
         'host'       => 'guentransporte-de01b.mail.protection.outlook.com',
         'port'       => 25,
@@ -21,7 +22,8 @@ return [
         'passwort'   => '',
     ],
 
-    // Variante B: SMTP AUTH mit einem Postfach (siehe README zu Einschränkungen)
+    // Variante B, nur übergangsweise: SMTP AUTH mit einem Postfach
+    // (Microsoft schaltet die Passwort-Anmeldung ab Ende 2026 standardmäßig ab, siehe README)
     // 'smtp' => [
     //     'host'       => 'smtp.office365.com',
     //     'port'       => 587,
@@ -30,12 +32,22 @@ return [
     //     'passwort'   => '',
     // ],
 
-    // Empfänger je Standort (Standard siehe bewerbung.php)
+    // Empfänger und Telefon je Standort (Standard siehe bewerbung.php)
     // 'empfaenger' => [
     //     'Nürnberg'   => 'nuernberg-bewerbung@guen-transporte.de',
     //     'Crailsheim' => 'crailsheim-bewerbung@guen-transporte.de',
     // ],
+    // 'telefon' => [
+    //     'Nürnberg'   => '+49 911 6323697',
+    //     'Crailsheim' => '+49 7951 468943',
+    // ],
+
+    // Kopie jeder Bewerbung an ein weiteres Postfach – bei Variante A nur ein internes Postfach
+    // 'kopie' => '',
 
     // Ordner für die Sendebegrenzung (Standard: temporärer Ordner des Servers)
     // 'sperrordner' => '/pfad/ausserhalb/des/webroots',
+
+    // Nur hinter eigenem Reverse-Proxy auf true setzen (README, „Hinter einem Reverse-Proxy“)
+    // 'hinter_proxy' => false,
 ];
