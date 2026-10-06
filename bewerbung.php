@@ -12,6 +12,8 @@
  * die PHP-Funktion mail() des Servers versendet.
  */
 
+date_default_timezone_set('Europe/Berlin'); // Eingangszeit in deutscher Zeit, unabhängig vom Server
+
 $CONFIG = [
     // Bewerbungspostfach je Standort (Wert des Feldes „Bevorzugter Standort“)
     'empfaenger' => [
