@@ -142,13 +142,13 @@ const T = {
     form_position: "Position", form_standort: "Bevorzugter Standort",
     form_pos1: "Paketzusteller Nürnberg (Vollzeit)", form_pos2: "Paketzusteller Crailsheim (Vollzeit)",
     form_pos3: "Be- und Entlader Nürnberg (Minijob)", form_pos4: "Initiativbewerbung",
-    form_files: "Unterlagen (PDF/DOC/DOCX, max. 10 MB)",
+    form_files: "Unterlagen (PDF/DOC/DOCX, zusammen max. 10 MB)",
     form_drop: "Hierher ziehen oder <u>klicken zum Auswählen</u>",
-    form_drop_hint: "PDF · DOC · DOCX · max. 10 MB",
+    form_drop_hint: "PDF · DOC · DOCX · zusammen max. 10 MB",
     form_dsgvo: "Ich willige in die Verarbeitung meiner Daten gemäß <a href=\"#datenschutz\" data-legal=\"privacy\" style=\"color:var(--bronze);text-decoration:underline;\">Datenschutzerklärung</a> ein. *",
     form_submit: "Bewerbung senden",
     form_ok_title: "Vielen Dank!",
-    form_ok_text: "Vielen Dank für Ihr Interesse. Unser Online-Formular wird derzeit fertiggestellt. Bitte senden Sie Ihre Unterlagen vorerst per E-Mail an <a href='mailto:nuernberg-bewerbung@guen-transporte.de' style='color:var(--bronze);text-decoration:underline;'>nuernberg-bewerbung@guen-transporte.de</a>",
+    form_ok_text: "Ihre Bewerbung ist bei uns eingegangen. Wir melden uns so schnell wie möglich bei Ihnen.",
 
     /* Footer */
     footer_tagline: "seit September 1995",
@@ -449,37 +449,51 @@ document.addEventListener('DOMContentLoaded', () => {
         fileList.appendChild(it);
       });
     };
-    fileInput.addEventListener('change', e => {
-      [...e.target.files].forEach(f => { if (f.size <= 10*1024*1024) filesState.push(f); });
+    const MAX_BYTES = 10 * 1024 * 1024; /* Formular-Dienst: alle Anhänge zusammen max. 10 MB */
+    const addFiles = list => {
+      const err = document.getElementById('formError');
+      const skipped = [];
+      [...list].forEach(f => {
+        const total = filesState.reduce((n, x) => n + x.size, 0);
+        if (!/\.(pdf|docx?)$/i.test(f.name)) skipped.push(f.name + ' (nur PDF, DOC, DOCX)');
+        else if (total + f.size > MAX_BYTES) skipped.push(f.name + ' (zusammen über 10 MB)');
+        else filesState.push(f);
+      });
+      if (err) { err.hidden = !skipped.length; err.textContent = skipped.length ? 'Nicht angehängt: ' + skipped.join(', ') : ''; }
       renderFiles();
-    });
+    };
+    fileInput.addEventListener('change', e => { addFiles(e.target.files); });
     ['dragenter','dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('dragover'); }));
     ['dragleave','drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('dragover'); }));
-    drop.addEventListener('drop', e => {
-      [...e.dataTransfer.files].forEach(f => {
-        if (/\.(pdf|docx?|DOCX?|PDF)$/i.test(f.name) && f.size <= 10*1024*1024) filesState.push(f);
-      });
-      renderFiles();
-    });
+    drop.addEventListener('drop', e => { addFiles(e.dataTransfer.files); });
   }
 
-  /* ---------- FORM submit + routing ---------- */
-  // Application emails route by selected "Bevorzugter Standort".
-  // NOTE: actual delivery needs a backend later — this only resolves recipients.
-  const BEWERBUNG_MAIL = {
-    nbg: 'nuernberg-bewerbung@guen-transporte.de',
-    crl: 'crailsheim-bewerbung@guen-transporte.de',
+  /* ---------- FORM: Versand per E-Mail ----------
+     Funktioniert auf jedem Server, auch auf rein statischem Hosting: das Formular
+     geht an einen Formular-Dienst, der es als E-Mail an den gewählten Standort
+     weiterleitet und danach auf diese Seite zurückleitet.
+     Alles Einstellbare steht in BEWERBUNG. */
+  const BEWERBUNG = {
+    dienst: 'https://formsubmit.co/',             // Formular-Dienst, die Empfängeradresse wird angehängt
+    empfaenger: {                                  // Bewerbungen je Standort
+      'Nürnberg':   'nuernberg-bewerbung@guen-transporte.de',
+      'Crailsheim': 'crailsheim-bewerbung@guen-transporte.de',
+    },
+    kopie: 'ivan.deleu1@gmail.com',                // NUR FÜR DEN TEST: Kopie jeder Bewerbung. Vor dem Livegang leeren: kopie: ''
   };
   function resolveRecipients(standort) {
-    return standort === 'Crailsheim'
-      ? [BEWERBUNG_MAIL.crl]
-      : [BEWERBUNG_MAIL.nbg];
+    return [BEWERBUNG.empfaenger[standort] || BEWERBUNG.empfaenger['Nürnberg']];
   }
   const form = document.getElementById('applyForm');
   if (form) {
+    const setHidden = (name, value) => {
+      let el = form.querySelector(`input[type=hidden][name="${name}"]`);
+      if (!el) { el = document.createElement('input'); el.type = 'hidden'; el.name = name; form.appendChild(el); }
+      el.value = value;
+    };
     form.addEventListener('submit', e => {
       e.preventDefault();
-      // simple validation
+      const err = document.getElementById('formError');
       const required = ['vorname','nachname','telefon','email'];
       let ok = true;
       required.forEach(id => {
@@ -487,17 +501,48 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!el.value.trim()) { el.style.borderBottomColor = '#c44'; ok = false; }
         else el.style.borderBottomColor = '';
       });
+      const mail = document.getElementById('email');
+      if (mail.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail.value.trim())) { mail.style.borderBottomColor = '#c44'; ok = false; }
       if (!document.getElementById('dsgvo').checked) ok = false;
-      if (!ok) return;
+      if (!ok) {
+        if (err) { err.hidden = false; err.textContent = 'Bitte füllen Sie alle Pflichtfelder (*) korrekt aus und stimmen Sie der Datenschutzerklärung zu.'; }
+        return;
+      }
+      if (err) { err.hidden = true; err.textContent = ''; }
 
-      // Resolve routing (no backend yet — TODO: POST to server / mail API)
       const standort = document.getElementById('standort') ? document.getElementById('standort').value : 'Nürnberg';
-      const recipients = resolveRecipients(standort);
-      // TODO(v0.6+): send the application + uploaded files (filesState) to these recipients.
-      console.info('[Bewerbung] Standort:', standort, '→ Empfänger:', recipients.join(', '));
+      const posSel = document.getElementById('position');
+      const stelle = posSel ? posSel.selectedOptions[0].text : '';
+      const name = `${document.getElementById('vorname').value.trim()} ${document.getElementById('nachname').value.trim()}`;
+      const back = location.href.split('#')[0].split('?')[0] + '?bewerbung=gesendet#bewerbung';
 
-      document.getElementById('formSuccess').classList.add('show');
+      setHidden('Stelle', stelle);
+      setHidden('_subject', `Bewerbung: ${stelle} – ${name}`);
+      setHidden('_template', 'table');
+      setHidden('_captcha', 'false');
+      setHidden('_next', back);
+      if (BEWERBUNG.kopie) setHidden('_cc', BEWERBUNG.kopie);
+
+      /* Dateien aus der Liste (auch per Drag & Drop) in das Dateifeld übernehmen */
+      const fileInput = document.getElementById('files');
+      if (fileInput && typeof DataTransfer !== 'undefined') {
+        const dt = new DataTransfer();
+        filesState.forEach(f => dt.items.add(f));
+        fileInput.files = dt.files;
+      }
+
+      form.action = BEWERBUNG.dienst + resolveRecipients(standort)[0];
+      const btn = form.querySelector('.form-submit');
+      if (btn) { btn.disabled = true; btn.firstElementChild.textContent = 'Wird gesendet …'; }
+      HTMLFormElement.prototype.submit.call(form);
     });
+
+    /* Rückkehr vom Formular-Dienst: Dank anzeigen und Adresse aufräumen */
+    if (new URLSearchParams(location.search).get('bewerbung') === 'gesendet') {
+      document.getElementById('formSuccess').classList.add('show');
+      history.replaceState(null, '', location.pathname + '#bewerbung');
+      requestAnimationFrame(() => document.getElementById('bewerbung')?.scrollIntoView());
+    }
   }
 
   /* ---------- MARQUEE render ---------- */

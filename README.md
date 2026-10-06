@@ -73,12 +73,41 @@ Inter Tight ist auf Latin und Latin Extended reduziert.
    Variante ohne `www` sollte per 301 dorthin weiterleiten. Bei einem
    Wechsel der Hauptadresse sind alle drei Angaben je Seite gemeinsam zu
    ändern.
-4. **Bewerbungsformular anbinden.** Das Formular überträgt derzeit nichts:
-   nach dem Absenden erscheint nur ein Hinweis. Ein serverseitiger Empfang
-   samt Dateiupload (`Lebenslauf`, `Zeugnisse`) steht noch aus; die
-   Empfängerlogik nach Standort liegt in `app.js` (`resolveRecipients`).
-   Sobald übertragen wird, ist die Datenschutzerklärung um die Beschreibung
-   dieser Verarbeitung zu ergänzen.
+4. **Bewerbungsformular: Testkopie entfernen.** Das Formular sendet jede
+   Bewerbung samt Anhängen (PDF/DOC/DOCX, zusammen max. 10 MB) per E-Mail an
+   das Postfach des gewählten Standorts. Für den Testbetrieb geht eine Kopie
+   an eine Testadresse. Vor dem Livegang in `app.js` im Block `BEWERBUNG`
+   `kopie: ''` setzen.
+
+## Bewerbungsformular
+
+Das Formular braucht keinen eigenen Server-Code und funktioniert deshalb auf
+jedem Hosting, auch auf rein statischem. Es wird an den Formular-Dienst
+FormSubmit (`formsubmit.co`) gesendet, der es als E-Mail weiterleitet und
+den Besucher danach auf `index.html?bewerbung=gesendet#bewerbung` zurückführt;
+dort erscheint die Dankesmeldung.
+
+Einstellungen in `app.js`, Block `BEWERBUNG`:
+
+| Feld         | Bedeutung                                              |
+|--------------|--------------------------------------------------------|
+| `dienst`     | Adresse des Formular-Dienstes                          |
+| `empfaenger` | Bewerbungspostfach je Standort (Nürnberg, Crailsheim)  |
+| `kopie`      | optionale Kopie jeder Bewerbung, im Livebetrieb leer   |
+
+**Einmalige Freischaltung je Postfach.** Bei der ersten Bewerbung an eine
+Adresse schickt FormSubmit an dieses Postfach eine E-Mail „Activate Form“.
+Erst nach dem Klick auf den Link darin werden Bewerbungen zugestellt. Das
+ist für `nuernberg-bewerbung@` und `crailsheim-bewerbung@` je einmal nötig.
+Nach dem Umzug auf die endgültige Domain mit einer Testbewerbung prüfen,
+ob die Zustellung weiter ohne neue Freischaltung funktioniert.
+
+Spamschutz: ein unsichtbares Feld `_honey`; Bewerbungen, in denen es
+ausgefüllt ist, verwirft der Dienst.
+
+Die Datenschutzerklärung (Abschnitt 6) nennt den Dienst. Wird ein anderer
+Dienst oder ein eigenes Server-Skript verwendet, sind `dienst` in `app.js`
+und Abschnitt 6 gemeinsam anzupassen.
 
 ## Rechtstexte
 

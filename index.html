@@ -1500,7 +1500,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         </div>
       </div>
 
-      <form class="form-card" id="applyForm" novalidate aria-labelledby="formTitle">
+      <form class="form-card" id="applyForm" novalidate aria-labelledby="formTitle" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
         <h3 class="form-title visually-hidden" id="formTitle" data-i18n="form_title">Ihre Bewerbung</h3>
         <p class="form-sub" data-i18n="form_sub">Felder mit * sind Pflicht. Unterlagen können Sie direkt unten anhängen.</p>
 
@@ -1544,31 +1544,35 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
         </div>
 
         <div class="field">
-          <label data-i18n="form_files">Unterlagen (PDF/DOC/DOCX, max. 10 MB)</label>
+          <label data-i18n="form_files">Unterlagen (PDF/DOC/DOCX, zusammen max. 10 MB)</label>
           <label class="drop" id="drop">
-            <input type="file" id="files" accept=".pdf,.doc,.docx" multiple style="display:none;" />
+            <input type="file" id="files" name="attachment" accept=".pdf,.doc,.docx" multiple style="display:none;" />
             <div class="drop__inner">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
               <span class="drop__text" data-i18n="form_drop">Hierher ziehen oder <u>klicken zum Auswählen</u></span>
-              <span class="drop__hint mono" data-i18n="form_drop_hint">PDF · DOC · DOCX · max. 10 MB</span>
+              <span class="drop__hint mono" data-i18n="form_drop_hint">PDF · DOC · DOCX · zusammen max. 10 MB</span>
             </div>
           </label>
           <div class="filelist" id="filelist"></div>
         </div>
 
         <label class="checkbox">
-          <input type="checkbox" id="dsgvo" required />
+          <input type="checkbox" id="dsgvo" name="Einwilligung" value="Ja, Datenschutzerklärung gelesen und eingewilligt" required />
           <span data-i18n="form_dsgvo">Ich willige in die Verarbeitung meiner Daten gemäß <a href="#datenschutz" data-legal="privacy" style="color:var(--bronze);text-decoration:underline;">Datenschutzerklärung</a> ein. *</span>
         </label>
 
+        <!-- Spamschutz: Feld bleibt für Menschen unsichtbar und leer -->
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honey" />
+
         <button type="submit" class="btn btn--bronze form-submit"><span data-i18n="form_submit">Bewerbung senden</span> <span class="arrow">→</span></button>
+        <p class="form-error" id="formError" role="alert" hidden></p>
 
         <div class="form-success" id="formSuccess">
           <div class="form-success__icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
           </div>
           <div class="form-success__title" data-i18n="form_ok_title">Vielen Dank!</div>
-          <p class="form-success__text" data-i18n="form_ok_text">Vielen Dank für Ihr Interesse. Unser Online-Formular wird derzeit fertiggestellt. Bitte senden Sie Ihre Unterlagen vorerst per E-Mail an <a href="mailto:nuernberg-bewerbung@guen-transporte.de" style="color:var(--bronze);text-decoration:underline;">nuernberg-bewerbung@guen-transporte.de</a></p>
+          <p class="form-success__text" data-i18n="form_ok_text">Ihre Bewerbung ist bei uns eingegangen. Wir melden uns so schnell wie möglich bei Ihnen.</p>
         </div>
       </form>
     </div>
@@ -1807,6 +1811,9 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
   text-align: center;
 }
 .form-success.show { display: flex; }
+.form-error { margin: 12px 0 0; color: #b3261e; font-size: 14px; line-height: 1.45; }
+.form-honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-submit[disabled] { opacity: .65; cursor: progress; }
 .form-success__icon {
   width: 64px; height: 64px;
   border-radius: 50%;
@@ -2316,9 +2323,10 @@ body.overlay-open .sticky-apply { display: none; }
 <p>Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO, die Sie durch das Anklicken der Schaltfläche erteilen. Die Einwilligung gilt für den jeweiligen Seitenaufruf; laden Sie die Seite neu, ist die Karte wieder deaktiviert.</p>
 <p>Dasselbe gilt für die Schaltfläche „Route planen“: Diese öffnet Google Maps in einem neuen Fenster. Für die dortige Datenverarbeitung ist Google verantwortlich.</p>
 <p>Weitere Informationen finden Sie in der Datenschutzerklärung von Google.</p>
-<h3>6. Bewerbung per E-Mail</h3>
+<h3>6. Bewerbung über das Online-Formular oder per E-Mail</h3>
 
-<p>Bewerbungen erreichen uns derzeit per E-Mail. Wir verarbeiten dabei die von Ihnen übermittelten Angaben und Unterlagen, etwa Kontaktdaten, Lebenslauf, Anschreiben und Zeugnisse.</p>
+<p>Sie können sich über das Bewerbungsformular auf dieser Website oder per E-Mail bewerben. Wir verarbeiten dabei die von Ihnen übermittelten Angaben und Unterlagen, etwa Name, Telefonnummer, E-Mail-Adresse, gewünschte Stelle und Standort, Lebenslauf, Anschreiben und Zeugnisse.</p>
+<p>Für die technische Übermittlung des Bewerbungsformulars nutzen wir den Dienst FormSubmit (formsubmit.co). Wenn Sie das Formular absenden, werden Ihre Angaben und angehängten Unterlagen an die Server dieses Dienstes übertragen und von dort als E-Mail an das Bewerbungspostfach des von Ihnen gewählten Standorts weitergeleitet. Der Dienst kann die Übermittlung zu Zwecken der Zustellung vorübergehend speichern. Eine Verarbeitung außerhalb der Europäischen Union, insbesondere in den USA, kann dabei nicht ausgeschlossen werden. Wenn Sie dies nicht wünschen, senden Sie Ihre Bewerbung bitte direkt per E-Mail an nuernberg-bewerbung@guen-transporte.de oder crailsheim-bewerbung@guen-transporte.de.</p>
 <p>Zweck der Verarbeitung ist die Prüfung Ihrer Eignung für die ausgeschriebene Stelle und die Durchführung des Bewerbungsverfahrens.</p>
 <p>Rechtsgrundlage ist Art. 88 Abs. 1 DSGVO in Verbindung mit § 26 Abs. 1 BDSG. Die Verarbeitung ist für die Entscheidung über die Begründung eines Beschäftigungsverhältnisses erforderlich.</p>
 <p>Im Falle einer Absage bewahren wir Ihre Daten zur Abwehr möglicher Rechtsansprüche, etwa nach dem Allgemeinen Gleichbehandlungsgesetz, für längstens sechs Monate nach Versand der Absage auf und löschen sie anschließend. Rechtsgrundlage hierfür ist Art. 6 Abs. 1 lit. f DSGVO; das berechtigte Interesse besteht in der Beweisführung in einem möglichen Rechtsstreit.</p>
