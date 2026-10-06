@@ -771,7 +771,7 @@ document.addEventListener('DOMContentLoaded', openLegalFromHash);
    Land on the section; if the first form field would still be off-screen
    (narrow layout, steps list stacked above the form), land on the form card. */
 function scrollToApply() {
-  const OFFSET = 92;
+  const OFFSET = 56; /* Kopfzeile 76 + 24 − Abstand oben von #bewerbung 44 */
   const sec   = document.getElementById('bewerbung');
   const form  = document.getElementById('applyForm');
   const first = document.getElementById('vorname');
@@ -779,7 +779,7 @@ function scrollToApply() {
   const y = el => el.getBoundingClientRect().top + window.scrollY;
   const secTarget = y(sec) - OFFSET;
   const fitsOnScreen = (y(first) - secTarget) < (window.innerHeight - 80);
-  const target = fitsOnScreen ? secTarget : y(form) - OFFSET;
+  const target = fitsOnScreen ? secTarget : y(form) - 100; /* Formkarte 24px unter der Kopfzeile */
   window.scrollTo({ top: target, behavior: 'smooth' });
 }
 document.addEventListener('click', e => {

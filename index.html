@@ -76,7 +76,7 @@
 <style>
 /* ===== Reset & base ===== */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -153,6 +153,10 @@ h1, h2, h3, h4, h5 {
 section { padding: 100px 0; position: relative; }
 .hero { padding: 110px 0 60px !important; }
 @media (max-width: 768px) { section { padding: 64px 0; } .hero { padding: 90px 0 50px !important; } }
+/* Sprungziel aus dem Menü: Überschrift 24px unter der Kopfzeile (76px).
+   scroll-margin-top = 76 + 24 − Abstand oben des Abschnitts. */
+section[id] { scroll-margin-top: 0; }
+@media (max-width: 768px) { section[id] { scroll-margin-top: 36px; } }
 
 .section-kicker {
   font-family: "Geist Mono", ui-monospace, "SF Mono", Consolas, monospace;
@@ -1609,7 +1613,7 @@ body:has(.mobile-nav.open) .sticky-apply { display: none; }
 }
 .vstep:last-child::before { display: none; }
 /* Bewerbung fits one desktop screen */
-#bewerbung { padding-top: 44px; padding-bottom: 44px; }
+#bewerbung { padding-top: 44px; padding-bottom: 44px; scroll-margin-top: 56px; }
 @media (min-width: 901px) {
   #bewerbung .section-h2 { font-size: 38px; margin-bottom: 14px; }
   #bewerbung .bew-head   { margin-bottom: 34px; }
