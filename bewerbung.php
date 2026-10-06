@@ -190,17 +190,20 @@ $position = feld('position', 40);
 $stelle   = isset($STELLEN[$position]) ? $STELLEN[$position] : feld('Stelle', 120);
 $standort = feld('standort', 40);
 
+// Standort zuerst bestimmen: Fehlermeldungen nennen dann das Postfach dieses Standorts
+if (isset($CONFIG['empfaenger'][$standort])) {
+    $POSTFACH_HINWEIS = $CONFIG['empfaenger'][$standort];
+} else {
+    $standort = array_keys($CONFIG['empfaenger'])[0];
+}
+$an = $CONFIG['empfaenger'][$standort];
+
 if ($vorname === '' || $nachname === '' || $telefon === '' || !gueltige_adresse($email)) {
     antwort(false, 'Bitte füllen Sie alle Pflichtfelder korrekt aus.', 422);
 }
 if (feld('Einwilligung') === '') {
     antwort(false, 'Bitte stimmen Sie der Datenschutzerklärung zu.', 422);
 }
-if (!isset($CONFIG['empfaenger'][$standort])) {
-    $standort = array_keys($CONFIG['empfaenger'])[0];
-}
-$an = $CONFIG['empfaenger'][$standort];
-$POSTFACH_HINWEIS = $an;
 
 // Anhänge: Endung, Dateianfang und Gesamtgröße prüfen
 $anhaenge = [];
